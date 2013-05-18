@@ -25,9 +25,10 @@ HEADERS  += jpconjmain.h \
 FORMS    += jpconjmain.ui \
     about.ui
 
-TRANSLATIONS    +=  localization/jpconj_en.ts
+TRANSLATIONS    +=  localization/jpconj_en.ts\
+                    localization/jpconj_ar.ts
 
 LIBS    += -L../libjpconj-release -llibjpconj
-INCLUDEPATH +=  ../libjpconj
+INCLUDEPATH +=  ../libjpconj-release
 OTHER_FILES +=
 

@@ -36,6 +36,8 @@ QString conj(QString verb, int type, int time, bool polite, bool positive)
 
 QString Libjpconj::conjugate(QString verb, int type, int time, bool polite, bool positive)
 {
+    if(verb.length()<2)
+        return verb;
 
     int end = getEnd(verb);
     verb.chop(1);
@@ -101,7 +103,7 @@ QString Libjpconj::conjugate(QString verb, int type, int time, bool polite, bool
             else //negative
                 return Verbform::aForm(verb, type, end) + QString::fromUtf8("なかったら");
 
-    case _Raison:
+    case _Reason:
         if (polite)
             if (positive)
                 return Verbform::iForm(verb, type, end) + QString::fromUtf8("ますから");
@@ -177,7 +179,7 @@ QString Libjpconj::conjugate(QString verb, int type, int time, bool polite, bool
                 return Verbform::eForm(verb, type, end) + QString::fromUtf8("ません");
         else
             if (positive)
-                return Verbform::uForm(verb, end);
+                return Verbform::eForm(verb, end) + QString::fromUtf8("る");;
             else //negative
                 return Verbform::eForm(verb, type, end) + QString::fromUtf8("ない");
 

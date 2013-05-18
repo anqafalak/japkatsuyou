@@ -9,12 +9,13 @@
         <translation type="unfinished">عن البرنامج ...</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="100"/>
+        <location filename="../about.ui" line="104"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;JapKatsuyou is a Japanese Conjugation application, using the library libjpconj.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(c) 2013 Abdelkrime Aries&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Licenced under GNU GPLv3 or later&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;JapKatsuyou هو تطبيق لتصريف الأفعال اليابانية.
+&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(c) 2013 عبد الكريم عريس&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;الرخصة بموجب GNU GLPv3 أو أي نسخة لاحقة&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="122"/>
+        <location filename="../about.ui" line="126"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -26,7 +27,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.ui" line="152"/>
+        <location filename="../about.ui" line="156"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
@@ -34,49 +35,129 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>jpconjmain</name>
     <message>
-        <location filename="../jpconjmain.ui" line="23"/>
         <source>Katsuyou: Japanese Conjugation</source>
+        <translation type="obsolete">كاتسيو: تصريف الأفعال اليابانية</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.ui" line="23"/>
+        <source>JapKatsuyou: Japanese Conjugation</source>
         <translation type="unfinished">كاتسيو: تصريف الأفعال اليابانية</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="39"/>
+        <location filename="../jpconjmain.ui" line="46"/>
+        <location filename="../jpconjmain.ui" line="170"/>
         <source>Conjugate</source>
         <translation type="unfinished">تصريف</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="85"/>
+        <location filename="../jpconjmain.ui" line="92"/>
         <source>Polite form?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">صيغة مهذبة؟</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="101"/>
+        <location filename="../jpconjmain.ui" line="108"/>
         <source>Positive?</source>
         <translation type="unfinished">إيجابي؟</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="132"/>
+        <location filename="../jpconjmain.ui" line="139"/>
         <source>&amp;File</source>
         <translation type="unfinished">ملف</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="140"/>
+        <location filename="../jpconjmain.ui" line="147"/>
         <source>&amp;Help</source>
         <translation type="unfinished">مساعدة</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="158"/>
+        <location filename="../jpconjmain.ui" line="165"/>
         <source>&amp;Close</source>
         <translation type="unfinished">غلق</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="163"/>
-        <source>say</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.ui" line="168"/>
+        <location filename="../jpconjmain.ui" line="175"/>
         <source>&amp;About</source>
         <translation type="unfinished">عن البرنامج</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="52"/>
+        <source>Ichidan</source>
+        <translation type="unfinished">إتشيدان</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="53"/>
+        <source>Godan</source>
+        <translation type="unfinished">غودان</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="57"/>
+        <source>TeForm</source>
+        <translation type="unfinished">صيغة Te</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="58"/>
+        <source>Present</source>
+        <translation type="unfinished">المضارع</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="59"/>
+        <source>Past</source>
+        <translation type="unfinished">الماضي</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="60"/>
+        <source>Provisional Condition</source>
+        <translation type="unfinished">الشرط المؤقت</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="61"/>
+        <source>Condition</source>
+        <translation type="unfinished">الشرط</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="62"/>
+        <source>Imperative</source>
+        <translation type="unfinished">الأمر</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="63"/>
+        <source>Volitional</source>
+        <translation type="unfinished">الاختيار (هيا فلـ)</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="64"/>
+        <source>Present Continuous</source>
+        <translation type="unfinished">المضارع المستمر</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="65"/>
+        <source>Past Continuous</source>
+        <translation type="unfinished">الماضي المستمر</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="66"/>
+        <source>Passive</source>
+        <translation type="unfinished">المبني للمجهول</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="67"/>
+        <source>Causative</source>
+        <translation type="unfinished">السبب</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="68"/>
+        <source>Causative Passive</source>
+        <translation type="unfinished">السبب مبني للمجهول</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="69"/>
+        <source>Potential</source>
+        <translation type="unfinished">الاستطاعة</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="70"/>
+        <source>Reason</source>
+        <translation type="unfinished">العلة</translation>
     </message>
 </context>
 </TS>

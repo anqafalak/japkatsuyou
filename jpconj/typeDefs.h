@@ -52,7 +52,7 @@
 #define _Causative          10 // a＋せる a＋させる
 #define _CausativePassive   11 // a＋せられる a＋させられる
 #define _Potential          12 // e＋る e＋られる
-#define _Raison             13 // ta＋から
+#define _Reason             13 // ta＋から
 
 //#define _Desire             14 // i + たい
 //#define _WhileDoing         15 // ながら
