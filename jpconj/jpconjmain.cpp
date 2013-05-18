@@ -1,4 +1,5 @@
 #include "jpconjmain.h"
+#include "qdialog.h"
 
 jpconjmain::jpconjmain(QWidget *parent) :
     QMainWindow(parent),
@@ -28,8 +29,22 @@ void jpconjmain::on_btn_conj_clicked()
     doConj();
 }
 
+void jpconjmain::on_action_About_triggered()
+{
+    openAbout();
+}
+
 
 //private functions
+
+void jpconjmain::openAbout()
+{
+    winAbout = new About(this);
+    //winAbout->setWindowFlags(Qt::WindowTitleHint | Qt::Dialog | Qt::CustomizeWindowHint);
+    //winAbout->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
+    winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+    winAbout->show();
+}
 
 void jpconjmain::doInit()
 {
@@ -55,3 +70,5 @@ void jpconjmain::doConj()
     QString result = libjpconjlink::conjugate(verb, type, time, polite, positive);
     ui->outputt->setText(result);
 }
+
+

@@ -14,19 +14,21 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         jpconjmain.cpp \
-    libjpconjlink.cpp
+        libjpconjlink.cpp \
+    about.cpp
 
 HEADERS  += jpconjmain.h \
     libjpconjlink.h \
     verbtype.h \
-    verbtime.h
+    verbtime.h \
+    about.h
 
-FORMS    += jpconjmain.ui
+FORMS    += jpconjmain.ui \
+    about.ui
 
 TRANSLATIONS    +=  localization/jpconj_en.ts
 
 LIBS    += -L../libjpconj-release -llibjpconj
 INCLUDEPATH +=  ../libjpconj
-
 OTHER_FILES +=
 
