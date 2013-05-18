@@ -1,5 +1,5 @@
-jpconjug
-========
+JapKatsuyou
+===========
 
 
 A library used to conjugate Japanese verbs. The repo contains the library project and the application project.
