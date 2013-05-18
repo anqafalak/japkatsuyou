@@ -19,9 +19,8 @@ SOURCES += main.cpp\
 
 HEADERS  += jpconjmain.h \
     libjpconjlink.h \
-    verbtype.h \
-    verbtime.h \
-    about.h
+    about.h \
+    typeDefs.h
 
 FORMS    += jpconjmain.ui \
     about.ui

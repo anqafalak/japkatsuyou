@@ -112,6 +112,117 @@ QString Libjpconj::conjugate(QString verb, int type, int time, bool polite, bool
                 return Verbform::taForm(verb, type, end) + QString::fromUtf8("から");
             else //negative
                 return Verbform::aForm(verb, type, end) + QString::fromUtf8("なかったから");
+
+    case _Imperative:
+        if (polite)
+            if (positive)
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("下さい");
+            else
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("ないで下さい");
+        else
+            if (positive)
+                switch (type)
+                {
+                case _ichidan:
+                    return verb + QString::fromUtf8("ろ");
+                case _godan:
+                    return Verbform::eForm(verb, type, end);
+                }
+            else //negative
+                return Verbform::uForm(verb, end) + QString::fromUtf8("な");
+
+    case _Volitional:
+        if (polite)
+            if (positive)
+                return Verbform::iForm(verb, type, end) + QString::fromUtf8("ましょう");
+            else
+                return Verbform::uForm(verb, end) + QString::fromUtf8("のをやめましょう");
+        else
+            if (positive)
+                return Verbform::oForm(verb, type, end) + QString::fromUtf8("う");
+            else //negative
+                return Verbform::uForm(verb, end) + QString::fromUtf8("のをやめよう");
+
+    case _PresentContinuous:
+        if (polite)
+            if (positive)
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("います");
+            else
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いません");
+        else
+            if (positive)
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いる");
+            else
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いない");
+
+    case _PastContinuous:
+        if (polite)
+            if (positive)
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いました");
+            else
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いませんでした");
+        else
+            if (positive)
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いた");
+            else
+                return Verbform::teForm(verb, type, end) + QString::fromUtf8("いなかった");
+
+    case _Potential:
+        if (type == _ichidan)
+            verb += QString::fromUtf8("られ");
+        if (polite)
+            if (positive)
+                return Verbform::eForm(verb, type, end) + QString::fromUtf8("ます");
+            else
+                return Verbform::eForm(verb, type, end) + QString::fromUtf8("ません");
+        else
+            if (positive)
+                return Verbform::uForm(verb, end);
+            else //negative
+                return Verbform::eForm(verb, type, end) + QString::fromUtf8("ない");
+
+    case _Passive:
+        if (type == _ichidan)
+            verb += QString::fromUtf8("ら");
+        if (polite)
+            if (positive)
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("れます");
+            else
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("れません");
+        else
+            if (positive)
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("れる");
+            else //negative
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("れない");
+
+    case _Causative:
+        if (type == _ichidan)
+            verb += QString::fromUtf8("さ");
+        if (polite)
+            if (positive)
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せます");
+            else
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せません");
+        else
+            if (positive)
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せる");
+            else //negative
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せない");
+
+    case _CausativePassive:
+        if (type == _ichidan)
+            verb += QString::fromUtf8("さ");
+        if (polite)
+            if (positive)
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せられます");
+            else
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せられません");
+        else
+            if (positive)
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せられる");
+            else //negative
+                return Verbform::aForm(verb, type, end) + QString::fromUtf8("せられない");
+
     }
 
     return Verbform::uForm(verb, end);

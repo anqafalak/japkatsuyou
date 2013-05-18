@@ -49,15 +49,26 @@ void jpconjmain::openAbout()
 void jpconjmain::doInit()
 {
     //Initialize types of verb
-    ui->vfrmchoice->addItem("Ichidan", QVariant(verbType::_ichidan));
-    ui->vfrmchoice->addItem("Godan", QVariant(verbType::_godan));
-    ui->vfrmchoice->addItem("Zuru Verb", QVariant(verbType::_zuruVerb));
+    ui->vfrmchoice->addItem("Ichidan", QVariant(_ichidan));
+    ui->vfrmchoice->addItem("Godan", QVariant(_godan));
+    //ui->vfrmchoice->addItem("Zuru Verb", QVariant(_zuruVerb));
 
     //Initialize conjugation time
-    ui->conjchoice->addItem("TeForm", QVariant(verbTime::_TeForm));
-    ui->conjchoice->addItem("Present", QVariant(verbTime::_Present));
-    ui->conjchoice->addItem("Past", QVariant(verbTime::_Past));
-    ui->conjchoice->addItem("Provision", QVariant(verbTime::_Provision));
+    ui->conjchoice->addItem("TeForm", QVariant(_TeForm));
+    ui->conjchoice->addItem("Present", QVariant(_Present));
+    ui->conjchoice->addItem("Past", QVariant(_Past));
+    ui->conjchoice->addItem("Provision", QVariant(_Provision));
+    ui->conjchoice->addItem("Condition", QVariant(_Condition));
+    ui->conjchoice->addItem("Imperative", QVariant(_Imperative));
+    ui->conjchoice->addItem("Volitional", QVariant(_Volitional));
+    ui->conjchoice->addItem("Present Continuous", QVariant(_PresentContinuous));
+    ui->conjchoice->addItem("Past Continuous", QVariant(_PastContinuous));
+    ui->conjchoice->addItem("Passive", QVariant(_Passive));
+    ui->conjchoice->addItem("Causative", QVariant(_Causative));
+    ui->conjchoice->addItem("Causative Passive", QVariant(_CausativePassive));
+    ui->conjchoice->addItem("Potential", QVariant(_Potential));
+    ui->conjchoice->addItem("Raison", QVariant(_Raison));
+
 }
 
 void jpconjmain::doConj()

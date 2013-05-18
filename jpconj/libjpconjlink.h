@@ -1,8 +1,9 @@
 #ifndef LIBJPCONJLINK_H
 #define LIBJPCONJLINK_H
 
-#include "verbtype.h"
-#include "verbtime.h"
+//#include "verbtype.h"
+//#include "verbtime.h"
+#include "typeDefs.h"
 #include "QLibrary"
 
 class libjpconjlink

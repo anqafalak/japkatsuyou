@@ -101,7 +101,7 @@ QString Verbform::oForm(QString radical, int type, int end)
 {
     switch (type){
     case _ichidan:
-        return radical;
+        return radical + QString::fromUtf8("よ");;
     case _zuruVerb:
         type = _godan;
     case _godan:
