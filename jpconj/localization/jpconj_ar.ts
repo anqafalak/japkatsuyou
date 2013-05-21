@@ -11,8 +11,8 @@
     <message>
         <location filename="../about.ui" line="104"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;JapKatsuyou is a Japanese Conjugation application, using the library libjpconj.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(c) 2013 Abdelkrime Aries&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Licenced under GNU GPLv3 or later&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;JapKatsuyou هو تطبيق لتصريف الأفعال اليابانية.
-&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(c) 2013 عبد الكريم عريس&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;الرخصة بموجب GNU GLPv3 أو أي نسخة لاحقة&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body dir=&quot;rtl&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;JapKatsuyou هو تطبيق لتصريف الأفعال اليابانية.
+&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; (c) 2013 عبد الكريم عريس&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;الرخصة بموجب GNU GLPv3 أو أي نسخة لاحقة&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../about.ui" line="126"/>
@@ -29,6 +29,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="156"/>
         <source>Credits</source>
+        <translatorcomment>المساهمون </translatorcomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

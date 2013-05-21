@@ -16,7 +16,9 @@ int main(int argc, char *argv[])
     myappTranslator.load("jpconj_ar", "./localization");
     a.installTranslator(&myappTranslator);
 
+    a.setLayoutDirection(Qt::RightToLeft);
     jpconjmain w;
+    w.setLayoutDirection(Qt::RightToLeft);
     w.show();
 
     return a.exec();

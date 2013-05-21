@@ -47,6 +47,9 @@
    <iconset>
     <normaloff>img/icon.png</normaloff>img/icon.png</iconset>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
   </property>
@@ -100,6 +103,9 @@
      <height>91</height>
     </rect>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;JapKatsuyou is a Japanese Conjugation application, using the library libjpconj.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(c) 2013 Abdelkrime Aries&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Licenced under GNU GPLv3 or later&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
@@ -144,7 +150,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>10</x>
      <y>106</y>
-     <width>71</width>
+     <width>381</width>
      <height>20</height>
     </rect>
    </property>
@@ -154,6 +160,9 @@ p, li { white-space: pre-wrap; }
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
     <string>Credits</string>

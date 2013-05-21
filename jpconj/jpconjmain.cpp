@@ -40,6 +40,7 @@ void jpconjmain::on_action_About_triggered()
 void jpconjmain::openAbout()
 {
     winAbout = new About(this);
+    winAbout->setLayoutDirection(this->layoutDirection());
     //winAbout->setWindowFlags(Qt::WindowTitleHint | Qt::Dialog | Qt::CustomizeWindowHint);
     //winAbout->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
