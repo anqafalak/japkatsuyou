@@ -18,17 +18,52 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "about.h"
-#include "ui_about.h"
+#include "preference.h"
+#include "ui_preference.h"
 
-About::About(QWidget *parent) :
+Preference::Preference(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::About)
+    ui(new Ui::Preference)
 {
     ui->setupUi(this);
+    doInit();
+
 }
 
-About::~About()
+Preference::~Preference()
 {
     delete ui;
+}
+
+
+
+void Preference::doInit()
+{
+    QSettings settings;
+
+    int index = settings.value("langidx",0).toInt();
+
+    //Initialize interface language
+    ui->lang->addItem(tr("Default"), QVariant("def"));
+    ui->lang->addItem(tr("Arabic"), QVariant("ar"));
+    ui->lang->addItem(tr("English"), QVariant("en"));
+
+    ui->lang->setCurrentIndex(index);
+}
+
+void Preference::doSave()
+{
+    QSettings settings;
+
+    int index = ui->lang->currentIndex();
+    QVariant langacro = ui->lang->itemData(index);
+
+    settings.setValue("langidx", index);
+    settings.setValue("langacro", langacro);
+
+}
+
+void Preference::on_prefOK_accepted()
+{
+    doSave();
 }

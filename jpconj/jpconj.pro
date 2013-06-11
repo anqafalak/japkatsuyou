@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,15 +15,20 @@ TEMPLATE = app
 SOURCES += main.cpp\
         jpconjmain.cpp \
         libjpconjlink.cpp \
-    about.cpp
+    about.cpp \
+    edict2.cpp \
+    preference.cpp
 
 HEADERS  += jpconjmain.h \
     libjpconjlink.h \
     about.h \
-    typeDefs.h
+    typeDefs.h \
+    edict2.h \
+    preference.h
 
 FORMS    += jpconjmain.ui \
-    about.ui
+    about.ui \
+    preference.ui
 
 TRANSLATIONS    +=  localization/jpconj_en.ts\
                     localization/jpconj_ar.ts

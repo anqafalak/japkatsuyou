@@ -34,6 +34,7 @@ class LIBJPCONJSHARED_EXPORT Libjpconj
 public:
     Libjpconj();
     QString conjugate(QString verb, int type, int time, bool polite, bool positive);
+    QString conjugate(QString verb, int type, int end, int time, bool polite, bool positive);
 
 private:
     static int getEnd(QString verb);
@@ -43,6 +44,7 @@ extern "C"
 {
    // #include "libjpconj.h"
     QString conj(QString verb, int type, int time, bool polite, bool positive);
+    QString conjEnd(QString verb, int type, int end, int time, bool polite, bool positive);
 }
 
 #endif // LIBJPCONJ_H

@@ -24,18 +24,18 @@ Verbform::Verbform()
 {
 }
 
+/*
 QString Verbform::uForm(QString radical, int end)
 {
     return radical + _endChars.at(end);
-}
+}*/
 
 QString Verbform::iForm(QString radical, int type, int end)
 {
     switch (type){
     case _ichidan:
         return radical;
-    case _zuruVerb:
-        type = _godan;
+
     case _godan:
         switch (end){
         case _uEnd:
@@ -58,6 +58,19 @@ QString Verbform::iForm(QString radical, int type, int end)
             return radical + QString::fromUtf8("り");
         }
 
+    case _zuruVerb:
+        return radical + QString::fromUtf8("り");
+
+    case _suruVerb:
+        radical.chop(1);
+        return radical + QString::fromUtf8("し");
+
+    case _ikuVerb:
+        return radical + QString::fromUtf8("き");
+
+    case _kouTou:
+        return radical + QString::fromUtf8("い");
+
     }
 
     return radical;
@@ -68,8 +81,7 @@ QString Verbform::eForm(QString radical, int type, int end)
     switch (type){
     case _ichidan:
         return radical;
-    case _zuruVerb:
-        type = _godan;
+
     case _godan:
         switch (end){
         case _uEnd:
@@ -92,6 +104,19 @@ QString Verbform::eForm(QString radical, int type, int end)
             return radical + QString::fromUtf8("れ");
         }
 
+    case _zuruVerb:
+        return radical + QString::fromUtf8("れ");
+
+    case _suruVerb:
+        radical.chop(1);
+        return radical + QString::fromUtf8("す");
+
+    case _ikuVerb:
+        return radical + QString::fromUtf8("け");
+
+    case _kouTou:
+        return radical + QString::fromUtf8("え");
+
     }
 
     return radical;
@@ -101,9 +126,8 @@ QString Verbform::oForm(QString radical, int type, int end)
 {
     switch (type){
     case _ichidan:
-        return radical + QString::fromUtf8("よ");;
-    case _zuruVerb:
-        type = _godan;
+        return radical + QString::fromUtf8("よ");
+
     case _godan:
         switch (end){
         case _uEnd:
@@ -126,6 +150,18 @@ QString Verbform::oForm(QString radical, int type, int end)
             return radical + QString::fromUtf8("ろ");
         }
 
+    case _zuruVerb:
+        return radical + QString::fromUtf8("ろ");
+
+    case _suruVerb:
+        radical.chop(1);
+        return radical + QString::fromUtf8("しよ");
+
+    case _ikuVerb:
+        return radical + QString::fromUtf8("こ");
+
+    case _kouTou:
+        return radical + QString::fromUtf8("お");
     }
 
     return radical;
@@ -136,8 +172,7 @@ QString Verbform::aForm(QString radical, int type, int end)
     switch (type){
     case _ichidan:
         return radical;
-    case _zuruVerb:
-        type = _godan;
+
     case _godan:
         switch (end){
         case _uEnd:
@@ -160,6 +195,18 @@ QString Verbform::aForm(QString radical, int type, int end)
             return radical + QString::fromUtf8("ら");
         }
 
+    case _zuruVerb:
+        return radical + QString::fromUtf8("ら");
+
+    case _suruVerb:
+        radical.chop(1);
+        return radical + QString::fromUtf8("し");
+
+    case _ikuVerb:
+        return radical + QString::fromUtf8("か");
+
+    case _kouTou:
+        return radical + QString::fromUtf8("わ");
     }
 
     return radical;
@@ -201,22 +248,9 @@ QString Verbform::teForm(QString radical, int type, int end)
     case _godan:
         switch (end){
         case _uEnd:
-            if (Dou_KouVerb(radical))
-                return radical + QString::fromUtf8("うて");
-            else
-                return radical + QString::fromUtf8("って");
+            return radical + QString::fromUtf8("って");
         case _kuEnd:
-            if (IkuVerb(radical))
-            {
-                if (radical.endsWith(QString::fromUtf8("ゆ")))
-                {
-                    radical.chop(1);
-                    return radical + QString::fromUtf8("いって");
-                }
-                return radical + QString::fromUtf8("って");
-            }
-            else
-                return radical + QString::fromUtf8("いて");
+            return radical + QString::fromUtf8("いて");
         case _guEnd:
             return radical + QString::fromUtf8("いで");
         case _suEnd:
@@ -235,6 +269,21 @@ QString Verbform::teForm(QString radical, int type, int end)
 
     case _zuruVerb:
         return radical + QString::fromUtf8("って");
+
+    case _suruVerb:
+        radical.chop(1);
+        return radical + QString::fromUtf8("して");
+
+    case _ikuVerb:
+        if (radical.endsWith(QString::fromUtf8("ゆ")))
+        {
+            radical.chop(1);
+            return radical + QString::fromUtf8("いって");
+        }
+        return radical + QString::fromUtf8("って");
+
+    case _kouTou:
+        return radical + QString::fromUtf8("うて");
     }
 
     return radical + QString::fromUtf8("て");
@@ -250,22 +299,9 @@ QString Verbform::taForm(QString radical, int type, int end)
     case _godan:
         switch (end){
         case _uEnd:
-            if (Dou_KouVerb(radical))
-                return radical + QString::fromUtf8("うた");
-            else
-                return radical + QString::fromUtf8("った");
+            return radical + QString::fromUtf8("った");
         case _kuEnd:
-            if (IkuVerb(radical))
-            {
-                if (radical.endsWith(QString::fromUtf8("ゆ")))
-                {
-                    radical.chop(1);
-                    return radical + QString::fromUtf8("いった");
-                }
-                return radical + QString::fromUtf8("った");
-            }
-            else
-                return radical + QString::fromUtf8("いた");
+            return radical + QString::fromUtf8("いた");
         case _guEnd:
             return radical + QString::fromUtf8("いだ");
         case _suEnd:
@@ -284,6 +320,21 @@ QString Verbform::taForm(QString radical, int type, int end)
 
     case _zuruVerb:
         return radical + QString::fromUtf8("った");
+
+    case _suruVerb:
+        radical.chop(1);
+        return radical + QString::fromUtf8("した");
+
+    case _ikuVerb:
+        if (radical.endsWith(QString::fromUtf8("ゆ")))
+        {
+            radical.chop(1);
+            return radical + QString::fromUtf8("いった");
+        }
+        return radical + QString::fromUtf8("った");
+
+    case _kouTou:
+        return radical + QString::fromUtf8("うた");
     }
 
     return radical + QString::fromUtf8("た");
@@ -291,7 +342,7 @@ QString Verbform::taForm(QString radical, int type, int end)
 
 
 //private functions
-
+/*
 bool Verbform::IkuVerb(QString radical)
 {
     if (radical.endsWith(QString::fromUtf8("い")) || radical.endsWith(QString::fromUtf8("行")) || radical.endsWith(QString::fromUtf8("ゆ")))
@@ -308,3 +359,4 @@ bool Verbform::Dou_KouVerb(QString radical)
 
     return false;
 }
+*/

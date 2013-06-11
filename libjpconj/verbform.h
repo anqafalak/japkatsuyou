@@ -38,8 +38,8 @@ public:
     static QString taForm(QString radical, int type, int end);
 
 private:
-    static bool IkuVerb(QString radical);
-    static bool Dou_KouVerb(QString radical);
+    //static bool IkuVerb(QString radical);
+    //static bool Dou_KouVerb(QString radical);
 };
 
 #endif // VERBFORM_H

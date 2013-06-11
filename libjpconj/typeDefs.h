@@ -23,11 +23,20 @@
 
 // verb type
 #define _ichidan 1
-#define _godan 5
-#define _zuruVerb 10
+#define _nidan 2
 
+#define _yondan 4
+#define _godan 5
+#define _aruVerb 6
+#define _ikuVerb 7
+#define _kuruVerb 8
+#define _suruVerb 9
+#define _ssuruVerb 10
+#define _zuruVerb 11
+#define _irregular 12
+#define _kouTou 13
 //dictionary Verb ending
-#define _endChars QString::fromUtf8("うくぐすつぬぶむる")
+#define _endChars QString::fromUtf8("うくぐすつぬぶむるふ")
 #define _uEnd 0
 #define _kuEnd 1
 #define _guEnd 2
@@ -37,6 +46,8 @@
 #define _buEnd 6
 #define _muEnd 7
 #define _ruEnd 8
+
+#define _huEnd 9
 
 //Conjugation time (form)
 #define _TeForm             0 // no polite form

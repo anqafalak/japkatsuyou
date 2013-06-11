@@ -18,17 +18,31 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "about.h"
-#include "ui_about.h"
+#ifndef PREFERENCE_H
+#define PREFERENCE_H
 
-About::About(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::About)
-{
-    ui->setupUi(this);
+#include <QDialog>
+#include <QSettings>
+
+namespace Ui {
+class Preference;
 }
 
-About::~About()
+class Preference : public QDialog
 {
-    delete ui;
-}
+    Q_OBJECT
+    
+public:
+    explicit Preference(QWidget *parent = 0);
+    ~Preference();
+    
+private slots:
+    void on_prefOK_accepted();
+
+private:
+    Ui::Preference *ui;
+    void doInit();
+    void doSave();
+};
+
+#endif // PREFERENCE_H
