@@ -78,7 +78,8 @@ void jpconjmain::doInit()
 
 //ui->showt->setHorizontalHeader();
 
-
+    ui->menu_View->addAction(ui->mainTool->toggleViewAction());
+    ui->menu_View->addAction(ui->search->toggleViewAction());
 
 }
 
