@@ -27,18 +27,25 @@ libjpconjlink::libjpconjlink()
 
 QString libjpconjlink::conjugate(QString verb, int type, int time, bool polite, bool positive)
 {
-    typedef QString (*pf)(QString, int, int, bool, bool);
+    typedef const char* (*pf)(const char*, int, int, bool, bool);
+
+    QByteArray verbArray = verb.toUtf8();
+    const char* charVerb = verbArray.constData();
 
      pf conj =(pf)QLibrary::resolve("liblibjpconj","conj");
 
-     return  conj(verb, type, time, polite, positive);
+     return  QString::fromUtf8(conj(charVerb, type, time, polite, positive));
 }
 
 QString libjpconjlink::conjugate(QString verb, int type, int end, int time, bool polite, bool positive)
 {
-    typedef QString (*pf)(QString, int, int, int, bool, bool);
+    typedef const char* (*pf)(const char*, int, int, int, bool, bool);
+
+    //const char* charVerb = verb.toUtf8().constData();
+    QByteArray verbArray = verb.toUtf8();
+    const char* charVerb = verbArray.constData();
 
      pf conjEnd =(pf)QLibrary::resolve("liblibjpconj","conjEnd");
 
-     return  conjEnd(verb, type, end, time, polite, positive);
+     return  QString::fromUtf8(conjEnd(charVerb, type, end, time, polite, positive));
 }

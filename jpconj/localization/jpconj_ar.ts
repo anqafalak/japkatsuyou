@@ -39,17 +39,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preference.cpp" line="27"/>
+        <location filename="../preference.cpp" line="47"/>
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preference.cpp" line="28"/>
+        <location filename="../preference.cpp" line="48"/>
         <source>Arabic</source>
         <translation type="unfinished">العربية</translation>
     </message>
     <message>
-        <location filename="../preference.cpp" line="29"/>
+        <location filename="../preference.cpp" line="49"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57,114 +57,176 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>jpconjmain</name>
     <message>
-        <location filename="../jpconjmain.ui" line="23"/>
+        <location filename="../jpconjmain.ui" line="26"/>
         <source>JapKatsuyou: Japanese Verb Conjugation</source>
         <translation type="unfinished">JapKatsuyou : تصريف الأفعال اليابانية</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="124"/>
+        <location filename="../jpconjmain.ui" line="127"/>
         <source>&amp;File</source>
         <translation type="unfinished">ملف</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="132"/>
+        <location filename="../jpconjmain.ui" line="133"/>
         <source>&amp;Help</source>
         <translation type="unfinished">مساعدة</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="139"/>
+        <location filename="../jpconjmain.ui" line="140"/>
         <source>&amp;View</source>
         <translation type="unfinished">مظهر</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="146"/>
+        <location filename="../jpconjmain.ui" line="145"/>
         <source>&amp;Edit</source>
         <translation type="unfinished">تحرير</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="169"/>
-        <location filename="../jpconjmain.ui" line="336"/>
+        <location filename="../jpconjmain.ui" line="168"/>
+        <location filename="../jpconjmain.ui" line="325"/>
         <source>ToolBar</source>
         <translation type="unfinished">شريط الأدوات</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="208"/>
+        <location filename="../jpconjmain.ui" line="207"/>
         <source>Verb conjugation</source>
         <translation type="unfinished">تصريف الأفعال</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="267"/>
-        <location filename="../jpconjmain.ui" line="294"/>
+        <location filename="../jpconjmain.ui" line="266"/>
         <source>Conjugate</source>
         <translation type="unfinished">تصريف</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="289"/>
+        <location filename="../jpconjmain.ui" line="288"/>
         <source>&amp;Close</source>
         <translation type="unfinished">إغلاق</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="299"/>
+        <location filename="../jpconjmain.ui" line="293"/>
         <source>&amp;About</source>
         <translation type="unfinished">عن البرنامج</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="304"/>
-        <source>testDB</source>
+        <location filename="../jpconjmain.ui" line="330"/>
+        <source>kiki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="309"/>
+        <location filename="../jpconjmain.ui" line="298"/>
         <source>&amp;Preference</source>
         <translation type="unfinished">خيارات</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="314"/>
+        <location filename="../jpconjmain.ui" line="303"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">عن &amp;Qt </translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="325"/>
+        <location filename="../jpconjmain.ui" line="314"/>
         <source>Verb Conjugation</source>
         <translation type="unfinished">تصريف الأفعال</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="97"/>
+        <location filename="../jpconjmain.cpp" line="143"/>
         <source>This verb doesn&apos;t exist in the database.</source>
         <translation type="unfinished">هذا الفعل لا يمكن تصريفه</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="104"/>
+        <location filename="../jpconjmain.cpp" line="150"/>
         <source>Polite Postive</source>
         <translation type="unfinished">مهذب وإيجابي</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="104"/>
+        <location filename="../jpconjmain.cpp" line="150"/>
         <source>Polite Negative</source>
         <translation type="unfinished">مهذب ومنفي</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="104"/>
-        <source>Positive</source>
+        <location filename="../jpconjmain.cpp" line="150"/>
+        <source>Informal Positive</source>
         <translation type="unfinished">عامي وإيجابي</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="104"/>
-        <source>Negative</source>
-        <translation type="unfinished">عامي ومنفي</translation>
+        <location filename="../jpconjmain.cpp" line="150"/>
+        <source>Informal Negative</source>
+        <translation type="unfinished">عامي وسلبي</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="107"/>
+        <location filename="../jpconjmain.cpp" line="170"/>
+        <source>Provisional Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="171"/>
+        <source>Condition</source>
+        <translation type="unfinished">الشرط</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="172"/>
+        <source>Imperative</source>
+        <translation type="unfinished">الأمر</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="173"/>
+        <source>Volitional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="174"/>
+        <source>Present Continuous</source>
+        <translation type="unfinished">المضارع المستمر</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="175"/>
+        <source>Past Continuous</source>
+        <translation type="unfinished">الماضي المستمر</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="176"/>
+        <source>Passive</source>
+        <translation type="unfinished">المبني للمجهول</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="177"/>
+        <source>Causative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="178"/>
+        <source>Causative Passive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="179"/>
+        <source>Potential</source>
+        <translation type="unfinished">الاستطاعة</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="180"/>
+        <source>Reason</source>
+        <translation type="unfinished">السبب</translation>
+    </message>
+    <message>
+        <source>Positive</source>
+        <translation type="obsolete">عامي وإيجابي</translation>
+    </message>
+    <message>
+        <source>Negative</source>
+        <translation type="obsolete">عامي ومنفي</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.cpp" line="153"/>
         <source>This verb is found</source>
         <translation type="unfinished">تم إيجاد الفعل</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="109"/>
+        <location filename="../jpconjmain.cpp" line="168"/>
         <source>Present</source>
         <translation type="unfinished">المضارع</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.cpp" line="113"/>
+        <location filename="../jpconjmain.cpp" line="169"/>
         <source>Past</source>
         <translation type="unfinished">الماضي</translation>
     </message>
