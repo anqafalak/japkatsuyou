@@ -33,14 +33,15 @@ FORMS    += jpconjmain.ui \
 TRANSLATIONS    +=  localization/jpconj_en.ts\
                     localization/jpconj_ar.ts
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-release/release/ -llibjpconj
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-release/debug/ -llibjpconj
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/release/ -llibjpconj
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
 else:symbian: LIBS += -llibjpconj
-else:unix: LIBS += -L$$PWD/../libjpconj-release/ -llibjpconj
+else:unix: LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
 
-INCLUDEPATH += $$PWD/../libjpconj-release
-DEPENDPATH += $$PWD/../libjpconj-release
+INCLUDEPATH += $$PWD/../libjpconj-bin
+DEPENDPATH += $$PWD/../libjpconj-bin
 
 #LIBS    += -L../libjpconj-release -llibjpconj
 #INCLUDEPATH +=  ../libjpconj-release
 #OTHER_FILES +=
+
