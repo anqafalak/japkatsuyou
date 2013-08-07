@@ -44,4 +44,3 @@ DEPENDPATH += $$PWD/../libjpconj-release
 #LIBS    += -L../libjpconj-release -llibjpconj
 #INCLUDEPATH +=  ../libjpconj-release
 #OTHER_FILES +=
-
