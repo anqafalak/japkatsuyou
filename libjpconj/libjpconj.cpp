@@ -27,27 +27,42 @@ Libjpconj::Libjpconj()
 
 //extern function
 
-QString conj(QString verb, int type, int time, bool polite, bool positive)
+const char* conj(const char* verb, int type, int time, bool polite, bool positive)
 {
-    Libjpconj jpconj;
-    QString result = jpconj.conjugate(verb, type, time, polite, positive);
+    const char* result = Libjpconj::Cconjugate(verb, type, time, polite, positive);
     return result;
 }
 
-QString conjEnd(QString verb, int type, int end, int time, bool polite, bool positive)
+const char* conjEnd(const char* verb, int type, int end, int time, bool polite, bool positive)
 {
-    Libjpconj jpconj;
-    QString result = jpconj.conjugate(verb, type, end, time, polite, positive);
+    const char* result = Libjpconj::CconjugateEnd(verb, type, end, time, polite, positive);
     return result;
 }
 
 
-QString Libjpconj::conjugate(QString verb, int type, int time, bool polite, bool positive)
+// transform functions
+const char* Libjpconj::Cconjugate(const char* verb, int type, int time, bool polite, bool positive)
 {
+    //Libjpconj jpconj;
     int end = getEnd(verb);
-    return conjugate(verb, type, end, time, polite, positive);
+    QString Qverb = QString::fromUtf8(verb);
+    Qverb = conjugate(Qverb, type, end, time, polite, positive);
+
+    //QByteArray verbArray = verb.toUtf8();
+    //const char* charVerb = verbArray.constData();
+
+    return Qverb.toUtf8().constData();
 }
 
+const char* Libjpconj::CconjugateEnd(const char* verb, int type, int end, int time, bool polite, bool positive)
+{
+    //Libjpconj jpconj;
+    QString Qverb = QString::fromUtf8(verb);
+    Qverb = conjugate(Qverb, type, end, time, polite, positive);
+    return Qverb.toUtf8().constData();
+}
+
+// public functions
 QString Libjpconj::conjugate(QString verb, int type, int end, int time, bool polite, bool positive)
 {
     if(verb.length()<2)
@@ -284,7 +299,7 @@ QString Libjpconj::conjugate(QString verb, int type, int end, int time, bool pol
 
     }
 
-    return Verbform::uForm(radical, end);
+    return verb;
 }
 
 /*
