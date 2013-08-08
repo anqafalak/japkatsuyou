@@ -1,5 +1,5 @@
 /*
-    This file is part of libjpconj project; a library that provide
+    This file is part of JapKatsyou project; an application that provide
     Japanese verb conjugation
 
     Copyright (C) 2013  Abdelkrime Aries <kariminfo0@gmail.com>

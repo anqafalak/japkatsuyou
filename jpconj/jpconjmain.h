@@ -30,6 +30,7 @@
 #include "preference.h"
 #include "edict2.h"
 #include <QMap>
+#include "paths.h"
 
 namespace Ui {
 class jpconjmain;

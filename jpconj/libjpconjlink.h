@@ -25,6 +25,7 @@
 //#include "verbtime.h"
 #include "typeDefs.h"
 #include "QLibrary"
+#include "paths.h"
 
 class libjpconjlink
 {

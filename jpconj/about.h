@@ -22,6 +22,7 @@
 #define ABOUT_H
 
 #include <QDialog>
+#include "paths.h"
 
 namespace Ui {
 class About;

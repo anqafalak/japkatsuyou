@@ -24,6 +24,7 @@
 #include <QtSql/QtSql>
 #include "QDebug"
 #include "typeDefs.h"
+#include "paths.h"
 
 class Edict2
 {

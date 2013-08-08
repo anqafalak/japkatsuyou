@@ -25,11 +25,13 @@
 #include <QLibraryInfo>
 #include <QSettings>
 #include <QDesktopWidget>
+#include"paths.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    a.setWindowIcon(QIcon(QString(dataFolder) + "img/icon.png"));
     a.setOrganizationName("JpConj");
     a.setOrganizationDomain("https://github.com/kariminf/");
     a.setApplicationName("JapKatsuyou");
@@ -43,7 +45,7 @@ int main(int argc, char *argv[])
     QString langacro = settings.value("langacro", "def").toString();
 
     QTranslator myappTranslator;
-    myappTranslator.load("jpconj_" + langacro, "./localization");
+    myappTranslator.load("jpconj_" + langacro, QString(dataFolder) + "localization");
     a.installTranslator(&myappTranslator);
 
     QTranslator qtTranslator;

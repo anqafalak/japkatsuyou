@@ -18,32 +18,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PREFERENCE_H
-#define PREFERENCE_H
+#ifndef PATHS_H
+#define PATHS_H
 
-#include <QDialog>
-#include <QSettings>
-#include "paths.h"
 
-namespace Ui {
-class Preference;
-}
+#define dataFolder "./"
 
-class Preference : public QDialog
-{
-    Q_OBJECT
-    
-public:
-    explicit Preference(QWidget *parent = 0);
-    ~Preference();
-    
-private slots:
-    void on_prefOK_accepted();
 
-private:
-    Ui::Preference *ui;
-    void doInit();
-    void doSave();
-};
+#endif // PATHS_H
 
-#endif // PREFERENCE_H

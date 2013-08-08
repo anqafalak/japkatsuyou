@@ -25,10 +25,6 @@
   <property name="windowTitle">
    <string>JapKatsuyou: Japanese Verb Conjugation</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>img/icon.png</normaloff>img/icon.png</iconset>
-  </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>
