@@ -62,68 +62,68 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="127"/>
+        <location filename="../jpconjmain.ui" line="123"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="133"/>
+        <location filename="../jpconjmain.ui" line="129"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="140"/>
+        <location filename="../jpconjmain.ui" line="136"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="145"/>
+        <location filename="../jpconjmain.ui" line="141"/>
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="168"/>
-        <location filename="../jpconjmain.ui" line="325"/>
+        <location filename="../jpconjmain.ui" line="164"/>
+        <location filename="../jpconjmain.ui" line="321"/>
         <source>ToolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="207"/>
+        <location filename="../jpconjmain.ui" line="203"/>
         <source>Verb conjugation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="266"/>
+        <location filename="../jpconjmain.ui" line="262"/>
         <source>Conjugate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="288"/>
+        <location filename="../jpconjmain.ui" line="284"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="293"/>
+        <location filename="../jpconjmain.ui" line="289"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="330"/>
+        <location filename="../jpconjmain.ui" line="326"/>
         <source>kiki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="298"/>
+        <location filename="../jpconjmain.ui" line="294"/>
         <source>&amp;Preference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="303"/>
+        <location filename="../jpconjmain.ui" line="299"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="314"/>
+        <location filename="../jpconjmain.ui" line="310"/>
         <source>Verb Conjugation</source>
         <translation type="unfinished"></translation>
     </message>
