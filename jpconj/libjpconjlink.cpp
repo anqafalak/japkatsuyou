@@ -27,6 +27,7 @@ libjpconjlink::libjpconjlink()
 
 QString libjpconjlink::conjugate(QString verb, int type, int time, bool polite, bool positive)
 {
+
     typedef const char* (*pf)(const char*, int, int, bool, bool);
 
     QByteArray verbArray = verb.toUtf8();
@@ -39,13 +40,24 @@ QString libjpconjlink::conjugate(QString verb, int type, int time, bool polite, 
 
 QString libjpconjlink::conjugate(QString verb, int type, int end, int time, bool polite, bool positive)
 {
-    typedef const char* (*pf)(const char*, int, int, int, bool, bool);
 
-    //const char* charVerb = verb.toUtf8().constData();
-    QByteArray verbArray = verb.toUtf8();
-    const char* charVerb = verbArray.constData();
+     QLibrary library(QString(_LIB) + "libjpconj");
+     if (!library.load()){
+         qDebug() << library.errorString();
+         return "";
+     }
 
-     pf conjEnd =(pf)QLibrary::resolve("liblibjpconj","conjEnd");
+     typedef const char* (*sharedfunc)(const char*, int, int, int, bool, bool);
+     sharedfunc conjEnd = (sharedfunc)library.resolve("conjEnd");
+     if (!conjEnd){
+         qDebug() << "Function doesn't exist";
+         return "";
+     }
 
-     return  QString::fromUtf8(conjEnd(charVerb, type, end, time, polite, positive));
+     QByteArray verbArray = verb.toUtf8();
+     const char* charVerb = verbArray.constData();
+
+     return QString::fromUtf8(conjEnd(charVerb, type, end, time, polite, positive));
+
+
 }

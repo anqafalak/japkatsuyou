@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = jpconj
 TEMPLATE = app
 
+VERSION = 0.2
+DEFINES += VERSION=\\\"$$VERSION\\\"
 
 SOURCES += main.cpp\
         jpconjmain.cpp \
@@ -31,17 +33,18 @@ FORMS    += jpconjmain.ui \
     about.ui \
     preference.ui
 
-TRANSLATIONS    +=  localization/jpconj_en.ts\
-                    localization/jpconj_ar.ts
+TRANSLATIONS    +=  i18n/jpconj_en.ts\
+                    i18n/jpconj_ar.ts\
+                    i18n/jpconj_ja.ts\
+                    i18n/jpconj_fr.ts
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/release/ -llibjpconj
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
 else:symbian: LIBS += -llibjpconj
 else:unix: LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
 
-INCLUDEPATH += $$PWD/../libjpconj-bin
-DEPENDPATH += $$PWD/../libjpconj-bin
-
+INCLUDEPATH += -L$$PWD/../libjpconj-bin
+DEPENDPATH += -L$$PWD/../libjpconj-bin/
 #LIBS    += -L../libjpconj-release -llibjpconj
 #INCLUDEPATH +=  ../libjpconj-release
 #OTHER_FILES +=

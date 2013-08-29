@@ -26,6 +26,7 @@ About::About(QWidget *parent) :
     ui(new Ui::About)
 {
     ui->setupUi(this);
+    ui->verl->setText(tr("Version") + " " + VERSION);
 }
 
 About::~About()

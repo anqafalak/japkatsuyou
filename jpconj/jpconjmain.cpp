@@ -75,7 +75,7 @@ void jpconjmain::doInit()
     ui->conjchoice->addItem(tr("Potential"), QVariant(_Potential));
     ui->conjchoice->addItem(tr("Reason"), QVariant(_Reason));*/
 
-
+    qDebug()<< QString(VERSION);
 //ui->showt->setHorizontalHeader();
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());

@@ -26,6 +26,7 @@
 #include "typeDefs.h"
 #include "QLibrary"
 #include "paths.h"
+#include "qdebug.h"
 
 class libjpconjlink
 {

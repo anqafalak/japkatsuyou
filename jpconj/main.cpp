@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(QString(dataFolder) + "img/icon.png"));
     a.setOrganizationName("JpConj");
     a.setOrganizationDomain("https://github.com/kariminf/");
-    a.setApplicationName("JapKatsuyou");
+    //a.setApplicationName("JapKatsuyou- " + QString(VERSION));
 
     //    QTranslator qtTranslator;
     //    qtTranslator.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath));

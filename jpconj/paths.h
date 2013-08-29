@@ -24,6 +24,11 @@
 
 #define dataFolder "./"
 
+#ifdef Q_WS_WIN
+    #define _LIB ""
+#else
+    #define _LIB "lib"
+#endif
 
 #endif // PATHS_H
 

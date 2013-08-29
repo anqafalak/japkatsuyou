@@ -126,9 +126,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>130</y>
+     <y>140</y>
      <width>381</width>
-     <height>131</height>
+     <height>121</height>
     </rect>
    </property>
    <property name="html">
@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>106</y>
+     <y>120</y>
      <width>381</width>
      <height>20</height>
     </rect>
@@ -166,6 +166,19 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>Credits</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="verl">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>371</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
