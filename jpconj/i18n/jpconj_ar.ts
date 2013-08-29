@@ -30,6 +30,11 @@ p, li { white-space: pre-wrap; }
         <source>Credits</source>
         <translation type="unfinished">المساهمون</translation>
     </message>
+    <message>
+        <location filename="../about.cpp" line="29"/>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Preference</name>
