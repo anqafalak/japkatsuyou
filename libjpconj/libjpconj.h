@@ -42,11 +42,7 @@ private:
 
 };
 
-extern "C"
-{
-   //#include "libjpconj.h"
-    const char* conj(const char* verb, int type, int time, bool polite, bool positive);
-    const char* conjEnd(const char* verb, int type, int end, int time, bool polite, bool positive);
-}
+extern "C" WIN_EXPORT const char* conj(const char* verb, int type, int time, bool polite, bool positive);
+extern "C" WIN_EXPORT const char* conjEnd(const char* verb, int type, int end, int time, bool polite, bool positive);
 
 #endif // LIBJPCONJ_H
