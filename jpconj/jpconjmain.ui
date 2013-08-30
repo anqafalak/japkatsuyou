@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>JapKatsuyou: Japanese Verb Conjugation</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
+    <normaloff>:/img/icon.png</normaloff>:/img/icon.png</iconset>
+  </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>
@@ -175,6 +179,9 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_Close"/>
+   <addaction name="action_Preference"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="search">
@@ -280,6 +287,11 @@
    </widget>
   </widget>
   <action name="action_Close">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/close.png</normaloff>
+     <normalon>:/img/icon.png</normalon>:/img/close.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Close</string>
    </property>
@@ -290,6 +302,11 @@
    </property>
   </action>
   <action name="action_Preference">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/pref.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>&amp;Preference</string>
    </property>
@@ -321,13 +338,10 @@
     <string>ToolBar</string>
    </property>
   </action>
-  <action name="actionKiki">
-   <property name="text">
-    <string>kiki</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

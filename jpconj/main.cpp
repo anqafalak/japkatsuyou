@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    a.setWindowIcon(QIcon(QString(dataFolder) + "img/icon.png"));
+   //a.setWindowIcon(QIcon(QString(dataFolder) + "img/icon.png"));
     a.setOrganizationName("JpConj");
     a.setOrganizationDomain("https://github.com/kariminf/");
     //a.setApplicationName("JapKatsuyou- " + QString(VERSION));
