@@ -3,5 +3,6 @@
         <file>img/close.png</file>
         <file>img/pref.png</file>
         <file>img/icon.png</file>
+        <file>img/about.png</file>
     </qresource>
 </RCC>

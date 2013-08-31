@@ -24,6 +24,7 @@
 #include <QDialog>
 #include <QSettings>
 #include "paths.h"
+#include "QTranslator"
 
 namespace Ui {
 class Preference;

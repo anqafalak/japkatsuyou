@@ -182,6 +182,7 @@
    <addaction name="action_Close"/>
    <addaction name="action_Preference"/>
    <addaction name="separator"/>
+   <addaction name="action_About"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="search">
@@ -297,6 +298,11 @@
    </property>
   </action>
   <action name="action_About">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/about.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>&amp;About</string>
    </property>

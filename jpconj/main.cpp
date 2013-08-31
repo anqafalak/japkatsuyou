@@ -45,11 +45,11 @@ int main(int argc, char *argv[])
     QString langacro = settings.value("langacro", "def").toString();
 
     QTranslator myappTranslator;
-    myappTranslator.load("jpconj_" + langacro, QString(dataFolder) + "localization");
+    myappTranslator.load("jpconj_" + langacro, QString(dataFolder) + "i18n");
     a.installTranslator(&myappTranslator);
 
     QTranslator qtTranslator;
-    qtTranslator.load("qt_" + langacro, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qtTranslator.load("qt_" + langacro, QString(dataFolder) + "i18n");//QLibraryInfo::location(QLibraryInfo::TranslationsPath)
     a.installTranslator(&qtTranslator);
 
     //a.setLayoutDirection(Qt::RightToLeft);

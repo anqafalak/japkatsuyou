@@ -60,8 +60,8 @@ void Preference::doSave()
 
     settings.setValue("langidx", index);
     settings.setValue("langacro", langacro);
-
 }
+
 
 void Preference::on_prefOK_accepted()
 {
