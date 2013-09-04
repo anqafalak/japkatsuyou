@@ -35,7 +35,7 @@ The JapKatsuyou project is under [GPL v3](https://github.com/DzCoding/JapKatsuyo
 Documentation
 -------------
 
-The documentation uptodate can be founded on the [wiki](https://link.com) pages 
+The documentation uptodate can be founded on the [FAQ file](https://github.com/DzCoding/JapKatsuyou/blob/master/FAQ.rst) . 
 
 ------------
 Installation
@@ -49,6 +49,6 @@ Contacts
 
 - If you have a concrete bug report please go to the [Tracker](https://github.com/DzCoding/JapKatsuyou/issues) ; submit your report and tag it "bug".
 
-- If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this [How to contribute?](LINK-to-contribute-session-in-wiki) 
+- If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this [How to contribute?](https://github.com/DzCoding/JapKatsuyou/blob/master/FAQ.rst#how-to-contribute) 
 
 - If you want to follow the project news or you have some feedbacks, you can contact us via our [mailing list](http://link-to-mailing-list)
