@@ -21,14 +21,14 @@ version 0.2
 Authors:
 --------
 
-Check the [Authors](https://github.com/kariminf/JapKatsuyou/blob/master/AUTHORS.rst) list  
+Check the [Authors](https://github.com/DzCoding/JapKatsuyou/blob/master/Authors.rst) list  
 
 
 --------
 License:
 --------
 
-The JapKatsuyou project is under [GPL v3](https://github.com/kariminf/JapKatsuyou/blob/master/LICENSE) license  
+The JapKatsuyou project is under [GPL v3](https://github.com/DzCoding/JapKatsuyou/blob/master/LICENSE) license  
 
 
 -------------
@@ -47,7 +47,7 @@ See the file named [INSTALL](https://link.com) for further information.
 Contacts
 ------------
 
-- If you have a concrete bug report please go to the [Tracker](https://github.com/kariminf/JapKatsuyou/issues) ; submit your report and tag it "bug".
+- If you have a concrete bug report please go to the [Tracker](https://github.com/DzCoding/JapKatsuyou/issues) ; submit your report and tag it "bug".
 
 - If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this [How to contribute?](LINK-to-contribute-session-in-wiki) 
 
