@@ -1,27 +1,54 @@
-JapKatsuyou
-===========
+===============
+**JapKatsuyou**
+===============
+
+-----------
+What is it?
+-----------
+JapKatsuyou is a library used to conjugate Japanese verbs; by giving the verb in its dictionary form (root+u).
+
+JapKatsuyou searchs for a verb in a verb database created from 
+[The EDICT Dictionary](http://www.csse.monash.edu.au/~jwb/edict.html"Dictionnary"). If the verb is found; the Application calls the conjugation process and shows the result.
 
 
-A library used to conjugate Japanese verbs. The repo contains the library project and the application project.
+--------
+Release:
+--------
 
-1- Library project (libconj)
-----------------------------
+version 0.2
 
-It contains the library code, witch export one external function: conj.
+--------
+Authors:
+--------
 
-QString conj(QString verb, int type, int time, bool polite, bool positive);
+Check the [Authors](https://github.com/kariminf/JapKatsuyou/blob/master/AUTHORS.rst"Authors") list  
 
-verb: the verb in dictionary form.
 
-type: type of the verb (Ichidan, Godan, etc.), there is a class containg constants' definition in both library and appliction.
+--------
+License:
+--------
 
-time: conjugation time or form (present, past, condition, etc.) there are constants defining these constnts in both projects.
+The JapKatsuyou project is under [GPL v3](https://github.com/kariminf/JapKatsuyou/blob/master/LICENSE") license  
 
-polite: defining if the conjugation is in polite form or not.
 
-positive: define if the verb is positive (e.g. "Go") or negative (e.g. "Don't go")
+-------------
+Documentation
+-------------
 
-2- Application project (jpconj)
--------------------------------
+The documentation uptodate can be founded on the [wiki](https://link.com") pages 
 
-It contains an example on how to use the library. Also it contains some classes to connect with the library.
+------------
+Installation
+------------
+
+See the file named [INSTALL](https://link.com") for further information.
+
+------------
+Contacts
+------------
+
+- If you have a concrete bug report please go to the [Tracker](https://github.com/kariminf/JapKatsuyou/issues") ; submit your report and tag it "bug".
+
+- If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this [How to contribute?](LINK-to-contribute-session-in-wiki") 
+
+- If you want to follow the project news or you have some feedbacks, you can contact us via our [mailing list](http://link-to-mailing-list")
