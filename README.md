@@ -35,7 +35,7 @@ The JapKatsuyou project is under [GPL v3](https://github.com/DzCoding/JapKatsuyo
 Documentation
 -------------
 
-The documentation uptodate can be founded on the [FAQ file](https://github.com/DzCoding/JapKatsuyou/blob/master/FAQ.rst) pages 
+The documentation uptodate can be founded on the [FAQ file](https://github.com/DzCoding/JapKatsuyou/blob/master/FAQ.rst) . 
 
 ------------
 Installation
