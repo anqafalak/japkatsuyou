@@ -10,6 +10,13 @@ JapKatsuyou is a library used to conjugate Japanese verbs; by giving the verb in
 JapKatsuyou searchs for a verb in a verb database created from 
 [The EDICT Dictionary](http://www.csse.monash.edu.au/~jwb/edict.html"Dictionnary"). If the verb is found; the Application calls the conjugation process and shows the result.
 
+
+--------
+Release:
+--------
+
+version 0.2
+
 --------
 Authors:
 --------
