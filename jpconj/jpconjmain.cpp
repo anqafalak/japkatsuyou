@@ -47,7 +47,8 @@ void jpconjmain::openAbout()
     winAbout->setLayoutDirection(this->layoutDirection());
     //winAbout->setWindowFlags(Qt::WindowTitleHint | Qt::Dialog | Qt::CustomizeWindowHint);
     //winAbout->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
-    winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+    //winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+    winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
     winAbout->show();
 
 }
