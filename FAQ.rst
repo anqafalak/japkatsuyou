@@ -27,7 +27,7 @@ libjpconj is a library which has static functions .This library is used to conju
 How to contact us?
 ==================
 
-See the `README file <https://github.com/DzCoding/JapKatsuyou/blob/master/README.md>`_ for more.
+See the `README file <./README.md>`_ for more.
 
 ````
 
