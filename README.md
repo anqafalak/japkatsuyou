@@ -41,7 +41,7 @@ The documentation uptodate can be founded on the [FAQ file](https://github.com/D
 Installation
 ------------
 
-See the file named [INSTALL](https://link.com) for further information.
+See the file named [INSTALL](https://github.com/DzCoding/JapKatsuyou/blob/master/INSTALL.rst) for further information.
 
 ------------
 Contacts
