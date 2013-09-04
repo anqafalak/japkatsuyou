@@ -17,6 +17,7 @@ Documentation
 
 * README file : `Zakaria Smahi <https://github.com/zsmahi>`_
 * Authors file: Zakaria Smahi
+* FAQ file: Zakaria Smahi
 
 Design
 ------
