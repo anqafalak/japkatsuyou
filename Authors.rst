@@ -1,4 +1,4 @@
-JapKatsuyou a Japanese verbs conjugater.
+JapKatsuyou a Japanese verbs conjugator.
 
 Here you can find the list of Authors & maintainers. We appreciate your contribution in this project.
 
@@ -10,7 +10,7 @@ Contributors
 Coding
 ------
 
-* `Abdelkarim Aries <https://github.com/kariminf>`_
+* `Abdelkrime Aries <https://github.com/kariminf>`_
 
 Documentation
 -------------
@@ -24,15 +24,15 @@ Design
 
 Packaging
 --------- 
-* Windows NSIS installer: Abdelkarim Aries
-* Ubuntu DEB package: Abdelkarim Aries
+* Windows NSIS installer: Abdelkrime Aries
+* Ubuntu DEB package: Abdelkrime Aries
 *
 
 Testing
 -------
 
-* Test : Abdelkarim Aries , Zakaria Smahi
-* Bugs : Abdelkarim Aries
+* Test : Abdelkrime Aries , Zakaria Smahi
+* Bugs : Abdelkrime Aries
 *
 
 
