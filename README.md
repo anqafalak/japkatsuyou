@@ -43,6 +43,12 @@ Installation
 
 See the file named [INSTALL](./INSTALL.rst) for further information.
 
+--------
+Accounts
+--------
+
+Available accounts [Sourceforge](https://sourceforge.net/projects/japkatsuyou/) ; Launchpad (comming).
+
 ------------
 Contacts
 ------------
