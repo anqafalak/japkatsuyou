@@ -1,27 +1,42 @@
-JapKatsuyou
-===========
+===============
+**JapKatsuyou**
+===============
+
+-----------
+What is it?
+-----------
+JapKatsuyou is a library used to conjugate Japanese verbs; by giving the verb in its dictionary form (root+u).
+
+JapKatsuyou searchs for a verb in a verb database created from `The EDICT Dictionary <http://www.csse.monash.edu.au/~jwb/edict.html>`_  
+. If the verb is found; the Application calls the conjugation process and shows the result.
+
+:Authors:  See `Authors <https://github.com/kariminf/JapKatsuyou/blob/master/AUTHORS.rst>`_
+:Release: 0.2  
+:License: `GPL v3 <https://github.com/kariminf/JapKatsuyou/blob/master/LICENSE>`_
+:Tracker: See `Issues <https://github.com/kariminf/JapKatsuyou/issues>`_
+:Mailing List: Subscribe to our mailing list `here <http://link-to-mailing-list>`_
 
 
-A library used to conjugate Japanese verbs. The repo contains the library project and the application project.
 
-1- Library project (libconj)
-----------------------------
+-------------
+Documentation
+-------------
 
-It contains the library code, witch export one external function: conj.
+The documentation uptodate can be founded on the wiki pages `link <http://link.com>`_
 
-QString conj(QString verb, int type, int time, bool polite, bool positive);
+------------
+Installation
+------------
 
-verb: the verb in dictionary form.
+See the file named `INSTALL <http://INSTALL-file-LINK>`_
+for further information.
 
-type: type of the verb (Ichidan, Godan, etc.), there is a class containg constants' definition in both library and appliction.
+------------
+Contacts
+------------
 
-time: conjugation time or form (present, past, condition, etc.) there are constants defining these constnts in both projects.
+- If you have a concrete bug report please go to the `Tracker  <https://github.com/kariminf/JapKatsuyou/issues>`_, submit your report and tag it "bug".
 
-polite: defining if the conjugation is in polite form or not.
+- If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this `How to contribute?  <LINK-to-contribute-session-in-wiki>`_. 
 
-positive: define if the verb is positive (e.g. "Go") or negative (e.g. "Don't go")
-
-2- Application project (jpconj)
--------------------------------
-
-It contains an example on how to use the library. Also it contains some classes to connect with the library.
+- If you want to follow the project news or you have some feedbacks, you can contact us via our `mailing list <http://link-to-mailing-list>`_
