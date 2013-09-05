@@ -21,10 +21,9 @@
 #ifndef TYPEDEFS_H
 #define TYPEDEFS_H
 
-// verb type
+// verb types
 #define _ichidan 1
 #define _nidan 2
-
 #define _yondan 4
 #define _godan 5
 #define _aruVerb 6
@@ -35,6 +34,8 @@
 #define _zuruVerb 11
 #define _irregular 12
 #define _kouTou 13
+
+
 //dictionary Verb ending
 #define _endChars QString::fromUtf8("うくぐすつぬぶむるふ")
 #define _uEnd 0
