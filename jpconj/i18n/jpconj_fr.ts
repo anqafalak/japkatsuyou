@@ -62,7 +62,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="207"/>
         <source>Thanks</source>
-        <translation type="unfinished">Remerciements</translation>
+        <translation>Remerciements</translation>
     </message>
     <message>
         <location filename="../about.ui" line="219"/>
@@ -82,7 +82,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.cpp" line="29"/>
         <source>Version</source>
-        <translation type="unfinished">Version</translation>
+        <translation>Version</translation>
     </message>
 </context>
 <context>
@@ -90,22 +90,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../preference.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="unfinished">Préférences</translation>
+        <translation>Préférences</translation>
     </message>
     <message>
         <location filename="../preference.cpp" line="47"/>
         <source>Default</source>
-        <translation type="unfinished">Par défaut</translation>
+        <translation>Par défaut</translation>
     </message>
     <message>
         <location filename="../preference.cpp" line="48"/>
         <source>Arabic</source>
-        <translation type="unfinished">Arabe</translation>
+        <translation>Arabe</translation>
     </message>
     <message>
         <location filename="../preference.cpp" line="49"/>
         <source>English</source>
-        <translation type="unfinished">Anglais</translation>
+        <translation>Anglais</translation>
     </message>
 </context>
 <context>
@@ -113,12 +113,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../jpconjmain.ui" line="26"/>
         <source>JapKatsuyou: Japanese Verb Conjugation</source>
-        <translation type="unfinished">JapKatsuyou: Conjugaison des Verbes Japonais</translation>
+        <translation>JapKatsuyou: Conjugaison des Verbes Japonais</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="127"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Fichier</translation>
+        <translation>&amp;Fichier</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="133"/>
@@ -184,22 +184,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../jpconjmain.cpp" line="150"/>
         <source>Polite Postive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forme Polie Affirmative</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="150"/>
         <source>Polite Negative</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forme Polie Négative</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="150"/>
         <source>Informal Positive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forme Informel Affirmative</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="150"/>
         <source>Informal Negative</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forme Informel Négative</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="153"/>
@@ -219,7 +219,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../jpconjmain.cpp" line="170"/>
         <source>Provisional Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">État provisoire</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="171"/>
@@ -234,7 +234,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../jpconjmain.cpp" line="173"/>
         <source>Volitional</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Volontaire</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="174"/>
@@ -249,7 +249,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../jpconjmain.cpp" line="176"/>
         <source>Passive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Passive</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="177"/>
@@ -264,12 +264,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../jpconjmain.cpp" line="179"/>
         <source>Potential</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Potentiel</translation>
     </message>
     <message>
         <location filename="../jpconjmain.cpp" line="180"/>
         <source>Reason</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Raison</translation>
     </message>
 </context>
 </TS>
