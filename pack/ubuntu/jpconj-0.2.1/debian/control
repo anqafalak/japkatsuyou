@@ -1,0 +1,19 @@
+Source: jpconj
+Section: education
+Priority: extra
+Maintainer: Abdelkrime Aries <kariminfo0@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), libqt4-dev
+Standards-Version: 3.9.3
+Homepage: https://github.com/kariminf/JapKatsuyou
+#Vcs-Git: git://git.debian.org/collab-maint/jpconj.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/jpconj.git;a=summary
+
+Package: jpconj
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libjpconj (>= 0.2)
+Description: JapKatsuyou: Japanese verb conjugation application
+  This application is a GUI which use the library libjpconj.
+  Giving a Japanese verb in its dictionary form (root+u),
+  the application search for this verb in a verb database
+  (created from Jim breen's dictionary Edict2), if the verb 
+  is found, the application calls the library libjpconj to conjugate it.
