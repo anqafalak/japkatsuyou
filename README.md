@@ -43,6 +43,12 @@ Installation
 
 See the file named [INSTALL](./INSTALL.rst) for further information.
 
+--------
+Accounts
+--------
+
+Available accounts [Sourceforge](https://sourceforge.net/projects/japkatsuyou/) ; [Launchpad](https://launchpad.net/~dzcoding/+archive/japkatsuyou).
+
 ------------
 Contacts
 ------------
@@ -51,4 +57,4 @@ Contacts
 
 - If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this [How to contribute?](./FAQ.rst#how-to-contribute) 
 
-- If you want to follow the project news or you have some feedbacks, you can contact us via our [mailing list](http://link-to-mailing-list)
+- If you want to follow the project news or you have some feedbacks, you can contact us by subscribing in our mailing list in [launchepad](https://launchpad.net/~dzcoding)
