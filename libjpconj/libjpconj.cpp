@@ -114,7 +114,7 @@ QString Libjpconj::conjugate(QString verb, int type, int end, int time, bool pol
         if (polite)
 
             if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ませば");
+                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ますれば");
             else
                 return Verbform::iForm(radical, type, end) + QString::fromUtf8("ませんならば");
         else
