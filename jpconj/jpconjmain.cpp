@@ -45,39 +45,14 @@ void jpconjmain::openAbout()
 {
     winAbout = new About(this);
     winAbout->setLayoutDirection(this->layoutDirection());
-    //winAbout->setWindowFlags(Qt::WindowTitleHint | Qt::Dialog | Qt::CustomizeWindowHint);
-    //winAbout->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
-    //winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
-    winAbout->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
+    winAbout->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
     winAbout->show();
 
 }
 
 void jpconjmain::doInit()
-{/*
-    //Initialize types of verb
-    ui->vfrmchoice->addItem(tr("Ichidan"), QVariant(_ichidan));
-    ui->vfrmchoice->addItem(tr("Godan"), QVariant(_godan));
-    //ui->vfrmchoice->addItem(tr("Zuru Verb"), QVariant(_zuruVerb));
-
-    //Initialize conjugation time
-    ui->conjchoice->addItem(tr("TeForm"), QVariant(_TeForm));
-    ui->conjchoice->addItem(tr("Present"), QVariant(_Present));
-    ui->conjchoice->addItem(tr("Past"), QVariant(_Past));
-    ui->conjchoice->addItem(tr("Provisional Condition"), QVariant(_Provision));
-    ui->conjchoice->addItem(tr("Condition"), QVariant(_Condition));
-    ui->conjchoice->addItem(tr("Imperative"), QVariant(_Imperative));
-    ui->conjchoice->addItem(tr("Volitional"), QVariant(_Volitional));
-    ui->conjchoice->addItem(tr("Present Continuous"), QVariant(_PresentContinuous));
-    ui->conjchoice->addItem(tr("Past Continuous"), QVariant(_PastContinuous));
-    ui->conjchoice->addItem(tr("Passive"), QVariant(_Passive));
-    ui->conjchoice->addItem(tr("Causative"), QVariant(_Causative));
-    ui->conjchoice->addItem(tr("Causative Passive"), QVariant(_CausativePassive));
-    ui->conjchoice->addItem(tr("Potential"), QVariant(_Potential));
-    ui->conjchoice->addItem(tr("Reason"), QVariant(_Reason));*/
-
+{
     qDebug()<< QString(VERSION);
-//ui->showt->setHorizontalHeader();
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());

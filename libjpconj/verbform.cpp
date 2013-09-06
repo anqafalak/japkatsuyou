@@ -30,6 +30,19 @@ QString Verbform::uForm(QString radical, int end)
     return radical + _endChars.at(end);
 }*/
 
+
+/*! \~english
+ * @brief  Verbform::iForm  Gives the i-form (stem) of a verb
+ *
+ *  The function take a \i radical \i of a verb and gives its i-form by changing the last character's sound
+ * from \b u \b (dictionary form) to \b i \b \n
+ * eg. 飲む -> 飲み
+ * @param radical It is the part which never get changed during conjugation,
+ * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
+ * @param type type of the verb: ichidan, godan, etc. See typeDefs.h
+ * @param end the ending of the verb: ru, ku, mu, etc. See typeDefs.h
+ * @return QString the i-form of the verb
+ */
 QString Verbform::iForm(QString radical, int type, int end)
 {
     switch (type){
@@ -76,6 +89,30 @@ QString Verbform::iForm(QString radical, int type, int end)
     return radical;
 }
 
+
+
+/* \~arabic
+* @brief Verbform::eForm <DIV dir="rtl"> استخراج e-form من الفعل</DIV>
+*
+*
+* @param radical <DIV dir="rtl"> الجزء الذي لا يتغير أثناء تصريف الفعل
+* مثل 飲む -> 飲 </DIV>
+* @param type
+* @param end
+* @return QString the iform of the verb
+*/
+/*! \~english
+ * @brief  Verbform::eForm  Gives the e-form (stem) of a verb
+ *
+ *  The function take a \i radical \i of a verb and gives its e-form by changing the last character's sound
+ * from \b u \b (dictionary form) to \b e \b \n
+ * eg. 飲む -> 飲め
+ * @param radical It is the part which never get changed during conjugation,
+ * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
+ * @param type type of the verb: ichidan, godan, etc. See typeDefs.h
+ * @param end the ending of the verb: ru, ku, mu, etc. See typeDefs.h
+ * @return QString the e-form of the verb
+ */
 QString Verbform::eForm(QString radical, int type, int end)
 {
     switch (type){
@@ -122,6 +159,18 @@ QString Verbform::eForm(QString radical, int type, int end)
     return radical;
 }
 
+/*! \~english
+ * @brief  Verbform::oForm  Gives the o-form (stem) of a verb
+ *
+ *  The function take a \i radical \i of a verb and gives its o-form by changing the last character's sound
+ * from \b u \b (dictionary form) to \b o \b \n
+ * eg. 飲む -> 飲も
+ * @param radical It is the part which never get changed during conjugation,
+ * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
+ * @param type type of the verb: ichidan, godan, etc. See typeDefs.h
+ * @param end the ending of the verb: ru, ku, mu, etc. See typeDefs.h
+ * @return QString the o-form of the verb
+ */
 QString Verbform::oForm(QString radical, int type, int end)
 {
     switch (type){
@@ -167,6 +216,18 @@ QString Verbform::oForm(QString radical, int type, int end)
     return radical;
 }
 
+/*! \~english
+ * @brief  Verbform::aForm  Gives the a-form (stem) of a verb
+ *
+ *  The function take a \i radical \i of a verb and gives its a-form by changing the last character's sound
+ * from \b u \b (dictionary form) to \b a \b \n
+ * eg. 飲む -> 飲ま
+ * @param radical It is the part which never get changed during conjugation,
+ * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
+ * @param type type of the verb: ichidan, godan, etc. See typeDefs.h
+ * @param end the ending of the verb: ru, ku, mu, etc. See typeDefs.h
+ * @return QString the a-form of the verb
+ */
 QString Verbform::aForm(QString radical, int type, int end)
 {
     switch (type){
@@ -237,8 +298,27 @@ QString Verbform::aForm(QString radical, int type, int end)
                 End Select
 */
 
-
-
+//TODO commplete
+/*! \~english
+ * @brief  Verbform::aForm  Gives the te-form (stem) of a verb
+ *
+ *  The function take a \i radical \i of a verb and gives its a-form by changing the last character's sound
+ * - u  to tte 買う -> 買って
+ * - ku to ite　歩く -> 歩いて
+ * - gu to ide　泳ぐ -> 泳いで
+ * - su to shite
+ * - tsu to tte
+ * - nu to nde
+ * - bu to nde
+ * - mu to nde
+ * - ru to tte eg. 取る -> 取って
+ *
+ * @param radical It is the part which never get changed during conjugation,
+ * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
+ * @param type type of the verb: ichidan, godan, etc. See typeDefs.h
+ * @param end the ending of the verb: ru, ku, mu, etc. See typeDefs.h
+ * @return QString the a-form of the verb
+ */
 QString Verbform::teForm(QString radical, int type, int end)
 {
     switch (type){
