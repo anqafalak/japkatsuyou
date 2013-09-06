@@ -31,14 +31,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-   //a.setWindowIcon(QIcon(QString(dataFolder) + "img/icon.png"));
-    a.setOrganizationName("JpConj");
-    a.setOrganizationDomain("https://github.com/kariminf/");
-    //a.setApplicationName("JapKatsuyou- " + QString(VERSION));
-
-    //    QTranslator qtTranslator;
-    //    qtTranslator.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    //    a.installTranslator(&qtTranslator);
+    a.setOrganizationName("DzCoding");
+    a.setOrganizationDomain("https://github.com/DzCoding/");
 
     QSettings settings;
 
@@ -52,7 +46,6 @@ int main(int argc, char *argv[])
     qtTranslator.load("qt_" + langacro, QString(dataFolder) + "i18n");//QLibraryInfo::location(QLibraryInfo::TranslationsPath)
     a.installTranslator(&qtTranslator);
 
-    //a.setLayoutDirection(Qt::RightToLeft);
     jpconjmain w;
 
     if (langacro == "ar")
