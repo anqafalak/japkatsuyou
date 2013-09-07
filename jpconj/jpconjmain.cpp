@@ -50,6 +50,14 @@ void jpconjmain::openAbout()
 
 }
 
+void jpconjmain::openPref()
+{
+    winPref = new Preference(this);
+    winPref->setLayoutDirection(this->layoutDirection());
+    winPref->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
+    winPref->show();
+}
+
 void jpconjmain::doInit()
 {
     qDebug()<< QString(VERSION);
@@ -212,10 +220,7 @@ void jpconjmain::on_action_About_triggered()
 
 void jpconjmain::on_action_Preference_triggered()
 {
-    winPref = new Preference(this);
-    winPref->setLayoutDirection(this->layoutDirection());
-    winPref->setWindowFlags(Qt::Tool | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
-    winPref->show();
+    openPref();
 }
 
 void jpconjmain::on_actionAbout_Qt_triggered()

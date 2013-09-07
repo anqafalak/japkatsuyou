@@ -41,7 +41,7 @@ class jpconjmain : public QMainWindow
     Q_OBJECT
 
 public slots:
-    void openAbout();
+
 
 public:
     explicit jpconjmain(QWidget *parent = 0);
@@ -65,8 +65,11 @@ private:
 
     void doInit();
     void doConj();
+    void openPref();
+    void openAbout();
 
     void tenseConj(const QString verb, const int time, const int type, const int end);
+
 
     static QMap <int, QString> initConjTime();
 };
