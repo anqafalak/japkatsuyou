@@ -24,6 +24,17 @@ Verbform::Verbform()
 {
 }
 
+/* \~arabic
+* @brief Verbform::eForm <DIV dir="rtl"> استخراج e-form من الفعل</DIV>
+*
+*
+* @param radical <DIV dir="rtl"> الجزء الذي لا يتغير أثناء تصريف الفعل
+* مثل 飲む -> 飲 </DIV>
+* @param type
+* @param end
+* @return QString the iform of the verb
+*/
+
 /*
 QString Verbform::uForm(QString radical, int end)
 {
@@ -34,7 +45,7 @@ QString Verbform::uForm(QString radical, int end)
 /*! \~english
  * @brief  Verbform::iForm  Gives the i-form (stem) of a verb
  *
- *  The function take a \i radical \i of a verb and gives its i-form by changing the last character's sound
+ * In case of GODAN verbs, The function take a \i radical \i of a verb and gives its i-form by changing the last character's sound
  * from \b u \b (dictionary form) to \b i \b \n
  * eg. 飲む -> 飲み
  * @param radical It is the part which never get changed during conjugation,
@@ -90,21 +101,10 @@ QString Verbform::iForm(QString radical, int type, int end)
 }
 
 
-
-/* \~arabic
-* @brief Verbform::eForm <DIV dir="rtl"> استخراج e-form من الفعل</DIV>
-*
-*
-* @param radical <DIV dir="rtl"> الجزء الذي لا يتغير أثناء تصريف الفعل
-* مثل 飲む -> 飲 </DIV>
-* @param type
-* @param end
-* @return QString the iform of the verb
-*/
 /*! \~english
  * @brief  Verbform::eForm  Gives the e-form (stem) of a verb
  *
- *  The function take a \i radical \i of a verb and gives its e-form by changing the last character's sound
+ * In case of GODAN verbs, The function take a \i radical \i of a verb and gives its e-form by changing the last character's sound
  * from \b u \b (dictionary form) to \b e \b \n
  * eg. 飲む -> 飲め
  * @param radical It is the part which never get changed during conjugation,
@@ -302,7 +302,7 @@ QString Verbform::aForm(QString radical, int type, int end)
 /*! \~english
  * @brief  Verbform::aForm  Gives the te-form (stem) of a verb
  *
- *  The function take a \i radical \i of a verb and gives its a-form by changing the last character's sound
+ * In case of GODAN verbs, The function take a \i radical \i of a verb and gives its a-form by changing the last character's sound
  * - u  to tte 買う -> 買って
  * - ku to ite　歩く -> 歩いて
  * - gu to ide　泳ぐ -> 泳いで
