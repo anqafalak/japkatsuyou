@@ -99,9 +99,18 @@ void jpconjmain::doConj()
             tenseConj(verb, type, form);
         }
 
+        ui->showt->setVerticalHeaderLabels(vlist);
+
+        int i=0;
+        foreach(int form, verbForms.keys()){
+            ui->showt->verticalHeaderItem(i)->setToolTip(verbForms.value(form).second);
+            i++;
+        }
+
     }
 
-    ui->showt->setVerticalHeaderLabels(vlist);
+
+
 }
 
 

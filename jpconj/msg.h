@@ -56,7 +56,7 @@ static QMap<int, formDesc> setVerbForms() {
 
     mapVerbForms.insert(verbForm::_Present,
                         formDesc(verbFormNames::tr("Present"),
-                                 verbFormDesc::tr("")));
+                                 verbFormDesc::tr("This is the present tense")));
 
     mapVerbForms.insert(verbForm::_Past,
                         formDesc(verbFormNames::tr("Past"),
