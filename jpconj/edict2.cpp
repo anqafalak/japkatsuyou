@@ -20,38 +20,6 @@
 
 #include "edict2.h"
 
-//
-const int Edict2::map2jpconj[28][2] = {
-{0, -1}, // 0
-{_ichidan, _ruEnd}, //1
-{_nidan, _uEnd}, //2
-{_yondan, _huEnd}, //3
-{_yondan, _ruEnd}, //4
-{_ichidan, _ruEnd}, //5
-{_irregular, _ruEnd}, //6
-{_godan, _buEnd}, //7
-{_godan, _guEnd}, //8
-{_godan, _kuEnd}, //9
-{_ikuVerb, _kuEnd}, //10
-{_godan, _muEnd}, //11
-{_godan, _nuEnd}, //12
-{_godan, _ruEnd}, //13
-{_aruVerb, _ruEnd}, //14  godan with ru irregular
-{_godan, _suEnd}, //15
-{_godan, _tuEnd}, //16
-{_godan, _uEnd}, //17
-{_kouTou, _uEnd}, //18 godan with u special
-{_godan, -1}, //19 godan with uru old form of eru : no verb in the database
-{_godan, -1}, //20 godan with zu : no verb in the database
-{_zuruVerb, _ruEnd}, //21
-{_kuruVerb, _ruEnd}, //22 kuru verb - special class
-{_godan, _nuEnd}, //23 irregular nu verb : 死ぬ
-{_suruVerb, _ruEnd}, //24 noun or participle which takes the aux. verb suru
-{_suruVerb, -1}, //25 su verb - precursor to the modern suru
-{_suruVerb, _ruEnd}, //26 suru verb - irregular
-{_ssuruVerb, _ruEnd}//27 suru verb - special class
-};
-
 Edict2::Edict2()
 {
     connect();
@@ -117,8 +85,3 @@ int Edict2::find(QString verb)
     return result;
 }
 
-void Edict2::getType(int edict2type, int &type, int &end)
-{
-    type = map2jpconj[edict2type][0];
-    end = map2jpconj[edict2type][1];
-}

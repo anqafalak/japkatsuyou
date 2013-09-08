@@ -21,7 +21,7 @@
 #include "jpconjmain.h"
 #include "qdialog.h"
 #include "QStringList"
-
+#include "QTextLayout"
 
 jpconjmain::jpconjmain(QWidget *parent) :
     QMainWindow(parent),
@@ -64,65 +64,22 @@ void jpconjmain::doInit()
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
-
+    ui->showt->setLayoutDirection(Qt::LeftToRight);
 }
 
 void jpconjmain::doConj()
 {
-
-
-
     ui->showt->setRowCount(0);
 
-    /*
-    QString conjTimeStr[] = {
-        tr("Present"),
-        tr("Past"),
-        tr("Provisional Condition"),
-        tr("Condition"),
-        tr("Imperative"),
-        tr("Volitional"),
-        tr("Present Continuous"),
-        tr("Past Continuous"),
-        tr("Passive"),
-        tr("Causative"),
-        tr("Causative Passive"),
-        tr("Potential"),
-        tr("Reason")
-    };
-
-    int conjTimeInt[13] = {
-        _Present,
-        _Past,
-        _Provision,
-        _Condition,
-        _Imperative,
-        _Volitional,
-        _PresentContinuous,
-        _PastContinuous,
-        _Passive,
-        _Causative,
-        _CausativePassive,
-        _Potential,
-        _Reason
-    };*/
-
-    QMap <int, QString> conjTime = initConjTime();
-
-
     QString verb = ui->inputt->text();
-    int type = 0;
-    int end = 0;
 
     QStringList vlist;
 
     Edict2 edict2;
 
-    int edict2type = edict2.find(verb);
+    int type = edict2.find(verb);
 
-    Edict2::getType(edict2type, type, end);
-
-    if (end < 0)
+    if (type < 0)
     {
         ui->msgt->setText(tr("This verb doesn't exist in the database."));
         ui->showt->setColumnCount(0);
@@ -136,10 +93,10 @@ void jpconjmain::doConj()
 
         ui->msgt->setText(tr("This verb is found"));
 
-        foreach (int time, conjTime.keys())
+        foreach (int form, verbForms.keys())
         {
-            vlist << conjTime.value(time);
-            tenseConj(verb, time, type, end);
+            vlist << verbForms.value(form).first;
+            tenseConj(verb, type, form);
         }
 
     }
@@ -147,54 +104,38 @@ void jpconjmain::doConj()
     ui->showt->setVerticalHeaderLabels(vlist);
 }
 
-QMap <int, QString> jpconjmain::initConjTime(){
-    QMap <int, QString> result;
-    result.insert(_Present,tr("Present"));
-    result.insert(_Past,tr("Past"));
-    result.insert(_Provision,tr("Provisional Condition"));
-    result.insert(_Condition,tr("Condition"));
-    result.insert(_Imperative,tr("Imperative"));
-    result.insert(_Volitional,tr("Volitional"));
-    result.insert(_PresentContinuous,tr("Present Continuous"));
-    result.insert(_PastContinuous,tr("Past Continuous"));
-    result.insert(_Passive,tr("Passive"));
-    result.insert(_Causative,tr("Causative"));
-    result.insert(_CausativePassive,tr("Causative Passive"));
-    result.insert(_Potential,tr("Potential"));
-    result.insert(_Reason,tr("Reason"));
 
-    return result;
-}
-
-void jpconjmain::tenseConj(const QString verb, const int time, const int type, const int end)
+void jpconjmain::tenseConj(const QString verb, const int type, const int form)
 {
 
     QString result = "";
+    QTextLayout textLayout;
+    textLayout.setFlags(Qt::LeftToRight);
     int rownum = ui->showt->rowCount();
 
     ui->showt->insertRow(rownum);
     QTableWidgetItem* item;
 
     // Polite, Positive
-    result = libjpconjlink::conjugate(verb, type, end, time, true, true);
+    result = libjpconjlink::conjugate(verb, type, form, true, true);
     item = new QTableWidgetItem(result);
-    item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
+    item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft );
     ui->showt->setItem(rownum,0,item);
 
     // Polite, Negative
-    result = libjpconjlink::conjugate(verb, type, end, time, true, false);
+    result = libjpconjlink::conjugate(verb, type, form, true, false);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,1,item);
 
     //Common, Positive
-    result = libjpconjlink::conjugate(verb, type, end, time, false, true);
+    result = libjpconjlink::conjugate(verb, type, form, false, true);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,2,item);
 
     //common, Negative
-    result = libjpconjlink::conjugate(verb, type, end, time, false, false);
+    result = libjpconjlink::conjugate(verb, type, form, false, false);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,3,item);

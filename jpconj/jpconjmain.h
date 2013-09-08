@@ -31,6 +31,7 @@
 #include "edict2.h"
 #include <QMap>
 #include "paths.h"
+#include "msg.h"
 
 namespace Ui {
 class jpconjmain;
@@ -68,10 +69,7 @@ private:
     void openPref();
     void openAbout();
 
-    void tenseConj(const QString verb, const int time, const int type, const int end);
-
-
-    static QMap <int, QString> initConjTime();
+    void tenseConj(const QString verb, const int type, const int form);
 };
 
 #endif // JPCONJMAIN_H

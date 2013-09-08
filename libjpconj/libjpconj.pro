@@ -6,7 +6,7 @@
 
 QT       -= gui
 
-VERSION = 0.2
+VERSION = 0.3
 
 TARGET = libjpconj
 TEMPLATE = lib
@@ -14,9 +14,11 @@ TEMPLATE = lib
 DEFINES += LIBJPCONJ_LIBRARY
 
 SOURCES +=  libjpconj.cpp \
-            verbform.cpp
+            verbstem.cpp \
+    inflection.cpp
 
 HEADERS +=  libjpconj.h\
             libjpconj_global.h \
-            verbform.h \
-            typeDefs.h
+            verbstem.h \
+            typeDefs.h \
+    inflection.h

@@ -32,8 +32,7 @@ class libjpconjlink
 {
 public:
     libjpconjlink();
-    static QString conjugate(QString verb, int type, int time, bool polite, bool positive);
-    static QString conjugate(QString verb, int type, int end, int time, bool polite, bool positive);
+    static QString conjugate(QString verb, VerbType type, VerbForm form, Politeness polite, Polarity affirmative);
 };
 
 #endif // LIBJPCONJLINK_H
