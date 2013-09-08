@@ -22,27 +22,19 @@
 #define LIBJPCONJ_H
 
 #include "libjpconj_global.h"
-//#include "string"
 #include "QString"
-#include "QChar"
-#include "typeDefs.h"
-#include "verbform.h"
+#include "inflection.h"
 
 class LIBJPCONJSHARED_EXPORT Libjpconj
 {
 
 public:
     Libjpconj();
-    static const char* Cconjugate(const char* verb, int type, int time, bool polite, bool positive);
-    static const char* CconjugateEnd(const char* verb, int type, int end, int time, bool polite, bool positive);
-    static QString conjugate(QString verb, int type, int end, int time, bool polite, bool positive);
-
-private:
-    static int getEnd(QString verb);
-
+    static const char* conjugateC(const char* verb, int type, int time, bool polite, bool affirmative);
+    //static const char* katsuyouC(const char* verb, int type, int time, bool polite, bool positive);
 };
 
-extern "C" WIN_EXPORT const char* conj(const char* verb, int type, int time, bool polite, bool positive);
-extern "C" WIN_EXPORT const char* conjEnd(const char* verb, int type, int end, int time, bool polite, bool positive);
+extern "C" WIN_EXPORT const char* Conjugate(const char* verb, int type, int time, bool polite, bool positive);
+//extern "C" WIN_EXPORT const char* Katsuyou(const char* verb, int type, int time, bool polite, bool positive);
 
 #endif // LIBJPCONJ_H

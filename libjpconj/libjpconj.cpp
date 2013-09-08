@@ -27,293 +27,35 @@ Libjpconj::Libjpconj()
 
 //extern function
 
-const char* conj(const char* verb, int type, int time, bool polite, bool positive)
+const char* Conjugate(const char* verb, int type, int time, bool polite, bool affirmative)
 {
-    const char* result = Libjpconj::Cconjugate(verb, type, time, polite, positive);
+    const char* result = Libjpconj::conjugateC(verb, type, time, polite, affirmative);
     return result;
 }
 
-const char* conjEnd(const char* verb, int type, int end, int time, bool polite, bool positive)
+/*const char* Katsuyou(const char* verb, int type, int time, bool polite, bool affirmative)
 {
-    const char* result = Libjpconj::CconjugateEnd(verb, type, end, time, polite, positive);
+    const char* result = Libjpconj::katsuyouC(verb, type, time, polite, affirmative);
     return result;
-}
+}*/
 
 
-// transform functions
-const char* Libjpconj::Cconjugate(const char* verb, int type, int time, bool polite, bool positive)
+const char* Libjpconj::conjugateC(const char* verb, int type, int time, bool polite, bool affirmative)
 {
-    //Libjpconj jpconj;
-    int end = getEnd(verb);
     QString Qverb = QString::fromUtf8(verb);
-    Qverb = conjugate(Qverb, type, end, time, polite, positive);
-
-    //QByteArray verbArray = verb.toUtf8();
-    //const char* charVerb = verbArray.constData();
+    Qverb = Inflection::conjugate(Qverb, type, time, polite, affirmative);
 
     return Qverb.toUtf8().constData();
 }
 
-const char* Libjpconj::CconjugateEnd(const char* verb, int type, int end, int time, bool polite, bool positive)
+/*const char* Libjpconj::katsuyouC(const char* verb, int type, int time, bool polite, bool affirmative)
 {
-    //Libjpconj jpconj;
     QString Qverb = QString::fromUtf8(verb);
-    Qverb = conjugate(Qverb, type, end, time, polite, positive);
+    Qverb = katsuyou(Qverb, type, time, polite, affirmative);
+
     return Qverb.toUtf8().constData();
-}
+}*/
+
 
 // public functions
-QString Libjpconj::conjugate(QString verb, int type, int end, int time, bool polite, bool positive)
-{
-    if(verb.length()<2)
-        return verb;
 
-    QString radical = verb;
-    radical.chop(1);
-
-    if (type == _ssuruVerb)
-    {
-        radical.chop(1);
-        end = _suEnd;
-        type = _godan;
-    }
-
-    switch (time)
-    {
-    case _TeForm:
-        if (positive)
-            return Verbform::teForm(radical, type, end);
-        else
-            return Verbform::aForm(radical, type, end) + QString::fromUtf8("なくて");
-    case _Present:
-        if (polite)
-
-            if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ます");
-            else
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ません");
-        else
-            if (positive)
-                return verb;
-            else
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("ない");
-    case _Past:
-        if (polite)
-
-            if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ました");
-            else
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ませんでした");
-        else
-            if (positive)
-                return Verbform::taForm(radical, type, end);
-            else
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("なかった");
-
-    case _Provision:   
-        if (polite)
-
-            if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ますれば");
-            else
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ませんならば");
-        else
-            if (positive)
-            {
-                if (type == _godan || type == _zuruVerb)
-                    return Verbform::eForm(radical, type, end)+ QString::fromUtf8("ば");
-
-                return Verbform::eForm(radical, type, end)+ QString::fromUtf8("れば");
-            }
-            else //negative
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("なければ");
-
-    case _Condition:
-        if (polite)
-            if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ましたら");
-            else
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ませんでしたら");
-        else
-            if (positive)
-                return Verbform::taForm(radical, type, end) + QString::fromUtf8("ら");
-            else //negative
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("なかったら");
-
-    case _Reason:
-        if (polite)
-            if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ますから");
-            else
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ませんから");
-        else
-            if (positive)
-                return Verbform::taForm(radical, type, end) + QString::fromUtf8("から");
-            else //negative
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("なかったから");
-
-    case _Imperative:
-        if (polite)
-            if (positive)
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("下さい");
-            else
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("ないで下さい");
-        else
-            if (positive)
-            {
-
-                switch (type)
-                {
-                case _ichidan:
-                    return verb + QString::fromUtf8("ろ");
-                case _suruVerb:
-                    verb.chop(1);
-                    return verb + QString::fromUtf8("しろ");
-                case _godan:
-                    return Verbform::eForm(radical, type, end);
-                }
-                return Verbform::eForm(radical, type, end);
-            }
-            else //negative
-                return verb + QString::fromUtf8("な");
-
-    case _Volitional:
-        if (polite)
-            if (positive)
-                return Verbform::iForm(radical, type, end) + QString::fromUtf8("ましょう");
-            else
-                return verb + QString::fromUtf8("のをやめましょう");
-        else
-            if (positive)
-                return Verbform::oForm(radical, type, end) + QString::fromUtf8("う");
-            else //negative
-                return verb + QString::fromUtf8("のをやめよう");
-
-    case _PresentContinuous:
-        if (polite)
-            if (positive)
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("います");
-            else
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いません");
-        else
-            if (positive)
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いる");
-            else
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いない");
-
-    case _PastContinuous:
-        if (polite)
-            if (positive)
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いました");
-            else
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いませんでした");
-        else
-            if (positive)
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いた");
-            else
-                return Verbform::teForm(radical, type, end) + QString::fromUtf8("いなかった");
-
-    case _Potential:
-        if (type == _ichidan)
-            verb += QString::fromUtf8("られ");
-        if (type == _suruVerb)
-        {
-            verb.chop(1);
-            verb += QString::fromUtf8("でき");
-            type = _ichidan;
-        }
-
-        if (polite)
-            if (positive)
-                return Verbform::eForm(radical, type, end) + QString::fromUtf8("ます");
-            else
-                return Verbform::eForm(radical, type, end) + QString::fromUtf8("ません");
-        else
-            if (positive)
-                return Verbform::eForm(radical, type, end) + QString::fromUtf8("る");
-            else //negative
-                return Verbform::eForm(radical, type, end) + QString::fromUtf8("ない");
-
-    case _Passive:
-        if (type == _ichidan)
-            verb += QString::fromUtf8("ら");
-        if (type == _suruVerb)
-        {
-            verb.chop(1);
-            verb += QString::fromUtf8("さ");
-            type = _ichidan;
-        }
-
-        if (polite)
-            if (positive)
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("れます");
-            else
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("れません");
-        else
-            if (positive)
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("れる");
-            else //negative
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("れない");
-
-    case _Causative:
-        if (type == _ichidan)
-            verb += QString::fromUtf8("さ");
-        if (type == _suruVerb)
-        {
-            verb.chop(1);
-            verb += QString::fromUtf8("さ");
-            type = _ichidan;
-        }
-
-        if (polite)
-            if (positive)
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せます");
-            else
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せません");
-        else
-            if (positive)
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せる");
-            else //negative
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せない");
-
-    case _CausativePassive:
-        if (type == _ichidan)
-            verb += QString::fromUtf8("さ");
-        if (type == _suruVerb)
-        {
-            verb.chop(1);
-            verb += QString::fromUtf8("さ");
-            type = _ichidan;
-        }
-
-        if (polite)
-            if (positive)
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せられます");
-            else
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せられません");
-        else
-            if (positive)
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せられる");
-            else //negative
-                return Verbform::aForm(radical, type, end) + QString::fromUtf8("せられない");
-
-    }
-
-    return verb;
-}
-
-/*
-
- */
-
-int Libjpconj::getEnd(QString verb)
-{
-    int lastpos = verb.length() -1;
-
-    if (lastpos >0)
-    {
-        QChar lastchar = verb.at(lastpos);
-        return _endChars.indexOf(lastchar);
-    }
-    return -1;
-}

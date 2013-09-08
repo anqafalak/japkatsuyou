@@ -18,28 +18,24 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VERBFORM_H
-#define VERBFORM_H
+#ifndef VERBSTEM_H
+#define VERBSTEM_H
 #include "libjpconj_global.h"
 #include "QString"
 #include "typeDefs.h"
 
-class Verbform
+class Verbstem
 {
 
 public:
-    Verbform();
-    static QString uForm(QString radical, int end);
-    static QString iForm(QString radical, int type, int end);
-    static QString eForm(QString radical, int type, int end);
-    static QString oForm(QString radical, int type, int end);
-    static QString aForm(QString radical, int type, int end);
-    static QString teForm(QString radical, int type, int end);
-    static QString taForm(QString radical, int type, int end);
-
-private:
-    //static bool IkuVerb(QString radical);
-    //static bool Dou_KouVerb(QString radical);
+    Verbstem();
+    static QString aForm(QString radical, VerbType type);
+    static QString eForm(QString radical, VerbType type);
+    static QString eImpForm(QString radical, VerbType type);
+    static QString tForm(QString radical, VerbType type);
+    static QString uForm(QString radical, VerbType type);
+    static QString iForm(QString radical, VerbType type);
+    static QString oForm(QString radical, VerbType type);
 };
 
-#endif // VERBFORM_H
+#endif //VERBSTEM_H

@@ -27,7 +27,8 @@ HEADERS  += jpconjmain.h \
     typeDefs.h \
     edict2.h \
     preference.h \
-    paths.h
+    paths.h \
+    msg.h
 
 FORMS    += jpconjmain.ui \
     about.ui \
