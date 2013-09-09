@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ar_SA">
+<TS version="2.0" language="ar">
 <context>
     <name>About</name>
     <message>
@@ -295,6 +295,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>verbFormDesc</name>
+    <message>
+        <location filename="../msg.h" line="59"/>
+        <source>This is the present tense</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>verbFormNames</name>
     <message>
         <location filename="../msg.h" line="58"/>
@@ -355,6 +363,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../msg.h" line="102"/>
         <source>Potential</source>
         <translation type="unfinished">استطاعة</translation>
+    </message>
+</context>
+<context>
+    <name>verbFormNames::QObject</name>
+    <message>
+        <source>Present</source>
+        <translation type="obsolete">مضارع</translation>
     </message>
 </context>
 <context>

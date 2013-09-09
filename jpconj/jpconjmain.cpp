@@ -77,7 +77,7 @@ void jpconjmain::doConj()
 
     Edict2 edict2;
 
-    int type = edict2.find(verb);
+    EdictType type = edict2.find(verb);
 
     if (type < 0)
     {
@@ -93,7 +93,7 @@ void jpconjmain::doConj()
 
         ui->msgt->setText(tr("This verb is found"));
 
-        foreach (int form, verbForms.keys())
+        foreach (CForm form, verbForms.keys())
         {
             vlist << verbForms.value(form).first;
             tenseConj(verb, type, form);
@@ -102,7 +102,7 @@ void jpconjmain::doConj()
         ui->showt->setVerticalHeaderLabels(vlist);
 
         int i=0;
-        foreach(int form, verbForms.keys()){
+        foreach(CForm form, verbForms.keys()){
             ui->showt->verticalHeaderItem(i)->setToolTip(verbForms.value(form).second);
             i++;
         }
@@ -114,7 +114,7 @@ void jpconjmain::doConj()
 }
 
 
-void jpconjmain::tenseConj(const QString verb, const int type, const int form)
+void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
 {
 
     QString result = "";
@@ -126,25 +126,25 @@ void jpconjmain::tenseConj(const QString verb, const int type, const int form)
     QTableWidgetItem* item;
 
     // Polite, Positive
-    result = libjpconjlink::conjugate(verb, type, form, true, true);
+    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Affirmative);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft );
     ui->showt->setItem(rownum,0,item);
 
     // Polite, Negative
-    result = libjpconjlink::conjugate(verb, type, form, true, false);
+    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Negative);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,1,item);
 
     //Common, Positive
-    result = libjpconjlink::conjugate(verb, type, form, false, true);
+    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Affirmative);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,2,item);
 
     //common, Negative
-    result = libjpconjlink::conjugate(verb, type, form, false, false);
+    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Negative);
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,3,item);

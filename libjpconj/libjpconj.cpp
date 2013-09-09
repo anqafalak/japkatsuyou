@@ -27,9 +27,9 @@ Libjpconj::Libjpconj()
 
 //extern function
 
-const char* Conjugate(const char* verb, int type, int time, bool polite, bool affirmative)
+const char* Conjugate(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
-    const char* result = Libjpconj::conjugateC(verb, type, time, polite, affirmative);
+    const char* result = Libjpconj::conjugateC(verb, type, form, polite, affirmative);
     return result;
 }
 
@@ -40,10 +40,10 @@ const char* Conjugate(const char* verb, int type, int time, bool polite, bool af
 }*/
 
 
-const char* Libjpconj::conjugateC(const char* verb, int type, int time, bool polite, bool affirmative)
+const char* Libjpconj::conjugateC(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
     QString Qverb = QString::fromUtf8(verb);
-    Qverb = Inflection::conjugate(Qverb, type, time, polite, affirmative);
+    Qverb = Inflection::conjugate(Qverb, type, form, polite, affirmative);
 
     return Qverb.toUtf8().constData();
 }

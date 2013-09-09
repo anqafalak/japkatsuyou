@@ -29,13 +29,13 @@ class Verbstem
 
 public:
     Verbstem();
-    static QString aForm(QString radical, VerbType type);
-    static QString eForm(QString radical, VerbType type);
-    static QString eImpForm(QString radical, VerbType type);
-    static QString tForm(QString radical, VerbType type);
-    static QString uForm(QString radical, VerbType type);
-    static QString iForm(QString radical, VerbType type);
-    static QString oForm(QString radical, VerbType type);
+    static QString aForm(QString radical, EdictType type);
+    static QString eForm(QString radical, EdictType type);
+    static QString eImpForm(QString radical, EdictType type);
+    static QString tForm(QString radical, EdictType type);
+    static QString uForm(QString radical, EdictType type);
+    static QString iForm(QString radical, EdictType type);
+    static QString oForm(QString radical, EdictType type);
 };
 
 #endif //VERBSTEM_H
