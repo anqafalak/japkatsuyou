@@ -6,48 +6,6 @@
 #include <QMap>
 #include <QPair>
 
-/*
-namespace verbForms {
-
-
-QMap<int, int> formse;
-
-formDesc desc("","");
-
-formse.insert(1,2);
-const int id[]={
-    VConjugate::_Present,
-    VConjugate::_Past,
-    VConjugate::_Provision,
-    VConjugate::_Condition,
-    VConjugate::_Imperative,
-    VConjugate::_Volitional,
-    VConjugate::_PresentContinuous,
-    VConjugate::_PastContinuous,
-    VConjugate::_Passive,
-    VConjugate::_Causative,
-    VConjugate::_CausativePassive,
-    VConjugate::_Potential
-};
-
-const QString name[]={
-    QObject::tr("Present"),
-    QObject::tr("Past"),
-    QObject::tr("Provisional Condition"),
-    QObject::tr("Condition"),
-    QObject::tr("Imperative"),
-    QObject::tr("Volitional"),
-    QObject::tr("Present Continuous"),
-    QObject::tr("Past Continuous"),
-    QObject::tr("Passive"),
-    QObject::tr("Causative"),
-    QObject::tr("Causative Passive"),
-    QObject::tr("Potential")
-};
-
-}*/
-
-
 typedef QPair<QString, QString> formDesc;
 typedef QObject verbFormNames; //used just to butify i18n files: name of verb form
 typedef QObject verbFormDesc; //used just to butify i18n files: description of verb form
