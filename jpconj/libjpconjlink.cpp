@@ -25,7 +25,7 @@ libjpconjlink::libjpconjlink()
 }
 
 
-QString libjpconjlink::conjugate(QString verb, VerbType type, VerbForm form, Politeness polite, Polarity affirmative)
+QString libjpconjlink::conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
 
      QLibrary library(QString(_LIB) + "libjpconj");
@@ -34,7 +34,7 @@ QString libjpconjlink::conjugate(QString verb, VerbType type, VerbForm form, Pol
          return "";
      }
 
-     typedef const char* (*sharedfunc)(const char*, int, int, bool, bool);
+     typedef const char* (*sharedfunc)(const char*, EdictType, CForm, Politeness, Polarity);
      sharedfunc libConjugate = (sharedfunc)library.resolve("Conjugate");
      if (!libConjugate){
          qDebug() << "Function doesn't exist";

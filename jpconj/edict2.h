@@ -32,7 +32,7 @@ class Edict2
 public:
     Edict2();
     ~Edict2();
-    int find(QString verb);
+    EdictType find(QString verb);
     void connect();
     void desconnect();
 

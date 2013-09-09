@@ -192,6 +192,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>verbFormDesc</name>
+    <message>
+        <location filename="../msg.h" line="59"/>
+        <source>This is the present tense</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>verbFormNames</name>
     <message>
         <location filename="../msg.h" line="58"/>

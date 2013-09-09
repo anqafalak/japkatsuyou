@@ -69,7 +69,7 @@ private:
     void openPref();
     void openAbout();
 
-    void tenseConj(const QString verb, const int type, const int form);
+    void tenseConj(const QString verb, EdictType type, CForm form);
 };
 
 #endif // JPCONJMAIN_H

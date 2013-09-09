@@ -53,7 +53,7 @@ void Edict2::desconnect()
     }
 }
 
-int Edict2::find(QString verb)
+EdictType Edict2::find(QString verb)
 {
     int result= 0;
 
@@ -82,6 +82,6 @@ int Edict2::find(QString verb)
     //qDebug() << result;
     verbdb.close();
 
-    return result;
+    return (EdictType) result;
 }
 

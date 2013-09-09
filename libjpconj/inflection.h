@@ -11,7 +11,7 @@ class Inflection
 {
 public:
     Inflection();
-    static QString conjugate(QString verb, VerbType type, VerbForm form, Politeness polite, Polarity affirmative);
+    static QString conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
 
 private:
     static QString tEnd(QString end, bool te);

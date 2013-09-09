@@ -22,6 +22,7 @@
 #define LIBJPCONJ_GLOBAL_H
 
 #include <QtCore/qglobal.h>
+#include "typeDefs.h"
 
 #if defined(LIBJPCONJ_LIBRARY)
 #  define LIBJPCONJSHARED_EXPORT Q_DECL_EXPORT

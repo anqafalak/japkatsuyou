@@ -30,11 +30,11 @@ class LIBJPCONJSHARED_EXPORT Libjpconj
 
 public:
     Libjpconj();
-    static const char* conjugateC(const char* verb, int type, int time, bool polite, bool affirmative);
+    static const char* conjugateC(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
     //static const char* katsuyouC(const char* verb, int type, int time, bool polite, bool positive);
 };
 
-extern "C" WIN_EXPORT const char* Conjugate(const char* verb, int type, int time, bool polite, bool positive);
+extern "C" WIN_EXPORT const char* Conjugate(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
 //extern "C" WIN_EXPORT const char* Katsuyou(const char* verb, int type, int time, bool polite, bool positive);
 
 #endif // LIBJPCONJ_H

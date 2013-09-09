@@ -323,6 +323,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>verbFormDesc</name>
+    <message>
+        <location filename="../msg.h" line="59"/>
+        <source>This is the present tense</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>verbFormNames</name>
     <message>
         <location filename="../msg.h" line="58"/>
@@ -383,6 +391,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../msg.h" line="102"/>
         <source>Potential</source>
         <translation type="unfinished">Potentiel</translation>
+    </message>
+</context>
+<context>
+    <name>verbFormNames::QObject</name>
+    <message>
+        <source>Present</source>
+        <translation type="obsolete">Présent</translation>
     </message>
 </context>
 <context>
