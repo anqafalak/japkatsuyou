@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,7 +19,8 @@ SOURCES += main.cpp\
         libjpconjlink.cpp \
     about.cpp \
     edict2.cpp \
-    preference.cpp
+    preference.cpp \
+    language.cpp
 
 HEADERS  += jpconjmain.h \
     libjpconjlink.h \
@@ -28,7 +29,8 @@ HEADERS  += jpconjmain.h \
     edict2.h \
     preference.h \
     paths.h \
-    msg.h
+    msg.h \
+    language.h
 
 FORMS    += jpconjmain.ui \
     about.ui \

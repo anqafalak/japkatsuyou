@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  
+  <language id="ar">
+    <name>العربية</name>
+    <location>./i18n/</location>
+  </language>
+  
+  <language id="en">
+    <name>English</name>
+    <location>./i18n/</location>
+  </language>
+  
+  <language id="fr">
+    <name>Français</name>
+    <location>./i18n/</location>
+  </language>
+  
+  <language id="ja">
+    <name>日本語</name>
+    <location>./i18n/</location>
+  </language>
+  
+</languages>

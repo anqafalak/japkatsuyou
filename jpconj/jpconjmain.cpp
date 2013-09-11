@@ -1,8 +1,13 @@
 /*
-    This file is part of JapKatsyou project; an application that provide
+    This file is part of JapKatsuyou project; an application that provide
     Japanese verb conjugation
 
     Copyright (C) 2013  Abdelkrime Aries <kariminfo0@gmail.com>
+    Copyright (C) 2013  DzCoding group (JapKatsuyou team)
+
+    Authors:
+            Abdelkrime Aries <kariminfo0@gmail.com>
+            Zakaria Smahi <zakaria08esi@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,9 +24,6 @@
  */
 
 #include "jpconjmain.h"
-#include "qdialog.h"
-#include "QStringList"
-#include "QTextLayout"
 
 jpconjmain::jpconjmain(QWidget *parent) :
     QMainWindow(parent),
@@ -36,7 +38,16 @@ jpconjmain::~jpconjmain()
     delete ui;
 }
 
+void jpconjmain::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+        Language::mainWindowDirection(this);
 
+    }
+    QMainWindow::changeEvent(event);
+}
 
 
 //private functions
@@ -62,6 +73,9 @@ void jpconjmain::doInit()
 {
     qDebug()<< QString(VERSION);
 
+    Language::loadTranslations();
+
+    Language::mainWindowDirection(this);
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
     ui->showt->setLayoutDirection(Qt::LeftToRight);

@@ -1,8 +1,12 @@
 /*
-    This file is part of JapKatsyou project; an application that provide
+    This file is part of JapKatsuyou project; an application that provide
     Japanese verb conjugation
 
     Copyright (C) 2013  Abdelkrime Aries <kariminfo0@gmail.com>
+    Copyright (C) 2013  DzCoding group (JapKatsuyou team)
+
+    Authors:
+            Abdelkrime Aries <kariminfo0@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -39,27 +43,27 @@ Preference::~Preference()
 
 void Preference::doInit()
 {
-    QSettings settings;
 
-    int index = settings.value("langidx",0).toInt();
+    QHash<QString, QString> languageInfo = Language::getLanguagesInfo();
 
-    //Initialize interface language
-    ui->lang->addItem(tr("Default"), QVariant("def"));
-    ui->lang->addItem(tr("Arabic"), QVariant("ar"));
-    ui->lang->addItem(tr("English"), QVariant("en"));
+    foreach (QString langId, languageInfo.keys())
+        ui->lang->addItem(languageInfo.value(langId), QVariant(langId));
+
+    QString confLangId = Language::getConfigLanguage();
+
+    int index = ui->lang->findData(QVariant(confLangId));
 
     ui->lang->setCurrentIndex(index);
 }
 
 void Preference::doSave()
 {
-    QSettings settings;
 
     int index = ui->lang->currentIndex();
-    QVariant langacro = ui->lang->itemData(index);
+    QString langID = ui->lang->itemData(index).toString();
 
-    settings.setValue("langidx", index);
-    settings.setValue("langacro", langacro);
+    Language::setConfigLanguage(langID);
+    Language::setLanguage();
 }
 
 
