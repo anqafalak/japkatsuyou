@@ -132,6 +132,7 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="actionHelp_Content"/>
     <addaction name="action_About"/>
     <addaction name="actionAbout_Qt"/>
    </widget>
@@ -342,6 +343,11 @@
    </property>
    <property name="text">
     <string>ToolBar</string>
+   </property>
+  </action>
+  <action name="actionHelp_Content">
+   <property name="text">
+    <string>Help Content</string>
    </property>
   </action>
  </widget>
