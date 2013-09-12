@@ -27,7 +27,6 @@
 
 #include <QDialog>
 #include <QUrl>
-#include <QFile>
 #include <QResource>
 #include <QDesktopServices>
 

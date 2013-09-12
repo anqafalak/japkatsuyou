@@ -4,5 +4,7 @@
         <file>about/licence_en</file>
         <file>about/thanks_en</file>
         <file>about/authors_ar</file>
+        <file>about/licence_ar</file>
+        <file>about/thanks_ar</file>
     </qresource>
 </RCC>

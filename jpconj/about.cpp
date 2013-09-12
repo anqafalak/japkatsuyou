@@ -67,11 +67,8 @@ QUrl About::loadLocalizePath(QString fileName)
     QString LocalizedFilePath = ":/about/" + fileName + "_" + currentLanguage;
 
     QResource fileRessource(LocalizedFilePath);
-    //QFile LocalizedFile(LocalizedFilePath);
-    if(!fileRessource.isValid()){
+    if(!fileRessource.isValid())
         LocalizedFilePath = ":/about/" + fileName + "_en";
-    }
-
 
     return QUrl("qrc" + LocalizedFilePath);
 }
