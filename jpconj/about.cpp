@@ -30,10 +30,48 @@ About::About(QWidget *parent) :
     ui(new Ui::About)
 {
     ui->setupUi(this);
-    ui->verl->setText(tr("Version") + " " + VERSION);
+    Init();
 }
 
 About::~About()
 {
     delete ui;
+}
+
+void About::Init()
+{
+    ui->verl->setText(tr("Version") + " " + VERSION);
+
+    ui->licenceText->viewport()->setAutoFillBackground(false);
+    ui->licenceText->setSource(loadLocalizePath("licence"));
+    connect(ui->licenceText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
+
+    ui->authorsText->viewport()->setAutoFillBackground(false);
+    ui->authorsText->setSource(loadLocalizePath("authors"));
+    connect(ui->authorsText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
+
+    ui->thanksText->viewport()->setAutoFillBackground(false);
+    ui->thanksText->setSource(loadLocalizePath("thanks"));
+    connect(ui->thanksText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
+}
+
+
+void About::externUrl(const QUrl &url)
+{
+    QDesktopServices::openUrl(url);
+}
+
+QUrl About::loadLocalizePath(QString fileName)
+{
+    QString currentLanguage = Language::getConfigLanguage();
+    QString LocalizedFilePath = ":/about/" + fileName + "_" + currentLanguage;
+
+    QResource fileRessource(LocalizedFilePath);
+    //QFile LocalizedFile(LocalizedFilePath);
+    if(!fileRessource.isValid()){
+        LocalizedFilePath = ":/about/" + fileName + "_en";
+    }
+
+
+    return QUrl("qrc" + LocalizedFilePath);
 }

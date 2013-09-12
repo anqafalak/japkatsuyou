@@ -53,5 +53,6 @@ DEPENDPATH += -L$$PWD/../libjpconj-bin/
 #OTHER_FILES +=
 
 RESOURCES += \
-    icons.qrc
+    icons.qrc \
+    about.qrc
 
