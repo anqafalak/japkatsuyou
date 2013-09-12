@@ -26,7 +26,12 @@
 #define ABOUT_H
 
 #include <QDialog>
+#include <QUrl>
+#include <QResource>
+#include <QDesktopServices>
+
 #include "paths.h"
+#include "language.h"
 
 namespace Ui {
 class About;
@@ -42,6 +47,11 @@ public:
     
 private:
     Ui::About *ui;
+    void Init();
+    QUrl loadLocalizePath(QString fileName);
+
+private slots:
+    void externUrl(const QUrl &url);
 };
 
 #endif // ABOUT_H
