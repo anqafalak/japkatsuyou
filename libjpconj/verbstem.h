@@ -24,15 +24,17 @@
 
 #ifndef VERBSTEM_H
 #define VERBSTEM_H
+
 #include "libjpconj_global.h"
-#include "QString"
 #include "typeDefs.h"
+
+#include <QString>
+
 
 class Verbstem
 {
 
 public:
-    Verbstem();
     static QString aForm(QString radical, EdictType type);
     static QString eForm(QString radical, EdictType type);
     static QString eImpForm(QString radical, EdictType type);

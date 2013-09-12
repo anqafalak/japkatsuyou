@@ -32,7 +32,6 @@
 //TODO: check suru types
 
 
-
 /*! \~english
  * @brief  Verbstem::aForm  Gives the a-form (stem) of a verb
  *
@@ -41,7 +40,7 @@
  * eg. 飲む -> 飲ま
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString the a-form of the verb
  */
 QString Verbstem::aForm(QString radical, EdictType type)
@@ -150,7 +149,7 @@ QString Verbstem::aForm(QString radical, EdictType type)
  * eg. 飲む -> 飲め
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString the e-form of the verb
  */
 QString Verbstem::eForm(QString radical, EdictType type)
@@ -260,7 +259,7 @@ QString Verbstem::eForm(QString radical, EdictType type)
  * eg. する -> しろ
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString the e-imperative form of the verb
  */
 QString Verbstem::eImpForm(QString radical, EdictType type)
@@ -338,7 +337,7 @@ QString Verbstem::eImpForm(QString radical, EdictType type)
  *
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString the t-form of the verb
  */
 QString Verbstem::tForm(QString radical, EdictType type)
@@ -458,7 +457,7 @@ QString Verbstem::tForm(QString radical, EdictType type)
  * Gives the dictionary form of a verb
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString dictionary form of the verb
  */
 QString Verbstem::uForm(QString radical, EdictType type)
@@ -566,7 +565,7 @@ QString Verbstem::uForm(QString radical, EdictType type)
  * eg. 飲む -> 飲み
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString the i-form of the verb
  */
 QString Verbstem::iForm(QString radical, EdictType type)
@@ -683,7 +682,7 @@ QString Verbstem::iForm(QString radical, EdictType type)
  * eg. 飲む -> 飲も
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. See typeDefs.h
+ * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
  * @return QString the o-form of the verb
  */
 QString Verbstem::oForm(QString radical, EdictType type)
