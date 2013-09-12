@@ -132,8 +132,6 @@ void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
 {
 
     QString result = "";
-    QTextLayout textLayout;
-    textLayout.setFlags(Qt::LeftToRight);
     int rownum = ui->showt->rowCount();
 
     ui->showt->insertRow(rownum);

@@ -25,16 +25,17 @@
 #define INFLECTION_H
 
 #include "libjpconj_global.h"
-#include "QString"
-#include "QChar"
 #include "typeDefs.h"
 #include "verbstem.h"
+
+#include <QString>
+
 
 class Inflection
 {
 public:
-    Inflection();
     static QString conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
+    static QString katsuyou(QString verb, EdictType type, KForm form);
 
 private:
     static QString tEnd(QString end, bool te);

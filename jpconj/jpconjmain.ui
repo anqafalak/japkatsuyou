@@ -184,6 +184,7 @@
    <addaction name="action_Preference"/>
    <addaction name="separator"/>
    <addaction name="action_About"/>
+   <addaction name="actionHelp_Content"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="search">
@@ -323,17 +324,6 @@
     <string>About &amp;Qt</string>
    </property>
   </action>
-  <action name="actionVerb_Conjugation">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Verb Conjugation</string>
-   </property>
-  </action>
   <action name="actionToolBar">
    <property name="checkable">
     <bool>true</bool>
@@ -346,6 +336,11 @@
    </property>
   </action>
   <action name="actionHelp_Content">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/help.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>Help Content</string>
    </property>

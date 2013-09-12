@@ -26,19 +26,20 @@
 #define LIBJPCONJ_H
 
 #include "libjpconj_global.h"
-#include "QString"
 #include "inflection.h"
+
+#include <QString>
+
 
 class LIBJPCONJSHARED_EXPORT Libjpconj
 {
 
 public:
-    Libjpconj();
     static const char* conjugateC(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
-    //static const char* katsuyouC(const char* verb, int type, int time, bool polite, bool positive);
+    static const char* katsuyouC(const char* verb, EdictType type, KForm form);
 };
 
 extern "C" WIN_EXPORT const char* Conjugate(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
-//extern "C" WIN_EXPORT const char* Katsuyou(const char* verb, int type, int time, bool polite, bool positive);
+extern "C" WIN_EXPORT const char* Katsuyou(const char* verb, EdictType type, KForm form);
 
 #endif // LIBJPCONJ_H

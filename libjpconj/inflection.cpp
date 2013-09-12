@@ -23,10 +23,28 @@
 
 #include "inflection.h"
 
-Inflection::Inflection()
-{
-}
+/*!
+ * \class Inflection
+ * It is used to get the verb's conjugation (inflection) by affording the six basic conjugation
+ * forms, and adding suffixes to get more complicated conjugation form
+ */
 
+
+/*!
+ * \brief Inflection::conjugate Gives complicated conjugation forms, such as polite positive past form (tense)
+ *
+ * It gives complex conjugation forms, using the basic stems, and adding suffixes according to parameters:
+ * \b type \b, \b form \b, \b polite \b, and \b affirmative \b.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type Type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * \param form Complex form (tense) which we want to conjugate to, such as: present, past, conditional, etc.
+ * (See VConjugate::CForm)
+ * \param polite The language can be polite or plain, ans thus verb conjugation variate according to these two.
+ * (See VConjugate::Politeness)
+ * \param affirmative The sentence can be affirmative (positive) or negative.
+ * (See VConjugate::Polarity)
+ * \return The complex verb conjugation
+ */
 QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
     if(verb.length()<2)
@@ -233,6 +251,56 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
     return verb;
 }
 
+
+/*!
+ * \brief Inflection::katsuyou Gives basic conjugation forms, as thought in Japanese schools
+ *
+ * It gives basic conjugation forms (or basic stems), those basic forms can be used to form
+ * complex conjugation forms by adding suffixes and auxilary verbs.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type Type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * \param form Basic forms: imperfective, conjuntive, etc. (See VKatsuyou::KForm)
+ * \return Basic forms conjugation
+ */
+QString Inflection::katsuyou(QString verb, EdictType type, KForm form)
+{
+    if(verb.length()<2)
+        return verb;
+
+    QString radical = verb;
+    //QString end = verb.right(1);
+    radical.chop(1);
+
+
+    switch (form){
+    case VKatsuyou::_Imperfective_a:
+        return Verbstem::aForm(radical, type);
+
+    case VKatsuyou::_Imperfective_o:
+        return Verbstem::oForm(radical, type);
+
+    case VKatsuyou::_Conjunctive_i:
+        return Verbstem::iForm(radical, type);
+
+    case VKatsuyou::_Conjunctive_t:
+        return Verbstem::tForm(radical, type);
+
+    case VKatsuyou::_Attributive_u:
+        return Verbstem::uForm(radical, type);
+
+    case VKatsuyou::_Hypothetical_e:
+        return Verbstem::eForm(radical, type);
+
+    case VKatsuyou::_Imperative_e:
+        return Verbstem::eImpForm(radical, type);
+
+    default:
+        break;
+    }
+
+    return verb;
+}
+
 //Not used, it's just for future reference, if it appears some _v5 verbs (unknown end)
 int Inflection::getEnd(QString verb)
 {
@@ -240,7 +308,7 @@ int Inflection::getEnd(QString verb)
 
     if (lastpos >0)
     {
-        QChar lastchar = verb.at(lastpos);
+        QString lastchar = verb.at(lastpos);
         return _endChars.indexOf(lastchar);
     }
     return -1;
