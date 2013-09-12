@@ -26,8 +26,6 @@
 #define JPCONJMAIN_H
 
 #include <QMainWindow>
-#include <QtHelp/QHelpEngine>
-#include <QSplitter>
 #include <QTextEdit>
 #include "ui_jpconjmain.h"
 #include "QDebug"
@@ -40,11 +38,8 @@
 #include "msg.h"
 #include "qdialog.h"
 #include "language.h"
-#include "QStringList"
-#include "QTextLayout"
-#include <QtCore/QLibraryInfo>
- #include <QtGui/QApplication>
- #include <QtHelp/QHelpEngineCore>
+
+
 namespace Ui {
 class jpconjmain;
 }
