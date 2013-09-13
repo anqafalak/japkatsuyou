@@ -23,14 +23,11 @@
 
 #include "language.h"
 
-QTranslator* Language::current = 0;
-QHash<QString, QTranslator*> Language::translators;
+QTranslator* Language::currentQtTranslator = 0;
+QTranslator* Language::currentJpconjTranslator = 0;
+QString Language::currentLanguageID = "en";
+QHash<QString, PairTrans> Language::translators;
 QHash<QString, QString> Language::languagesInfo;
-
-Language::Language()
-{
-}
-
 
 void Language::mainWindowDirection(QMainWindow * w)
 {
@@ -50,13 +47,19 @@ void Language::addTranslation(QString langId, QString dir)
 {
     QString jpconjTransLocation = dir + "jpconj_" + langId + ".qm";
     QTranslator* jpconjTranslator = new QTranslator();
-    if (jpconjTranslator->load(jpconjTransLocation))
-        translators.insert(langId, jpconjTranslator);
 
-    QString qtTransLocation = dir + "jpconj_" + langId.left(2) + ".qm";
+    /*if (jpconjTranslator->load(jpconjTransLocation))
+        translators.insert(langId, jpconjTranslator);*/
+
+    QString qtTransLocation = dir + "qt_" + langId.left(2) + ".qm";
     QTranslator* qtTranslator = new QTranslator();
-    if (qtTranslator->load(qtTransLocation))
-        translators.insert(langId, qtTranslator);
+    /*if (qtTranslator->load(qtTransLocation))
+        translators.insert(langId, qtTranslator);*/
+
+    jpconjTranslator->load(jpconjTransLocation);
+    qtTranslator->load(qtTransLocation);
+    translators.insert(langId, PairTrans(jpconjTranslator, qtTranslator));
+
 }
 
 QString Language::getConfigLanguage()
@@ -66,12 +69,20 @@ QString Language::getConfigLanguage()
     return settings.value("langacro", "??").toString();
 }
 
+QString Language::getCurrentLanguage()
+{
+    return currentLanguageID;
+}
+
+
 void Language::setConfigLanguage(QString langID)
 {
     QSettings settings;//("DzCoding", "JapKatsuyou")
-
     settings.setValue("langacro", langID);
+
+    currentLanguageID = langID;
 }
+
 
 QHash<QString, QString> Language::getLanguagesInfo()
 {
@@ -121,6 +132,8 @@ void Language::loadTranslations()
     } //end for
 
     //run the specified language
+
+    currentLanguageID = getConfigLanguage();
     setLanguage();
 
 }
@@ -128,12 +141,9 @@ void Language::loadTranslations()
 
 void Language::setLanguage()
 {
-    // remove previous
 
-    QString langID = getConfigLanguage();
-
-    if(!translators.contains(langID)){
-        langID = QLocale::system().uiLanguages().at(0);
+    if(!translators.contains(currentLanguageID)){
+        QString langID = QLocale::system().uiLanguages().at(0);
 
         if(!translators.contains(langID)){
             langID = langID.left(2);
@@ -143,15 +153,18 @@ void Language::setLanguage()
         setConfigLanguage(langID);
     }
 
-    if (current)
-    {
-        qApp->removeTranslator(current);
-    }
+    if (currentJpconjTranslator)
+        qApp->removeTranslator(currentJpconjTranslator);
 
-    current = translators.value(langID, 0);
+    if (currentQtTranslator)
+        qApp->removeTranslator(currentQtTranslator);
 
-    if (current)
-    {
-        qApp->installTranslator(current);
-    }
+    currentJpconjTranslator = translators.value(currentLanguageID).first;
+    currentQtTranslator = translators.value(currentLanguageID).second;
+
+    if (currentJpconjTranslator)
+        qApp->installTranslator(currentJpconjTranslator);
+
+    if (currentQtTranslator)
+        qApp->installTranslator(currentQtTranslator);
 }

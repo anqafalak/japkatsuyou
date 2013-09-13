@@ -9,62 +9,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.ui" line="110"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;A Japanese Conjugation application, using the library libjpconj.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.ui" line="159"/>
+        <location filename="../about.ui" line="131"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.ui" line="171"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright 2013 Abdelkrime Aries&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;	&lt;a href=&quot;kariminfo0@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;kariminfo0@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;GNU GPLv3&lt;/span&gt;&lt;/a&gt; or later&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.ui" line="184"/>
+        <location filename="../about.ui" line="168"/>
         <source>Authors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.ui" line="196"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Abdelkrime Aries&lt;/span&gt; (&lt;a href=&quot;kariminfo0@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;kariminfo0@gmail.com&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Original developper&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Zakaria Smahi&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; (&lt;/span&gt;&lt;a href=&quot;zakaria08esi@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;zakaria08esi@gmail.com&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Coding &amp;amp; documentation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.ui" line="210"/>
+        <location filename="../about.ui" line="202"/>
         <source>Thanks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.ui" line="222"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Jim Breen&lt;/span&gt; (&lt;a href=&quot;jim.breen@monash.edu&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;jim.breen@monash.edu&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Main author of &lt;/span&gt;&lt;a href=&quot;http://www.csse.monash.edu.au/~jwb/edict.html&quot;&gt;&lt;span style=&quot; font-style:italic; text-decoration: underline; color:#0057ae;&quot;&gt;Edict2&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; dictionary which used to detect verbs availability. The dictionary is licensed uder &lt;/span&gt;&lt;a href=&quot;http://www.edrdg.org/edrdg/licence.html&quot;&gt;&lt;span style=&quot; font-style:italic; text-decoration: underline; color:#0057ae;&quot;&gt;CC-BY-SA-3.0&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="29"/>
+        <location filename="../about.cpp" line="43"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72,23 +32,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Preference</name>
     <message>
-        <location filename="../preference.ui" line="14"/>
+        <location filename="../preference.ui" line="32"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preference.cpp" line="47"/>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preference.cpp" line="48"/>
-        <source>Arabic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preference.cpp" line="49"/>
-        <source>English</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -121,144 +66,364 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="168"/>
-        <location filename="../jpconjmain.ui" line="344"/>
+        <location filename="../jpconjmain.ui" line="334"/>
         <source>ToolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="211"/>
+        <location filename="../jpconjmain.ui" line="212"/>
         <source>Verb conjugation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="270"/>
+        <location filename="../jpconjmain.ui" line="271"/>
         <source>Conjugate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="297"/>
+        <location filename="../jpconjmain.ui" line="298"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="307"/>
+        <location filename="../jpconjmain.ui" line="308"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="317"/>
+        <location filename="../jpconjmain.ui" line="318"/>
         <source>&amp;Preference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="322"/>
+        <location filename="../jpconjmain.ui" line="323"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="333"/>
-        <source>Verb Conjugation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.cpp" line="84"/>
-        <source>This verb doesn&apos;t exist in the database.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.cpp" line="91"/>
-        <source>Polite Postive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.cpp" line="91"/>
-        <source>Polite Negative</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.cpp" line="91"/>
-        <source>Informal Positive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.cpp" line="91"/>
-        <source>Informal Negative</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../jpconjmain.cpp" line="94"/>
-        <source>This verb is found</source>
+        <location filename="../jpconjmain.ui" line="344"/>
+        <source>Help Content</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>verbFormDesc</name>
     <message>
-        <location filename="../msg.h" line="59"/>
+        <location filename="../msg.h" line="42"/>
         <source>This is the present tense</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="46"/>
+        <source>This is the past tense</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="50"/>
+        <source>The provisional conditional form is used: 
+ - In conditionals where the emphasis rests more on the condition than the result. 
+ - Expressing obligations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="54"/>
+        <source>It can be used in the same way as the provisional condition form.
+ However, it implies more certainty about the condition.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="58"/>
+        <source>The imperative form is used to order someone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="62"/>
+        <source>In general, the volitional form expresses intention, eg. Let&apos;s... or Shall we...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="66"/>
+        <source>This is the present continuous tense.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="70"/>
+        <source>This is the past continuous tense.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="74"/>
+        <source>This is the passive voice of the verb.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="78"/>
+        <source>The causative is used for: 
+ - Making someone do something 
+ - Letting someone do something.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="82"/>
+        <source>It is used to express causation passively.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="86"/>
+        <source>The potential is used to express that 
+ one has the ability to do something.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>verbFormNames</name>
     <message>
-        <location filename="../msg.h" line="58"/>
+        <location filename="../msg.h" line="41"/>
         <source>Present</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="62"/>
+        <location filename="../msg.h" line="45"/>
         <source>Past</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="66"/>
+        <location filename="../msg.h" line="49"/>
         <source>Provisional Condition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="70"/>
-        <source>Condition</source>
+        <location filename="../msg.h" line="53"/>
+        <source>Conditional</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="74"/>
+        <location filename="../msg.h" line="57"/>
         <source>Imperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="78"/>
+        <location filename="../msg.h" line="61"/>
         <source>Volitional</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="82"/>
+        <location filename="../msg.h" line="65"/>
         <source>Present Continuous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="86"/>
+        <location filename="../msg.h" line="69"/>
         <source>Past Continuous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="90"/>
+        <location filename="../msg.h" line="73"/>
         <source>Passive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="94"/>
+        <location filename="../msg.h" line="77"/>
         <source>Causative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="98"/>
+        <location filename="../msg.h" line="81"/>
         <source>Causative Passive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="102"/>
+        <location filename="../msg.h" line="85"/>
         <source>Potential</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>verbPolarityDesc</name>
+    <message>
+        <location filename="../msg.h" line="147"/>
+        <source>Negative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="148"/>
+        <source>Form used in negative sentences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="150"/>
+        <source>Affirmative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="151"/>
+        <source>Form used in affirmative sentences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>verbPolitenessDesc</name>
+    <message>
+        <location filename="../msg.h" line="133"/>
+        <source>Plain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="134"/>
+        <source>Plain form of a sentence; it is used with friends</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="136"/>
+        <source>Polite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="137"/>
+        <source>Polite form of a sentence; it is used in official discussion.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>verbTypeDesc</name>
+    <message>
+        <location filename="../msg.h" line="96"/>
+        <source>This verb doesn&apos;t exist in the database.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="97"/>
+        <source>Ichidan verb.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="98"/>
+        <source>Nidan verb with &apos;u&apos; ending (archaic).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="99"/>
+        <source>Yondan verb with &apos;hu/fu&apos; ending (archaic)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="100"/>
+        <source>Yondan verb with &apos;ru&apos; ending (archaic).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="101"/>
+        <source>Godan verb (not completely classified).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="102"/>
+        <source>Godan verb -aru special class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="103"/>
+        <source>Godan verb with &apos;bu&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="104"/>
+        <source>Godan verb with &apos;gu&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="105"/>
+        <source>Godan verb with &apos;ku&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="106"/>
+        <source>Godan verb - iku/yuku special class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="107"/>
+        <source>Godan verb with &apos;mu&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="108"/>
+        <source>Godan verb with &apos;nu&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="109"/>
+        <source>Godan verb with &apos;ru&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="110"/>
+        <source>Godan verb with &apos;ru&apos; ending (irregular verb).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="111"/>
+        <source>Godan verb with &apos;su&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="112"/>
+        <source>Godan verb with &apos;tsu&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="113"/>
+        <source>Godan verb with &apos;u&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="114"/>
+        <source>Godan verb with &apos;u&apos; ending (special class).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="115"/>
+        <source>Godan verb - uru old class verb (old form of Eru).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="116"/>
+        <source>Godan verb with &apos;zu&apos; ending.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="117"/>
+        <source>Ichidan verb - zuru verb - (alternative form of -jiru verbs).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="118"/>
+        <source>kuru verb - special class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="119"/>
+        <source>irregular nu verb.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="120"/>
+        <source>noun or participle which takes the aux. verb suru.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="121"/>
+        <source>su verb - precursor to the modern suru.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="122"/>
+        <source>suru verb - irregular.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="123"/>
+        <source>suru verb - special class.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

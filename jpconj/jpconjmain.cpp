@@ -93,37 +93,39 @@ void jpconjmain::doConj()
 
     EdictType type = edict2.find(verb);
 
-    if (type < 0)
+    if (type == VerbType::_v0)
     {
-        ui->msgt->setText(tr("This verb doesn't exist in the database."));
+        ui->msgt->setText(verbTypesMsg.at(0));
         ui->showt->setColumnCount(0);
     }
     else
     {
         ui->showt->setColumnCount(4);
         QStringList hlist;
-        hlist << tr("Polite Postive") << tr("Polite Negative") << tr("Informal Positive") << tr("Informal Negative");
+        hlist << verbPolitenessMsg.at(1).first + " " + verbPolarityMsg.at(1).first;
+        hlist << verbPolitenessMsg.at(1).first + " " + verbPolarityMsg.at(0).first;
+        hlist << verbPolitenessMsg.at(0).first + " " + verbPolarityMsg.at(1).first;
+        hlist << verbPolitenessMsg.at(0).first + " " + verbPolarityMsg.at(0).first;
+
         ui->showt->setHorizontalHeaderLabels(hlist);
 
-        ui->msgt->setText(tr("This verb is found"));
+        ui->msgt->setText(verbTypesMsg.at(type));
 
-        foreach (CForm form, verbForms.keys())
+        foreach (CForm form, verbFormsMsg.keys())
         {
-            vlist << verbForms.value(form).first;
+            vlist << verbFormsMsg.value(form).first;
             tenseConj(verb, type, form);
         }
 
         ui->showt->setVerticalHeaderLabels(vlist);
 
         int i=0;
-        foreach(CForm form, verbForms.keys()){
-            ui->showt->verticalHeaderItem(i)->setToolTip(verbForms.value(form).second);
+        foreach(CForm form, verbFormsMsg.keys()){
+            ui->showt->verticalHeaderItem(i)->setToolTip(verbFormsMsg.value(form).second);
             i++;
         }
 
     }
-
-
 
 }
 
@@ -183,11 +185,6 @@ void jpconjmain::on_action_About_triggered()
 void jpconjmain::on_action_Preference_triggered()
 {
     openPref();
-}
-
-void jpconjmain::on_actionAbout_Qt_triggered()
-{
-    QApplication::aboutQt();
 }
 
 void jpconjmain::on_actionHelp_Content_triggered()

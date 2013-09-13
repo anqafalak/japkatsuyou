@@ -24,26 +24,28 @@
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
 
-#include "QString"
-#include <QSettings>
-#include <QTranslator>
-#include <QMainWindow>
-#include"paths.h"
-#include <QHash>
+#include "paths.h"
+
 #include <QApplication>
-#include "QDebug"
+#include <QDebug>
+#include <QDomElement>
+#include <QDomDocument>
 #include <QFile>
-#include "QDomDocument"
-#include "QDomElement"
+#include <QHash>
+#include <QMainWindow>
+#include <QPair>
+#include <QSettings>
+#include <QString>
+#include <QTranslator>
 
-
+typedef QPair<QTranslator*, QTranslator*> PairTrans;
 class Language
 {
 public:
-    Language();
     static void loadTranslations();
     static void mainWindowDirection (QMainWindow *w);
     static QString getConfigLanguage();
+    static QString getCurrentLanguage();
     static void setConfigLanguage(QString langID);
     static QHash<QString, QString> getLanguagesInfo();
 
@@ -51,8 +53,10 @@ public slots:
     static void setLanguage();
 
 private:
-    static QTranslator* current;
-    static QHash<QString, QTranslator*> translators;
+    static QTranslator* currentQtTranslator;
+    static QTranslator* currentJpconjTranslator;
+    static QString currentLanguageID;
+    static QHash<QString, PairTrans> translators;
     static QHash<QString, QString> languagesInfo;
 
     static void addTranslation(QString langId, QString dir);
