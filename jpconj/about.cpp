@@ -42,6 +42,10 @@ void About::Init()
 {
     ui->verl->setText(tr("Version") + " " + VERSION);
 
+    ui->aboutText->viewport()->setAutoFillBackground(false);
+    ui->aboutText->setSource(loadLocalizePath("about"));
+    connect(ui->aboutText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
+
     ui->licenceText->viewport()->setAutoFillBackground(false);
     ui->licenceText->setSource(loadLocalizePath("license"));
     connect(ui->licenceText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
@@ -63,7 +67,7 @@ void About::externUrl(const QUrl &url)
 
 QUrl About::loadLocalizePath(QString fileName)
 {
-    QString currentLanguage = Language::getConfigLanguage();
+    QString currentLanguage = Language::getCurrentLanguage();
     QString LocalizedFilePath = ":/about/" + fileName + "_" + currentLanguage;
 
     QResource fileRessource(LocalizedFilePath);

@@ -32,8 +32,8 @@
 
 typedef QPair<QString, QString> pairs; //to join two strings, the second is the description of the first
 
-typedef QObject verbFormNames; //used just to butify i18n files: name of verb form
-typedef QObject verbFormDesc; //used just to butify i18n files: description of verb form
+typedef QObject verbFormNames; //used just to beautify i18n files: name of verb form
+typedef QObject verbFormDesc; //used just to beautify i18n files: description of verb form
 static QMap<CForm, pairs> setVerbFormsMsg() {
     QMap<CForm, pairs> mapVerbForms;
 
@@ -47,43 +47,43 @@ static QMap<CForm, pairs> setVerbFormsMsg() {
 
     mapVerbForms.insert(VConjugate::_Provision,
                         pairs(verbFormNames::tr("Provisional Condition"),
-                                 verbFormDesc::tr("")));
+                                 verbFormDesc::tr("The provisional conditional form is used: \n - In conditionals where the emphasis rests more on the condition than the result. \n - Expressing obligations.")));
 
     mapVerbForms.insert(VConjugate::_Condition,
-                        pairs(verbFormNames::tr("Condition"),
-                                 verbFormDesc::tr("")));
+                        pairs(verbFormNames::tr("Conditional"),
+                                 verbFormDesc::tr("It can be used in the same way as the provisional condition form.\n However, it implies more certainty about the condition.")));
 
     mapVerbForms.insert(VConjugate::_Imperative,
                         pairs(verbFormNames::tr("Imperative"),
-                                 verbFormDesc::tr("")));
+                                 verbFormDesc::tr("The imperative form is used to order someone")));
 
     mapVerbForms.insert(VConjugate::_Volitional,
                         pairs(verbFormNames::tr("Volitional"),
-                                 verbFormDesc::tr("")));
+                                 verbFormDesc::tr("In general, the volitional form expresses intention, eg. Let's... or Shall we...")));
 
     mapVerbForms.insert(VConjugate::_PresentContinuous,
                         pairs(verbFormNames::tr("Present Continuous"),
-                                 verbFormDesc::tr("This is the present continuous tense")));
+                                 verbFormDesc::tr("This is the present continuous tense.")));
 
     mapVerbForms.insert(VConjugate::_PastContinuous,
                         pairs(verbFormNames::tr("Past Continuous"),
-                                 verbFormDesc::tr("This is the past continuous tense")));
+                                 verbFormDesc::tr("This is the past continuous tense.")));
 
     mapVerbForms.insert(VConjugate::_Passive,
                         pairs(verbFormNames::tr("Passive"),
-                                 verbFormDesc::tr("This is the passive form of the verbs")));
+                                 verbFormDesc::tr("This is the passive voice of the verb.")));
 
     mapVerbForms.insert(VConjugate::_Causative,
                         pairs(verbFormNames::tr("Causative"),
-                                 verbFormDesc::tr("")));
+                                 verbFormDesc::tr("The causative is used for: \n - Making someone do something \n - Letting someone do something.")));
 
     mapVerbForms.insert(VConjugate::_CausativePassive,
                         pairs(verbFormNames::tr("Causative Passive"),
-                                 verbFormDesc::tr("")));
+                                 verbFormDesc::tr("It is used to express causation passively.")));
 
     mapVerbForms.insert(VConjugate::_Potential,
                         pairs(verbFormNames::tr("Potential"),
-                                 verbFormDesc::tr("This is the potential form: eg. I can do")));
+                                 verbFormDesc::tr("The potential is used to express that \n one has the ability to do something.")));
 
     return mapVerbForms;
 }

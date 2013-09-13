@@ -134,7 +134,6 @@
     </property>
     <addaction name="actionHelp_Content"/>
     <addaction name="action_About"/>
-    <addaction name="actionAbout_Qt"/>
    </widget>
    <widget class="QMenu" name="menu_View">
     <property name="title">

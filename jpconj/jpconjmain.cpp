@@ -187,11 +187,6 @@ void jpconjmain::on_action_Preference_triggered()
     openPref();
 }
 
-void jpconjmain::on_actionAbout_Qt_triggered()
-{
-    QApplication::aboutQt();
-}
-
 void jpconjmain::on_actionHelp_Content_triggered()
 {
 
