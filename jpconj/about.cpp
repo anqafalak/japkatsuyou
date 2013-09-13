@@ -43,7 +43,7 @@ void About::Init()
     ui->verl->setText(tr("Version") + " " + VERSION);
 
     ui->licenceText->viewport()->setAutoFillBackground(false);
-    ui->licenceText->setSource(loadLocalizePath("licence"));
+    ui->licenceText->setSource(loadLocalizePath("license"));
     connect(ui->licenceText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
 
     ui->authorsText->viewport()->setAutoFillBackground(false);
