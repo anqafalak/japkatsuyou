@@ -22,12 +22,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QApplication>
+
 #include "jpconjmain.h"
 
-#include <QLibraryInfo>
-#include <QDesktopWidget>
-#include "language.h"
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {

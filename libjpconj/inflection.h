@@ -24,7 +24,6 @@
 #ifndef INFLECTION_H
 #define INFLECTION_H
 
-#include "libjpconj_global.h"
 #include "typeDefs.h"
 #include "verbstem.h"
 

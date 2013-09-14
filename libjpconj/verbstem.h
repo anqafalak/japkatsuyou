@@ -25,7 +25,6 @@
 #ifndef VERBSTEM_H
 #define VERBSTEM_H
 
-#include "libjpconj_global.h"
 #include "typeDefs.h"
 
 #include <QString>

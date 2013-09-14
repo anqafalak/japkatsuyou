@@ -24,11 +24,6 @@
 
 #include "libjpconjlink.h"
 
-libjpconjlink::libjpconjlink()
-{
-}
-
-
 QString libjpconjlink::conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
 

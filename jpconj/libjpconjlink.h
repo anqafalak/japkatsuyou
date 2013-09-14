@@ -25,17 +25,15 @@
 #ifndef LIBJPCONJLINK_H
 #define LIBJPCONJLINK_H
 
-//#include "verbtype.h"
-//#include "verbtime.h"
-#include "typeDefs.h"
-#include "QLibrary"
 #include "paths.h"
-#include "qdebug.h"
+#include "typeDefs.h"
+
+#include <QDebug>
+#include <QLibrary>
 
 class libjpconjlink
 {
 public:
-    libjpconjlink();
     static QString conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
 };
 

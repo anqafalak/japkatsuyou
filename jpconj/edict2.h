@@ -25,10 +25,12 @@
 #ifndef EDICT2_H
 #define EDICT2_H
 
-#include <QtSql/QtSql>
-#include "QDebug"
-#include "typeDefs.h"
 #include "paths.h"
+#include "typeDefs.h"
+
+#include <QDebug>
+#include <QtSql/QtSql>
+
 
 class Edict2
 {

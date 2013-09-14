@@ -24,6 +24,7 @@
 
 #include "edict2.h"
 
+
 Edict2::Edict2()
 {
     connect();
@@ -31,7 +32,7 @@ Edict2::Edict2()
 
 Edict2::~Edict2()
 {
-    //
+
 }
 
 void Edict2::connect()
@@ -39,7 +40,7 @@ void Edict2::connect()
     if (!QSqlDatabase::contains("dbverbs"))
     {
         verbdb =  QSqlDatabase::addDatabase("QSQLITE","dbverbs");
-        verbdb.setDatabaseName(QString(dataFolder) + "verbs/edict2verbs.db" );//QDir::homePath() + QDir::separator() + "inoveDB.db3"
+        verbdb.setDatabaseName(QString(dataFolder) + "verbs/edict2verbs.db" );
     }
     else
     {

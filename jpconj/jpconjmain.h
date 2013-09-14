@@ -25,20 +25,17 @@
 #ifndef JPCONJMAIN_H
 #define JPCONJMAIN_H
 
-#include <QMainWindow>
-#include <QTextEdit>
-#include "ui_jpconjmain.h"
-#include "QDebug"
-#include "libjpconjlink.h"
 #include "about.h"
-#include "preference.h"
 #include "edict2.h"
-#include <QMap>
-#include "paths.h"
-#include "msg.h"
-#include "qdialog.h"
 #include "language.h"
+#include "libjpconjlink.h"
 
+#include "preference.h"
+
+#include <QDebug>
+#include <QMainWindow>
+#include <QMap>
+#include "msg.h"
 
 namespace Ui {
 class jpconjmain;

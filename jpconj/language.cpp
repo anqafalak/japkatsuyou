@@ -55,9 +55,9 @@ void Language::addTranslation(QString langId, QString dir)
     QTranslator* qtTranslator = new QTranslator();
     /*if (qtTranslator->load(qtTransLocation))
         translators.insert(langId, qtTranslator);*/
-
-    jpconjTranslator->load(jpconjTransLocation);
     qtTranslator->load(qtTransLocation);
+    jpconjTranslator->load(jpconjTransLocation);
+
     translators.insert(langId, PairTrans(jpconjTranslator, qtTranslator));
 
 }
@@ -162,9 +162,10 @@ void Language::setLanguage()
     currentJpconjTranslator = translators.value(currentLanguageID).first;
     currentQtTranslator = translators.value(currentLanguageID).second;
 
+    if (currentQtTranslator)
+        qApp->installTranslator(currentQtTranslator);
+
     if (currentJpconjTranslator)
         qApp->installTranslator(currentJpconjTranslator);
 
-    if (currentQtTranslator)
-        qApp->installTranslator(currentQtTranslator);
 }
