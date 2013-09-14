@@ -471,14 +471,14 @@
         <translation>عادي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="218"/>
-        <source>Plain form of a sentence; it is used with friends</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../msg.h" line="206"/>
         <source>Polite</source>
         <translation>مهذب</translation>
+    </message>
+    <message>
+        <location filename="../msg.h" line="218"/>
+        <source>Plain form of a sentence; it is used with friends.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../msg.h" line="220"/>
@@ -501,132 +501,160 @@
     <message>
         <location filename="../msg.h" line="143"/>
         <source>Nidan verb with &apos;u&apos; ending (archaic).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل نيدان ينتهي ب &quot;u&quot; (مهجور).</translation>
+    </message>
+    <message>
+        <source>Yondan verb with &apos;hu/fu&apos; ending (archaic)</source>
+        <translation type="obsolete">فعل يوندان ينتهي ب &quot;hu/fu&quot; (مهجور)</translation>
     </message>
     <message>
         <location filename="../msg.h" line="145"/>
-        <source>Yondan verb with &apos;hu/fu&apos; ending (archaic)</source>
-        <translation type="unfinished"></translation>
+        <source>Yondan verb with &apos;hu/fu&apos; ending (archaic).</source>
+        <translation>فعل يوندان ينتهي ب &quot;ru&quot; (مهجور).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="147"/>
         <source>Yondan verb with &apos;ru&apos; ending (archaic).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل يوندان ينتهي ب &quot;ru&quot; (مهجور).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="149"/>
         <source>Godan verb (not completely classified).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان (لم يتم تصنيفه بشكل نهائي).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="151"/>
         <source>Godan verb -aru special class.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان: aru - فئة خاصة.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="153"/>
         <source>Godan verb with &apos;bu&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;bu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="155"/>
         <source>Godan verb with &apos;gu&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;gu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="157"/>
         <source>Godan verb with &apos;ku&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;ku&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="159"/>
         <source>Godan verb - iku/yuku special class.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان: Iku/Yuku - فئة خاصة.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="161"/>
         <source>Godan verb with &apos;mu&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;mu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="163"/>
         <source>Godan verb with &apos;nu&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;nu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="165"/>
         <source>Godan verb with &apos;ru&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;ru&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="167"/>
         <source>Godan verb with &apos;ru&apos; ending (irregular verb).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;ru&quot; (فعل غير نظامي).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="169"/>
         <source>Godan verb with &apos;su&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;su&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="171"/>
         <source>Godan verb with &apos;tsu&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;tsu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="173"/>
         <source>Godan verb with &apos;u&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;u&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="175"/>
         <source>Godan verb with &apos;u&apos; ending (special class).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;u&quot; (فئة خاصة).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="177"/>
         <source>Godan verb - uru old class verb (old form of Eru).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان - فعل فئة Uru القديمة (الشكل القديم ل Eru).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="179"/>
         <source>Godan verb with &apos;zu&apos; ending.</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل غودان ينتهي ب &quot;zu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="181"/>
         <source>Ichidan verb - zuru verb - (alternative form of -jiru verbs).</source>
-        <translation type="unfinished"></translation>
+        <translation>فعل إتشيدان - Zuru (شكل بديل لأفعال -jiru).</translation>
     </message>
     <message>
         <location filename="../msg.h" line="183"/>
-        <source>kuru verb - special class.</source>
-        <translation type="unfinished"></translation>
+        <source>Kuru verb - special class.</source>
+        <translation>الفعل Kuru - فئة خاصة.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="185"/>
-        <source>irregular nu verb.</source>
-        <translation type="unfinished"></translation>
+        <source>Irregular nu verb.</source>
+        <translation>فعل غير نظامي ينهي ب &quot;nu&quot;.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="187"/>
-        <source>noun or participle which takes the aux. verb suru.</source>
-        <translation type="unfinished"></translation>
+        <source>Noun or participle which takes the aux. verb suru.</source>
+        <translation>اسم أو فعل يستعمل الفعل المساعد Suru.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="189"/>
-        <source>su verb - precursor to the modern suru.</source>
-        <translation type="unfinished"></translation>
+        <source>Su verb - precursor to the modern suru.</source>
+        <translation>فعل Su - سابق لفعل Suru الحديث.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="191"/>
-        <source>suru verb - irregular.</source>
-        <translation type="unfinished"></translation>
+        <source>Suru verb - irregular.</source>
+        <translation>فعل Suru - غير نظامي.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="193"/>
+        <source>Suru verb - special class.</source>
+        <translation>فعل Suru - فئة خاصة.</translation>
+    </message>
+    <message>
+        <source>kuru verb - special class.</source>
+        <translation type="obsolete">الفعل Kuru - فئة خاصة.</translation>
+    </message>
+    <message>
+        <source>irregular nu verb.</source>
+        <translation type="obsolete">فعل غير نظامي ينهي ب &quot;nu&quot;.</translation>
+    </message>
+    <message>
+        <source>noun or participle which takes the aux. verb suru.</source>
+        <translation type="obsolete">اسم أو فعل يستعمل الفعل المساعد suru.</translation>
+    </message>
+    <message>
+        <source>su verb - precursor to the modern suru.</source>
+        <translation type="obsolete">فعل su - سابق لفعل suru الحديث.</translation>
+    </message>
+    <message>
+        <source>suru verb - irregular.</source>
+        <translation type="obsolete">فعل suru - غير نظامي.</translation>
+    </message>
+    <message>
         <source>suru verb - special class.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">فعل suru - فئة خاصة.</translation>
     </message>
 </context>
 </TS>
