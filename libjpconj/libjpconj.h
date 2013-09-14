@@ -25,8 +25,8 @@
 #ifndef LIBJPCONJ_H
 #define LIBJPCONJ_H
 
-#include "libjpconj_global.h"
 #include "inflection.h"
+#include "libjpconj_global.h"
 
 #include <QString>
 

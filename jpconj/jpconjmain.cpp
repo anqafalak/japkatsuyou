@@ -24,6 +24,7 @@
  */
 
 #include "jpconjmain.h"
+#include "ui_jpconjmain.h"
 
 jpconjmain::jpconjmain(QWidget *parent) :
     QMainWindow(parent),
@@ -42,6 +43,7 @@ void jpconjmain::changeEvent(QEvent* event)
 {
     if (event->type() == QEvent::LanguageChange)
     {
+        //Msg::updateMsg();
         ui->retranslateUi(this);
         Language::mainWindowDirection(this);
 
@@ -72,13 +74,11 @@ void jpconjmain::openPref()
 void jpconjmain::doInit()
 {
     qDebug()<< QString(VERSION);
-
     Language::loadTranslations();
-
     Language::mainWindowDirection(this);
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
-    ui->showt->setLayoutDirection(Qt::LeftToRight);
+    //ui->showt->setLayoutDirection(Qt::LeftToRight);
 }
 
 void jpconjmain::doConj()
@@ -93,35 +93,37 @@ void jpconjmain::doConj()
 
     EdictType type = edict2.find(verb);
 
-    if (type == VerbType::_v0)
+    if (type < 1)
     {
-        ui->msgt->setText(verbTypesMsg.at(0));
+        ui->msgt->setText(Msg::getVerbTypeDesc(type));
         ui->showt->setColumnCount(0);
     }
     else
     {
         ui->showt->setColumnCount(4);
         QStringList hlist;
-        hlist << verbPolitenessMsg.at(1).first + " " + verbPolarityMsg.at(1).first;
-        hlist << verbPolitenessMsg.at(1).first + " " + verbPolarityMsg.at(0).first;
-        hlist << verbPolitenessMsg.at(0).first + " " + verbPolarityMsg.at(1).first;
-        hlist << verbPolitenessMsg.at(0).first + " " + verbPolarityMsg.at(0).first;
+
+        hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
+        hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
+        hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
+        hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
 
         ui->showt->setHorizontalHeaderLabels(hlist);
 
-        ui->msgt->setText(verbTypesMsg.at(type));
+        ui->msgt->setText(Msg::getVerbTypeDesc(type));
 
-        foreach (CForm form, verbFormsMsg.keys())
+        //foreach (CForm form, formsMsg.keys())
+        foreach (CForm form, Msg::verbFormsList())
         {
-            vlist << verbFormsMsg.value(form).first;
+            vlist << Msg::getVerbFormName(form);
             tenseConj(verb, type, form);
         }
 
         ui->showt->setVerticalHeaderLabels(vlist);
 
         int i=0;
-        foreach(CForm form, verbFormsMsg.keys()){
-            ui->showt->verticalHeaderItem(i)->setToolTip(verbFormsMsg.value(form).second);
+        foreach(CForm form, Msg::verbFormsList()){
+            ui->showt->verticalHeaderItem(i)->setToolTip(Msg::getVerbFormDesc(form));
             i++;
         }
 

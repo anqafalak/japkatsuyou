@@ -25,13 +25,12 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <QDialog>
-#include <QUrl>
-#include <QResource>
-#include <QDesktopServices>
-
-#include "paths.h"
 #include "language.h"
+
+#include <QDesktopServices>
+#include <QDialog>
+#include <QResource>
+#include <QUrl>
 
 namespace Ui {
 class About;

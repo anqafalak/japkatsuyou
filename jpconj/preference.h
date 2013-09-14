@@ -25,12 +25,11 @@
 #ifndef PREFERENCE_H
 #define PREFERENCE_H
 
-#include <QDialog>
-#include <QSettings>
-#include "paths.h"
-#include "QTranslator"
-#include "QDebug"
 #include "language.h"
+
+#include <QDebug>
+#include <QDialog>
+
 
 namespace Ui {
 class Preference;

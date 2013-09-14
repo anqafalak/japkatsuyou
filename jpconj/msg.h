@@ -25,133 +25,235 @@
 #define MSG_H
 
 #include "typeDefs.h"
-#include "QString"
-#include <QMap>
-#include <QPair>
-#include <QVector>
 
-typedef QPair<QString, QString> pairs; //to join two strings, the second is the description of the first
+#include <QApplication>
+#include <QList>
+#include <QString>
 
-typedef QObject verbFormNames; //used just to beautify i18n files: name of verb form
-typedef QObject verbFormDesc; //used just to beautify i18n files: description of verb form
-static QMap<CForm, pairs> setVerbFormsMsg() {
-    QMap<CForm, pairs> mapVerbForms;
+#ifdef __GNUC__
+#define NO_USE_FUNC __attribute__ ((unused))
+#else
+#define NO_USE_FUNC
+#endif
 
-    mapVerbForms.insert(VConjugate::_Present,
-                        pairs(verbFormNames::tr("Present"),
-                                 verbFormDesc::tr("This is the present tense")));
+namespace Msg {
 
-    mapVerbForms.insert(VConjugate::_Past,
-                        pairs(verbFormNames::tr("Past"),
-                                 verbFormDesc::tr("This is the past tense")));
+static QList<CForm> NO_USE_FUNC verbFormsList()
+{
+    QList<CForm> resultList;
+    resultList << VConjugate::_Present;
+    resultList << VConjugate::_Past;
+    resultList << VConjugate::_Provision;
+    resultList << VConjugate::_Condition;
+    resultList << VConjugate::_Imperative;
+    resultList << VConjugate::_Volitional;
+    resultList << VConjugate::_PresentContinuous;
+    resultList << VConjugate::_PastContinuous;
+    resultList << VConjugate::_Passive;
+    resultList << VConjugate::_Causative;
+    resultList << VConjugate::_CausativePassive;
+    resultList << VConjugate::_Potential;
 
-    mapVerbForms.insert(VConjugate::_Provision,
-                        pairs(verbFormNames::tr("Provisional Condition"),
-                                 verbFormDesc::tr("The provisional conditional form is used: \n - In conditionals where the emphasis rests more on the condition than the result. \n - Expressing obligations.")));
-
-    mapVerbForms.insert(VConjugate::_Condition,
-                        pairs(verbFormNames::tr("Conditional"),
-                                 verbFormDesc::tr("It can be used in the same way as the provisional condition form.\n However, it implies more certainty about the condition.")));
-
-    mapVerbForms.insert(VConjugate::_Imperative,
-                        pairs(verbFormNames::tr("Imperative"),
-                                 verbFormDesc::tr("The imperative form is used to order someone")));
-
-    mapVerbForms.insert(VConjugate::_Volitional,
-                        pairs(verbFormNames::tr("Volitional"),
-                                 verbFormDesc::tr("In general, the volitional form expresses intention, eg. Let's... or Shall we...")));
-
-    mapVerbForms.insert(VConjugate::_PresentContinuous,
-                        pairs(verbFormNames::tr("Present Continuous"),
-                                 verbFormDesc::tr("This is the present continuous tense.")));
-
-    mapVerbForms.insert(VConjugate::_PastContinuous,
-                        pairs(verbFormNames::tr("Past Continuous"),
-                                 verbFormDesc::tr("This is the past continuous tense.")));
-
-    mapVerbForms.insert(VConjugate::_Passive,
-                        pairs(verbFormNames::tr("Passive"),
-                                 verbFormDesc::tr("This is the passive voice of the verb.")));
-
-    mapVerbForms.insert(VConjugate::_Causative,
-                        pairs(verbFormNames::tr("Causative"),
-                                 verbFormDesc::tr("The causative is used for: \n - Making someone do something \n - Letting someone do something.")));
-
-    mapVerbForms.insert(VConjugate::_CausativePassive,
-                        pairs(verbFormNames::tr("Causative Passive"),
-                                 verbFormDesc::tr("It is used to express causation passively.")));
-
-    mapVerbForms.insert(VConjugate::_Potential,
-                        pairs(verbFormNames::tr("Potential"),
-                                 verbFormDesc::tr("The potential is used to express that \n one has the ability to do something.")));
-
-    return mapVerbForms;
+    return resultList;
 }
-static const QMap<CForm, pairs> verbFormsMsg = setVerbFormsMsg();
 
-typedef QObject verbTypeDesc; //used just to beautify i18n files: description of verb form
-static QVector<QString> setVerbTypesMsg() {
-    QVector<QString> vectorVerbTypes;
 
-    vectorVerbTypes.append(verbTypeDesc::tr("This verb doesn't exist in the database.")); //_v0
-    vectorVerbTypes.append(verbTypeDesc::tr("Ichidan verb.")); //_v1
-    vectorVerbTypes.append(verbTypeDesc::tr("Nidan verb with 'u' ending (archaic).")); //_v2a_s
-    vectorVerbTypes.append(verbTypeDesc::tr("Yondan verb with 'hu/fu' ending (archaic)")); //_v4h
-    vectorVerbTypes.append(verbTypeDesc::tr("Yondan verb with 'ru' ending (archaic).")); //_v4r
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb (not completely classified).")); //_v5
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb -aru special class.")); //_v5aru
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'bu' ending.")); //_v5b
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'gu' ending.")); //_v5g
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'ku' ending.")); //_v5k
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb - iku/yuku special class.")); //_v5k_s
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'mu' ending.")); //_v5m
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'nu' ending.")); //_v5n
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'ru' ending.")); //_v5r
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'ru' ending (irregular verb).")); //_v5r_i
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'su' ending.")); //_v5s
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'tsu' ending.")); //_v5t
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'u' ending.")); //_v5u
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'u' ending (special class).")); //_v5u_s
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb - uru old class verb (old form of Eru).")); //_v5uru
-    vectorVerbTypes.append(verbTypeDesc::tr("Godan verb with 'zu' ending.")); //_v5z
-    vectorVerbTypes.append(verbTypeDesc::tr("Ichidan verb - zuru verb - (alternative form of -jiru verbs).")); //_vz
-    vectorVerbTypes.append(verbTypeDesc::tr("kuru verb - special class.")); //_vk
-    vectorVerbTypes.append(verbTypeDesc::tr("irregular nu verb.")); //_vn
-    vectorVerbTypes.append(verbTypeDesc::tr("noun or participle which takes the aux. verb suru.")); //_vs
-    vectorVerbTypes.append(verbTypeDesc::tr("su verb - precursor to the modern suru.")); //_vs_c
-    vectorVerbTypes.append(verbTypeDesc::tr("suru verb - irregular.")); //_vs_i
-    vectorVerbTypes.append(verbTypeDesc::tr("suru verb - special class.")); //_vs_s
+static QString NO_USE_FUNC getVerbFormName(CForm form)
+{
+    switch (form){
+    case VConjugate::_TeForm:
+        return qApp->translate("verbFormNames", "Te form");
+    case VConjugate::_Present:
+        return qApp->translate("verbFormNames", "Present");
+    case VConjugate::_Past:
+        return qApp->translate("verbFormNames", "Past");
+    case VConjugate::_Provision:
+        return qApp->translate("verbFormNames", "Provisional Condition");
+    case VConjugate::_Condition:
+        return qApp->translate("verbFormNames", "Conditional");
+    case VConjugate::_Imperative:
+        return qApp->translate("verbFormNames", "Imperative");
+    case VConjugate::_Volitional:
+        return qApp->translate("verbFormNames", "Volitional");
+    case VConjugate::_PresentContinuous:
+        return qApp->translate("verbFormNames", "Present Continuous");
+    case VConjugate::_PastContinuous:
+        return qApp->translate("verbFormNames", "Past Continuous");
+    case VConjugate::_Passive:
+        return qApp->translate("verbFormNames", "Passive");
+    case VConjugate::_Causative:
+        return qApp->translate("verbFormNames", "Causative");
+    case VConjugate::_CausativePassive:
+        return qApp->translate("verbFormNames", "Causative Passive");
+    case VConjugate::_Potential:
+        return qApp->translate("verbFormNames", "Potential");
+    default:
+        break;
+    }
 
-    return vectorVerbTypes;
+    return "";
 }
-static const QVector<QString> verbTypesMsg = setVerbTypesMsg();
 
-typedef QObject verbPolitenessDesc; //used just to beautify i18n files: description of verb form
-static QVector<pairs> setVerbPolitenessMsg() {
-    QVector<pairs> mapVerbPoliteness;
 
-    mapVerbPoliteness.append(pairs(verbPolitenessDesc::tr("Plain"),
-                              verbPolitenessDesc::tr("Plain form of a sentence; it is used with friends")));
+static QString NO_USE_FUNC getVerbFormDesc(CForm form)
+{
+    switch (form){
+    case VConjugate::_TeForm:
+        return qApp->translate("verbFormDesc", "It's a form used for many purposes, like successive actions.");
+    case VConjugate::_Present:
+        return qApp->translate("verbFormDesc", "This is the present tense.");
+    case VConjugate::_Past:
+        return qApp->translate("verbFormDesc", "This is the past tense.");
+    case VConjugate::_Provision:
+        return qApp->translate("verbFormDesc", "The provisional conditional form is used: \n - In conditionals where the emphasis rests more on the condition than the result. \n - Expressing obligations.");
+    case VConjugate::_Condition:
+        return qApp->translate("verbFormDesc", "It can be used in the same way as the provisional condition form.\n However, it implies more certainty about the condition.");
+    case VConjugate::_Imperative:
+        return qApp->translate("verbFormDesc", "The imperative form is used to give an order to someone.");
+    case VConjugate::_Volitional:
+        return qApp->translate("verbFormDesc", "In general, the volitional form expresses intention, eg. Let's... or Shall we...");
+    case VConjugate::_PresentContinuous:
+        return qApp->translate("verbFormDesc", "This is the present continuous tense.");
+    case VConjugate::_PastContinuous:
+        return qApp->translate("verbFormDesc", "This is the past continuous tense.");
+    case VConjugate::_Passive:
+        return qApp->translate("verbFormDesc", "This is the passive voice of the verb.");
+    case VConjugate::_Causative:
+        return qApp->translate("verbFormDesc", "The causative is used for: \n - Making someone do something \n - Letting someone do something.");
+    case VConjugate::_CausativePassive:
+        return qApp->translate("verbFormDesc", "It is used to express causation passively.");
+    case VConjugate::_Potential:
+        return qApp->translate("verbFormDesc", "The potential is used to express that \n one has the ability to do something.");
+    default:
+        break;
+    }
 
-    mapVerbPoliteness.append(pairs(verbPolitenessDesc::tr("Polite"),
-                              verbPolitenessDesc::tr("Polite form of a sentence; it is used in official discussion.")));
-
-    return mapVerbPoliteness;
+    return "";
 }
-static const QVector<pairs> verbPolitenessMsg = setVerbPolitenessMsg();
 
-typedef QObject verbPolarityDesc; //used just to beautify i18n files: description of verb form
-static QVector<pairs> setVerbPolarityMsg() {
-    QVector<pairs> mapVerbPolarity;
 
-    mapVerbPolarity.append(pairs(verbPolarityDesc::tr("Negative"),
-                            verbPolarityDesc::tr("Form used in negative sentences.")));
+static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
+{
+    switch (type){
+    case VerbType::_v0:
+        return qApp->translate("verbTypeDesc", "This verb doesn't exist in the database.");
+    case VerbType::_v1:
+        return qApp->translate("verbTypeDesc", "Ichidan verb.");
+    case VerbType::_v2a_s:
+        return qApp->translate("verbTypeDesc", "Nidan verb with 'u' ending (archaic).");
+    case VerbType::_v4h:
+        return qApp->translate("verbTypeDesc", "Yondan verb with 'hu/fu' ending (archaic)");
+    case VerbType::_v4r:
+        return qApp->translate("verbTypeDesc", "Yondan verb with 'ru' ending (archaic).");
+    case VerbType::_v5:
+        return qApp->translate("verbTypeDesc", "Godan verb (not completely classified).");
+    case VerbType::_v5aru:
+        return qApp->translate("verbTypeDesc", "Godan verb -aru special class.");
+    case VerbType::_v5b:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'bu' ending.");
+    case VerbType::_v5g:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'gu' ending.");
+    case VerbType::_v5k:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'ku' ending.");
+    case VerbType::_v5k_s:
+        return qApp->translate("verbTypeDesc", "Godan verb - iku/yuku special class.");
+    case VerbType::_v5m:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'mu' ending.");
+    case VerbType::_v5n:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'nu' ending.");
+    case VerbType::_v5r:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'ru' ending.");
+    case VerbType::_v5r_i:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'ru' ending (irregular verb).");
+    case VerbType::_v5s:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'su' ending.");
+    case VerbType::_v5t:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'tsu' ending.");
+    case VerbType::_v5u:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'u' ending.");
+    case VerbType::_v5u_s:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'u' ending (special class).");
+    case VerbType::_v5uru:
+        return qApp->translate("verbTypeDesc", "Godan verb - uru old class verb (old form of Eru).");
+    case VerbType::_v5z:
+        return qApp->translate("verbTypeDesc", "Godan verb with 'zu' ending.");
+    case VerbType::_vz:
+        return qApp->translate("verbTypeDesc", "Ichidan verb - zuru verb - (alternative form of -jiru verbs).");
+    case VerbType::_vk:
+        return qApp->translate("verbTypeDesc", "kuru verb - special class.");
+    case VerbType::_vn:
+        return qApp->translate("verbTypeDesc", "irregular nu verb.");
+    case VerbType::_vs:
+        return qApp->translate("verbTypeDesc", "noun or participle which takes the aux. verb suru.");
+    case VerbType::_vs_c:
+        return qApp->translate("verbTypeDesc", "su verb - precursor to the modern suru.");
+    case VerbType::_vs_i:
+        return qApp->translate("verbTypeDesc", "suru verb - irregular.");
+    case VerbType::_vs_s:
+        return qApp->translate("verbTypeDesc", "suru verb - special class.");
 
-    mapVerbPolarity.append(pairs(verbPolarityDesc::tr("Affirmative"),
-                            verbPolarityDesc::tr("Form used in affirmative sentences.")));
+    }
 
-    return mapVerbPolarity;
+    return "";
 }
-static const QVector<pairs> verbPolarityMsg = setVerbPolarityMsg();
+
+static QString NO_USE_FUNC getVerbPolitenessName(Politeness polite)
+{
+    switch (polite) {
+    case VConjugate::_Plain:
+        return qApp->translate("verbPolitenessDesc", "Plain");
+    case VConjugate::_Polite:
+        return qApp->translate("verbPolitenessDesc", "Polite");
+    default:
+        break;
+    }
+
+    return "";
+}
+
+static QString NO_USE_FUNC getVerbPolitenessDesc(Politeness polite)
+{
+    switch (polite) {
+    case VConjugate::_Plain:
+        return qApp->translate("verbPolitenessDesc", "Plain form of a sentence; it is used with friends");
+    case VConjugate::_Polite:
+        return qApp->translate("verbPolitenessDesc", "Polite form of a sentence; it is used in official discussion.");
+    default:
+        break;
+    }
+
+    return "";
+}
+
+static QString NO_USE_FUNC getVerbPolarityName(Polarity affirmative)
+{
+    switch (affirmative) {
+    case VConjugate::_Negative:
+        return qApp->translate("verbPolarityDesc", "Negative");
+    case VConjugate::_Affirmative:
+        return qApp->translate("verbPolarityDesc", "Affirmative");
+    default:
+        break;
+    }
+
+    return "";
+}
+
+static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
+{
+    switch (affirmative) {
+    case VConjugate::_Negative:
+        return qApp->translate("verbPolarityDesc", "Form used in negative sentences.");
+    case VConjugate::_Affirmative:
+        return qApp->translate("verbPolarityDesc", "Form used in affirmative sentences.");
+    default:
+        break;
+    }
+
+    return "";
+}
+
+
+}
 
 #endif // MSG_H
