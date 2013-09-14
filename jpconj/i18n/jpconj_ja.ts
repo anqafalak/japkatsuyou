@@ -298,13 +298,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="218"/>
-        <source>Plain form of a sentence; it is used with friends</source>
+        <location filename="../msg.h" line="206"/>
+        <source>Polite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="206"/>
-        <source>Polite</source>
+        <location filename="../msg.h" line="218"/>
+        <source>Plain form of a sentence; it is used with friends.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -332,7 +332,7 @@
     </message>
     <message>
         <location filename="../msg.h" line="145"/>
-        <source>Yondan verb with &apos;hu/fu&apos; ending (archaic)</source>
+        <source>Yondan verb with &apos;hu/fu&apos; ending (archaic).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -427,32 +427,32 @@
     </message>
     <message>
         <location filename="../msg.h" line="183"/>
-        <source>kuru verb - special class.</source>
+        <source>Kuru verb - special class.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../msg.h" line="185"/>
-        <source>irregular nu verb.</source>
+        <source>Irregular nu verb.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../msg.h" line="187"/>
-        <source>noun or participle which takes the aux. verb suru.</source>
+        <source>Noun or participle which takes the aux. verb suru.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../msg.h" line="189"/>
-        <source>su verb - precursor to the modern suru.</source>
+        <source>Su verb - precursor to the modern suru.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../msg.h" line="191"/>
-        <source>suru verb - irregular.</source>
+        <source>Suru verb - irregular.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../msg.h" line="193"/>
-        <source>suru verb - special class.</source>
+        <source>Suru verb - special class.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -142,7 +142,7 @@ static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
     case VerbType::_v2a_s:
         return qApp->translate("verbTypeDesc", "Nidan verb with 'u' ending (archaic).");
     case VerbType::_v4h:
-        return qApp->translate("verbTypeDesc", "Yondan verb with 'hu/fu' ending (archaic)");
+        return qApp->translate("verbTypeDesc", "Yondan verb with 'hu/fu' ending (archaic).");
     case VerbType::_v4r:
         return qApp->translate("verbTypeDesc", "Yondan verb with 'ru' ending (archaic).");
     case VerbType::_v5:
@@ -180,17 +180,17 @@ static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
     case VerbType::_vz:
         return qApp->translate("verbTypeDesc", "Ichidan verb - zuru verb - (alternative form of -jiru verbs).");
     case VerbType::_vk:
-        return qApp->translate("verbTypeDesc", "kuru verb - special class.");
+        return qApp->translate("verbTypeDesc", "Kuru verb - special class.");
     case VerbType::_vn:
-        return qApp->translate("verbTypeDesc", "irregular nu verb.");
+        return qApp->translate("verbTypeDesc", "Irregular nu verb.");
     case VerbType::_vs:
-        return qApp->translate("verbTypeDesc", "noun or participle which takes the aux. verb suru.");
+        return qApp->translate("verbTypeDesc", "Noun or participle which takes the aux. verb suru.");
     case VerbType::_vs_c:
-        return qApp->translate("verbTypeDesc", "su verb - precursor to the modern suru.");
+        return qApp->translate("verbTypeDesc", "Su verb - precursor to the modern suru.");
     case VerbType::_vs_i:
-        return qApp->translate("verbTypeDesc", "suru verb - irregular.");
+        return qApp->translate("verbTypeDesc", "Suru verb - irregular.");
     case VerbType::_vs_s:
-        return qApp->translate("verbTypeDesc", "suru verb - special class.");
+        return qApp->translate("verbTypeDesc", "Suru verb - special class.");
 
     }
 
@@ -215,7 +215,7 @@ static QString NO_USE_FUNC getVerbPolitenessDesc(Politeness polite)
 {
     switch (polite) {
     case VConjugate::_Plain:
-        return qApp->translate("verbPolitenessDesc", "Plain form of a sentence; it is used with friends");
+        return qApp->translate("verbPolitenessDesc", "Plain form of a sentence; it is used with friends.");
     case VConjugate::_Polite:
         return qApp->translate("verbPolitenessDesc", "Polite form of a sentence; it is used in official discussion.");
     default:
