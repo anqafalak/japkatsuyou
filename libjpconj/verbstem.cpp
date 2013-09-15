@@ -45,10 +45,14 @@
  */
 QString Verbstem::aForm(QString radical, EdictType type)
 {
+    radical += QString::fromUtf8("|");
+
     switch (type){
 
     case VerbType::_v0: //just the radical
+        radical.chop(1);
         return radical;
+
     case VerbType::_v1: 	//Ichidan verb
         return radical;
 
@@ -110,13 +114,13 @@ QString Verbstem::aForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
-        radical.chop(1);
-        return radical + QString::fromUtf8("じ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|じ");
 
     case VerbType::_vk://kuru verb - special class
-        if (radical.endsWith(QString::fromUtf8("く"))){
-            radical.chop(1);
-            radical += QString::fromUtf8("こ");
+        if (radical.endsWith(QString::fromUtf8("く|"))){
+            radical.chop(2);
+            radical += QString::fromUtf8("こ|");
         }
         return radical;
 
@@ -124,16 +128,20 @@ QString Verbstem::aForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("な");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
-        return "";
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
+        //radical.chop(1);
         return radical + QString::fromUtf8("せ");
 
     case VerbType::_vs_i://suru verb - irregular
-        return "";
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_s: //suru verb - special class
-        return "";
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
     }
 
     return radical;
@@ -154,10 +162,12 @@ QString Verbstem::aForm(QString radical, EdictType type)
  */
 QString Verbstem::eForm(QString radical, EdictType type)
 {
+    radical += QString::fromUtf8("|");
 
     switch (type){
 
     case VerbType::_v0: //just the radical
+        radical.chop(1);
         return radical;
 
     case VerbType::_v1: 	//Ichidan verb
@@ -221,8 +231,8 @@ QString Verbstem::eForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
-        radical.chop(1);
-        return radical + QString::fromUtf8("(じれ/ずれ)");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|(じ/ず)れ");
 
     case VerbType::_vk://kuru verb - special class
         return radical + QString::fromUtf8("れ");
@@ -231,17 +241,20 @@ QString Verbstem::eForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ね");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
-        return radical + QString::fromUtf8("れ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|すれ");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
+        //radical.chop(1);
         return radical + QString::fromUtf8("すれ");
 
     case VerbType::_vs_i://suru verb - irregular
-        return radical + QString::fromUtf8("れ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|すれ");
 
     case VerbType::_vs_s: //suru verb - special class
-        radical.chop(1);
-        return radical + QString::fromUtf8("(すれ/せ)");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|(すれ/せ)");
 
     default:
         break;
@@ -264,14 +277,13 @@ QString Verbstem::eForm(QString radical, EdictType type)
  */
 QString Verbstem::eImpForm(QString radical, EdictType type)
 {
-
     switch (type){
 
     case VerbType::_v0: //just the radical
         return radical;
 
     case VerbType::_v1: 	//Ichidan verb
-        return radical + QString::fromUtf8("(ろ/よ)");
+        return radical + QString::fromUtf8("|(ろ/よ)");
 
     case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical; //TODO: check
@@ -287,29 +299,29 @@ QString Verbstem::eImpForm(QString radical, EdictType type)
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(1);
-        return radical + QString::fromUtf8("(じろ/じよ/ぜよ)");
+        return radical + QString::fromUtf8("|(じろ/じよ/ぜよ)");
 
     case VerbType::_vk://kuru verb - special class
         if (radical.endsWith(QString::fromUtf8("く"))){
             radical.chop(1);
             radical += QString::fromUtf8("こ");
         }
-        return radical + QString::fromUtf8("い");
+        return radical + QString::fromUtf8("|い");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
         radical.chop(1);
-        return radical + QString::fromUtf8("(しろ/せよ)");
+        return radical + QString::fromUtf8("|(しろ/せよ)");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
-        return radical + QString::fromUtf8("せよ");
+        return radical + QString::fromUtf8("|せよ");
 
     case VerbType::_vs_i://suru verb - irregular
         radical.chop(1);
-        return radical + QString::fromUtf8("(しろ/せよ)");
+        return radical + QString::fromUtf8("|(しろ/せよ)");
 
     case VerbType::_vs_s: //suru verb - special class
         radical.chop(1);
-        return radical + QString::fromUtf8("(しろ/せよ)");
+        return radical + QString::fromUtf8("|(しろ/せよ)");
 
     default:
         break;
@@ -342,10 +354,12 @@ QString Verbstem::eImpForm(QString radical, EdictType type)
  */
 QString Verbstem::tForm(QString radical, EdictType type)
 {
+    radical += QString::fromUtf8("|");
 
     switch (type){
 
     case VerbType::_v0: //just the radical
+        radical.chop(1);
         return radical;
 
     case VerbType::_v1: 	//Ichidan verb
@@ -413,13 +427,13 @@ QString Verbstem::tForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
-        radical.chop(1);
-        return radical + QString::fromUtf8("じ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|じ");
 
     case VerbType::_vk://kuru verb - special class
-        if (radical.endsWith(QString::fromUtf8("く"))){
-            radical.chop(1);
-            radical += QString::fromUtf8("き");
+        if (radical.endsWith(QString::fromUtf8("く|"))){
+            radical.chop(2);
+            radical += QString::fromUtf8("き|");
         }
         return radical;
 
@@ -427,19 +441,19 @@ QString Verbstem::tForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ん");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
-        radical.chop(1);
-        return radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
         return radical + QString::fromUtf8("し");
 
     case VerbType::_vs_i://suru verb - irregular
-        radical.chop(1);
-        return radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_s: //suru verb - special class
-        radical.chop(1);
-        return radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     default:
         break;
@@ -462,9 +476,12 @@ QString Verbstem::tForm(QString radical, EdictType type)
  */
 QString Verbstem::uForm(QString radical, EdictType type)
 {
+    radical += QString::fromUtf8("|");
+
     switch (type){
 
     case VerbType::_v0: //just the radical
+        radical.chop(1);
         return radical;
 
     case VerbType::_v1: 	//Ichidan verb
@@ -528,25 +545,28 @@ QString Verbstem::uForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ず");
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
-        radical + QString::fromUtf8("る");
+        return radical + QString::fromUtf8("る");
 
     case VerbType::_vk://kuru verb - special class
-        radical + QString::fromUtf8("る");
+        return radical + QString::fromUtf8("る");
 
     case VerbType::_vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("ぬ");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
-        radical + QString::fromUtf8("る");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|する");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
-        radical + QString::fromUtf8("する");
+        return radical + QString::fromUtf8("する");
 
     case VerbType::_vs_i://suru verb - irregular
-        radical + QString::fromUtf8("る");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|する");
 
     case VerbType::_vs_s: //suru verb - special class
-        radical + QString::fromUtf8("る");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|する");
 
     default:
         break;
@@ -570,10 +590,12 @@ QString Verbstem::uForm(QString radical, EdictType type)
  */
 QString Verbstem::iForm(QString radical, EdictType type)
 {
+    radical += QString::fromUtf8("|");
 
     switch (type){
 
     case VerbType::_v0: //just the radical
+        radical.chop(1);
         return radical;
 
     case VerbType::_v1: 	//Ichidan verb
@@ -637,13 +659,13 @@ QString Verbstem::iForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ず");
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
-        radical.chop(1);
-        return radical + QString::fromUtf8("じ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|じ");
 
     case VerbType::_vk://kuru verb - special class
-        if (radical.endsWith(QString::fromUtf8("く"))){
-            radical.chop(1);
-            return radical + QString::fromUtf8("き");
+        if (radical.endsWith(QString::fromUtf8("く|"))){
+            radical.chop(2);
+            return radical + QString::fromUtf8("き|");
         }
         return radical;
 
@@ -651,19 +673,19 @@ QString Verbstem::iForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("に");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
-        radical.chop(1);
-        radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
-        radical + QString::fromUtf8("し");
+        return radical + QString::fromUtf8("し");
 
     case VerbType::_vs_i://suru verb - irregular
-        radical.chop(1);
-        radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_s: //suru verb - special class
-        radical.chop(1);
-        radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     default:
         break;
@@ -687,9 +709,12 @@ QString Verbstem::iForm(QString radical, EdictType type)
  */
 QString Verbstem::oForm(QString radical, EdictType type)
 {
+    radical += QString::fromUtf8("|");
+
     switch (type){
 
     case VerbType::_v0: //just the radical
+        radical.chop(1);
         return radical;
 
     case VerbType::_v1: 	//Ichidan verb
@@ -753,13 +778,13 @@ QString Verbstem::oForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ず");
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
-        radical.chop(1);
-        return radical + QString::fromUtf8("じ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|じ");
 
     case VerbType::_vk://kuru verb - special class
-        if (radical.endsWith(QString::fromUtf8("く"))){
-            radical.chop(1);
-            return radical + QString::fromUtf8("こ");
+        if (radical.endsWith(QString::fromUtf8("く|"))){
+            radical.chop(2);
+            return radical + QString::fromUtf8("こ|");
         }
         return radical;
 
@@ -767,19 +792,19 @@ QString Verbstem::oForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("の");
 
     case VerbType::_vs://noun or participle which takes the aux. verb suru
-        radical.chop(1);
-        radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_c://su verb - precursor to the modern suru
-        radical + QString::fromUtf8("し");
+        return radical + QString::fromUtf8("し");
 
     case VerbType::_vs_i://suru verb - irregular
-        radical.chop(1);
-        radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     case VerbType::_vs_s: //suru verb - special class
-        radical.chop(1);
-        radical + QString::fromUtf8("し");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|し");
 
     default:
         break;

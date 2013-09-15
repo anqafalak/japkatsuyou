@@ -54,198 +54,195 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
     QString end = verb.right(1);
     radical.chop(1);
 
-    switch (form){
+    QString bar = QString::fromUtf8("|");
+
+    switch(form){
+
     case VConjugate::_TeForm:
-        if (affirmative)
+        if(affirmative)
             return Verbstem::tForm(radical, type) + tEnd(end, true);
-        else
-            return Verbstem::aForm(radical, type) + QString::fromUtf8("なくて");
+        return Verbstem::aForm(radical, type) + QString::fromUtf8("|なくて");
+
     case VConjugate::_Present:
-        if (polite)
+        if(polite){
+            if(affirmative)
+                return Verbstem::iForm(radical, type) + QString::fromUtf8("|ます");
+            return Verbstem::iForm(radical, type) + QString::fromUtf8("|ません");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::uForm(radical, type) + "|";
+        return Verbstem::aForm(radical, type) + QString::fromUtf8("|ない");
 
-            if (affirmative)
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ます");
-            else
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ません");
-        else
-            if (affirmative)
-                return verb;
-            else
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("ない");
     case VConjugate::_Past:
-        if (polite)
-
-            if (affirmative)
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ました");
-            else
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ませんでした");
-        else
-            if (affirmative)
-                return Verbstem::tForm(radical, type) + tEnd(end, false);
-            else
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("なかった");
+        if(polite){
+            if(affirmative)
+                return Verbstem::iForm(radical, type) + QString::fromUtf8("|ました");
+            return Verbstem::iForm(radical, type) + QString::fromUtf8("|ませんでした");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::tForm(radical, type) + tEnd(end, false);
+        return Verbstem::aForm(radical, type) + QString::fromUtf8("|なかった");
 
     case VConjugate::_Provision:
-        if (polite)
+        if(polite){
             if (affirmative)
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ますれば");
-            else
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ませんならば");
-        else
-            if (affirmative)
-                return Verbstem::eForm(radical, type)+ QString::fromUtf8("ば");
-            else //negative
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("なければ");
+                return Verbstem::iForm(radical, type) + QString::fromUtf8("|ますれば");
+            return Verbstem::iForm(radical, type) + QString::fromUtf8("|ませんならば");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::eForm(radical, type)+ QString::fromUtf8("|ば");
+        return Verbstem::aForm(radical, type) + QString::fromUtf8("|なければ");
 
     case VConjugate::_Condition:
-        if (polite)
-            if (affirmative)
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ましたら");
-            else
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ませんでしたら");
-        else
-            if (affirmative)
-                return Verbstem::tForm(radical, type) + tEnd(end, false) + QString::fromUtf8("ら");
-            else //negative
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("なかったら");
+        if(polite){
+            if(affirmative)
+                return Verbstem::iForm(radical, type) + QString::fromUtf8("|ましたら");
+            return Verbstem::iForm(radical, type) + QString::fromUtf8("|ませんでしたら");
+        }
+        //plain
+        if (affirmative)
+            return Verbstem::tForm(radical, type) + tEnd(end, false) + QString::fromUtf8("ら");
+        return Verbstem::aForm(radical, type) + QString::fromUtf8("|なかったら");
 
     case VConjugate::_Imperative:
-        if (polite)
-            if (affirmative)
+        if(polite){
+            if(affirmative)
                 return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("下さい");
-            else
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("ないで下さい");
-        else
-            if (affirmative)
-                return Verbstem::eImpForm(radical, type);
-            else //negative
-                return verb + QString::fromUtf8("な");
+            return Verbstem::aForm(radical, type) + QString::fromUtf8("|ないで下さい");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::eImpForm(radical, type) + "|";
+        return Verbstem::uForm(radical, type) + QString::fromUtf8("|な");
 
     case VConjugate::_Volitional:
-        if (polite)
-            if (affirmative)
-                return Verbstem::iForm(radical, type) + QString::fromUtf8("ましょう");
-            else
-                return verb + QString::fromUtf8("のをやめましょう");
-        else
-            if (affirmative)
-                return Verbstem::oForm(radical, type) + QString::fromUtf8("う");
-            else //negative
-                return verb + QString::fromUtf8("のをやめよう");
+        if(polite){
+            if(affirmative)
+                return Verbstem::iForm(radical, type) + QString::fromUtf8("|ましょう");
+            return Verbstem::uForm(radical, type) + QString::fromUtf8("|のをやめましょう");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::oForm(radical, type) + QString::fromUtf8("|う");
+        return Verbstem::uForm(radical, type) + QString::fromUtf8("|のをやめよう");
 
     case VConjugate::_PresentContinuous:
-        if (polite)
-            if (affirmative)
+        if(polite){
+            if(affirmative)
                 return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("います");
-            else
-                return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いません");
-        else
-            if (affirmative)
-                return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いる");
-            else
-                return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いない");
+            return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いません");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いる");
+        return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いない");
 
     case VConjugate::_PastContinuous:
-        if (polite)
-            if (affirmative)
+        if(polite){
+            if(affirmative)
                 return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いました");
-            else
-                return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いませんでした");
-        else
-            if (affirmative)
-                return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いた");
-            else
-                return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いなかった");
+            return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いませんでした");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いた");
+        return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いなかった");
 
     case VConjugate::_Potential:
-        if (type == VerbType::_v1)
-            radical += QString::fromUtf8("ら"); // radical + られ but since eForm = radical + れ we used it like this
 
-        if (type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if (type < VerbType::_vs_s) // suru verb number 27 ends with su,  no need to chop it
-                radical.chop(1);
-            radical += QString::fromUtf8("でき");
+        if(type == VerbType::_v1){
+            radical += QString::fromUtf8("||られ"); // radical + られ
             type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar = "";
+        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
+            if (type != VerbType::_vs_c) // suru verb number 25 ends with su,  no need to chop it
+                radical.chop(1);
+            radical += QString::fromUtf8("||でき");
+            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar = "";
         }
 
-        if (polite)
+        if (polite){
             if (affirmative)
-                return Verbstem::eForm(radical, type) + QString::fromUtf8("ます");
-            else
-                return Verbstem::eForm(radical, type) + QString::fromUtf8("ません");
-        else
-            if (affirmative)
-                return Verbstem::eForm(radical, type) + QString::fromUtf8("る");
-            else //negative
-                return Verbstem::eForm(radical, type) + QString::fromUtf8("ない");
+                return Verbstem::eForm(radical, type) + bar + QString::fromUtf8("ます");
+            return Verbstem::eForm(radical, type) + bar + QString::fromUtf8("ません");
+        }
+        //plain
+        if (affirmative)
+            return Verbstem::eForm(radical, type) + bar + QString::fromUtf8("る");
+        return Verbstem::eForm(radical, type) + bar + QString::fromUtf8("ない");
 
     case VConjugate::_Passive:
-        if (type == VerbType::_v1)
-            verb += QString::fromUtf8("ら");
-
-        if (type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if (type < VerbType::_vs_s) // suru verb number 27 ends with su,  no need to chop it
-                radical.chop(1);
-            radical += QString::fromUtf8("さ");
+        if(type == VerbType::_v1){
+            radical += QString::fromUtf8("||ら");
             type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar ="";
+        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
+            if(type != VerbType::_vs_c) // suru verb number 27 ends with su,  no need to chop it
+                radical.chop(1);
+            radical += QString::fromUtf8("||さ");
+            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar ="";
         }
 
-        if (polite)
-            if (affirmative)
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("れます");
-            else
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("れません");
-        else
-            if (affirmative)
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("れる");
-            else //negative
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("れない");
+        if(polite){
+            if(affirmative)
+                return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("れます");
+            return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("れません");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("れる");
+        return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("れない");
 
     case VConjugate::_Causative:
-        if (type == VerbType::_v1)
-            verb += QString::fromUtf8("さ");
-
-        if (type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if (type < VerbType::_vs_s) // suru verb number 27 ends with su,  no need to chop it
-                radical.chop(1);
-            radical += QString::fromUtf8("さ");
+        if(type == VerbType::_v1){
+            radical += QString::fromUtf8("||さ");
             type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar ="";
+        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
+            if(type != VerbType::_vs_c) // suru verb number 27 ends with su,  no need to chop it
+                radical.chop(1);
+            radical += QString::fromUtf8("||さ");
+            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar ="";
         }
 
-        if (polite)
-            if (affirmative)
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せます");
-            else
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せません");
-        else
-            if (affirmative)
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せる");
-            else //negative
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せない");
+        if(polite){
+            if(affirmative)
+                return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せます");
+            return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せません");
+        }
+        //plain
+        if(affirmative)
+            return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せる");
+        return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せない");
 
     case VConjugate::_CausativePassive:
-        if (type == VerbType::_v1)
-            verb += QString::fromUtf8("さ");
-
-        if (type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if (type < VerbType::_vs_s) // suru verb number 27 ends with su,  no need to chop it
-                radical.chop(1);
-            radical += QString::fromUtf8("さ");
+        if(type == VerbType::_v1){
+            radical += QString::fromUtf8("||さ");
             type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar ="";
+        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
+            if(type != VerbType::_vs_c) // suru verb number 27 ends with su,  no need to chop it
+                radical.chop(1);
+            radical += QString::fromUtf8("||さ");
+            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            bar ="";
         }
 
-
-        if (polite)
+        if(polite){
             if (affirmative)
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せられます");
-            else
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せられません");
-        else
-            if (affirmative)
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せられる");
-            else //negative
-                return Verbstem::aForm(radical, type) + QString::fromUtf8("せられない");
-
+                return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せられます");
+            return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せられません");
+        }
+        //plain
+        if (affirmative)
+            return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せられる");
+        return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せられない");
     }
 
     return verb;
@@ -329,11 +326,11 @@ QString Inflection::tEnd(QString end, bool te)
     if (QString::fromUtf8("ぬむぶぐ").contains(end))
     {
         if (te)
-            return QString::fromUtf8("で");
-        return QString::fromUtf8("だ");
+            return QString::fromUtf8("|で");
+        return QString::fromUtf8("|だ");
     }
 
     if (te)
-        return QString::fromUtf8("て");
-    return QString::fromUtf8("た");
+        return QString::fromUtf8("|て");
+    return QString::fromUtf8("|た");
 }
