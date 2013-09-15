@@ -74,11 +74,18 @@ void jpconjmain::openPref()
 void jpconjmain::doInit()
 {
     qDebug()<< QString(VERSION);
+    libjpconjlink::Init();
     Language::loadTranslations();
     Language::mainWindowDirection(this);
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
+}
+
+void jpconjmain::basicConjugation()
+{
+    QString resultHTML ="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />";
+
 }
 
 void jpconjmain::doConj()
@@ -142,25 +149,25 @@ void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
     QTableWidgetItem* item;
 
     // Polite, Positive
-    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Affirmative);
+    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Affirmative).remove("|");
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft );
     ui->showt->setItem(rownum,0,item);
 
     // Polite, Negative
-    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Negative);
+    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Negative).remove("|");
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,1,item);
 
     //Common, Positive
-    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Affirmative);
+    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Affirmative).remove("|");
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,2,item);
 
     //common, Negative
-    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Negative);
+    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Negative).remove("|");
     item = new QTableWidgetItem(result);
     item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
     ui->showt->setItem(rownum,3,item);

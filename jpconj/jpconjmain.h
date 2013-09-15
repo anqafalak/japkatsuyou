@@ -29,13 +29,13 @@
 #include "edict2.h"
 #include "language.h"
 #include "libjpconjlink.h"
-
+#include "msg.h"
 #include "preference.h"
 
 #include <QDebug>
 #include <QMainWindow>
 #include <QMap>
-#include "msg.h"
+
 
 namespace Ui {
 class jpconjmain;
@@ -72,6 +72,8 @@ private:
     void doConj();
     void openPref();
     void openAbout();
+
+    void basicConjugation();
 
     void tenseConj(const QString verb, EdictType type, CForm form);
 

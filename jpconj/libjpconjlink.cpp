@@ -24,26 +24,46 @@
 
 #include "libjpconjlink.h"
 
+sharedConjugate libjpconjlink::libConjugate = 0;
+sharedKatsuyou libjpconjlink::libKatsuyou = 0;
+
+bool libjpconjlink::Init()
+{
+    QLibrary library(QString(_LIB) + "libjpconj");
+    if (!library.load()){
+        qDebug() << "library 'libjpconj' doesn't exist";
+        return false;
+    }
+
+    libConjugate = (sharedConjugate)library.resolve("Conjugate");
+    if (!libConjugate)
+        qDebug() << "Function 'Conjugate' doesn't exist";
+
+    libKatsuyou = (sharedKatsuyou)library.resolve("Katsuyou");
+    if (!libKatsuyou)
+        qDebug() << "Function 'Katsuyou' doesn't exist";
+
+    return true;
+}
+
 QString libjpconjlink::conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
+    if (!libConjugate)
+        return "";
 
-     QLibrary library(QString(_LIB) + "libjpconj");
-     if (!library.load()){
-         qDebug() << "library doesn't exist";
-         return "";
-     }
+    QByteArray verbArray = verb.toUtf8();
+    const char* charVerb = verbArray.constData();
 
-     typedef const char* (*sharedfunc)(const char*, EdictType, CForm, Politeness, Polarity);
-     sharedfunc libConjugate = (sharedfunc)library.resolve("Conjugate");
-     if (!libConjugate){
-         qDebug() << "Function doesn't exist";
-         return "";
-     }
+    return QString::fromUtf8(libConjugate(charVerb, type, form, polite, affirmative));
+}
 
-     QByteArray verbArray = verb.toUtf8();
-     const char* charVerb = verbArray.constData();
+QString libjpconjlink::katsuyou(QString verb, EdictType type, KForm form)
+{
+    if (!libKatsuyou)
+        return "";
 
-     return QString::fromUtf8(libConjugate(charVerb, type, form, polite, affirmative));
+    QByteArray verbArray = verb.toUtf8();
+    const char* charVerb = verbArray.constData();
 
-
+    return QString::fromUtf8(libKatsuyou(charVerb, type, form));
 }
