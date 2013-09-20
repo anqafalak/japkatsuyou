@@ -54,5 +54,6 @@ DEPENDPATH += -L$$PWD/../libjpconj-bin/
 
 RESOURCES += \
     icons.qrc \
-    about.qrc
+    about.qrc \
+    output.qrc
 

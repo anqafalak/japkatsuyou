@@ -28,6 +28,7 @@
 
 #include <QApplication>
 #include <QList>
+#include <QMap>
 #include <QString>
 
 #ifdef __GNUC__
@@ -253,6 +254,90 @@ static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
     return "";
 }
 
+static QMap<KForm, QString> NO_USE_FUNC basicFormsMap()
+{
+    QMap<KForm, QString> resultMap;
+    resultMap.insert(VKatsuyou::_Imperfective_a, "a");
+    resultMap.insert(VKatsuyou::_Imperfective_o, "o");
+    resultMap.insert(VKatsuyou::_Conjunctive_i, "i");
+    resultMap.insert(VKatsuyou::_Conjunctive_t, "t");
+    resultMap.insert(VKatsuyou::_Attributive_u, "u");
+    resultMap.insert(VKatsuyou::_Hypothetical_e, "e");
+    resultMap.insert(VKatsuyou::_Imperative_e, "eImp");
+
+    return resultMap;
+}
+
+static QString NO_USE_FUNC getTranslatedString(int number)
+{
+    switch (number) {
+    case 0:
+        return qApp->translate("conjugationStrings", "Stem");
+
+    case 1:
+        return qApp->translate("conjugationStrings", "Verb");
+
+    case 2:
+        return qApp->translate("conjugationStrings", "Suffix");
+
+    case 3:
+        return qApp->translate("conjugationStrings", "Words that come after");
+
+    case 4:
+        return qApp->translate("conjugationStrings", "Form name");
+
+    case 5:
+        return qApp->translate("conjugationStrings", "Basic Conjugation");
+
+    default:
+        break;
+    }
+
+    return "";
+}
+
+static QList<QString> NO_USE_FUNC verbStringsList()
+{
+    QList<QString> resultList;
+    resultList << "&_Stem&";
+    resultList << "&_Verb&";
+    resultList << "&_Suffix&";
+    resultList << "&_WordsAfter&";
+    resultList << "&_Form&";
+    resultList << "&_BasicConj&";
+    return resultList;
+}
+
+static QString NO_USE_FUNC getBasicFormName(KForm form)
+{
+    switch (form){
+    case VKatsuyou::_Imperfective_a:
+        return qApp->translate("basicFormName", "Imperfective (general)");
+
+    case VKatsuyou::_Hypothetical_e:
+        return qApp->translate("basicFormName", "Hypothetical");
+
+    case VKatsuyou::_Imperative_e:
+        return qApp->translate("basicFormName", "Imperative");
+
+    case VKatsuyou::_Conjunctive_t:
+        return qApp->translate("basicFormName", "Conjunctive (other)");
+
+    case VKatsuyou::_Attributive_u:
+        return qApp->translate("basicFormName", "Attributive");
+
+    case VKatsuyou::_Conjunctive_i:
+        return qApp->translate("basicFormName", "Conjunctive (_i)");
+
+    case VKatsuyou::_Imperfective_o:
+        return qApp->translate("basicFormName", "Imperfective (volitional)");
+
+    default:
+        break;
+    }
+
+    return "";
+}
 
 }
 

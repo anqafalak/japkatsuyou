@@ -82,10 +82,80 @@ void jpconjmain::doInit()
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
 }
 
-void jpconjmain::basicConjugation()
+QString jpconjmain::readHtmlFile(QString URL)
 {
-    QString resultHTML ="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />";
+    QString result="";
+    QFile HtmlFile(URL);
 
+    if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream htmlStream(&HtmlFile);
+        result = htmlStream.readAll();
+    }
+
+    return result;
+}
+
+void jpconjmain::basicConjugation(QString verb, EdictType type)
+{
+    QString basicConjHTML = readHtmlFile(":/output/basicConj");
+    QString standardConjHTML = readHtmlFile(":/output/standardConj");
+
+    {//begin: calculated strings
+        QMap<KForm, QString> basicForms = Msg::basicFormsMap();
+        foreach (KForm form, basicForms.keys()){
+            QStringList conj = libjpconjlink::katsuyou(verb, type, form).split("|");
+            QString str = basicForms.value(form) + "&";
+
+            standardConjHTML.replace("&stem_" + str, conj[0]);
+            standardConjHTML.replace("&suffix_" + str, conj[1]);
+
+            basicConjHTML.replace("&basic_" + str, conj[0] + conj[1]);
+            basicConjHTML.replace("&_Name_" + str, Msg::getBasicFormName(form));
+        }
+    }//end: calculated strings
+
+    {//begin: constant strings
+        QList<QString> verbStrings =  Msg::verbStringsList();
+        for (int i=0; i< verbStrings.size(); i++){
+            QString translation = Msg::getTranslatedString(i);
+            standardConjHTML.replace(verbStrings[i], translation);
+            basicConjHTML.replace(verbStrings[i], translation);
+        }
+    }//end: constant strings
+
+    ui->standardConj->setHtml(standardConjHTML);
+    ui->basicConj->setHtml(basicConjHTML);
+}
+
+void jpconjmain::complexConjugation(QString verb, EdictType type)
+{
+    QStringList vlist;
+    ui->showt->setColumnCount(4);
+    QStringList hlist;
+
+    hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
+    hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
+    hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
+    hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
+
+    ui->showt->setHorizontalHeaderLabels(hlist);
+
+    ui->msgt->setText(Msg::getVerbTypeDesc(type));
+
+    //foreach (CForm form, formsMsg.keys())
+    foreach (CForm form, Msg::verbFormsList())
+    {
+        vlist << Msg::getVerbFormName(form);
+        tenseConj(verb, type, form);
+    }
+
+    ui->showt->setVerticalHeaderLabels(vlist);
+
+    int i=0;
+    foreach(CForm form, Msg::verbFormsList()){
+        ui->showt->verticalHeaderItem(i)->setToolTip(Msg::getVerbFormDesc(form));
+        i++;
+    }
 }
 
 void jpconjmain::doConj()
@@ -93,8 +163,6 @@ void jpconjmain::doConj()
     ui->showt->setRowCount(0);
 
     QString verb = ui->inputt->text();
-
-    QStringList vlist;
 
     Edict2 edict2;
 
@@ -104,35 +172,9 @@ void jpconjmain::doConj()
     {
         ui->msgt->setText(Msg::getVerbTypeDesc(type));
         ui->showt->setColumnCount(0);
-    }
-    else
-    {
-        ui->showt->setColumnCount(4);
-        QStringList hlist;
-
-        hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
-        hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
-        hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
-        hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
-
-        ui->showt->setHorizontalHeaderLabels(hlist);
-
-        ui->msgt->setText(Msg::getVerbTypeDesc(type));
-
-        //foreach (CForm form, formsMsg.keys())
-        foreach (CForm form, Msg::verbFormsList())
-        {
-            vlist << Msg::getVerbFormName(form);
-            tenseConj(verb, type, form);
-        }
-
-        ui->showt->setVerticalHeaderLabels(vlist);
-
-        int i=0;
-        foreach(CForm form, Msg::verbFormsList()){
-            ui->showt->verticalHeaderItem(i)->setToolTip(Msg::getVerbFormDesc(form));
-            i++;
-        }
+    } else {
+        complexConjugation(verb, type);
+        basicConjugation(verb, type);
 
     }
 

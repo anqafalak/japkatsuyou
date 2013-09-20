@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<table border="1" style="width: 100%;">
+  <tbody>
+    <tr style="vertical-align:middle;">
+      <td colspan="2"
+      style="text-align:center;margin-left:auto;margin-right:auto;">&_Verb&</td>
+      <td rowspan="2"
+        style="text-align:center;margin-left:auto;margin-right:">&_WordsAfter&</td>
+    </tr>
+    <tr>
+      <td
+      style="text-align:center;margin-left:auto;margin-right:auto;">&_Stem&</td>
+      <td
+      style="text-align:center;margin-left:auto;margin-right:auto;">&_Suffix&</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_a&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&suffix_a&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">-ない</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_i&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&suffix_i&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">-ます</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_u&</td>
+      <td
+      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_u&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_u&</td>
+      <td
+      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_u&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">-時</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_e&</td>
+      <td
+      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_e&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">-ば</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_eImp&</td>
+      <td
+      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_eImp&</td>
+      <td
+      style="text-align:left;margin-left:0;margin-right:auto;">。(命令)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_o&</td>
+      <td
+      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_o&</td>
+      <td style="text-align:left;margin-left:0;margin-right:auto;">-う
+      <br/> 一段、くる、する：-よう
+      </td>
+    </tr>
+  </tbody>
+</table>
