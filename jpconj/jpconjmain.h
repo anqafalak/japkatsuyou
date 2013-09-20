@@ -31,6 +31,7 @@
 #include "libjpconjlink.h"
 #include "msg.h"
 #include "preference.h"
+#include "typeDefs.h"
 
 #include <QDebug>
 #include <QMainWindow>
@@ -73,9 +74,12 @@ private:
     void openPref();
     void openAbout();
 
-    void basicConjugation();
+    void basicConjugation(QString verb, EdictType type);
+    void complexConjugation(QString verb, EdictType type);
 
     void tenseConj(const QString verb, EdictType type, CForm form);
+
+    QString readHtmlFile(QString URL);
 
 protected:
     void changeEvent(QEvent* event);

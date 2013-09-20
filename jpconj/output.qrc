@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>output/standardConj</file>
+        <file>output/basicConj</file>
+    </qresource>
+</RCC>
