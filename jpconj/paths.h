@@ -25,6 +25,7 @@
 #ifndef PATHS_H
 #define PATHS_H
 
+#include <QDir>
 
 #define dataFolder "./"
 
