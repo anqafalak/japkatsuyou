@@ -49,9 +49,6 @@ public:
     static void setConfigLanguage(QString langID);
     static QHash<QString, QString> getLanguagesInfo();
 
-public slots:
-    static void setLanguage();
-
 private:
     static QTranslator* currentQtTranslator;
     static QTranslator* currentJpconjTranslator;
@@ -60,6 +57,9 @@ private:
     static QHash<QString, QString> languagesInfo;
 
     static void addTranslation(QString langId, QString dir);
+
+public slots:
+    static void setLanguage();
 };
 
 #endif // LANGUAGE_H

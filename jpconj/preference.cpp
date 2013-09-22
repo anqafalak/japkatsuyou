@@ -25,6 +25,23 @@
 #include "preference.h"
 #include "ui_preference.h"
 
+/*!
+ * \class Preference
+ * This class is used to manage "Preference" dialog box.
+ * It initialize the dialog components,
+ * and save the user's settings to config file
+ */
+
+
+
+/*******************************************************
+ *                    PUBLIC
+ *******************************************************/
+
+/*!
+ * \brief Preference::Preference The constructor of the Dialog box "Preference"
+ * \param parent
+ */
 Preference::Preference(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Preference)
@@ -34,6 +51,11 @@ Preference::Preference(QWidget *parent) :
 
 }
 
+
+
+/*!
+ * \brief Preference::~Preference The destructor of the Dialog box "Preference"
+ */
 Preference::~Preference()
 {
     delete ui;
@@ -41,6 +63,13 @@ Preference::~Preference()
 
 
 
+/*!
+ * \brief Preference::doInit Initialize the components of the "Preference" Box
+ *
+ * It Initializes the components.
+ * For example, it look for available languages using Language::getLanguagesInfo
+ * then it initialize a list of languages that user can select from.
+ */
 void Preference::doInit()
 {
 
@@ -56,6 +85,13 @@ void Preference::doInit()
     ui->lang->setCurrentIndex(index);
 }
 
+
+
+/*!
+ * \brief Preference::doSave Save user settings
+ *
+ * When the user push the "OK" button, this function is called to save his settings.
+ */
 void Preference::doSave()
 {
 
@@ -66,6 +102,11 @@ void Preference::doSave()
     Language::setLanguage();
 }
 
+
+
+/*******************************************************
+ *                   PRIVATE SLOTS
+ *******************************************************/
 
 void Preference::on_prefOK_accepted()
 {

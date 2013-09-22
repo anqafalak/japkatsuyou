@@ -24,17 +24,46 @@
 
 #include "edict2.h"
 
+/*!
+ * \class Edict2
+ * This class is used to connect to the verbs' database,
+ * and verify if a verb exists, then get its type
+ */
 
+
+
+/*******************************************************
+ *                    PUBLIC
+ *******************************************************/
+
+/*!
+ * \brief Edict2::Edict2 Constructor of the Edict2 management module
+ */
 Edict2::Edict2()
 {
     connect();
 }
 
+
+
+/*!
+ * \brief Edict2::~Edict2 Destructor of the Edict2 management module
+ */
 Edict2::~Edict2()
 {
 
 }
 
+
+
+/*!
+ * \brief Edict2::connect Connect to edict2verbs.db SqLite database
+ *
+ * This function is loaded when we want to manage edict2verbs.db SqLite database.
+ * It looks for a connection name called "dbverbs", if found we just use the database
+ * assigned to that connection name.
+ * If not, we search for edict2verbs.db, and assign connection name called "dbverbs" to it.
+ */
 void Edict2::connect()
 {
     if (!QSqlDatabase::contains("dbverbs"))
@@ -50,6 +79,11 @@ void Edict2::connect()
 
 
 
+/*!
+ * \brief Edict2::desconnect Desconnect edict2verbs.db SqLite database
+ *
+ * It looks for a connection name called "dbverbs", if found we remove it.
+ */
 void Edict2::desconnect()
 {
     if (QSqlDatabase::contains("dbverbs"))
@@ -58,6 +92,13 @@ void Edict2::desconnect()
     }
 }
 
+
+
+/*!
+ * \brief Edict2::find Search for a verb in the database, and return its type.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \return The type of the verb if found (See: VerbType::EdictType)
+ */
 EdictType Edict2::find(QString verb)
 {
     int result= 0;
