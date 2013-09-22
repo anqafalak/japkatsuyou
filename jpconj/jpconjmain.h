@@ -46,13 +46,32 @@ class jpconjmain : public QMainWindow
 {
     Q_OBJECT
 
-public slots:
-
-
 public:
     explicit jpconjmain(QWidget *parent = 0);
     ~jpconjmain();
-    
+
+private:
+    Ui::jpconjmain *ui;
+    About     *winAbout;
+    Preference *winPref;
+
+    void doInit();
+
+    //Functions related to actions slots
+    void openAbout();
+    void openPref();
+    void doConj();
+
+    //Functions related to conjugation
+    void basicConjugation(QString verb, EdictType type);
+    void complexConjugation(QString verb, EdictType type);
+    void tenseConj(const QString verb, EdictType type, CForm form);
+
+    QString readHtmlFile(QString URL);
+
+protected:
+    void changeEvent(QEvent* event);
+
 private slots:
     void on_action_Close_triggered();
 
@@ -63,26 +82,6 @@ private slots:
     void on_action_Preference_triggered();
 
     void on_actionHelp_Content_triggered();
-
-private:
-    Ui::jpconjmain *ui;
-    About     *winAbout;
-    Preference *winPref;
-
-    void doInit();
-    void doConj();
-    void openPref();
-    void openAbout();
-
-    void basicConjugation(QString verb, EdictType type);
-    void complexConjugation(QString verb, EdictType type);
-
-    void tenseConj(const QString verb, EdictType type, CForm form);
-
-    QString readHtmlFile(QString URL);
-
-protected:
-    void changeEvent(QEvent* event);
 };
 
 #endif // JPCONJMAIN_H

@@ -24,9 +24,31 @@
 
 #include "libjpconjlink.h"
 
+/*!
+ * \class libjpconjlink
+ * This class is used as an interface between the shared library libjpconj
+ * and the application.
+ */
+
 sharedConjugate libjpconjlink::libConjugate = 0;
 sharedKatsuyou libjpconjlink::libKatsuyou = 0;
 
+
+
+/*******************************************************
+ *                    PUBLIC
+ *******************************************************/
+
+/*!
+ * \brief libjpconjlink::Init Initialize the module variables.
+ *
+ * This function is used to initialize the functions which point on
+ * the library's extern functions.
+ *
+ * \return Returns:
+ * - True: if the library is loaded
+ * - False: otherwise
+ */
 bool libjpconjlink::Init()
 {
     QLibrary library(QString(_LIB) + "libjpconj");
@@ -46,6 +68,24 @@ bool libjpconjlink::Init()
     return true;
 }
 
+
+
+/*!
+ * \brief libjpconjlink::conjugate Gives complicated conjugation forms, such as polite positive past form (tense)
+ *
+ * It uses a static function in libjpconj to do its work. \n
+ * It gives complex conjugation forms, using the basic stems, and adding suffixes according to parameters:
+ * \b type \b, \b form \b, \b polite \b, and \b affirmative \b.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type Type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * \param form Complex form (tense) which we want to conjugate to, such as: present, past, conditional, etc.
+ * (See VConjugate::CForm)
+ * \param polite The language can be polite or plain, ans thus verb conjugation variate according to these two.
+ * (See VConjugate::Politeness)
+ * \param affirmative The sentence can be affirmative (positive) or negative.
+ * (See VConjugate::Polarity)
+ * \return The complex verb conjugation
+ */
 QString libjpconjlink::conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
     if (!libConjugate)
@@ -57,6 +97,19 @@ QString libjpconjlink::conjugate(QString verb, EdictType type, CForm form, Polit
     return QString::fromUtf8(libConjugate(charVerb, type, form, polite, affirmative));
 }
 
+
+
+/*!
+ * \brief libjpconjlink::katsuyou Gives basic conjugation forms, as thought in Japanese schools
+ *
+ * It uses a static function in libjpconj to do its work. \n
+ * It gives basic conjugation forms (or basic stems), those basic forms can be used to form
+ * complex conjugation forms by adding suffixes and auxilary verbs.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type Type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * \param form Basic forms: imperfective, conjuntive, etc. (See VKatsuyou::KForm)
+ * \return Basic forms conjugation
+ */
 QString libjpconjlink::katsuyou(QString verb, EdictType type, KForm form)
 {
     if (!libKatsuyou)

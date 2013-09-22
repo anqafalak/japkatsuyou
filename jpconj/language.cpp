@@ -23,12 +23,31 @@
 
 #include "language.h"
 
+/*!
+ * \class Language
+ * This class is used to manage the localization
+ */
+
 QTranslator* Language::currentQtTranslator = 0;
 QTranslator* Language::currentJpconjTranslator = 0;
 QString Language::currentLanguageID = "en";
 QHash<QString, PairTrans> Language::translators;
 QHash<QString, QString> Language::languagesInfo;
 
+
+
+/*******************************************************
+ *                    PUBLIC
+ *******************************************************/
+
+/*!
+ * \brief Language::mainWindowDirection Sets the Layout direction to RTL or LTR
+ *
+ * Sets the direction of a given QMainWindow to RTL or LTR according to current local
+ * - RTL: If the local first two characters are in: ar, dv, ha, he, fa, ps, ur, yi
+ * - LTR: Otherwise
+ * \param w A QMainWindow which we want to set the direction.
+ */
 void Language::mainWindowDirection(QMainWindow * w)
 {
     QString langID = getConfigLanguage();
@@ -43,25 +62,12 @@ void Language::mainWindowDirection(QMainWindow * w)
 }
 
 
-void Language::addTranslation(QString langId, QString dir)
-{
-    QString jpconjTransLocation = dir + "jpconj_" + langId + ".qm";
-    QTranslator* jpconjTranslator = new QTranslator();
 
-    /*if (jpconjTranslator->load(jpconjTransLocation))
-        translators.insert(langId, jpconjTranslator);*/
-
-    QString qtTransLocation = dir + "qt_" + langId.left(2) + ".qm";
-    QTranslator* qtTranslator = new QTranslator();
-    /*if (qtTranslator->load(qtTransLocation))
-        translators.insert(langId, qtTranslator);*/
-    qtTranslator->load(qtTransLocation);
-    jpconjTranslator->load(jpconjTransLocation);
-
-    translators.insert(langId, PairTrans(jpconjTranslator, qtTranslator));
-
-}
-
+/*!
+ * \brief Language::getConfigLanguage Get the language ID from the Config file
+ * \return The ID of the specified language \n
+ * If the language ID is not available, it returns "??"
+ */
 QString Language::getConfigLanguage()
 {
     QSettings settings;//("DzCoding", "JapKatsuyou")
@@ -69,12 +75,23 @@ QString Language::getConfigLanguage()
     return settings.value("langacro", "??").toString();
 }
 
+
+
+/*!
+ * \brief Language::getCurrentLanguage Get the current language ID
+ * \return The ID of the language used currently
+ */
 QString Language::getCurrentLanguage()
 {
     return currentLanguageID;
 }
 
 
+
+/*!
+ * \brief Language::setConfigLanguage Set the language ID to the Config file
+ * \param langID
+ */
 void Language::setConfigLanguage(QString langID)
 {
     QSettings settings;//("DzCoding", "JapKatsuyou")
@@ -84,11 +101,27 @@ void Language::setConfigLanguage(QString langID)
 }
 
 
+
+/*!
+ * \brief Language::getLanguagesInfo Get ID's and names of available languages.
+ * \return A QHash of language-ID as key, and language-name as value. \n
+ * Example: <en, English>, <ar, Arabic>, etc.
+ */
 QHash<QString, QString> Language::getLanguagesInfo()
 {
     return languagesInfo;
 }
 
+
+
+/*!
+ * \brief Language::loadTranslations Look for available translations and load them.
+ *
+ * It looks for available languages in an XML file, containing id, name, location.
+ * Then, it loads the languages (translations) from their locations.
+ * It creates, also, the QHash<QString, QString> languagesInfo that can be returned
+ * using the function Language::getLanguagesInfo
+ */
 void Language::loadTranslations()
 {
     QFile languageConfigFile(QString(dataFolder) + "i18n/languages.xml");
@@ -139,6 +172,55 @@ void Language::loadTranslations()
 }
 
 
+
+/*******************************************************
+ *                    PRIVATE
+ *******************************************************/
+
+/*!
+ * \brief Language::addTranslation Add a translation (language) to available languages.
+ * \param langId The language ID: "en", "ar", "fr", "ja", etc.
+ * \param dir The language's translation file's location. eg. "./i18n/jpconj_ar.qm"
+ */
+void Language::addTranslation(QString langId, QString dir)
+{
+    QString jpconjTransLocation = dir + "jpconj_" + langId + ".qm";
+    QTranslator* jpconjTranslator = new QTranslator();
+
+    /*if (jpconjTranslator->load(jpconjTransLocation))
+        translators.insert(langId, jpconjTranslator);*/
+
+    QString qtTransLocation = dir + "qt_" + langId.left(2) + ".qm";
+    QTranslator* qtTranslator = new QTranslator();
+    /*if (qtTranslator->load(qtTransLocation))
+        translators.insert(langId, qtTranslator);*/
+    qtTranslator->load(qtTransLocation);
+    jpconjTranslator->load(jpconjTransLocation);
+
+    translators.insert(langId, PairTrans(jpconjTranslator, qtTranslator));
+
+}
+
+
+
+/*******************************************************
+ *                   PUBLIC SLOTS
+ *******************************************************/
+
+/*!
+ * \brief Language::setLanguage Set a specified language to be used in the UI.
+ *
+ * To set a language, you have to follow these steps:
+ * - First, load translations in the start of the application using Language::loadTranslations
+ * - Then get available languages using the function Language::getLanguagesInfo \n
+ * eg. \code QHash<QString, QString> langinf = Language::getLanguagesInfo(); \code
+ * - Choose a language ID. Let say, you choosed language ID "ja" for Japanese
+ * - Save this language ID in the config file, using Language::setConfigLanguage \n
+ * eg. \code Language::setConfigLanguage("ja") \code
+ * - Finaly, call this function, and it will get the language ID from the config file
+ * and charge it, if not available it charge the system's language, if also not available
+ * it charge the English language (ID = "en").
+ */
 void Language::setLanguage()
 {
 

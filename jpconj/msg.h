@@ -31,14 +31,29 @@
 #include <QMap>
 #include <QString>
 
+
 #ifdef __GNUC__
 #define NO_USE_FUNC __attribute__ ((unused))
 #else
 #define NO_USE_FUNC
 #endif
 
+/*! Msg namespace (abbr. Messages) is used to store all strings used to internationalize the application.
+ * It contains also, some lists which help speeding things up.
+ *
+ * In all functions we used NO_USE_FUNC to stop "function-not-used" warnings in case of GCC compiler.
+ * This is its definition: \n
+ * #ifdef \_\_GNUC\_\_ \n
+ * #define NO_USE_FUNC \_\_attribute\_\_ ((unused)) \n
+ * #else \n
+ * #define NO_USE_FUNC \n
+ * #endif \n
+ */
 namespace Msg {
 
+/*! Gives a list of complex conjugation forms (See: VConjugate::CForm).\n
+ * This list makes it easier to loop over the different complex conjugation forms.
+ */
 static QList<CForm> NO_USE_FUNC verbFormsList()
 {
     QList<CForm> resultList;
@@ -59,6 +74,10 @@ static QList<CForm> NO_USE_FUNC verbFormsList()
 }
 
 
+
+/*! Gives the verb complex form name in the current language.\n
+ * For example, for VConjugate::_Present we get "present" in English
+ */
 static QString NO_USE_FUNC getVerbFormName(CForm form)
 {
     switch (form){
@@ -96,6 +115,10 @@ static QString NO_USE_FUNC getVerbFormName(CForm form)
 }
 
 
+
+/*! Gives the verb complex form description in the current language.\n
+ * For example, for VConjugate::_Present we get "This is the present tense." in English
+ */
 static QString NO_USE_FUNC getVerbFormDesc(CForm form)
 {
     switch (form){
@@ -133,6 +156,10 @@ static QString NO_USE_FUNC getVerbFormDesc(CForm form)
 }
 
 
+
+/*! Gives the verb type description in the current language.\n
+ * For example, for VerbType::_v1 we get "Ichidan verb." in English
+ */
 static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
 {
     switch (type){
@@ -198,6 +225,11 @@ static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
     return "";
 }
 
+
+
+/*! Gives the conjugation politness name in the current language.\n
+ * For example, for VConjugate::_Plain we get "Plain" in English
+ */
 static QString NO_USE_FUNC getVerbPolitenessName(Politeness polite)
 {
     switch (polite) {
@@ -212,6 +244,11 @@ static QString NO_USE_FUNC getVerbPolitenessName(Politeness polite)
     return "";
 }
 
+
+
+/*! Gives the conjugation politness description in the current language.\n
+ * For example, for VConjugate::_Plain we get "Plain form of a sentence; it is used with friends." in English
+ */
 static QString NO_USE_FUNC getVerbPolitenessDesc(Politeness polite)
 {
     switch (polite) {
@@ -226,6 +263,11 @@ static QString NO_USE_FUNC getVerbPolitenessDesc(Politeness polite)
     return "";
 }
 
+
+
+/*! Gives the conjugation polarity name in the current language.\n
+ * For example, for VConjugate::_Negative we get "Negative" in English
+ */
 static QString NO_USE_FUNC getVerbPolarityName(Polarity affirmative)
 {
     switch (affirmative) {
@@ -240,6 +282,11 @@ static QString NO_USE_FUNC getVerbPolarityName(Polarity affirmative)
     return "";
 }
 
+
+
+/*! Gives the conjugation polarity description in the current language. \n
+ * For example, for VConjugate::_Negative we get "Form used in negative sentences." in English
+ */
 static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
 {
     switch (affirmative) {
@@ -254,6 +301,19 @@ static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
     return "";
 }
 
+
+
+/*! Gives a QMap containing KForm as key and QString as value. \n
+ * It is used to make it easier to replace HTML variables with results of basic conjugation. \n
+ * For example, if we have a variable called "&stem\_a&" in an HTML file. \n
+ * Supposing the HTML content is stored in a QString htmlContent. \n
+ * Then we can replace the string "&stem\_a&" with the value of
+ * libjpconjlink::katsuyou(verb, type, VKatsuyou::_Imperfective_a);\n
+ * \n
+ * Using this QMap, we can loop over all the existant KForm and replace the contents \n
+ * Example (Assuming basicConjHTML is a QString containing HTML content) \n
+ * \snippet jpconjmain.cpp Doxygen: basicFormsMap example
+ */
 static QMap<KForm, QString> NO_USE_FUNC basicFormsMap()
 {
     QMap<KForm, QString> resultMap;
@@ -268,6 +328,11 @@ static QMap<KForm, QString> NO_USE_FUNC basicFormsMap()
     return resultMap;
 }
 
+
+
+/*! Gives the replacement of HTML variables in Msg::verbStringsList in the current language
+ * Giving its number in the QList afforded by this function.
+ */
 static QString NO_USE_FUNC getTranslatedString(int number)
 {
     switch (number) {
@@ -296,6 +361,10 @@ static QString NO_USE_FUNC getTranslatedString(int number)
     return "";
 }
 
+
+
+/*! Gives a list of predefined QStrings used as reeplacement variables in HTML.
+ */
 static QList<QString> NO_USE_FUNC verbStringsList()
 {
     QList<QString> resultList;
@@ -308,6 +377,11 @@ static QList<QString> NO_USE_FUNC verbStringsList()
     return resultList;
 }
 
+
+
+/*! Gives the verb basic form name in the current language.\n
+ * For example, for VKatsuyou::_Imperfective_a we get "Imperfective (general)" in English
+ */
 static QString NO_USE_FUNC getBasicFormName(KForm form)
 {
     switch (form){

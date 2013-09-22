@@ -27,6 +27,12 @@
 
 #include <QApplication>
 
+/*!
+ * \brief main The main function which the application start with.
+ * \param argc
+ * \param argv
+ * \return
+ */
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

@@ -42,14 +42,15 @@ class Preference : public QDialog
 public:
     explicit Preference(QWidget *parent = 0);
     ~Preference();
-    
-private slots:
-    void on_prefOK_accepted();
 
 private:
     Ui::Preference *ui;
     void doInit();
     void doSave();
+
+private slots:
+    void on_prefOK_accepted();
+
 };
 
 #endif // PREFERENCE_H

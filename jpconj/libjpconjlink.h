@@ -36,6 +36,7 @@ typedef const char* (*sharedKatsuyou)(const char*, EdictType, KForm);
 
 class libjpconjlink
 {
+
 public:
     static bool Init();
     static QString conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);

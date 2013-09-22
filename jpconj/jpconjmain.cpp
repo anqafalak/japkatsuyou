@@ -26,6 +26,21 @@
 #include "jpconjmain.h"
 #include "ui_jpconjmain.h"
 
+/*!
+ * \class jpconjmain
+ * This class is used to manage the main window of the application.
+ */
+
+
+
+/*******************************************************
+ *                    PUBLIC
+ *******************************************************/
+
+/*!
+ * \brief jpconjmain::jpconjmain The constructor of the main window
+ * \param parent
+ */
 jpconjmain::jpconjmain(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::jpconjmain)
@@ -34,43 +49,28 @@ jpconjmain::jpconjmain(QWidget *parent) :
     doInit();
 }
 
+
+
+/*!
+ * \brief jpconjmain::~jpconjmain The destructor of the main window
+ */
 jpconjmain::~jpconjmain()
 {
     delete ui;
 }
 
-void jpconjmain::changeEvent(QEvent* event)
-{
-    if (event->type() == QEvent::LanguageChange)
-    {
-        //Msg::updateMsg();
-        ui->retranslateUi(this);
-        Language::mainWindowDirection(this);
-
-    }
-    QMainWindow::changeEvent(event);
-}
 
 
-//private functions
+/*******************************************************
+ *                    PRIVATE
+ *******************************************************/
 
-void jpconjmain::openAbout()
-{
-    winAbout = new About(this);
-    winAbout->setLayoutDirection(this->layoutDirection());
-    winAbout->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
-    winAbout->show();
-
-}
-
-void jpconjmain::openPref()
-{
-    winPref = new Preference(this);
-    winPref->setLayoutDirection(this->layoutDirection());
-    winPref->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
-    winPref->show();
-}
-
+/*!
+ * \brief jpconjmain::doInit Initialize the components of the main window
+ *
+ * This function sets the language and direction of the main window.
+ * You can call it in the constructor of this window.
+ */
 void jpconjmain::doInit()
 {
     qDebug()<< QString(VERSION);
@@ -82,25 +82,79 @@ void jpconjmain::doInit()
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
 }
 
-QString jpconjmain::readHtmlFile(QString URL)
+
+
+/*!
+ * \brief jpconjmain::openAbout This function is used to call "about" dialog box.
+ */
+void jpconjmain::openAbout()
 {
-    QString result="";
-    QFile HtmlFile(URL);
+    winAbout = new About(this);
+    winAbout->setLayoutDirection(this->layoutDirection());
+    winAbout->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
+    winAbout->show();
 
-    if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QTextStream htmlStream(&HtmlFile);
-        result = htmlStream.readAll();
-    }
-
-    return result;
 }
 
+
+
+/*!
+ * \brief jpconjmain::openPref This function is used to call "preferences" dialog box.
+ */
+void jpconjmain::openPref()
+{
+    winPref = new Preference(this);
+    winPref->setLayoutDirection(this->layoutDirection());
+    winPref->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
+    winPref->show();
+}
+
+
+
+/*!
+ * \brief jpconjmain::doConj This function is used to show different conjugation forms
+ *
+ * This function search for the existance of the verb, using Edict2 module.
+ * Then, it calls for:
+ * - jpconjmain::basicConjugation To show the standard and basic conjugation forms.
+ * - jpconjmain::complexConjugation To show the complex conjugation forms.
+ */
+void jpconjmain::doConj()
+{
+    ui->showt->setRowCount(0);
+
+    QString verb = ui->inputt->text();
+
+    Edict2 edict2;
+
+    EdictType type = edict2.find(verb);
+
+    if (type < 1)
+    {
+        ui->msgt->setText(Msg::getVerbTypeDesc(type));
+        ui->showt->setColumnCount(0);
+    } else {
+        complexConjugation(verb, type);
+        basicConjugation(verb, type);
+
+    }
+
+}
+
+
+
+/*!
+ * \brief jpconjmain::basicConjugation Used to show the standard and basic conjugation forms.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type The Edict2 type of the verb (See: VerbType::EdictType)
+ */
 void jpconjmain::basicConjugation(QString verb, EdictType type)
 {
     QString basicConjHTML = readHtmlFile(":/output/basicConj");
     QString standardConjHTML = readHtmlFile(":/output/standardConj");
 
     {//begin: calculated strings
+//! [Doxygen: basicFormsMap example]
         QMap<KForm, QString> basicForms = Msg::basicFormsMap();
         foreach (KForm form, basicForms.keys()){
             QStringList conj = libjpconjlink::katsuyou(verb, type, form).split("|");
@@ -112,6 +166,7 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
             basicConjHTML.replace("&basic_" + str, conj[0] + conj[1]);
             basicConjHTML.replace("&_Name_" + str, Msg::getBasicFormName(form));
         }
+//! [Doxygen: basicFormsMap example]
     }//end: calculated strings
 
     {//begin: constant strings
@@ -127,6 +182,13 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
     ui->basicConj->setHtml(basicConjHTML);
 }
 
+
+
+/*!
+ * \brief jpconjmain::complexConjugation Used to show the complex conjugation forms.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type The Edict2 type of the verb (See: VerbType::EdictType)
+ */
 void jpconjmain::complexConjugation(QString verb, EdictType type)
 {
     QStringList vlist;
@@ -158,29 +220,18 @@ void jpconjmain::complexConjugation(QString verb, EdictType type)
     }
 }
 
-void jpconjmain::doConj()
-{
-    ui->showt->setRowCount(0);
-
-    QString verb = ui->inputt->text();
-
-    Edict2 edict2;
-
-    EdictType type = edict2.find(verb);
-
-    if (type < 1)
-    {
-        ui->msgt->setText(Msg::getVerbTypeDesc(type));
-        ui->showt->setColumnCount(0);
-    } else {
-        complexConjugation(verb, type);
-        basicConjugation(verb, type);
-
-    }
-
-}
 
 
+/*!
+ * \brief jpconjmain::tenseConj Used to create a row in the QTableWindget
+ *
+ * Creates a new row in QTableWindget.
+ * This row contains polite-positive, polite-negative, plain-positive, plain-negative combinations.
+ * For each of these combinations, we conjugate the verb based on its type and the form we want.
+ * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param type The Edict2 type of the verb (See: VerbType::EdictType)
+ * \param form The form can be: present, past, conditional, etc. (See: VConjugate::CForm)
+ */
 void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
 {
 
@@ -216,7 +267,50 @@ void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
 }
 
 
-// Private Slots
+
+/*!
+ * \brief jpconjmain::readHtmlFile Reads an HTML file and return a QString
+ * \param URL URL of the HTML file, we want to read.
+ * \return A QString which is the content of this HTML file.
+ */
+QString jpconjmain::readHtmlFile(QString URL)
+{
+    QString result="";
+    QFile HtmlFile(URL);
+
+    if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream htmlStream(&HtmlFile);
+        result = htmlStream.readAll();
+    }
+
+    return result;
+}
+
+/*******************************************************
+ *                    PROTECTED
+ *******************************************************/
+
+/*!
+ * \brief jpconjmain::changeEvent The event treated her is the change of language.
+ * \param event
+ */
+void jpconjmain::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        //Msg::updateMsg();
+        ui->retranslateUi(this);
+        Language::mainWindowDirection(this);
+
+    }
+    QMainWindow::changeEvent(event);
+}
+
+
+
+/*******************************************************
+ *                   PRIVATE SLOTS
+ *******************************************************/
 
 void jpconjmain::on_action_Close_triggered()
 {
