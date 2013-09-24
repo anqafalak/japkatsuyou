@@ -154,7 +154,7 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
     QString standardConjHTML = readHtmlFile(":/output/standardConj");
 
     {//begin: calculated strings
-//! [Doxygen: basicFormsMap example]
+        //! [Doxygen: basicFormsMap example]
         QMap<KForm, QString> basicForms = Msg::basicFormsMap();
         foreach (KForm form, basicForms.keys()){
             QStringList conj = libjpconjlink::katsuyou(verb, type, form).split("|");
@@ -166,7 +166,7 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
             basicConjHTML.replace("&basic_" + str, conj[0] + conj[1]);
             basicConjHTML.replace("&_Name_" + str, Msg::getBasicFormName(form));
         }
-//! [Doxygen: basicFormsMap example]
+        //! [Doxygen: basicFormsMap example]
     }//end: calculated strings
 
     {//begin: constant strings
