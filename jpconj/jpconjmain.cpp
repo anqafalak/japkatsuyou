@@ -80,6 +80,17 @@ void jpconjmain::doInit()
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
+
+    QPalette palette;
+    palette.setBrush(QPalette::Base, Qt::transparent);
+    ui->basicConj->page()->setPalette(palette);
+    ui->basicConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
+    ui->standardConj->page()->setPalette(palette);
+    ui->standardConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
+
+    setCSS(ui->basicConj, "DzStyle.css");
+    setCSS(ui->standardConj, "DzStyle.css");
+    setCSS(ui->complexConj, "DzStyle.css");
 }
 
 
@@ -121,7 +132,6 @@ void jpconjmain::openPref()
  */
 void jpconjmain::doConj()
 {
-    ui->showt->setRowCount(0);
 
     QString verb = ui->inputt->text();
 
@@ -129,14 +139,11 @@ void jpconjmain::doConj()
 
     EdictType type = edict2.find(verb);
 
-    if (type < 1)
-    {
-        ui->msgt->setText(Msg::getVerbTypeDesc(type));
-        ui->showt->setColumnCount(0);
-    } else {
+    ui->msgt->setText(Msg::getVerbTypeDesc(type));
+
+    if (type > 0) {
         complexConjugation(verb, type);
         basicConjugation(verb, type);
-
     }
 
 }
@@ -154,7 +161,7 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
     QString standardConjHTML = readHtmlFile(":/output/standardConj");
 
     {//begin: calculated strings
-//! [Doxygen: basicFormsMap example]
+        //! [Doxygen: basicFormsMap example]
         QMap<KForm, QString> basicForms = Msg::basicFormsMap();
         foreach (KForm form, basicForms.keys()){
             QStringList conj = libjpconjlink::katsuyou(verb, type, form).split("|");
@@ -166,7 +173,7 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
             basicConjHTML.replace("&basic_" + str, conj[0] + conj[1]);
             basicConjHTML.replace("&_Name_" + str, Msg::getBasicFormName(form));
         }
-//! [Doxygen: basicFormsMap example]
+        //! [Doxygen: basicFormsMap example]
     }//end: calculated strings
 
     {//begin: constant strings
@@ -191,79 +198,36 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
  */
 void jpconjmain::complexConjugation(QString verb, EdictType type)
 {
-    QStringList vlist;
-    ui->showt->setColumnCount(4);
-    QStringList hlist;
+    QString complexConjHTML = readHtmlFile(":/output/complexConj");
 
-    hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
-    hlist << Msg::getVerbPolitenessName(VConjugate::_Polite) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
-    hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Affirmative);
-    hlist << Msg::getVerbPolitenessName(VConjugate::_Plain) + " " + Msg::getVerbPolarityName(VConjugate::_Negative);
+    {//begin: constant strings
+        complexConjHTML.replace("&_Polite&", Msg::getVerbPolitenessName(VConjugate::_Polite));
+        complexConjHTML.replace("&_Plain&", Msg::getVerbPolitenessName(VConjugate::_Plain));
+        complexConjHTML.replace("&_Affirmative&", Msg::getVerbPolarityName(VConjugate::_Affirmative));
+        complexConjHTML.replace("&_Negative&", Msg::getVerbPolarityName(VConjugate::_Negative));
 
-    ui->showt->setHorizontalHeaderLabels(hlist);
+        complexConjHTML.replace("&_Form&", Msg::getTranslatedString(4));
 
-    ui->msgt->setText(Msg::getVerbTypeDesc(type));
+        QMap<CForm, QString> complexForms = Msg::complexFormsMap();
+        foreach (CForm form, complexForms.keys()){
+            QString str = complexForms.value(form) + "&";
 
-    //foreach (CForm form, formsMsg.keys())
-    foreach (CForm form, Msg::verbFormsList())
-    {
-        vlist << Msg::getVerbFormName(form);
-        tenseConj(verb, type, form);
-    }
+            complexConjHTML.replace("&_Form_" + str, Msg::getVerbFormName(form));
+            complexConjHTML.replace("&_Tip_" + str, Msg::getVerbFormDesc(form));
+            complexConjHTML.replace("&PoA_" + str,
+                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Polite, VConjugate::_Affirmative).remove("|"));
+            complexConjHTML.replace("&PoN_" + str,
+                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Polite, VConjugate::_Negative).remove("|"));
+            complexConjHTML.replace("&PlA_" + str,
+                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Plain, VConjugate::_Affirmative).remove("|"));
+            complexConjHTML.replace("&PlN_" + str,
+                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Plain, VConjugate::_Negative).remove("|"));
+        }
 
-    ui->showt->setVerticalHeaderLabels(vlist);
+    }//end: constant strings
 
-    int i=0;
-    foreach(CForm form, Msg::verbFormsList()){
-        ui->showt->verticalHeaderItem(i)->setToolTip(Msg::getVerbFormDesc(form));
-        i++;
-    }
-}
+    ui->complexConj->setHtml(complexConjHTML);
 
-
-
-/*!
- * \brief jpconjmain::tenseConj Used to create a row in the QTableWindget
- *
- * Creates a new row in QTableWindget.
- * This row contains polite-positive, polite-negative, plain-positive, plain-negative combinations.
- * For each of these combinations, we conjugate the verb based on its type and the form we want.
- * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
- * \param type The Edict2 type of the verb (See: VerbType::EdictType)
- * \param form The form can be: present, past, conditional, etc. (See: VConjugate::CForm)
- */
-void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
-{
-
-    QString result = "";
-    int rownum = ui->showt->rowCount();
-
-    ui->showt->insertRow(rownum);
-    QTableWidgetItem* item;
-
-    // Polite, Positive
-    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Affirmative).remove("|");
-    item = new QTableWidgetItem(result);
-    item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft );
-    ui->showt->setItem(rownum,0,item);
-
-    // Polite, Negative
-    result = libjpconjlink::conjugate(verb, type, form, _Polite, _Negative).remove("|");
-    item = new QTableWidgetItem(result);
-    item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
-    ui->showt->setItem(rownum,1,item);
-
-    //Common, Positive
-    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Affirmative).remove("|");
-    item = new QTableWidgetItem(result);
-    item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
-    ui->showt->setItem(rownum,2,item);
-
-    //common, Negative
-    result = libjpconjlink::conjugate(verb, type, form, _Plain, _Negative).remove("|");
-    item = new QTableWidgetItem(result);
-    item->setTextAlignment(Qt::AlignAbsolute + Qt::AlignLeft);
-    ui->showt->setItem(rownum,3,item);
 }
 
 
@@ -275,7 +239,7 @@ void jpconjmain::tenseConj(const QString verb, EdictType type, CForm form)
  */
 QString jpconjmain::readHtmlFile(QString URL)
 {
-    QString result="";
+    QString result="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />";
     QFile HtmlFile(URL);
 
     if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -284,6 +248,20 @@ QString jpconjmain::readHtmlFile(QString URL)
     }
 
     return result;
+}
+
+
+
+/*!
+ * \brief jpconjmain::setCSS Set a user defined CSS to the QWebView
+ * \param webView The QWebView we want to set the content CSS.
+ * \param nameCSS The name of the CSS located in <dataFolder>/styles/ with the extension ".css"
+ */
+void jpconjmain::setCSS(QWebView * webView, QString nameCSS)
+{
+    QString cssfile = QDir(QString(dataFolder)).absolutePath() + "/styles/" + nameCSS;
+    QWebSettings * settings = webView->settings();
+    settings->setUserStyleSheetUrl(QUrl::fromLocalFile(cssfile));
 }
 
 /*******************************************************

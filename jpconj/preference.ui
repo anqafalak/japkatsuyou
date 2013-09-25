@@ -38,8 +38,8 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>250</y>
-     <width>471</width>
+     <y>260</y>
+     <width>481</width>
      <height>41</height>
     </rect>
    </property>
@@ -50,15 +50,45 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QComboBox" name="lang">
+  <widget class="QTabWidget" name="setting_tab">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>20</y>
-     <width>231</width>
-     <height>31</height>
+     <x>10</x>
+     <y>10</y>
+     <width>481</width>
+     <height>251</height>
     </rect>
    </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="ui_tab">
+    <attribute name="title">
+     <string>User Interface</string>
+    </attribute>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>451</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lang_label">
+        <property name="text">
+         <string>User Interface language</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="lang"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>

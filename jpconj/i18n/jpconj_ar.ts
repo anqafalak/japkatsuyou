@@ -28,7 +28,7 @@
         <translation>شكر</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="43"/>
+        <location filename="../about.cpp" line="76"/>
         <source>Version</source>
         <translation>النسخة</translation>
     </message>
@@ -58,6 +58,16 @@
         <location filename="../preference.ui" line="32"/>
         <source>Preferences</source>
         <translation>خيارات</translation>
+    </message>
+    <message>
+        <location filename="../preference.ui" line="67"/>
+        <source>User Interface</source>
+        <translation>واجهة المستخدم</translation>
+    </message>
+    <message>
+        <location filename="../preference.ui" line="82"/>
+        <source>User Interface language</source>
+        <translation>لغة واجهة المستخدم</translation>
     </message>
     <message>
         <source>Default</source>
@@ -126,37 +136,37 @@
 <context>
     <name>basicFormName</name>
     <message>
-        <location filename="../msg.h" line="315"/>
+        <location filename="../msg.h" line="389"/>
         <source>Imperfective (general)</source>
         <translation>الشكل الناقص (عام)</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="318"/>
+        <location filename="../msg.h" line="392"/>
         <source>Hypothetical</source>
         <translation>الشكل الافتراضي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="321"/>
+        <location filename="../msg.h" line="395"/>
         <source>Imperative</source>
         <translation>شكل الأمر</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="324"/>
+        <location filename="../msg.h" line="398"/>
         <source>Conjunctive (other)</source>
         <translation>الشكل الموصول (آخر)</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="327"/>
+        <location filename="../msg.h" line="401"/>
         <source>Attributive</source>
         <translation>الشكل النعتي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="330"/>
+        <location filename="../msg.h" line="404"/>
         <source>Conjunctive (_i)</source>
         <translation>الشكل الموصول (_i)</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="333"/>
+        <location filename="../msg.h" line="407"/>
         <source>Imperfective (volitional)</source>
         <translation>الشكل الناقص (اختياري)</translation>
     </message>
@@ -168,32 +178,32 @@
 <context>
     <name>conjugationStrings</name>
     <message>
-        <location filename="../msg.h" line="275"/>
+        <location filename="../msg.h" line="340"/>
         <source>Stem</source>
         <translation>الجذر</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="278"/>
+        <location filename="../msg.h" line="343"/>
         <source>Verb</source>
         <translation>الفعل</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="281"/>
+        <location filename="../msg.h" line="346"/>
         <source>Suffix</source>
         <translation>اللاحقة</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="284"/>
+        <location filename="../msg.h" line="349"/>
         <source>Words that come after</source>
         <translation>الكلمات التي تأتي من بعد</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="287"/>
+        <location filename="../msg.h" line="352"/>
         <source>Form name</source>
         <translation>اسم الشكل</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="290"/>
+        <location filename="../msg.h" line="355"/>
         <source>Basic Conjugation</source>
         <translation>التصريف البسيط</translation>
     </message>
@@ -365,72 +375,72 @@
 <context>
     <name>verbFormDesc</name>
     <message>
-        <location filename="../msg.h" line="109"/>
+        <location filename="../msg.h" line="132"/>
         <source>The provisional conditional form is used: 
  - In conditionals where the emphasis rests more on the condition than the result. 
  - Expressing obligations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="111"/>
+        <location filename="../msg.h" line="134"/>
         <source>It can be used in the same way as the provisional condition form.
  However, it implies more certainty about the condition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="103"/>
+        <location filename="../msg.h" line="126"/>
         <source>It&apos;s a form used for many purposes, like successive actions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="105"/>
+        <location filename="../msg.h" line="128"/>
         <source>This is the present tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="107"/>
+        <location filename="../msg.h" line="130"/>
         <source>This is the past tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="113"/>
+        <location filename="../msg.h" line="136"/>
         <source>The imperative form is used to give an order to someone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="115"/>
+        <location filename="../msg.h" line="138"/>
         <source>In general, the volitional form expresses intention, eg. Let&apos;s... or Shall we...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="117"/>
+        <location filename="../msg.h" line="140"/>
         <source>This is the present continuous tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="119"/>
+        <location filename="../msg.h" line="142"/>
         <source>This is the past continuous tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="121"/>
+        <location filename="../msg.h" line="144"/>
         <source>This is the passive voice of the verb.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="123"/>
+        <location filename="../msg.h" line="146"/>
         <source>The causative is used for: 
  - Making someone do something 
  - Letting someone do something.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="125"/>
+        <location filename="../msg.h" line="148"/>
         <source>It is used to express causation passively.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="127"/>
+        <location filename="../msg.h" line="150"/>
         <source>The potential is used to express that 
  one has the ability to do something.</source>
         <translation type="unfinished"></translation>
@@ -439,17 +449,17 @@
 <context>
     <name>verbFormNames</name>
     <message>
-        <location filename="../msg.h" line="68"/>
+        <location filename="../msg.h" line="87"/>
         <source>Present</source>
         <translation>مضارع</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="70"/>
+        <location filename="../msg.h" line="89"/>
         <source>Past</source>
         <translation>ماضي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="72"/>
+        <location filename="../msg.h" line="91"/>
         <source>Provisional Condition</source>
         <translation>شرط مؤقت</translation>
     </message>
@@ -458,52 +468,52 @@
         <translation type="obsolete">شرط</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="74"/>
+        <location filename="../msg.h" line="93"/>
         <source>Conditional</source>
         <translation>شرط</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="76"/>
+        <location filename="../msg.h" line="95"/>
         <source>Imperative</source>
         <translation>أمر</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="66"/>
+        <location filename="../msg.h" line="85"/>
         <source>Te form</source>
         <translation>صيغة Te</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="78"/>
+        <location filename="../msg.h" line="97"/>
         <source>Volitional</source>
         <translation>أمر اختياري</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="80"/>
+        <location filename="../msg.h" line="99"/>
         <source>Present Continuous</source>
         <translation>مضارع مستمر</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="82"/>
+        <location filename="../msg.h" line="101"/>
         <source>Past Continuous</source>
         <translation>ماضي مستمر</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="84"/>
+        <location filename="../msg.h" line="103"/>
         <source>Passive</source>
         <translation>مبني للمجهول</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="86"/>
+        <location filename="../msg.h" line="105"/>
         <source>Causative</source>
         <translation>مسبب</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="88"/>
+        <location filename="../msg.h" line="107"/>
         <source>Causative Passive</source>
         <translation>مسبب مبني للمجهول</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="90"/>
+        <location filename="../msg.h" line="109"/>
         <source>Potential</source>
         <translation>استطاعة</translation>
     </message>
@@ -525,22 +535,22 @@
 <context>
     <name>verbPolarityDesc</name>
     <message>
-        <location filename="../msg.h" line="233"/>
+        <location filename="../msg.h" line="275"/>
         <source>Negative</source>
         <translation>منفي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="247"/>
+        <location filename="../msg.h" line="294"/>
         <source>Form used in negative sentences.</source>
         <translation>صيغة مستخدمة في الجمل المنفية.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="235"/>
+        <location filename="../msg.h" line="277"/>
         <source>Affirmative</source>
         <translation>إيجابي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="249"/>
+        <location filename="../msg.h" line="296"/>
         <source>Form used in affirmative sentences.</source>
         <translation>صيغة مستخدمة في الجمل الإيجابية.</translation>
     </message>
@@ -556,22 +566,22 @@
         <translation type="obsolete">مهذب</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="205"/>
+        <location filename="../msg.h" line="237"/>
         <source>Plain</source>
         <translation>عادي</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="207"/>
+        <location filename="../msg.h" line="239"/>
         <source>Polite</source>
         <translation>مهذب</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="219"/>
+        <location filename="../msg.h" line="256"/>
         <source>Plain form of a sentence; it is used with friends.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../msg.h" line="221"/>
+        <location filename="../msg.h" line="258"/>
         <source>Polite form of a sentence; it is used in official discussion.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -579,17 +589,17 @@
 <context>
     <name>verbTypeDesc</name>
     <message>
-        <location filename="../msg.h" line="140"/>
+        <location filename="../msg.h" line="167"/>
         <source>This verb doesn&apos;t exist in the database.</source>
         <translation>هذا الفعل غير متوفر في قاعدة البيانات.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="142"/>
+        <location filename="../msg.h" line="169"/>
         <source>Ichidan verb.</source>
         <translation>فعل إيتشيدان.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="144"/>
+        <location filename="../msg.h" line="171"/>
         <source>Nidan verb with &apos;u&apos; ending (archaic).</source>
         <translation>فعل نيدان ينتهي ب &quot;u&quot; (مهجور).</translation>
     </message>
@@ -598,127 +608,127 @@
         <translation type="obsolete">فعل يوندان ينتهي ب &quot;hu/fu&quot; (مهجور)</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="146"/>
+        <location filename="../msg.h" line="173"/>
         <source>Yondan verb with &apos;hu/fu&apos; ending (archaic).</source>
         <translation>فعل يوندان ينتهي ب &quot;ru&quot; (مهجور).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="148"/>
+        <location filename="../msg.h" line="175"/>
         <source>Yondan verb with &apos;ru&apos; ending (archaic).</source>
         <translation>فعل يوندان ينتهي ب &quot;ru&quot; (مهجور).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="150"/>
+        <location filename="../msg.h" line="177"/>
         <source>Godan verb (not completely classified).</source>
         <translation>فعل غودان (لم يتم تصنيفه بشكل نهائي).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="152"/>
+        <location filename="../msg.h" line="179"/>
         <source>Godan verb -aru special class.</source>
         <translation>فعل غودان: aru - فئة خاصة.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="154"/>
+        <location filename="../msg.h" line="181"/>
         <source>Godan verb with &apos;bu&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;bu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="156"/>
+        <location filename="../msg.h" line="183"/>
         <source>Godan verb with &apos;gu&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;gu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="158"/>
+        <location filename="../msg.h" line="185"/>
         <source>Godan verb with &apos;ku&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;ku&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="160"/>
+        <location filename="../msg.h" line="187"/>
         <source>Godan verb - iku/yuku special class.</source>
         <translation>فعل غودان: Iku/Yuku - فئة خاصة.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="162"/>
+        <location filename="../msg.h" line="189"/>
         <source>Godan verb with &apos;mu&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;mu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="164"/>
+        <location filename="../msg.h" line="191"/>
         <source>Godan verb with &apos;nu&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;nu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="166"/>
+        <location filename="../msg.h" line="193"/>
         <source>Godan verb with &apos;ru&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;ru&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="168"/>
+        <location filename="../msg.h" line="195"/>
         <source>Godan verb with &apos;ru&apos; ending (irregular verb).</source>
         <translation>فعل غودان ينتهي ب &quot;ru&quot; (فعل غير نظامي).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="170"/>
+        <location filename="../msg.h" line="197"/>
         <source>Godan verb with &apos;su&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;su&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="172"/>
+        <location filename="../msg.h" line="199"/>
         <source>Godan verb with &apos;tsu&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;tsu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="174"/>
+        <location filename="../msg.h" line="201"/>
         <source>Godan verb with &apos;u&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;u&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="176"/>
+        <location filename="../msg.h" line="203"/>
         <source>Godan verb with &apos;u&apos; ending (special class).</source>
         <translation>فعل غودان ينتهي ب &quot;u&quot; (فئة خاصة).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="178"/>
+        <location filename="../msg.h" line="205"/>
         <source>Godan verb - uru old class verb (old form of Eru).</source>
         <translation>فعل غودان - فعل فئة Uru القديمة (الشكل القديم ل Eru).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="180"/>
+        <location filename="../msg.h" line="207"/>
         <source>Godan verb with &apos;zu&apos; ending.</source>
         <translation>فعل غودان ينتهي ب &quot;zu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="182"/>
+        <location filename="../msg.h" line="209"/>
         <source>Ichidan verb - zuru verb - (alternative form of -jiru verbs).</source>
         <translation>فعل إتشيدان - Zuru (شكل بديل لأفعال -jiru).</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="184"/>
+        <location filename="../msg.h" line="211"/>
         <source>Kuru verb - special class.</source>
         <translation>الفعل Kuru - فئة خاصة.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="186"/>
+        <location filename="../msg.h" line="213"/>
         <source>Irregular nu verb.</source>
         <translation>فعل غير نظامي ينهي ب &quot;nu&quot;.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="188"/>
+        <location filename="../msg.h" line="215"/>
         <source>Noun or participle which takes the aux. verb suru.</source>
         <translation>اسم أو فعل يستعمل الفعل المساعد Suru.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="190"/>
+        <location filename="../msg.h" line="217"/>
         <source>Su verb - precursor to the modern suru.</source>
         <translation>فعل Su - سابق لفعل Suru الحديث.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="192"/>
+        <location filename="../msg.h" line="219"/>
         <source>Suru verb - irregular.</source>
         <translation>فعل Suru - غير نظامي.</translation>
     </message>
     <message>
-        <location filename="../msg.h" line="194"/>
+        <location filename="../msg.h" line="221"/>
         <source>Suru verb - special class.</source>
         <translation>فعل Suru - فئة خاصة.</translation>
     </message>

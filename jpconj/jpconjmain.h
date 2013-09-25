@@ -36,6 +36,7 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <QMap>
+#include <QWebView>
 
 
 namespace Ui {
@@ -65,9 +66,9 @@ private:
     //Functions related to conjugation
     void basicConjugation(QString verb, EdictType type);
     void complexConjugation(QString verb, EdictType type);
-    void tenseConj(const QString verb, EdictType type, CForm form);
 
     QString readHtmlFile(QString URL);
+    void setCSS(QWebView * webView, QString nameCSS);
 
 protected:
     void changeEvent(QEvent* event);

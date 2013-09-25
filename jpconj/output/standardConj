@@ -1,62 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-<table border="1" style="width: 100%;">
+<table border="0" style="width: 100%;">
   <tbody>
     <tr style="vertical-align:middle;">
-      <td colspan="2"
-      style="text-align:center;margin-left:auto;margin-right:auto;">&_Verb&</td>
-      <td rowspan="2"
-        style="text-align:center;margin-left:auto;margin-right:">&_WordsAfter&</td>
+      <td colspan="2" class="head1">&_Verb&</td>
+      <td rowspan="2" class="head3">&_WordsAfter&</td>
     </tr>
     <tr>
-      <td
-      style="text-align:center;margin-left:auto;margin-right:auto;">&_Stem&</td>
-      <td
-      style="text-align:center;margin-left:auto;margin-right:auto;">&_Suffix&</td>
+      <td class="head2">&_Stem&</td>
+      <td class="head2">&_Suffix&</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_a&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&suffix_a&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">-ない</td>
+      <td class="row1">&stem_a&</td>
+      <td class="row2">&suffix_a&</td>
+      <td class="row3">-ない</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_i&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&suffix_i&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">-ます</td>
+      <td class="row1">&stem_i&</td>
+      <td class="row2">&suffix_i&</td>
+      <td class="row3">-ます</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_u&</td>
-      <td
-      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_u&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">。</td>
+      <td class="row1">&stem_u&</td>
+      <td class="row2">&suffix_u&</td>
+      <td class="row3">。</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_u&</td>
-      <td
-      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_u&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">-時</td>
+      <td class="row1">&stem_u&</td>
+      <td class="row2">&suffix_u&</td>
+      <td class="row3">-時</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_e&</td>
-      <td
-      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_e&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">-ば</td>
+      <td class="row1">&stem_e&</td>
+      <td class="row2">&suffix_e&</td>
+      <td class="row3">-ば</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_eImp&</td>
-      <td
-      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_eImp&</td>
-      <td
-      style="text-align:left;margin-left:0;margin-right:auto;">。(命令)</td>
+      <td class="row1">&stem_eImp&</td>
+      <td class="row2">&suffix_eImp&</td>
+      <td class="row3">。(命令)</td>
     </tr>
     <tr>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">&stem_o&</td>
-      <td
-      style="text-align:left;margin-left:0;margin-right:auto;">&suffix_o&</td>
-      <td style="text-align:left;margin-left:0;margin-right:auto;">-う
+      <td class="row1">&stem_o&</td>
+      <td class="row2">&suffix_o&</td>
+      <td class="row3">-う
       <br/> 一段、くる、する：-よう
       </td>
     </tr>

@@ -27,7 +27,6 @@
 #include "typeDefs.h"
 
 #include <QApplication>
-#include <QList>
 #include <QMap>
 #include <QString>
 
@@ -54,23 +53,23 @@ namespace Msg {
 /*! Gives a list of complex conjugation forms (See: VConjugate::CForm).\n
  * This list makes it easier to loop over the different complex conjugation forms.
  */
-static QList<CForm> NO_USE_FUNC verbFormsList()
+static QMap<CForm, QString> NO_USE_FUNC complexFormsMap()
 {
-    QList<CForm> resultList;
-    resultList << VConjugate::_Present;
-    resultList << VConjugate::_Past;
-    resultList << VConjugate::_Provision;
-    resultList << VConjugate::_Condition;
-    resultList << VConjugate::_Imperative;
-    resultList << VConjugate::_Volitional;
-    resultList << VConjugate::_PresentContinuous;
-    resultList << VConjugate::_PastContinuous;
-    resultList << VConjugate::_Passive;
-    resultList << VConjugate::_Causative;
-    resultList << VConjugate::_CausativePassive;
-    resultList << VConjugate::_Potential;
+    QMap<CForm, QString> resultMap;
+    resultMap.insert(VConjugate::_Present, "present");
+    resultMap.insert(VConjugate::_Past, "past");
+    resultMap.insert(VConjugate::_Provision, "provision");
+    resultMap.insert(VConjugate::_Condition, "condition");
+    resultMap.insert(VConjugate::_Imperative, "imperative");
+    resultMap.insert(VConjugate::_Volitional, "volutional");
+    resultMap.insert(VConjugate::_PresentContinuous, "presentcontinuous");
+    resultMap.insert(VConjugate::_PastContinuous, "pastcontinuous");
+    resultMap.insert(VConjugate::_Passive, "passive");
+    resultMap.insert(VConjugate::_Causative, "causative");
+    resultMap.insert(VConjugate::_CausativePassive, "causativepassive");
+    resultMap.insert(VConjugate::_Potential, "potential");
 
-    return resultList;
+    return resultMap;
 }
 
 
