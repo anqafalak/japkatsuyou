@@ -230,14 +230,17 @@ enum KForm {
     /*! Conjunctive (other), in Japanese also: 連用形*/
     _Conjunctive_t      = 4,
 
+    /*! Attributive, in Japanese: 終止形*/
+    _Terminal_u         = 5,
+
     /*! Attributive, in Japanese: 連体形*/
-    _Attributive_u      = 5,
+    _Attributive_u      = 6,
 
     /*! Hypothetical, in Japanese: 仮定形*/
-    _Hypothetical_e     = 6,
+    _Hypothetical_e     = 7,
 
     /*! Imperative, in Japanese: 命令形*/
-    _Imperative_e       = 7
+    _Imperative_e       = 8
 };
 }
 

@@ -1,36 +1,40 @@
 <table border="0" style="width: 100%;">
   <tbody>
     <tr style="vertical-align:middle;">
-      <td class="head1">&_Form&</td>
-      <td class="head2">&_BasicConj&</td>
+      <td class="head1 Const" name="_Form"></td>
+      <td class="head2 Const" name= "_BasicConj"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_a&</td>
-      <td class="row1">&basic_a&</td>
+      <td class="rowtitle" id="_Name_a"></td>
+      <td class="row1" id="basic_a"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_e&</td>
-      <td class="row1">&basic_e&</td>
+      <td class="rowtitle" id="_Name_e"></td>
+      <td class="row1" id="basic_e"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_eImp&</td>
-      <td class="row1">&basic_eImp&</td>
+      <td class="rowtitle" id="_Name_eImp"></td>
+      <td class="row1" id="basic_eImp"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_t&</td>
-      <td class="row1">&basic_t&</td>
+      <td class="rowtitle" id="_Name_t"></td>
+      <td class="row1" id="basic_t"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_u&</td>
-      <td class="row1">&basic_u&</td>
+      <td class="rowtitle" id="_Name_u"></td>
+      <td class="row1" id="basic_u"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_i&</td>
-      <td class="row1">&basic_i&</td>
+      <td class="rowtitle" id="_Name_uAtt"></td>
+      <td class="row1" id="basic_uAtt"></td>
     </tr>
     <tr>
-      <td class="rowtitle">&_Name_o&</td>
-      <td class="row1">&basic_o&</td>
+      <td class="rowtitle" id="_Name_i"></td>
+      <td class="row1" id="basic_i"></td>
+    </tr>
+    <tr>
+      <td class="rowtitle" id="_Name_o"></td>
+      <td class="row1" id="basic_o"></td>
     </tr>
   </tbody>
 </table>

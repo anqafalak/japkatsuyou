@@ -47,17 +47,21 @@ QHash<QString, QString> Language::languagesInfo;
  * - RTL: If the local first two characters are in: ar, dv, ha, he, fa, ps, ur, yi
  * - LTR: Otherwise
  * \param w A QMainWindow which we want to set the direction.
+ * \return true if rtl, false if ltr
  */
-void Language::mainWindowDirection(QMainWindow * w)
+bool Language::mainWindowDirection(QMainWindow * w)
 {
     QString langID = getConfigLanguage();
     if (QString("ar|dv|ha|he|fa|ps|ur|yi").contains(langID.right(2))){
         qApp->setLayoutDirection(Qt::RightToLeft);
         w->setLayoutDirection(Qt::RightToLeft);
-    }else{
-        qApp->setLayoutDirection(Qt::LeftToRight);
-        w->setLayoutDirection(Qt::LeftToRight);
+        return true;
     }
+
+    qApp->setLayoutDirection(Qt::LeftToRight);
+    w->setLayoutDirection(Qt::LeftToRight);
+
+    return false;
 
 }
 
@@ -97,7 +101,7 @@ void Language::setConfigLanguage(QString langID)
     QSettings settings;//("DzCoding", "JapKatsuyou")
     settings.setValue("langacro", langID);
 
-    currentLanguageID = langID;
+    //currentLanguageID = langID;
 }
 
 
@@ -166,7 +170,7 @@ void Language::loadTranslations()
 
     //run the specified language
 
-    currentLanguageID = getConfigLanguage();
+    //currentLanguageID = getConfigLanguage();
     setLanguage();
 
 }
@@ -223,9 +227,9 @@ void Language::addTranslation(QString langId, QString dir)
  */
 void Language::setLanguage()
 {
-
-    if(!translators.contains(currentLanguageID)){
-        QString langID = QLocale::system().uiLanguages().at(0);
+    QString langID = getConfigLanguage();
+    if(!translators.contains(langID)){
+        langID = QLocale::system().uiLanguages().at(0);
 
         if(!translators.contains(langID)){
             langID = langID.left(2);
@@ -235,19 +239,23 @@ void Language::setLanguage()
         setConfigLanguage(langID);
     }
 
-    if (currentJpconjTranslator)
-        qApp->removeTranslator(currentJpconjTranslator);
+    if (langID != currentLanguageID){
 
-    if (currentQtTranslator)
-        qApp->removeTranslator(currentQtTranslator);
+        currentLanguageID = langID;
 
-    currentJpconjTranslator = translators.value(currentLanguageID).first;
-    currentQtTranslator = translators.value(currentLanguageID).second;
+        if (currentJpconjTranslator)
+            qApp->removeTranslator(currentJpconjTranslator);
 
-    if (currentQtTranslator)
-        qApp->installTranslator(currentQtTranslator);
+        if (currentQtTranslator)
+            qApp->removeTranslator(currentQtTranslator);
 
-    if (currentJpconjTranslator)
-        qApp->installTranslator(currentJpconjTranslator);
+        currentJpconjTranslator = translators.value(currentLanguageID).first;
+        currentQtTranslator = translators.value(currentLanguageID).second;
 
+        if (currentQtTranslator)
+            qApp->installTranslator(currentQtTranslator);
+
+        if (currentJpconjTranslator)
+            qApp->installTranslator(currentJpconjTranslator);
+    }
 }

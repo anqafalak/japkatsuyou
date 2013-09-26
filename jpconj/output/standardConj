@@ -1,47 +1,47 @@
 <table border="0" style="width: 100%;">
   <tbody>
     <tr style="vertical-align:middle;">
-      <td colspan="2" class="head1">&_Verb&</td>
-      <td rowspan="2" class="head3">&_WordsAfter&</td>
+      <td colspan="2" class="head1 Const" name="_Verb"></td>
+      <td rowspan="2" class="head3 Const" name="_WordsAfter"></td>
     </tr>
     <tr>
-      <td class="head2">&_Stem&</td>
-      <td class="head2">&_Suffix&</td>
+      <td class="head2 Const" name="_Stem"></td>
+      <td class="head2 Const" name="_Suffix"></td>
     </tr>
     <tr>
-      <td class="row1">&stem_a&</td>
-      <td class="row2">&suffix_a&</td>
-      <td class="row3">-ない</td>
+      <td class="row1" id="stem_a"></td>
+      <td class="row2" id="suffix_a"></td>
+      <td class="row3" id="after_a">-ない</td>
     </tr>
     <tr>
-      <td class="row1">&stem_i&</td>
-      <td class="row2">&suffix_i&</td>
-      <td class="row3">-ます</td>
+      <td class="row1" id="stem_i"></td>
+      <td class="row2" id="suffix_i"></td>
+      <td class="row3" id="after_i">-ます</td>
     </tr>
     <tr>
-      <td class="row1">&stem_u&</td>
-      <td class="row2">&suffix_u&</td>
-      <td class="row3">。</td>
+      <td class="row1" id="stem_u"></td>
+      <td class="row2" id="suffix_u"></td>
+      <td class="row3" id="after_u">。</td>
     </tr>
     <tr>
-      <td class="row1">&stem_u&</td>
-      <td class="row2">&suffix_u&</td>
-      <td class="row3">-時</td>
+      <td class="row1" id="stem_uAtt"></td>
+      <td class="row2" id="suffix_uAtt"></td>
+      <td class="row3" id="after_uAtt">-時</td>
     </tr>
     <tr>
-      <td class="row1">&stem_e&</td>
-      <td class="row2">&suffix_e&</td>
-      <td class="row3">-ば</td>
+      <td class="row1" id="stem_e"></td>
+      <td class="row2" id="suffix_e"></td>
+      <td class="row3" id="after_e">-ば</td>
     </tr>
     <tr>
-      <td class="row1">&stem_eImp&</td>
-      <td class="row2">&suffix_eImp&</td>
-      <td class="row3">。(命令)</td>
+      <td class="row1" id="stem_eImp"></td>
+      <td class="row2" id="suffix_eImp"></td>
+      <td class="row3" id="after_eImp">。(命令)</td>
     </tr>
     <tr>
-      <td class="row1">&stem_o&</td>
-      <td class="row2">&suffix_o&</td>
-      <td class="row3">-う
+      <td class="row1" id="stem_o"></td>
+      <td class="row2" id="suffix_o"></td>
+      <td class="row3" id="after_o">-う
       <br/> 一段、くる、する：-よう
       </td>
     </tr>

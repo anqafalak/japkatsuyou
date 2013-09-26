@@ -128,9 +128,9 @@ static QString NO_USE_FUNC getVerbFormDesc(CForm form)
     case VConjugate::_Past:
         return qApp->translate("verbFormDesc", "This is the past tense.");
     case VConjugate::_Provision:
-        return qApp->translate("verbFormDesc", "The provisional conditional form is used: \n - In conditionals where the emphasis rests more on the condition than the result. \n - Expressing obligations.");
+        return qApp->translate("verbFormDesc", "The provisional conditional form is used: - In conditionals where the emphasis rests more on the condition than the result;  - Expressing obligations.");
     case VConjugate::_Condition:
-        return qApp->translate("verbFormDesc", "It can be used in the same way as the provisional condition form.\n However, it implies more certainty about the condition.");
+        return qApp->translate("verbFormDesc", "It can be used in the same way as the provisional condition form. However, it implies more certainty about the condition.");
     case VConjugate::_Imperative:
         return qApp->translate("verbFormDesc", "The imperative form is used to give an order to someone.");
     case VConjugate::_Volitional:
@@ -142,11 +142,11 @@ static QString NO_USE_FUNC getVerbFormDesc(CForm form)
     case VConjugate::_Passive:
         return qApp->translate("verbFormDesc", "This is the passive voice of the verb.");
     case VConjugate::_Causative:
-        return qApp->translate("verbFormDesc", "The causative is used for: \n - Making someone do something \n - Letting someone do something.");
+        return qApp->translate("verbFormDesc", "The causative is used for: - Making someone do something; - Letting someone do something.");
     case VConjugate::_CausativePassive:
         return qApp->translate("verbFormDesc", "It is used to express causation passively.");
     case VConjugate::_Potential:
-        return qApp->translate("verbFormDesc", "The potential is used to express that \n one has the ability to do something.");
+        return qApp->translate("verbFormDesc", "The potential is used to express that one has the ability to do something.");
     default:
         break;
     }
@@ -320,7 +320,8 @@ static QMap<KForm, QString> NO_USE_FUNC basicFormsMap()
     resultMap.insert(VKatsuyou::_Imperfective_o, "o");
     resultMap.insert(VKatsuyou::_Conjunctive_i, "i");
     resultMap.insert(VKatsuyou::_Conjunctive_t, "t");
-    resultMap.insert(VKatsuyou::_Attributive_u, "u");
+    resultMap.insert(VKatsuyou::_Terminal_u, "u");
+    resultMap.insert(VKatsuyou::_Attributive_u, "uAtt");
     resultMap.insert(VKatsuyou::_Hypothetical_e, "e");
     resultMap.insert(VKatsuyou::_Imperative_e, "eImp");
 
@@ -332,30 +333,26 @@ static QMap<KForm, QString> NO_USE_FUNC basicFormsMap()
 /*! Gives the replacement of HTML variables in Msg::verbStringsList in the current language
  * Giving its number in the QList afforded by this function.
  */
-static QString NO_USE_FUNC getTranslatedString(int number)
+static QString NO_USE_FUNC getTranslatedString(QString elementId)
 {
-    switch (number) {
-    case 0:
+
+    if (elementId == "_Stem")
         return qApp->translate("conjugationStrings", "Stem");
 
-    case 1:
+    if (elementId == "_Verb")
         return qApp->translate("conjugationStrings", "Verb");
 
-    case 2:
+    if (elementId == "_Suffix")
         return qApp->translate("conjugationStrings", "Suffix");
 
-    case 3:
+    if (elementId == "_WordsAfter")
         return qApp->translate("conjugationStrings", "Words that come after");
 
-    case 4:
+    if (elementId == "_Form")
         return qApp->translate("conjugationStrings", "Form name");
 
-    case 5:
+    if (elementId == "_BasicConj")
         return qApp->translate("conjugationStrings", "Basic Conjugation");
-
-    default:
-        break;
-    }
 
     return "";
 }
@@ -364,7 +361,7 @@ static QString NO_USE_FUNC getTranslatedString(int number)
 
 /*! Gives a list of predefined QStrings used as reeplacement variables in HTML.
  */
-static QList<QString> NO_USE_FUNC verbStringsList()
+/*static QList<QString> NO_USE_FUNC verbStringsList()
 {
     QList<QString> resultList;
     resultList << "&_Stem&";
@@ -374,7 +371,7 @@ static QList<QString> NO_USE_FUNC verbStringsList()
     resultList << "&_Form&";
     resultList << "&_BasicConj&";
     return resultList;
-}
+}*/
 
 
 
@@ -395,6 +392,9 @@ static QString NO_USE_FUNC getBasicFormName(KForm form)
 
     case VKatsuyou::_Conjunctive_t:
         return qApp->translate("basicFormName", "Conjunctive (other)");
+
+    case VKatsuyou::_Terminal_u:
+        return qApp->translate("basicFormName", "Terminal");
 
     case VKatsuyou::_Attributive_u:
         return qApp->translate("basicFormName", "Attributive");

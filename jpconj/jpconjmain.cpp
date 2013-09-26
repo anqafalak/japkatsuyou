@@ -30,6 +30,9 @@
  * \class jpconjmain
  * This class is used to manage the main window of the application.
  */
+bool jpconjmain::rtl = false;
+bool jpconjmain::hasContent = false;
+bool jpconjmain::languageChanged = true;
 
 
 
@@ -76,7 +79,8 @@ void jpconjmain::doInit()
     qDebug()<< QString(VERSION);
     libjpconjlink::Init();
     Language::loadTranslations();
-    Language::mainWindowDirection(this);
+    rtl = Language::mainWindowDirection(this);
+
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
@@ -85,8 +89,12 @@ void jpconjmain::doInit()
     palette.setBrush(QPalette::Base, Qt::transparent);
     ui->basicConj->page()->setPalette(palette);
     ui->basicConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
+
     ui->standardConj->page()->setPalette(palette);
     ui->standardConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
+
+    ui->complexConj->page()->setPalette(palette);
+    ui->complexConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
 
     setCSS(ui->basicConj, "DzStyle.css");
     setCSS(ui->standardConj, "DzStyle.css");
@@ -141,11 +149,20 @@ void jpconjmain::doConj()
 
     ui->msgt->setText(Msg::getVerbTypeDesc(type));
 
-    if (type > 0) {
-        complexConjugation(verb, type);
-        basicConjugation(verb, type);
+    if (type < 1){
+
+        ui->standardConj->setHtml("");
+        ui->basicConj->setHtml("");
+        ui->complexConj->setHtml("");
+        hasContent = false;
+        return;
     }
 
+    complexConjugation(verb, type);
+    basicConjugation(verb, type);
+    hasContent = true;
+
+    setHTMLTranslation();
 }
 
 
@@ -157,36 +174,36 @@ void jpconjmain::doConj()
  */
 void jpconjmain::basicConjugation(QString verb, EdictType type)
 {
-    QString basicConjHTML = readHtmlFile(":/output/basicConj");
-    QString standardConjHTML = readHtmlFile(":/output/standardConj");
 
-    {//begin: calculated strings
-        //! [Doxygen: basicFormsMap example]
-        QMap<KForm, QString> basicForms = Msg::basicFormsMap();
-        foreach (KForm form, basicForms.keys()){
-            QStringList conj = libjpconjlink::katsuyou(verb, type, form).split("|");
-            QString str = basicForms.value(form) + "&";
+    if (!hasContent){
+        QString basicConjHTML = readHtmlFile(":/output/basicConj");
+        QString standardConjHTML = readHtmlFile(":/output/standardConj");
 
-            standardConjHTML.replace("&stem_" + str, conj[0]);
-            standardConjHTML.replace("&suffix_" + str, conj[1]);
+        ui->standardConj->setHtml(standardConjHTML);
+        ui->basicConj->setHtml(basicConjHTML);
+    }
 
-            basicConjHTML.replace("&basic_" + str, conj[0] + conj[1]);
-            basicConjHTML.replace("&_Name_" + str, Msg::getBasicFormName(form));
-        }
-        //! [Doxygen: basicFormsMap example]
-    }//end: calculated strings
 
-    {//begin: constant strings
-        QList<QString> verbStrings =  Msg::verbStringsList();
-        for (int i=0; i< verbStrings.size(); i++){
-            QString translation = Msg::getTranslatedString(i);
-            standardConjHTML.replace(verbStrings[i], translation);
-            basicConjHTML.replace(verbStrings[i], translation);
-        }
-    }//end: constant strings
+    //! [Doxygen: basicFormsMap example]
+    QMap<KForm, QString> basicForms = Msg::basicFormsMap();
+    QWebElement element_stem;
+    QWebElement element_suffix;
+    QWebElement element_basic;
+    foreach (KForm form, basicForms.keys()){
+        QStringList conj = libjpconjlink::katsuyou(verb, type, form).split("|");
+        QString elementId = basicForms.value(form);
 
-    ui->standardConj->setHtml(standardConjHTML);
-    ui->basicConj->setHtml(basicConjHTML);
+        element_stem = ui->standardConj->page()->mainFrame()->findFirstElement("#stem_" + elementId);
+        element_suffix = ui->standardConj->page()->mainFrame()->findFirstElement("#suffix_" + elementId);
+        element_stem.setInnerXml(conj[0]);
+        element_suffix.setInnerXml(conj[1]);
+
+        element_basic = ui->basicConj->page()->mainFrame()->findFirstElement("#basic_" + elementId);
+        element_basic.setInnerXml(conj[0] + conj[1]);
+
+    }
+    //! [Doxygen: basicFormsMap example]
+
 }
 
 
@@ -198,35 +215,33 @@ void jpconjmain::basicConjugation(QString verb, EdictType type)
  */
 void jpconjmain::complexConjugation(QString verb, EdictType type)
 {
-    QString complexConjHTML = readHtmlFile(":/output/complexConj");
+    if (!hasContent){
+        QString complexConjHTML = readHtmlFile(":/output/complexConj");
+        ui->complexConj->setHtml(complexConjHTML);
+    }
 
-    {//begin: constant strings
-        complexConjHTML.replace("&_Polite&", Msg::getVerbPolitenessName(VConjugate::_Polite));
-        complexConjHTML.replace("&_Plain&", Msg::getVerbPolitenessName(VConjugate::_Plain));
-        complexConjHTML.replace("&_Affirmative&", Msg::getVerbPolarityName(VConjugate::_Affirmative));
-        complexConjHTML.replace("&_Negative&", Msg::getVerbPolarityName(VConjugate::_Negative));
+    QString jsScript="";
+    QMap<CForm, QString> complexForms = Msg::complexFormsMap();
+    foreach (CForm form, complexForms.keys()){
 
-        complexConjHTML.replace("&_Form&", Msg::getTranslatedString(4));
+        QString elementId = complexForms.value(form);
 
-        QMap<CForm, QString> complexForms = Msg::complexFormsMap();
-        foreach (CForm form, complexForms.keys()){
-            QString str = complexForms.value(form) + "&";
+        jsScript += "document.getElementById(\"PoA_" + elementId + "\").innerHTML = \"";
+        jsScript += libjpconjlink::conjugate(verb, type, form, VConjugate::_Polite, VConjugate::_Affirmative).remove("|") + "\";\n";
 
-            complexConjHTML.replace("&_Form_" + str, Msg::getVerbFormName(form));
-            complexConjHTML.replace("&_Tip_" + str, Msg::getVerbFormDesc(form));
-            complexConjHTML.replace("&PoA_" + str,
-                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Polite, VConjugate::_Affirmative).remove("|"));
-            complexConjHTML.replace("&PoN_" + str,
-                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Polite, VConjugate::_Negative).remove("|"));
-            complexConjHTML.replace("&PlA_" + str,
-                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Plain, VConjugate::_Affirmative).remove("|"));
-            complexConjHTML.replace("&PlN_" + str,
-                                     libjpconjlink::conjugate(verb, type, form, VConjugate::_Plain, VConjugate::_Negative).remove("|"));
-        }
+        jsScript += "document.getElementById(\"PoN_" + elementId + "\").innerHTML = \"";
+        jsScript += libjpconjlink::conjugate(verb, type, form, VConjugate::_Polite, VConjugate::_Negative).remove("|") + "\";\n";
 
-    }//end: constant strings
+        jsScript += "document.getElementById(\"PlA_" + elementId + "\").innerHTML = \"";
+        jsScript += libjpconjlink::conjugate(verb, type, form, VConjugate::_Plain, VConjugate::_Affirmative).remove("|") + "\";\n";
 
-    ui->complexConj->setHtml(complexConjHTML);
+        jsScript += "document.getElementById(\"PlN_" + elementId + "\").innerHTML = \"";
+        jsScript += libjpconjlink::conjugate(verb, type, form, VConjugate::_Plain, VConjugate::_Negative).remove("|") + "\";\n";
+        //complexConjHTML.replace("&_Form_" + str, Msg::getVerbFormName(form));
+        //complexConjHTML.replace("&_Tip_" + str, Msg::getVerbFormDesc(form));
+    }
+
+    ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
 
 }
 
@@ -239,13 +254,15 @@ void jpconjmain::complexConjugation(QString verb, EdictType type)
  */
 QString jpconjmain::readHtmlFile(QString URL)
 {
-    QString result="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />";
+    QString result="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" /><body>";
     QFile HtmlFile(URL);
 
     if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
         QTextStream htmlStream(&HtmlFile);
         result = htmlStream.readAll();
     }
+
+    result += "</body>";
 
     return result;
 }
@@ -264,6 +281,112 @@ void jpconjmain::setCSS(QWebView * webView, QString nameCSS)
     settings->setUserStyleSheetUrl(QUrl::fromLocalFile(cssfile));
 }
 
+
+
+/*!
+ * \brief jpconjmain::setHTMLDirection Set the direction of the webView body.
+ */
+void jpconjmain::setHTMLTranslation()
+{
+    if (!hasContent)
+        return;
+
+    if (!languageChanged)
+        return;
+
+    QString jsScript = "var body = document.getElementsByTagName('body')[0]; \n";
+    QString dir = (rtl)?"rtl":"ltr";
+    jsScript += "body.dir = \"" + dir + "\";";
+
+    //ui->standardConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    //it is better for standard conjugation to stay ltr
+    ui->basicConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    //qDebug()<< jsScript;
+
+    //Retranslate strings
+
+    {//standard
+        QWebElementCollection standardConjConst = ui->standardConj->page()->mainFrame()->findAllElements(".Const");
+
+        for(int i = 0; i < standardConjConst.count(); i++){
+            QWebElement element = standardConjConst.at(i);
+            QString elementName = element.attribute("name", "");
+            element.setInnerXml(Msg::getTranslatedString(elementName));
+        }
+    }
+
+    {//basic
+        QWebElementCollection basicConjConst = ui->basicConj->page()->mainFrame()->findAllElements(".Const");
+
+        for(int i = 0; i < basicConjConst.count(); i++){
+            QWebElement element = basicConjConst.at(i);
+            QString elementName = element.attribute("name", "");
+            element.setInnerXml(Msg::getTranslatedString(elementName));
+        }
+
+        QMap<KForm, QString> basicForms = Msg::basicFormsMap();
+        QWebElement element_basic;
+        foreach (KForm form, basicForms.keys()){
+            QString elementId = basicForms.value(form);
+            element_basic = ui->basicConj->page()->mainFrame()->findFirstElement("#_Name_" + elementId);
+            element_basic.setInnerXml(Msg::getBasicFormName(form));
+        }
+    }
+
+    //complexConj
+
+    QWebElementCollection complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Form\"]");
+    for(int i = 0; i < complexConjConst.count(); i++)
+        complexConjConst.at(i).setInnerXml(Msg::getTranslatedString("_Form"));
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Polite\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolitenessName(VConjugate::_Polite));
+        element.setAttribute("title", Msg::getVerbPolitenessDesc(VConjugate::_Polite));
+    }
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Plain\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolitenessName(VConjugate::_Plain));
+        element.setAttribute("title", Msg::getVerbPolitenessDesc(VConjugate::_Plain));
+    }
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Affirmative\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolarityName(VConjugate::_Affirmative));
+        element.setAttribute("title", Msg::getVerbPolarityDesc(VConjugate::_Affirmative));
+    }
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Negative\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolarityName(VConjugate::_Negative));
+        element.setAttribute("title", Msg::getVerbPolarityDesc(VConjugate::_Negative));
+    }
+
+    QMap<CForm, QString> complexForms = Msg::complexFormsMap();
+    QWebElement element_complex;
+    foreach (CForm form, complexForms.keys()){
+        QString elementId = complexForms.value(form);
+
+        element_complex = ui->complexConj->page()->mainFrame()->findFirstElement("#_Form_" + elementId);
+        element_complex.setInnerXml(Msg::getVerbFormName(form));
+        element_complex.setAttribute("title", Msg::getVerbFormDesc(form));
+    }
+    //qDebug()<< jsScript;
+    ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+
+    qDebug()<< "Strings translation";
+    languageChanged = false;
+
+}
+
+
+
 /*******************************************************
  *                    PROTECTED
  *******************************************************/
@@ -278,8 +401,10 @@ void jpconjmain::changeEvent(QEvent* event)
     {
         //Msg::updateMsg();
         ui->retranslateUi(this);
-        Language::mainWindowDirection(this);
-
+        rtl=Language::mainWindowDirection(this);
+        languageChanged = true;
+        setHTMLTranslation();
+        //qDebug()<< "changed";
     }
     QMainWindow::changeEvent(event);
 }
@@ -313,4 +438,9 @@ void jpconjmain::on_action_Preference_triggered()
 void jpconjmain::on_actionHelp_Content_triggered()
 {
 
+}
+
+void jpconjmain::on_inputt_returnPressed()
+{
+    doConj();
 }

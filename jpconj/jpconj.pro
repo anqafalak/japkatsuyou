@@ -36,8 +36,7 @@ FORMS    += jpconjmain.ui \
     about.ui \
     preference.ui
 
-TRANSLATIONS    +=  i18n/jpconj_en.ts\
-                    i18n/jpconj_ar.ts\
+TRANSLATIONS    +=  i18n/jpconj_ar.ts\
                     i18n/jpconj_ja.ts\
                     i18n/jpconj_fr.ts
 
