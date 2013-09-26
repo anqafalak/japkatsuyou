@@ -43,7 +43,7 @@ class Language
 {
 public:
     static void loadTranslations();
-    static void mainWindowDirection (QMainWindow *w);
+    static bool mainWindowDirection(QMainWindow *w);
     static QString getConfigLanguage();
     static QString getCurrentLanguage();
     static void setConfigLanguage(QString langID);

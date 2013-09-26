@@ -1,99 +1,99 @@
 <table border="0" style="width: 100%">
   <tbody>
     <tr>
-      <td rowspan="2" class="head3">&_Form&</td>
-      <td colspan="2" class="head1">&_Polite&</td>
-      <td colspan="2" class="head1">&_Plain&</td>
+      <td rowspan="2" class="head3" name="_Form"></td>
+      <td colspan="2" class="head1" name="_Polite"></td>
+      <td colspan="2" class="head1" name="_Plain"></td>
     </tr>
     <tr>
-      <td class="head2">&_Affirmative&</td>
-      <td class="head2">&_Negative&</td>
-      <td class="head2">&_Affirmative&</td>
-      <td class="head2">&_Negative&</td>
+      <td class="head2" name="_Affirmative"></td>
+      <td class="head2" name="_Negative"></td>
+      <td class="head2" name="_Affirmative"></td>
+      <td class="head2" name="_Negative"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_present&">&_Form_present&</td>
-      <td class="row1">&PoA_present&</td>
-      <td class="row1">&PoN_present&</td>
-      <td class="row1">&PlA_present&</td>
-      <td class="row1">&PlN_present&</td>
+      <td class="rowtitle" id="_Form_present"></td>
+      <td class="row1" id="PoA_present"></td>
+      <td class="row1" id="PoN_present"></td>
+      <td class="row1" id="PlA_present"></td>
+      <td class="row1" id="PlN_present"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_past&">&_Form_past&</td>
-      <td class="row1">&PoA_past&</td>
-      <td class="row1">&PoN_past&</td>
-      <td class="row1">&PlA_past&</td>
-      <td class="row1">&PlN_past&</td>
+      <td class="rowtitle" id="_Form_past"></td>
+      <td class="row1" id="PoA_past"></td>
+      <td class="row1" id="PoN_past"></td>
+      <td class="row1" id="PlA_past"></td>
+      <td class="row1" id="PlN_past"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_provision&">&_Form_provision&</td>
-      <td class="row1">&PoA_provision&</td>
-      <td class="row1">&PoN_provision&</td>
-      <td class="row1">&PlA_provision&</td>
-      <td class="row1">&PlN_provision&</td>
+      <td class="rowtitle" id="_Form_provision"></td>
+      <td class="row1" id="PoA_provision"></td>
+      <td class="row1" id="PoN_provision"></td>
+      <td class="row1" id="PlA_provision"></td>
+      <td class="row1" id="PlN_provision"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_condition&">&_Form_condition&</td>
-      <td class="row1">&PoA_condition&</td>
-      <td class="row1">&PoN_condition&</td>
-      <td class="row1">&PlA_condition&</td>
-      <td class="row1">&PlN_condition&</td>
+      <td class="rowtitle" id="_Form_condition"></td>
+      <td class="row1" id="PoA_condition"></td>
+      <td class="row1" id="PoN_condition"></td>
+      <td class="row1" id="PlA_condition"></td>
+      <td class="row1" id="PlN_condition"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_imperative&">&_Form_imperative&</td>
-      <td class="row1">&PoA_imperative&</td>
-      <td class="row1">&PoN_imperative&</td>
-      <td class="row1">&PlA_imperative&</td>
-      <td class="row1">&PlN_imperative&</td>
+      <td class="rowtitle" id="_Form_imperative"></td>
+      <td class="row1" id="PoA_imperative"></td>
+      <td class="row1" id="PoN_imperative"></td>
+      <td class="row1" id="PlA_imperative"></td>
+      <td class="row1" id="PlN_imperative"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_volutional&">&_Form_volutional&</td>
-      <td class="row1">&PoA_volutional&</td>
-      <td class="row1">&PoN_volutional&</td>
-      <td class="row1">&PlA_volutional&</td>
-      <td class="row1">&PlN_volutional&</td>
+      <td class="rowtitle" id="_Form_volutional"></td>
+      <td class="row1" id="PoA_volutional"></td>
+      <td class="row1" id="PoN_volutional"></td>
+      <td class="row1" id="PlA_volutional"></td>
+      <td class="row1" id="PlN_volutional"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_presentcontinuous&">&_Form_presentcontinuous&</td>
-      <td class="row1">&PoA_presentcontinuous&</td>
-      <td class="row1">&PoN_presentcontinuous&</td>
-      <td class="row1">&PlA_presentcontinuous&</td>
-      <td class="row1">&PlN_presentcontinuous&</td>
+      <td class="rowtitle" id="_Form_presentcontinuous"></td>
+      <td class="row1" id="PoA_presentcontinuous"></td>
+      <td class="row1" id="PoN_presentcontinuous"></td>
+      <td class="row1" id="PlA_presentcontinuous"></td>
+      <td class="row1" id="PlN_presentcontinuous"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_pastcontinuous&">&_Form_pastcontinuous&</td>
-      <td class="row1">&PoA_pastcontinuous&</td>
-      <td class="row1">&PoN_pastcontinuous&</td>
-      <td class="row1">&PlA_pastcontinuous&</td>
-      <td class="row1">&PlN_pastcontinuous&</td>
+      <td class="rowtitle" id="_Form_pastcontinuous"></td>
+      <td class="row1" id="PoA_pastcontinuous"></td>
+      <td class="row1" id="PoN_pastcontinuous"></td>
+      <td class="row1" id="PlA_pastcontinuous"></td>
+      <td class="row1" id="PlN_pastcontinuous"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_passive&">&_Form_passive&</td>
-      <td class="row1">&PoA_passive&</td>
-      <td class="row1">&PoN_passive&</td>
-      <td class="row1">&PlA_passive&</td>
-      <td class="row1">&PlN_passive&</td>
+      <td class="rowtitle" id="_Form_passive"></td>
+      <td class="row1" id="PoA_passive"></td>
+      <td class="row1" id="PoN_passive"></td>
+      <td class="row1" id="PlA_passive"></td>
+      <td class="row1" id="PlN_passive"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_causative&">&_Form_causative&</td>
-      <td class="row1">&PoA_causative&</td>
-      <td class="row1">&PoN_causative&</td>
-      <td class="row1">&PlA_causative&</td>
-      <td class="row1">&PlN_causative&</td>
+      <td class="rowtitle" id="_Form_causative"></td>
+      <td class="row1" id="PoA_causative"></td>
+      <td class="row1" id="PoN_causative"></td>
+      <td class="row1" id="PlA_causative"></td>
+      <td class="row1" id="PlN_causative"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_causativepassive&">&_Form_causativepassive&</td>
-      <td class="row1">&PoA_causativepassive&</td>
-      <td class="row1">&PoN_causativepassive&</td>
-      <td class="row1">&PlA_causativepassive&</td>
-      <td class="row1">&PlN_causativepassive&</td>
+      <td class="rowtitle" id="_Form_causativepassive"></td>
+      <td class="row1" id="PoA_causativepassive"></td>
+      <td class="row1" id="PoN_causativepassive"></td>
+      <td class="row1" id="PlA_causativepassive"></td>
+      <td class="row1" id="PlN_causativepassive"></td>
     </tr>
     <tr>
-      <td class="rowtitle" title="&_Tip_potential&">&_Form_potential&</td>
-      <td class="row1">&PoA_potential&</td>
-      <td class="row1">&PoN_potential&</td>
-      <td class="row1">&PlA_potential&</td>
-      <td class="row1">&PlN_potential&</td>
+      <td class="rowtitle" id="_Form_potential"></td>
+      <td class="row1" id="PoA_potential"></td>
+      <td class="row1" id="PoN_potential"></td>
+      <td class="row1" id="PlA_potential"></td>
+      <td class="row1" id="PlN_potential"></td>
     </tr>
   </tbody>
 </table>

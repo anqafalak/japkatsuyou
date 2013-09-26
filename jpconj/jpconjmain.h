@@ -36,7 +36,10 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <QMap>
+#include <QWebElement>
+#include <QWebFrame>
 #include <QWebView>
+
 
 
 namespace Ui {
@@ -55,6 +58,9 @@ private:
     Ui::jpconjmain *ui;
     About     *winAbout;
     Preference *winPref;
+    static bool rtl;
+    static bool hasContent;
+    static bool languageChanged;
 
     void doInit();
 
@@ -67,8 +73,10 @@ private:
     void basicConjugation(QString verb, EdictType type);
     void complexConjugation(QString verb, EdictType type);
 
+    //HTML-related functions
     QString readHtmlFile(QString URL);
     void setCSS(QWebView * webView, QString nameCSS);
+    void setHTMLTranslation ();
 
 protected:
     void changeEvent(QEvent* event);
