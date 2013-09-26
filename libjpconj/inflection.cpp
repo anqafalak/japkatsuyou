@@ -282,6 +282,9 @@ QString Inflection::katsuyou(QString verb, EdictType type, KForm form)
     case VKatsuyou::_Conjunctive_t:
         return Verbstem::tForm(radical, type);
 
+    case VKatsuyou::_Terminal_u:
+        return Verbstem::uForm(radical, type);
+
     case VKatsuyou::_Attributive_u:
         return Verbstem::uForm(radical, type);
 
