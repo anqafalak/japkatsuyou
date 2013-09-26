@@ -91,6 +91,7 @@ private slots:
     void on_action_Preference_triggered();
 
     void on_actionHelp_Content_triggered();
+    void on_inputt_returnPressed();
 };
 
 #endif // JPCONJMAIN_H

@@ -439,3 +439,8 @@ void jpconjmain::on_actionHelp_Content_triggered()
 {
 
 }
+
+void jpconjmain::on_inputt_returnPressed()
+{
+    doConj();
+}
