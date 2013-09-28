@@ -27,6 +27,7 @@
 
 #include "about.h"
 #include "edict2.h"
+#include "export.h"
 #include "language.h"
 #include "libjpconjlink.h"
 #include "msg.h"
@@ -34,11 +35,14 @@
 #include "typeDefs.h"
 
 #include <QDebug>
+#include <QFileDialog>
+#include <QHash>
 #include <QMainWindow>
 #include <QMap>
 #include <QWebElement>
 #include <QWebFrame>
 #include <QWebView>
+#include <QMessageBox>
 
 
 
@@ -61,6 +65,8 @@ private:
     static bool rtl;
     static bool hasContent;
     static bool languageChanged;
+    static EdictType currentType;
+    static QString currentVerb;
 
     void doInit();
 
@@ -68,6 +74,7 @@ private:
     void openAbout();
     void openPref();
     void doConj();
+    void doExport();
 
     //Functions related to conjugation
     void basicConjugation(QString verb, EdictType type);
@@ -83,15 +90,12 @@ protected:
 
 private slots:
     void on_action_Close_triggered();
-
     void on_btn_conj_clicked();
-
     void on_action_About_triggered();
-
     void on_action_Preference_triggered();
-
     void on_actionHelp_Content_triggered();
     void on_inputt_returnPressed();
+    void on_actionExport_result_triggered();
 };
 
 #endif // JPCONJMAIN_H
