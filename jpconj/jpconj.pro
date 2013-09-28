@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     about.cpp \
     edict2.cpp \
     preference.cpp \
-    language.cpp
+    language.cpp \
+    export.cpp
 
 HEADERS  += jpconjmain.h \
     libjpconjlink.h \
@@ -30,7 +31,8 @@ HEADERS  += jpconjmain.h \
     preference.h \
     paths.h \
     msg.h \
-    language.h
+    language.h \
+    export.h
 
 FORMS    += jpconjmain.ui \
     about.ui \

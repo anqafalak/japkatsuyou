@@ -25,10 +25,12 @@
 #ifndef PREFERENCE_H
 #define PREFERENCE_H
 
+#include "export.h"
 #include "language.h"
 
 #include <QDebug>
 #include <QDialog>
+#include <QMap>
 
 
 namespace Ui {

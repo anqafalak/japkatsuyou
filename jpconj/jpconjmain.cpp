@@ -33,7 +33,8 @@
 bool jpconjmain::rtl = false;
 bool jpconjmain::hasContent = false;
 bool jpconjmain::languageChanged = true;
-
+EdictType jpconjmain::currentType = VConjugate::_v0;
+QString jpconjmain::currentVerb = "";
 
 
 /*******************************************************
@@ -143,26 +144,110 @@ void jpconjmain::doConj()
 
     QString verb = ui->inputt->text();
 
+    if (verb == currentVerb)
+        return;
+
     Edict2 edict2;
 
     EdictType type = edict2.find(verb);
 
-    ui->msgt->setText(Msg::getVerbTypeDesc(type));
+    currentType = type;
 
     if (type < 1){
-
+        ui->msgt->setText(Msg::getVerbTypeDesc(type));
+        ui->actionExport_result->setEnabled(false);
+        currentVerb = "";
+        hasContent = false;
         ui->standardConj->setHtml("");
         ui->basicConj->setHtml("");
         ui->complexConj->setHtml("");
-        hasContent = false;
+
         return;
     }
+
+    ui->actionExport_result->setEnabled(true);
 
     complexConjugation(verb, type);
     basicConjugation(verb, type);
     hasContent = true;
 
+    currentVerb = verb;
     setHTMLTranslation();
+}
+
+
+
+/*!
+ * \brief jpconjmain::doConj Used to export the result content as pdf, odt, etc.
+ */
+void jpconjmain::doExport()
+{
+
+    QHash<QString, QString> extensions = Msg::getExportExtensions();
+
+    QStringList filters;
+
+    foreach (QString extension, extensions.keys())
+        filters << extensions.value(extension) + " (*" + extension + ")";
+
+    QFileDialog saveDialog;
+    saveDialog.setOptions(QFileDialog::DontUseNativeDialog | QFileDialog::DontConfirmOverwrite);  // with or without this
+    saveDialog.setFilters(filters);
+    //saveDialog.setDefaultSuffix("pdf");
+    saveDialog.setFileMode(QFileDialog::AnyFile);
+    saveDialog.setAcceptMode(QFileDialog::AcceptSave);
+    saveDialog.setDirectory(QDir::homePath());
+    QString defaultName = currentVerb + "_" + Language::getCurrentLanguage();
+    saveDialog.selectFile(defaultName);
+
+    int response = saveDialog.exec();
+    if (response != QDialog::Accepted)
+        return;
+
+    QString filename = saveDialog.selectedFiles().first();
+
+    if(!QString(".pdf|.odt").contains(filename.right(4))){
+        QString selectedExtension = saveDialog.selectedNameFilter().right(5);
+        selectedExtension.chop(1);
+        filename += selectedExtension;
+    }
+
+    if(QFileInfo(filename).exists()){
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, Msg::fileExists(true), Msg::fileExists(false),
+                                      QMessageBox::Yes|QMessageBox::No);
+        if (reply == QMessageBox::No)
+            return;
+    }
+
+    Export exporter;
+    exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>");
+    exporter.addContent("<p><h3>" + ui->msgt->text() + "</h3></p>");
+    if(Export::getConfigExportPart("standard")){
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>");
+        exporter.addContent(ui->standardConj->page()->mainFrame()->toHtml());
+    }
+    if(Export::getConfigExportPart("basic")){
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>");
+        exporter.addContent(ui->basicConj->page()->mainFrame()->toHtml());
+    }
+    if(Export::getConfigExportPart("complex")){
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>");
+        exporter.addContent(ui->complexConj->page()->mainFrame()->toHtml());
+    }
+
+    if(Export::getConfigExportPart("styled"))
+        exporter.setStyle(QDir(QString(dataFolder)).absolutePath() + "/styles/DzStyle.css");
+
+    if (filename.endsWith(".pdf")){
+        //exporter.exportPdf(filename);
+        exporter.exportPdf(filename);
+        return;
+    }
+
+    if (filename.endsWith(".odt")){
+        exporter.exportOdf(filename);
+    }
 }
 
 
@@ -306,6 +391,8 @@ void jpconjmain::setHTMLTranslation()
 
     //Retranslate strings
 
+    ui->msgt->setText(Msg::getVerbTypeDesc(currentType));
+
     {//standard
         QWebElementCollection standardConjConst = ui->standardConj->page()->mainFrame()->findAllElements(".Const");
 
@@ -443,4 +530,10 @@ void jpconjmain::on_actionHelp_Content_triggered()
 void jpconjmain::on_inputt_returnPressed()
 {
     doConj();
+}
+
+
+void jpconjmain::on_actionExport_result_triggered()
+{
+    doExport();
 }

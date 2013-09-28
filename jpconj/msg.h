@@ -27,6 +27,7 @@
 #include "typeDefs.h"
 
 #include <QApplication>
+#include <QHash>
 #include <QMap>
 #include <QString>
 
@@ -49,6 +50,33 @@
  * #endif \n
  */
 namespace Msg {
+
+/*! Gives the list of extensions used to export the resulted conjugation tables, and their descriptions
+ */
+static QHash<QString, QString> NO_USE_FUNC getExportExtensions()
+{
+    QHash<QString, QString> resultHash;
+    resultHash.insert(".pdf",
+                     qApp->translate("ExportResult", "Pdf file"));
+    resultHash.insert(".odt",
+                     qApp->translate("ExportResult", "OpenDocument file"));
+
+    return resultHash;
+}
+
+
+
+/*! Strings used in Message box: file already exists
+ */
+static QString NO_USE_FUNC fileExists(bool title)
+{
+    if (title)
+        return qApp->translate("ExportResult", "File already exists");
+
+    return qApp->translate("ExportResult", "This file exists, do you want to overwrite it?");
+}
+
+
 
 /*! Gives a list of complex conjugation forms (See: VConjugate::CForm).\n
  * This list makes it easier to loop over the different complex conjugation forms.
@@ -359,7 +387,7 @@ static QString NO_USE_FUNC getTranslatedString(QString elementId)
 
 
 
-/*! Gives a list of predefined QStrings used as reeplacement variables in HTML.
+/* Gives a list of predefined QStrings used as reeplacement variables in HTML.
  */
 /*static QList<QString> NO_USE_FUNC verbStringsList()
 {
