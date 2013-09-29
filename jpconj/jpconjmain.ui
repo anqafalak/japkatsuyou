@@ -254,11 +254,13 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_Close"/>
+   <addaction name="actionExport_result"/>
    <addaction name="action_Preference"/>
    <addaction name="separator"/>
    <addaction name="action_About"/>
    <addaction name="actionHelp_Content"/>
+   <addaction name="separator"/>
+   <addaction name="action_Close"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="search">
@@ -406,6 +408,10 @@
   <action name="actionExport_result">
    <property name="enabled">
     <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/export.png</normaloff>:/img/export.png</iconset>
    </property>
    <property name="text">
     <string>Content Export</string>
