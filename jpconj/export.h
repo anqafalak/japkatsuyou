@@ -2,7 +2,9 @@
 #define EXPORT_H
 
 #include <QDebug>
+#include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QPrinter>
 #include <QSettings>
 #include <QTextStream>
@@ -13,18 +15,22 @@
 class Export
 {
 public:
-    Export(QString content = "");
-
-    QString htmlContent;
-    QString styleFile;
-
+    Export();
     void addContent(QString content);
     void setStyle(QString styleFile);
+    void setRTL(bool RTL);
     void exportPdf(QString filename);
     void exportOdf(QString filename);
+    void exportHtml(QString filename);
     void resetContent();
 
     static void setConfigExportParts(QMap<QString, bool> exportParts);
     static bool getConfigExportPart(QString exportPart);
+
+private:
+    QString htmlContent;
+    QString styleFile;
+    bool isRTL;
+    void addStyle(QString filename);
 };
 #endif // EXPORT_H

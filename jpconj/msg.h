@@ -60,6 +60,8 @@ static QHash<QString, QString> NO_USE_FUNC getExportExtensions()
                      qApp->translate("ExportResult", "Pdf file"));
     resultHash.insert(".odt",
                      qApp->translate("ExportResult", "OpenDocument file"));
+    resultHash.insert(".htm",
+                     qApp->translate("ExportResult", "HTML file"));
 
     return resultHash;
 }
