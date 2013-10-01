@@ -206,7 +206,7 @@ void jpconjmain::doExport()
 
     QString filename = saveDialog.selectedFiles().first();
 
-    if(!QString(".pdf|.odt").contains(filename.right(4))){
+    if(!QString(".pdf|.odt|.htm").contains(filename.right(4))){
         QString selectedExtension = saveDialog.selectedNameFilter().right(5);
         selectedExtension.chop(1);
         filename += selectedExtension;
@@ -221,19 +221,23 @@ void jpconjmain::doExport()
     }
 
     Export exporter;
-    exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>");
-    exporter.addContent("<p><h3>" + ui->msgt->text() + "</h3></p>");
+    exporter.setRTL(rtl);
+    exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
+    exporter.addContent("<p><h3>" + ui->msgt->text() + "</h3></p>\n");
     if(Export::getConfigExportPart("standard")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>");
-        exporter.addContent(ui->standardConj->page()->mainFrame()->toHtml());
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
+        QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter.addContent(data);
     }
     if(Export::getConfigExportPart("basic")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>");
-        exporter.addContent(ui->basicConj->page()->mainFrame()->toHtml());
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
+        QString data = ui->basicConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter.addContent(data);
     }
     if(Export::getConfigExportPart("complex")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>");
-        exporter.addContent(ui->complexConj->page()->mainFrame()->toHtml());
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
+        QString data = ui->complexConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter.addContent(data);
     }
 
     if(Export::getConfigExportPart("styled"))
@@ -247,6 +251,11 @@ void jpconjmain::doExport()
 
     if (filename.endsWith(".odt")){
         exporter.exportOdf(filename);
+        return;
+    }
+
+    if (filename.endsWith(".htm")){
+        exporter.exportHtml(filename);
     }
 }
 

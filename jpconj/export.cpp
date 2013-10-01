@@ -6,19 +6,30 @@
  *******************************************************/
 
 
-Export::Export(QString content)
+Export::Export()
 {
-    htmlContent = content;
+    resetContent();
+    isRTL = false;
 }
 
 void Export::addContent(QString content)
 {
-    htmlContent += content;
+    htmlContent.replace("<!--CONTENT-->",
+                        content + "\n<!--CONTENT-->");
 }
 
 void Export::setStyle(QString styleFile)
 {
     this->styleFile = styleFile;
+}
+
+void Export::setRTL(bool RTL)
+{
+    isRTL = RTL;
+    if (RTL)
+        htmlContent.replace("<body><!--DIR-->", "<body dir=\"rtl\">");
+    else
+        htmlContent.replace("<body><!--DIR-->", "<body dir=\"ltr\">");
 }
 
 void Export::exportPdf(QString filename)
@@ -30,6 +41,7 @@ void Export::exportPdf(QString filename)
 
     QWebView webview;
     webview.setHtml(htmlContent);
+
 
     if(styleFile.length()>0){
         QWebSettings * settings = webview.settings();
@@ -59,9 +71,51 @@ void Export::exportOdf(QString filename)
     writer.write(doc);
 }
 
+
+void Export::exportHtml(QString filename)
+{
+    QFile outputFile(filename);
+    if(!outputFile.open(QIODevice::WriteOnly)){
+        qDebug() << "- Error, unable to open the file for output";
+        return;
+    }
+
+    QTextStream outStream(&outputFile);
+
+    if(styleFile.length()>0){
+        QFileInfo styleInfo(styleFile);
+        QString stylename = styleInfo.fileName();
+
+        QFileInfo destInfo(filename);
+        QString stylefolder = destInfo.fileName() + "_files";
+        QString styleto = destInfo.absolutePath() + "/" + stylefolder + "/" + stylename;
+
+        QDir(destInfo.absolutePath()).mkdir(stylefolder);
+        qDebug() << styleFile << " to " << styleto;
+        QFile::copy(styleFile, styleto);
+
+        addStyle(styleto);
+    }
+
+    outStream << htmlContent;
+
+    outputFile.close();
+}
+
+
+
 void Export::resetContent()
 {
     htmlContent = "";
+    htmlContent += "<html>\n";
+    htmlContent += "<head>\n";
+    htmlContent += "<title>JapKatsuyou</title>\n";
+    htmlContent += "<meta charset=\"UTF-8\">\n"; //<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
+    htmlContent += "<!--STYLESHEETS-->\n";
+    htmlContent += "<body><!--DIR-->\n";
+    htmlContent += "<!--CONTENT-->\n";
+    htmlContent += "</body>\n";
+    htmlContent += "</html>\n";
 }
 
 
@@ -87,3 +141,10 @@ bool Export::getConfigExportPart(QString exportPart)
     return result;
 }
 
+
+void Export::addStyle(QString filename)
+{
+    htmlContent.replace("<!--STYLESHEETS-->",
+                        "<link rel=\"stylesheet\" type=\"text/css\" href=\"" +
+                        filename + "\">\n<!--STYLESHEETS-->");
+}

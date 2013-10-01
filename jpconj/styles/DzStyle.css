@@ -28,13 +28,13 @@ table.show {
 	direction: ltr;
 	text-align:left;
 	background: #006233; /* Old browsers */
-	background: -moz-linear-gradient(top, #006233 0%, #505050 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006233), color-stop(100%,#505050)); /* Chrome,Safari4+ */
+	background: -moz-linear-gradient(top, #006233 -20%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(-20%,#006233), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #006233 -20%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #006233 0%,#505050 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #006233 0%,#505050 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #006233 0%,#505050 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006233', endColorstr='#505050',GradientType=0 ); /* IE6-9 */
+	background: -o-linear-gradient(top, #006233 -20%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #006233 -20%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #006233 -20%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006233', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 .rowtitle {
