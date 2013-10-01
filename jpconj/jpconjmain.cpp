@@ -77,7 +77,7 @@ jpconjmain::~jpconjmain()
  */
 void jpconjmain::doInit()
 {
-    qDebug()<< QString(VERSION);
+    //qDebug()<< QString(VERSION);
     libjpconjlink::Init();
     Language::loadTranslations();
     rtl = Language::mainWindowDirection(this);
@@ -467,7 +467,7 @@ void jpconjmain::setHTMLTranslation()
     //qDebug()<< jsScript;
     ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
 
-    qDebug()<< "Strings translation";
+    //qDebug()<< "Strings translation";
     languageChanged = false;
 
 }

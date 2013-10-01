@@ -202,6 +202,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="actionHelp_Content"/>
+    <addaction name="separator"/>
     <addaction name="action_About"/>
    </widget>
    <widget class="QMenu" name="menu_View">
