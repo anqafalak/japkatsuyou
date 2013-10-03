@@ -77,7 +77,7 @@
         <number>1</number>
        </property>
        <item>
-        <widget class="QLineEdit" name="msgt">
+        <widget class="QLineEdit" name="verbType">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -193,17 +193,17 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="actionExport_result"/>
+    <addaction name="actionExportResult"/>
     <addaction name="separator"/>
-    <addaction name="action_Close"/>
+    <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="actionHelp_Content"/>
+    <addaction name="actionHelpContent"/>
     <addaction name="separator"/>
-    <addaction name="action_About"/>
+    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menu_View">
     <property name="title">
@@ -214,7 +214,7 @@
     <property name="title">
      <string>&amp;Edit</string>
     </property>
-    <addaction name="action_Preference"/>
+    <addaction name="actionPreference"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -255,13 +255,13 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionExport_result"/>
-   <addaction name="action_Preference"/>
+   <addaction name="actionExportResult"/>
+   <addaction name="actionPreference"/>
    <addaction name="separator"/>
-   <addaction name="action_About"/>
-   <addaction name="actionHelp_Content"/>
+   <addaction name="actionAbout"/>
+   <addaction name="actionHelpContent"/>
    <addaction name="separator"/>
-   <addaction name="action_Close"/>
+   <addaction name="actionClose"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="search">
@@ -313,7 +313,7 @@
       <number>1</number>
      </property>
      <item>
-      <widget class="QLineEdit" name="inputt">
+      <widget class="QLineEdit" name="inputConjVerb">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -332,7 +332,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_conj">
+      <widget class="QPushButton" name="conjugateButton">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -366,7 +366,7 @@
     </layout>
    </widget>
   </widget>
-  <action name="action_Close">
+  <action name="actionClose">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/img/close.png</normaloff>
@@ -376,7 +376,7 @@
     <string>&amp;Close</string>
    </property>
   </action>
-  <action name="action_About">
+  <action name="actionAbout">
    <property name="icon">
     <iconset>
      <normalon>:/img/about.png</normalon>
@@ -386,7 +386,7 @@
     <string>&amp;About</string>
    </property>
   </action>
-  <action name="action_Preference">
+  <action name="actionPreference">
    <property name="icon">
     <iconset>
      <normalon>:/img/pref.png</normalon>
@@ -396,7 +396,7 @@
     <string>&amp;Preference</string>
    </property>
   </action>
-  <action name="actionHelp_Content">
+  <action name="actionHelpContent">
    <property name="icon">
     <iconset>
      <normalon>:/img/help.png</normalon>
@@ -406,7 +406,7 @@
     <string>Help Content</string>
    </property>
   </action>
-  <action name="actionExport_result">
+  <action name="actionExportResult">
    <property name="enabled">
     <bool>false</bool>
    </property>

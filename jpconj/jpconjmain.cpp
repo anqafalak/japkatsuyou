@@ -142,7 +142,7 @@ void jpconjmain::openPref()
 void jpconjmain::doConj()
 {
 
-    QString verb = ui->inputt->text();
+    QString verb = ui->inputConjVerb->text();
 
     if (verb == currentVerb)
         return;
@@ -154,8 +154,8 @@ void jpconjmain::doConj()
     currentType = type;
 
     if (type < 1){
-        ui->msgt->setText(Msg::getVerbTypeDesc(type));
-        ui->actionExport_result->setEnabled(false);
+        ui->verbType->setText(Msg::getVerbTypeDesc(type));
+        ui->actionExportResult->setEnabled(false);
         currentVerb = "";
         hasContent = false;
         ui->standardConj->setHtml("");
@@ -165,7 +165,7 @@ void jpconjmain::doConj()
         return;
     }
 
-    ui->actionExport_result->setEnabled(true);
+    ui->actionExportResult->setEnabled(true);
 
     complexConjugation(verb, type);
     basicConjugation(verb, type);
@@ -223,7 +223,7 @@ void jpconjmain::doExport()
     Export exporter;
     exporter.setRTL(rtl);
     exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
-    exporter.addContent("<p><h3>" + ui->msgt->text() + "</h3></p>\n");
+    exporter.addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
     if(Export::getConfigExportPart("standard")){
         exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
         QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
@@ -400,7 +400,7 @@ void jpconjmain::setHTMLTranslation()
 
     //Retranslate strings
 
-    ui->msgt->setText(Msg::getVerbTypeDesc(currentType));
+    ui->verbType->setText(Msg::getVerbTypeDesc(currentType));
 
     {//standard
         QWebElementCollection standardConjConst = ui->standardConj->page()->mainFrame()->findAllElements(".Const");
@@ -511,38 +511,38 @@ void jpconjmain::changeEvent(QEvent* event)
  *                   PRIVATE SLOTS
  *******************************************************/
 
-void jpconjmain::on_action_Close_triggered()
+void jpconjmain::on_actionClose_triggered()
 {
     this->close();
 }
 
-void jpconjmain::on_btn_conj_clicked()
+void jpconjmain::on_conjugateButton_clicked()
 {
     doConj();
 }
 
-void jpconjmain::on_action_About_triggered()
+void jpconjmain::on_actionAbout_triggered()
 {
     openAbout();
 }
 
-void jpconjmain::on_action_Preference_triggered()
+void jpconjmain::on_actionPreference_triggered()
 {
     openPref();
 }
 
-void jpconjmain::on_actionHelp_Content_triggered()
+void jpconjmain::on_actionHelpContent_triggered()
 {
 
 }
 
-void jpconjmain::on_inputt_returnPressed()
+void jpconjmain::on_inputConjVerb_returnPressed()
 {
     doConj();
 }
 
 
-void jpconjmain::on_actionExport_result_triggered()
+void jpconjmain::on_actionExportResult_triggered()
 {
     doExport();
 }
