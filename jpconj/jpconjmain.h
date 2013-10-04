@@ -89,13 +89,13 @@ protected:
     void changeEvent(QEvent* event);
 
 private slots:
-    void on_action_Close_triggered();
-    void on_btn_conj_clicked();
-    void on_action_About_triggered();
-    void on_action_Preference_triggered();
-    void on_actionHelp_Content_triggered();
-    void on_inputt_returnPressed();
-    void on_actionExport_result_triggered();
+    void on_actionClose_triggered();
+    void on_conjugateButton_clicked();
+    void on_actionAbout_triggered();
+    void on_actionPreference_triggered();
+    void on_actionHelpContent_triggered();
+    void on_inputConjVerb_returnPressed();
+    void on_actionExportResult_triggered();
 };
 
 #endif // JPCONJMAIN_H
