@@ -93,7 +93,8 @@ QString Verbstem::aForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ら");
 
     case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return ""; //TODO: check
+        radical.chop(2);
+        return radical + "|";
 
     case VerbType::_v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("さ");
@@ -210,7 +211,8 @@ QString Verbstem::eForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("れ");
 
     case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return ""; //TODO: check
+        radical.chop(2);
+        return radical + QString::fromUtf8("|あれ");
 
     case VerbType::_v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("せ");
@@ -293,9 +295,6 @@ QString Verbstem::eImpForm(QString radical, EdictType type)
 
     case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
         return radical; //TODO: check
-
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return ""; //TODO: check
 
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(1);
@@ -406,7 +405,8 @@ QString Verbstem::tForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("っ");
 
     case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return radical + QString::fromUtf8("っ");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|あっ");
 
     case VerbType::_v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("し");
@@ -524,7 +524,8 @@ QString Verbstem::uForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("る");
 
     case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return radical + QString::fromUtf8("る");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|ある");
 
     case VerbType::_v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("す");
@@ -638,7 +639,8 @@ QString Verbstem::iForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("り");
 
     case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return radical + QString::fromUtf8("り");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|あり");
 
     case VerbType::_v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("し");
@@ -757,7 +759,8 @@ QString Verbstem::oForm(QString radical, EdictType type)
         return radical + QString::fromUtf8("ろ");
 
     case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
-        return radical + QString::fromUtf8("り");
+        radical.chop(2);
+        return radical + QString::fromUtf8("|あり");
 
     case VerbType::_v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("そ");
