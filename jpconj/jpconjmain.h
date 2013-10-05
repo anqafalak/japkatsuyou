@@ -28,6 +28,7 @@
 #include "about.h"
 #include "edict2.h"
 #include "export.h"
+#include "jpconjhelp.h"
 #include "language.h"
 #include "libjpconjlink.h"
 #include "msg.h"
@@ -75,6 +76,7 @@ private:
     void openPref();
     void doConj();
     void doExport();
+    void openHelp();
 
     //Functions related to conjugation
     void basicConjugation(QString verb, EdictType type);

@@ -261,6 +261,13 @@ void jpconjmain::doExport()
 
 
 
+void jpconjmain::openHelp()
+{
+    jpconjhelp* helpWindow = new jpconjhelp(this);
+    helpWindow->show();
+}
+
+
 /*!
  * \brief jpconjmain::basicConjugation Used to show the standard and basic conjugation forms.
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
@@ -483,6 +490,7 @@ void jpconjmain::setHTMLTranslation()
 
 
 
+
 /*******************************************************
  *                    PROTECTED
  *******************************************************/
@@ -533,7 +541,7 @@ void jpconjmain::on_actionPreference_triggered()
 
 void jpconjmain::on_actionHelpContent_triggered()
 {
-
+    openHelp();
 }
 
 void jpconjmain::on_inputConjVerb_returnPressed()
