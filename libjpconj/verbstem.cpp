@@ -69,7 +69,7 @@ QString Verbstem::aForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_v5aru: //Godan verb - -aru special class
-        return radical; //TODO: check
+        return radical + QString::fromUtf8("ら");
 
     case VerbType::_v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ば");
@@ -187,7 +187,7 @@ QString Verbstem::eForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_v5aru: //Godan verb - -aru special class
-        return radical; //TODO: check
+        return radical + QString::fromUtf8("れ");
 
     case VerbType::_v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("べ");
@@ -296,6 +296,9 @@ QString Verbstem::eImpForm(QString radical, EdictType type)
     case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
         return radical; //TODO: check
 
+    case VerbType::_v5aru: //Godan verb - -aru special class
+        return radical + QString::fromUtf8("|い");
+
     case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(1);
         return radical + QString::fromUtf8("|(じろ/じよ/ぜよ)");
@@ -377,7 +380,7 @@ QString Verbstem::tForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_v5aru: //Godan verb - -aru special class くださる　なさる　etc.
-        return radical; //TODO: check
+        return radical + QString::fromUtf8("っ");
 
     case VerbType::_v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ん");
@@ -615,7 +618,7 @@ QString Verbstem::iForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_v5aru: //Godan verb - -aru special class
-        return radical + QString::fromUtf8("り");
+        return radical + QString::fromUtf8("い");
 
     case VerbType::_v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("び");
@@ -735,7 +738,7 @@ QString Verbstem::oForm(QString radical, EdictType type)
         return radical; //TODO: check
 
     case VerbType::_v5aru: //Godan verb - -aru special class
-        return radical + QString::fromUtf8("り");
+        return radical + QString::fromUtf8("ろ");
 
     case VerbType::_v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ぼ");
