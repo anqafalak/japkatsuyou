@@ -4,8 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql xml webkit
-
+QT       += core gui sql xml webkit help network
+CONFIG += help
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = jpconj
@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     edict2.cpp \
     preference.cpp \
     language.cpp \
-    export.cpp
+    export.cpp \
+    jpconjhelp.cpp \
+    helpviewer.cpp
 
 HEADERS  += jpconjmain.h \
     libjpconjlink.h \
@@ -32,11 +34,14 @@ HEADERS  += jpconjmain.h \
     paths.h \
     msg.h \
     language.h \
-    export.h
+    export.h \
+    jpconjhelp.h \
+    helpviewer.h
 
 FORMS    += jpconjmain.ui \
     about.ui \
-    preference.ui
+    preference.ui \
+    jpconjhelp.ui
 
 TRANSLATIONS    +=  i18n/jpconj_ar.ts\
                     i18n/jpconj_ja.ts\
