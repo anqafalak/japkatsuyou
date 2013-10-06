@@ -6,7 +6,7 @@
 
 QT       -= gui
 
-VERSION = 0.3
+VERSION = 0.4
 
 TARGET = libjpconj
 TEMPLATE = lib
