@@ -22,3 +22,6 @@ Makefile
 *.qm
 jpconj-bin/
 libjpconj-bin/
+
+*.qhc
+*.qch
