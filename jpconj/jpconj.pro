@@ -60,3 +60,23 @@ RESOURCES += \
     output.qrc
 
 win32:RC_FILE = jpconj.rc
+
+unix {
+binfile.files += jpconj
+binfile.path = /usr/bin/
+configfiles.files += verbs, i18n, img/icon.png
+configfiles.files += verbs
+configfiles.files += i18n
+configfiles.path = /usr/share/jpconj/
+docfiles.files +=
+docfiles.path = /usr/share/doc/
+manfiles.files +=
+manfiles.path = /usr/share/man/man1/
+shortcutfiles.files += jpconj.desktop
+shortcutfiles.path = /usr/share/applications/
+INSTALLS += configfiles
+INSTALLS += docfiles
+INSTALLS += manfiles
+INSTALLS += shortcutfiles
+INSTALLS += binfile
+}

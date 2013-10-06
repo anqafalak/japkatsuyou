@@ -27,12 +27,10 @@
 
 #include <QDir>
 
-#define dataFolder "./"
-
 #ifdef Q_WS_WIN
-    #define _LIB ""
+    #define dataFolder "./"
 #else
-    #define _LIB "lib"
+    #define dataFolder "/usr/share/jpconj/"
 #endif
 
 #endif // PATHS_H

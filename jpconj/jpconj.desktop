@@ -1,0 +1,27 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=JapKatsuyou
+GenericName=Japanese verb conjugation
+Comment=A free Japanese verb conjugation application
+Exec=jpconj
+Icon=/usr/share/jpconj/icon.png
+Terminal=false
+Categories=Languages;Education;Qt;
+
+
+# Translations
+Name[ar]=JapKatsuyou
+GenericName[ar]=تصريف الأفعال اليابانية
+Comment[ar]=تطبيق مجاني لتصريف الأفعال اليابانية
+Icon[ar]=/usr/share/jpconj/img/icon.png
+
+Name[ja]=JapKatsuyou
+GenericName[ja]=日本語の動詞活用
+Comment[ja]=日本語の動詞活用するために無料のアプリケーション
+Icon[ja]=/usr/share/jpconj/img/icon.png
+
+Name[fr]=JapKatsuyou
+GenericName[fr]=Conjugaison des verbs Japonais
+Comment[fr]=Une application gratruite pour la Conjugaison des verbs Japonais
+Icon[fr]=/usr/share/jpconj/img/icon.png

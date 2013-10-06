@@ -20,13 +20,13 @@ DEFINES += LIBJPCONJ_LIBRARY
 
 SOURCES +=  \
             verbstem.cpp \
-    inflection.cpp \
-    jpconj.cpp
+            inflection.cpp \
+            jpconj.cpp
 
 HEADERS += \
             verbstem.h \
             typeDefs.h \
-    inflection.h \
-    jpconj.h \
-    jpconj_global.h
+            inflection.h \
+            jpconj.h \
+            jpconj_global.h
 
