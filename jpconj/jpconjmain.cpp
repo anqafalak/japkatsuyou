@@ -33,7 +33,6 @@
 bool jpconjmain::rtl = false;
 bool jpconjmain::hasContent = false;
 bool jpconjmain::languageChanged = true;
-EdictType jpconjmain::currentType = _v0;
 QString jpconjmain::currentVerb = "";
 
 
@@ -150,7 +149,7 @@ void jpconjmain::doConj()
 
     EdictType type = edict2.find(verb);
 
-    currentType = type;
+
 
     if (type < 1){
         ui->verbType->setText(Msg::getVerbTypeDesc(type));
@@ -164,14 +163,14 @@ void jpconjmain::doConj()
         return;
     }
 
-    ui->actionExportResult->setEnabled(true);
-
+    ui->verbType->setText(Msg::getVerbTypeDesc(type));
     complexConjugation(verb, type);
     basicConjugation(verb, type);
     hasContent = true;
-
     currentVerb = verb;
     setHTMLTranslation();
+
+    ui->actionExportResult->setEnabled(true);
 }
 
 
@@ -405,8 +404,6 @@ void jpconjmain::setHTMLTranslation()
     //qDebug()<< jsScript;
 
     //Retranslate strings
-
-    ui->verbType->setText(Msg::getVerbTypeDesc(currentType));
 
     {//standard
         QWebElementCollection standardConjConst = ui->standardConj->page()->mainFrame()->findAllElements(".Const");
