@@ -40,7 +40,7 @@
  * eg. 飲む -> 飲ま
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString the a-form of the verb
  */
 QString Verbstem::aForm(QString radical, EdictType type)
@@ -49,98 +49,98 @@ QString Verbstem::aForm(QString radical, EdictType type)
 
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         radical.chop(1);
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical;
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v5://Godan verb (not completely classified)
+    case _v5://Godan verb (not completely classified)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class
+    case _v5aru: //Godan verb - -aru special class
         return radical + QString::fromUtf8("ら");
 
-    case VerbType::_v5b://Godan verb with 'bu' ending
+    case _v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ば");
 
-    case VerbType::_v5g://Godan verb with 'gu' ending
+    case _v5g://Godan verb with 'gu' ending
         return radical + QString::fromUtf8("が");
 
-    case VerbType::_v5k://Godan verb with 'ku' ending
+    case _v5k://Godan verb with 'ku' ending
         return radical + QString::fromUtf8("か");
 
-    case VerbType::_v5k_s://Godan verb - iku/yuku special class
+    case _v5k_s://Godan verb - iku/yuku special class
         return radical + QString::fromUtf8("か");
 
-    case VerbType::_v5m://Godan verb with 'mu' ending
+    case _v5m://Godan verb with 'mu' ending
         return radical + QString::fromUtf8("ま");
 
-    case VerbType::_v5n://Godan verb with 'nu' ending
+    case _v5n://Godan verb with 'nu' ending
         return radical + QString::fromUtf8("な");
 
-    case VerbType::_v5r://Godan verb with 'ru' ending
+    case _v5r://Godan verb with 'ru' ending
         return radical + QString::fromUtf8("ら");
 
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
+    case _v5r_i://Godan verb with 'ru' ending (irregular verb) ある
         radical.chop(2);
         return radical + "|";
 
-    case VerbType::_v5s://Godan verb with 'su' ending
+    case _v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("さ");
 
-    case VerbType::_v5t://Godan verb with 'tsu' ending
+    case _v5t://Godan verb with 'tsu' ending
         return radical + QString::fromUtf8("た");
 
-    case VerbType::_v5u://Godan verb with 'u' ending
+    case _v5u://Godan verb with 'u' ending
         return radical + QString::fromUtf8("わ");
 
-    case VerbType::_v5u_s: //Godan verb with 'u' ending (special class) こう　とう
+    case _v5u_s: //Godan verb with 'u' ending (special class) こう　とう
         return radical + QString::fromUtf8("わ");
 
-    case VerbType::_v5uru://Godan verb - uru old class verb (old form of Eru)
+    case _v5uru://Godan verb - uru old class verb (old form of Eru)
         return radical; //TODO: check
 
-    case VerbType::_v5z://Godan verb with 'zu' ending
+    case _v5z://Godan verb with 'zu' ending
         return radical; //TODO: check
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(2);
         return radical + QString::fromUtf8("|じ");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         if (radical.endsWith(QString::fromUtf8("く|"))){
             radical.chop(2);
             radical += QString::fromUtf8("こ|");
         }
         return radical;
 
-    case VerbType::_vn://irregular nu verb 死ぬ
+    case _vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("な");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         //radical.chop(1);
         return radical + QString::fromUtf8("せ");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
     }
@@ -158,7 +158,7 @@ QString Verbstem::aForm(QString radical, EdictType type)
  * eg. 飲む -> 飲め
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString the e-form of the verb
  */
 QString Verbstem::eForm(QString radical, EdictType type)
@@ -167,94 +167,94 @@ QString Verbstem::eForm(QString radical, EdictType type)
 
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         radical.chop(1);
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical + QString::fromUtf8("れ");
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v5://Godan verb (not completely classified)
+    case _v5://Godan verb (not completely classified)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class
+    case _v5aru: //Godan verb - -aru special class
         return radical + QString::fromUtf8("れ");
 
-    case VerbType::_v5b://Godan verb with 'bu' ending
+    case _v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("べ");
 
-    case VerbType::_v5g://Godan verb with 'gu' ending
+    case _v5g://Godan verb with 'gu' ending
         return radical + QString::fromUtf8("げ");
 
-    case VerbType::_v5k://Godan verb with 'ku' ending
+    case _v5k://Godan verb with 'ku' ending
         return radical + QString::fromUtf8("け");
 
-    case VerbType::_v5k_s://Godan verb - iku/yuku special class
+    case _v5k_s://Godan verb - iku/yuku special class
         return radical + QString::fromUtf8("け");
 
-    case VerbType::_v5m://Godan verb with 'mu' ending
+    case _v5m://Godan verb with 'mu' ending
         return radical + QString::fromUtf8("め");
 
-    case VerbType::_v5n://Godan verb with 'nu' ending
+    case _v5n://Godan verb with 'nu' ending
         return radical + QString::fromUtf8("ね");
 
-    case VerbType::_v5r://Godan verb with 'ru' ending
+    case _v5r://Godan verb with 'ru' ending
         return radical + QString::fromUtf8("れ");
 
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
+    case _v5r_i://Godan verb with 'ru' ending (irregular verb) ある
         radical.chop(2);
         return radical + QString::fromUtf8("|あれ");
 
-    case VerbType::_v5s://Godan verb with 'su' ending
+    case _v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("せ");
 
-    case VerbType::_v5t://Godan verb with 'tsu' ending
+    case _v5t://Godan verb with 'tsu' ending
         return radical + QString::fromUtf8("て");
 
-    case VerbType::_v5u://Godan verb with 'u' ending
+    case _v5u://Godan verb with 'u' ending
         return radical + QString::fromUtf8("え");
 
-    case VerbType::_v5u_s: //Godan verb with 'u' ending (special class) こう　とう
+    case _v5u_s: //Godan verb with 'u' ending (special class) こう　とう
         return radical + QString::fromUtf8("え");
 
-    case VerbType::_v5uru://Godan verb - uru old class verb (old form of Eru)
+    case _v5uru://Godan verb - uru old class verb (old form of Eru)
         return radical; //TODO: check
 
-    case VerbType::_v5z://Godan verb with 'zu' ending
+    case _v5z://Godan verb with 'zu' ending
         return radical; //TODO: check
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(2);
         return radical + QString::fromUtf8("|(じ/ず)れ");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         return radical + QString::fromUtf8("れ");
 
-    case VerbType::_vn://irregular nu verb 死ぬ
+    case _vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("ね");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(2);
         return radical + QString::fromUtf8("|すれ");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         //radical.chop(1);
         return radical + QString::fromUtf8("すれ");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(2);
         return radical + QString::fromUtf8("|すれ");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(2);
         return radical + QString::fromUtf8("|(すれ/せ)");
 
@@ -274,54 +274,54 @@ QString Verbstem::eForm(QString radical, EdictType type)
  * eg. する -> しろ
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString the e-imperative form of the verb
  */
 QString Verbstem::eImpForm(QString radical, EdictType type)
 {
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical + QString::fromUtf8("|(ろ/よ)");
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class
+    case _v5aru: //Godan verb - -aru special class
         return radical + QString::fromUtf8("|い");
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(1);
         return radical + QString::fromUtf8("|(じろ/じよ/ぜよ)");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         if (radical.endsWith(QString::fromUtf8("く"))){
             radical.chop(1);
             radical += QString::fromUtf8("こ");
         }
         return radical + QString::fromUtf8("|い");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(1);
         return radical + QString::fromUtf8("|(しろ/せよ)");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         return radical + QString::fromUtf8("|せよ");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(1);
         return radical + QString::fromUtf8("|(しろ/せよ)");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(1);
         return radical + QString::fromUtf8("|(しろ/せよ)");
 
@@ -351,7 +351,7 @@ QString Verbstem::eImpForm(QString radical, EdictType type)
  *
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString the t-form of the verb
  */
 QString Verbstem::tForm(QString radical, EdictType type)
@@ -360,101 +360,101 @@ QString Verbstem::tForm(QString radical, EdictType type)
 
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         radical.chop(1);
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical;
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical; //TODO: check
 
-    case VerbType::_v5://Godan verb (not completely classified)
+    case _v5://Godan verb (not completely classified)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class くださる　なさる　etc.
+    case _v5aru: //Godan verb - -aru special class くださる　なさる　etc.
         return radical + QString::fromUtf8("っ");
 
-    case VerbType::_v5b://Godan verb with 'bu' ending
+    case _v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ん");
 
-    case VerbType::_v5g://Godan verb with 'gu' ending
+    case _v5g://Godan verb with 'gu' ending
         return radical + QString::fromUtf8("い");
 
-    case VerbType::_v5k://Godan verb with 'ku' ending
+    case _v5k://Godan verb with 'ku' ending
         return radical + QString::fromUtf8("い");
 
-    case VerbType::_v5k_s://Godan verb - iku/yuku special class
+    case _v5k_s://Godan verb - iku/yuku special class
         if (radical.endsWith(QString::fromUtf8("ゆ"))){
             radical.chop(1);
             radical += QString::fromUtf8("い");
         }
         return radical + QString::fromUtf8("っ");
 
-    case VerbType::_v5m://Godan verb with 'mu' ending
+    case _v5m://Godan verb with 'mu' ending
         return radical + QString::fromUtf8("ん");
 
-    case VerbType::_v5n://Godan verb with 'nu' ending
+    case _v5n://Godan verb with 'nu' ending
         return radical + QString::fromUtf8("ん");
 
-    case VerbType::_v5r://Godan verb with 'ru' ending
+    case _v5r://Godan verb with 'ru' ending
         return radical + QString::fromUtf8("っ");
 
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
+    case _v5r_i://Godan verb with 'ru' ending (irregular verb) ある
         radical.chop(2);
         return radical + QString::fromUtf8("|あっ");
 
-    case VerbType::_v5s://Godan verb with 'su' ending
+    case _v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("し");
 
-    case VerbType::_v5t://Godan verb with 'tsu' ending
+    case _v5t://Godan verb with 'tsu' ending
         return radical + QString::fromUtf8("っ");
 
-    case VerbType::_v5u://Godan verb with 'u' ending
+    case _v5u://Godan verb with 'u' ending
         return radical + QString::fromUtf8("っ");
 
-    case VerbType::_v5u_s: //Godan verb with 'u' ending (special class) こう　とう
+    case _v5u_s: //Godan verb with 'u' ending (special class) こう　とう
         return radical + QString::fromUtf8("う");
 
-    case VerbType::_v5uru://Godan verb - uru old class verb (old form of Eru)
+    case _v5uru://Godan verb - uru old class verb (old form of Eru)
         return radical; //TODO: check
 
-    case VerbType::_v5z://Godan verb with 'zu' ending
+    case _v5z://Godan verb with 'zu' ending
         return radical; //TODO: check
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(2);
         return radical + QString::fromUtf8("|じ");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         if (radical.endsWith(QString::fromUtf8("く|"))){
             radical.chop(2);
             radical += QString::fromUtf8("き|");
         }
         return radical;
 
-    case VerbType::_vn://irregular nu verb 死ぬ
+    case _vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("ん");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         return radical + QString::fromUtf8("し");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
@@ -474,7 +474,7 @@ QString Verbstem::tForm(QString radical, EdictType type)
  * Gives the dictionary form of a verb
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString dictionary form of the verb
  */
 QString Verbstem::uForm(QString radical, EdictType type)
@@ -483,92 +483,92 @@ QString Verbstem::uForm(QString radical, EdictType type)
 
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         radical.chop(1);
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical + QString::fromUtf8("う");
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical + QString::fromUtf8("ふ");
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_v5://Godan verb (not completely classified)
+    case _v5://Godan verb (not completely classified)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class
+    case _v5aru: //Godan verb - -aru special class
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_v5b://Godan verb with 'bu' ending
+    case _v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ぶ");
 
-    case VerbType::_v5g://Godan verb with 'gu' ending
+    case _v5g://Godan verb with 'gu' ending
         return radical + QString::fromUtf8("ぐ");
 
-    case VerbType::_v5k://Godan verb with 'ku' ending
+    case _v5k://Godan verb with 'ku' ending
         return radical + QString::fromUtf8("く");
 
-    case VerbType::_v5k_s://Godan verb - iku/yuku special class
+    case _v5k_s://Godan verb - iku/yuku special class
         return radical + QString::fromUtf8("く");
 
-    case VerbType::_v5m://Godan verb with 'mu' ending
+    case _v5m://Godan verb with 'mu' ending
         return radical + QString::fromUtf8("む");
 
-    case VerbType::_v5n://Godan verb with 'nu' ending
+    case _v5n://Godan verb with 'nu' ending
         return radical + QString::fromUtf8("ぬ");
 
-    case VerbType::_v5r://Godan verb with 'ru' ending
+    case _v5r://Godan verb with 'ru' ending
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
+    case _v5r_i://Godan verb with 'ru' ending (irregular verb) ある
         radical.chop(2);
         return radical + QString::fromUtf8("|ある");
 
-    case VerbType::_v5s://Godan verb with 'su' ending
+    case _v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("す");
 
-    case VerbType::_v5t://Godan verb with 'tsu' ending
+    case _v5t://Godan verb with 'tsu' ending
         return radical + QString::fromUtf8("つ");
 
-    case VerbType::_v5u://Godan verb with 'u' ending
+    case _v5u://Godan verb with 'u' ending
         return radical + QString::fromUtf8("う");
 
-    case VerbType::_v5u_s: //Godan verb with 'u' ending (special class) こう　とう
+    case _v5u_s: //Godan verb with 'u' ending (special class) こう　とう
         return radical + QString::fromUtf8("う");
 
-    case VerbType::_v5uru://Godan verb - uru old class verb (old form of Eru)
+    case _v5uru://Godan verb - uru old class verb (old form of Eru)
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_v5z://Godan verb with 'zu' ending
+    case _v5z://Godan verb with 'zu' ending
         return radical + QString::fromUtf8("ず");
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_vn://irregular nu verb 死ぬ
+    case _vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("ぬ");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(2);
         return radical + QString::fromUtf8("|する");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         return radical + QString::fromUtf8("する");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(2);
         return radical + QString::fromUtf8("|する");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(2);
         return radical + QString::fromUtf8("|する");
 
@@ -589,7 +589,7 @@ QString Verbstem::uForm(QString radical, EdictType type)
  * eg. 飲む -> 飲み
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString the i-form of the verb
  */
 QString Verbstem::iForm(QString radical, EdictType type)
@@ -598,97 +598,97 @@ QString Verbstem::iForm(QString radical, EdictType type)
 
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         radical.chop(1);
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical;
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical;//TODO: check
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical;//TODO: check
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical;//TODO: check
 
-    case VerbType::_v5://Godan verb (not completely classified)
+    case _v5://Godan verb (not completely classified)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class
+    case _v5aru: //Godan verb - -aru special class
         return radical + QString::fromUtf8("い");
 
-    case VerbType::_v5b://Godan verb with 'bu' ending
+    case _v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("び");
 
-    case VerbType::_v5g://Godan verb with 'gu' ending
+    case _v5g://Godan verb with 'gu' ending
         return radical + QString::fromUtf8("ぎ");
 
-    case VerbType::_v5k://Godan verb with 'ku' ending
+    case _v5k://Godan verb with 'ku' ending
         return radical + QString::fromUtf8("き");
 
-    case VerbType::_v5k_s://Godan verb - iku/yuku special class
+    case _v5k_s://Godan verb - iku/yuku special class
         return radical + QString::fromUtf8("き");
 
-    case VerbType::_v5m://Godan verb with 'mu' ending
+    case _v5m://Godan verb with 'mu' ending
         return radical + QString::fromUtf8("み");
 
-    case VerbType::_v5n://Godan verb with 'nu' ending
+    case _v5n://Godan verb with 'nu' ending
         return radical + QString::fromUtf8("に");
 
-    case VerbType::_v5r://Godan verb with 'ru' ending
+    case _v5r://Godan verb with 'ru' ending
         return radical + QString::fromUtf8("り");
 
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
+    case _v5r_i://Godan verb with 'ru' ending (irregular verb) ある
         radical.chop(2);
         return radical + QString::fromUtf8("|あり");
 
-    case VerbType::_v5s://Godan verb with 'su' ending
+    case _v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("し");
 
-    case VerbType::_v5t://Godan verb with 'tsu' ending
+    case _v5t://Godan verb with 'tsu' ending
         return radical + QString::fromUtf8("ち");
 
-    case VerbType::_v5u://Godan verb with 'u' ending
+    case _v5u://Godan verb with 'u' ending
         return radical + QString::fromUtf8("い");
 
-    case VerbType::_v5u_s: //Godan verb with 'u' ending (special class) こう　とう
+    case _v5u_s: //Godan verb with 'u' ending (special class) こう　とう
         return radical + QString::fromUtf8("い");
 
-    case VerbType::_v5uru://Godan verb - uru old class verb (old form of Eru)
+    case _v5uru://Godan verb - uru old class verb (old form of Eru)
         return radical + QString::fromUtf8("る");
 
-    case VerbType::_v5z://Godan verb with 'zu' ending
+    case _v5z://Godan verb with 'zu' ending
         return radical + QString::fromUtf8("ず");
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(2);
         return radical + QString::fromUtf8("|じ");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         if (radical.endsWith(QString::fromUtf8("く|"))){
             radical.chop(2);
             return radical + QString::fromUtf8("き|");
         }
         return radical;
 
-    case VerbType::_vn://irregular nu verb 死ぬ
+    case _vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("に");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         return radical + QString::fromUtf8("し");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
@@ -709,7 +709,7 @@ QString Verbstem::iForm(QString radical, EdictType type)
  * eg. 飲む -> 飲も
  * @param radical It is the part which never get changed during conjugation,
  * we can get it dictionary form (u-form) minus the last character (eg. 飲む -> 飲)
- * @param type type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * @param type type of the verb: v1, v5u, etc. (See EdictType)
  * @return QString the o-form of the verb
  */
 QString Verbstem::oForm(QString radical, EdictType type)
@@ -718,97 +718,97 @@ QString Verbstem::oForm(QString radical, EdictType type)
 
     switch (type){
 
-    case VerbType::_v0: //just the radical
+    case _v0: //just the radical
         radical.chop(1);
         return radical;
 
-    case VerbType::_v1: 	//Ichidan verb
+    case _v1: 	//Ichidan verb
         return radical;
 
-    case VerbType::_v2a_s: 	//Nidan verb with 'u' ending (archaic)
+    case _v2a_s: 	//Nidan verb with 'u' ending (archaic)
         return radical;//TODO: check
 
-    case VerbType::_v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
+    case _v4h: 	//Yondan verb with 'hu/fu' ending (archaic)
         return radical;//TODO: check
 
-    case VerbType::_v4r: //Yondan verb with 'ru' ending (archaic)
+    case _v4r: //Yondan verb with 'ru' ending (archaic)
         return radical;//TODO: check
 
-    case VerbType::_v5://Godan verb (not completely classified)
+    case _v5://Godan verb (not completely classified)
         return radical; //TODO: check
 
-    case VerbType::_v5aru: //Godan verb - -aru special class
+    case _v5aru: //Godan verb - -aru special class
         return radical + QString::fromUtf8("ろ");
 
-    case VerbType::_v5b://Godan verb with 'bu' ending
+    case _v5b://Godan verb with 'bu' ending
         return radical + QString::fromUtf8("ぼ");
 
-    case VerbType::_v5g://Godan verb with 'gu' ending
+    case _v5g://Godan verb with 'gu' ending
         return radical + QString::fromUtf8("ご");
 
-    case VerbType::_v5k://Godan verb with 'ku' ending
+    case _v5k://Godan verb with 'ku' ending
         return radical + QString::fromUtf8("こ");
 
-    case VerbType::_v5k_s://Godan verb - iku/yuku special class
+    case _v5k_s://Godan verb - iku/yuku special class
         return radical + QString::fromUtf8("こ");
 
-    case VerbType::_v5m://Godan verb with 'mu' ending
+    case _v5m://Godan verb with 'mu' ending
         return radical + QString::fromUtf8("も");
 
-    case VerbType::_v5n://Godan verb with 'nu' ending
+    case _v5n://Godan verb with 'nu' ending
         return radical + QString::fromUtf8("の");
 
-    case VerbType::_v5r://Godan verb with 'ru' ending
+    case _v5r://Godan verb with 'ru' ending
         return radical + QString::fromUtf8("ろ");
 
-    case VerbType::_v5r_i://Godan verb with 'ru' ending (irregular verb) ある
+    case _v5r_i://Godan verb with 'ru' ending (irregular verb) ある
         radical.chop(2);
         return radical + QString::fromUtf8("|あり");
 
-    case VerbType::_v5s://Godan verb with 'su' ending
+    case _v5s://Godan verb with 'su' ending
         return radical + QString::fromUtf8("そ");
 
-    case VerbType::_v5t://Godan verb with 'tsu' ending
+    case _v5t://Godan verb with 'tsu' ending
         return radical + QString::fromUtf8("と");
 
-    case VerbType::_v5u://Godan verb with 'u' ending
+    case _v5u://Godan verb with 'u' ending
         return radical + QString::fromUtf8("お");
 
-    case VerbType::_v5u_s: //Godan verb with 'u' ending (special class) こう　とう
+    case _v5u_s: //Godan verb with 'u' ending (special class) こう　とう
         return radical + QString::fromUtf8("お");
 
-    case VerbType::_v5uru://Godan verb - uru old class verb (old form of Eru)
+    case _v5uru://Godan verb - uru old class verb (old form of Eru)
         return radical + QString::fromUtf8("ろ");
 
-    case VerbType::_v5z://Godan verb with 'zu' ending
+    case _v5z://Godan verb with 'zu' ending
         return radical + QString::fromUtf8("ず");
 
-    case VerbType::_vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
+    case _vz://Ichidan verb - zuru verb - (alternative form of -jiru verbs)
         radical.chop(2);
         return radical + QString::fromUtf8("|じ");
 
-    case VerbType::_vk://kuru verb - special class
+    case _vk://kuru verb - special class
         if (radical.endsWith(QString::fromUtf8("く|"))){
             radical.chop(2);
             return radical + QString::fromUtf8("こ|");
         }
         return radical;
 
-    case VerbType::_vn://irregular nu verb 死ぬ
+    case _vn://irregular nu verb 死ぬ
         return radical + QString::fromUtf8("の");
 
-    case VerbType::_vs://noun or participle which takes the aux. verb suru
+    case _vs://noun or participle which takes the aux. verb suru
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_c://su verb - precursor to the modern suru
+    case _vs_c://su verb - precursor to the modern suru
         return radical + QString::fromUtf8("し");
 
-    case VerbType::_vs_i://suru verb - irregular
+    case _vs_i://suru verb - irregular
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 
-    case VerbType::_vs_s: //suru verb - special class
+    case _vs_s: //suru verb - special class
         radical.chop(2);
         return radical + QString::fromUtf8("|し");
 

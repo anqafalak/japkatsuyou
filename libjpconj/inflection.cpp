@@ -36,13 +36,13 @@
  * It gives complex conjugation forms, using the basic stems, and adding suffixes according to parameters:
  * \b type \b, \b form \b, \b polite \b, and \b affirmative \b.
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
- * \param type Type of the verb: v1, v5u, etc. (See VerbType::EdictType)
+ * \param type Type of the verb: v1, v5u, etc. (See EdictType)
  * \param form Complex form (tense) which we want to conjugate to, such as: present, past, conditional, etc.
- * (See VConjugate::CForm)
+ * (See CForm)
  * \param polite The language can be polite or plain, ans thus verb conjugation variate according to these two.
- * (See VConjugate::Politeness)
+ * (See Politeness)
  * \param affirmative The sentence can be affirmative (positive) or negative.
- * (See VConjugate::Polarity)
+ * (See Polarity)
  * \return The complex verb conjugation
  */
 QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
@@ -58,12 +58,12 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
 
     switch(form){
 
-    case VConjugate::_TeForm:
+    case _TeForm:
         if(affirmative)
             return Verbstem::tForm(radical, type) + tEnd(end, true);
         return Verbstem::aForm(radical, type) + QString::fromUtf8("|なくて");
 
-    case VConjugate::_Present:
+    case _Present:
         if(polite){
             if(affirmative)
                 return Verbstem::iForm(radical, type) + QString::fromUtf8("|ます");
@@ -74,7 +74,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::uForm(radical, type) + "|";
         return Verbstem::aForm(radical, type) + QString::fromUtf8("|ない");
 
-    case VConjugate::_Past:
+    case _Past:
         if(polite){
             if(affirmative)
                 return Verbstem::iForm(radical, type) + QString::fromUtf8("|ました");
@@ -85,7 +85,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::tForm(radical, type) + tEnd(end, false);
         return Verbstem::aForm(radical, type) + QString::fromUtf8("|なかった");
 
-    case VConjugate::_Provision:
+    case _Provision:
         if(polite){
             if (affirmative)
                 return Verbstem::iForm(radical, type) + QString::fromUtf8("|ますれば");
@@ -96,7 +96,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::eForm(radical, type)+ QString::fromUtf8("|ば");
         return Verbstem::aForm(radical, type) + QString::fromUtf8("|なければ");
 
-    case VConjugate::_Condition:
+    case _Condition:
         if(polite){
             if(affirmative)
                 return Verbstem::iForm(radical, type) + QString::fromUtf8("|ましたら");
@@ -107,7 +107,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::tForm(radical, type) + tEnd(end, false) + QString::fromUtf8("ら");
         return Verbstem::aForm(radical, type) + QString::fromUtf8("|なかったら");
 
-    case VConjugate::_Imperative:
+    case _Imperative:
         if(polite){
             if(affirmative)
                 return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("下さい");
@@ -118,7 +118,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::eImpForm(radical, type) + "|";
         return Verbstem::uForm(radical, type) + QString::fromUtf8("|な");
 
-    case VConjugate::_Volitional:
+    case _Volitional:
         if(polite){
             if(affirmative)
                 return Verbstem::iForm(radical, type) + QString::fromUtf8("|ましょう");
@@ -129,7 +129,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::oForm(radical, type) + QString::fromUtf8("|う");
         return Verbstem::uForm(radical, type) + QString::fromUtf8("|のをやめよう");
 
-    case VConjugate::_PresentContinuous:
+    case _PresentContinuous:
         if(polite){
             if(affirmative)
                 return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("います");
@@ -140,7 +140,7 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いる");
         return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いない");
 
-    case VConjugate::_PastContinuous:
+    case _PastContinuous:
         if(polite){
             if(affirmative)
                 return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いました");
@@ -151,17 +151,17 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いた");
         return Verbstem::tForm(radical, type) + tEnd(end, true) + QString::fromUtf8("いなかった");
 
-    case VConjugate::_Potential:
+    case _Potential:
 
-        if(type == VerbType::_v1){
+        if(type == _v1){
             radical += QString::fromUtf8("||られ"); // radical + られ
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar = "";
-        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if (type != VerbType::_vs_c) // suru verb number 25 ends with su,  no need to chop it
+        } else if(type >= _vs){ //suru verbs numbers are 27 26 25 24
+            if (type != _vs_c) // suru verb number 25 ends with su,  no need to chop it
                 radical.chop(1);
             radical += QString::fromUtf8("||でき");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar = "";
         }
 
@@ -175,16 +175,16 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::eForm(radical, type) + bar + QString::fromUtf8("る");
         return Verbstem::eForm(radical, type) + bar + QString::fromUtf8("ない");
 
-    case VConjugate::_Passive:
-        if(type == VerbType::_v1){
+    case _Passive:
+        if(type == _v1){
             radical += QString::fromUtf8("||ら");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar ="";
-        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if(type != VerbType::_vs_c) // suru verb number 27 ends with su,  no need to chop it
+        } else if(type >= _vs){ //suru verbs numbers are 27 26 25 24
+            if(type != _vs_c) // suru verb number 27 ends with su,  no need to chop it
                 radical.chop(1);
             radical += QString::fromUtf8("||さ");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar ="";
         }
 
@@ -198,16 +198,16 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("れる");
         return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("れない");
 
-    case VConjugate::_Causative:
-        if(type == VerbType::_v1){
+    case _Causative:
+        if(type == _v1){
             radical += QString::fromUtf8("||さ");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar ="";
-        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if(type != VerbType::_vs_c) // suru verb number 27 ends with su,  no need to chop it
+        } else if(type >= _vs){ //suru verbs numbers are 27 26 25 24
+            if(type != _vs_c) // suru verb number 27 ends with su,  no need to chop it
                 radical.chop(1);
             radical += QString::fromUtf8("||さ");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar ="";
         }
 
@@ -221,16 +221,16 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
             return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せる");
         return Verbstem::aForm(radical, type) + bar + QString::fromUtf8("せない");
 
-    case VConjugate::_CausativePassive:
-        if(type == VerbType::_v1){
+    case _CausativePassive:
+        if(type == _v1){
             radical += QString::fromUtf8("||さ");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar ="";
-        } else if(type >= VerbType::_vs){ //suru verbs numbers are 27 26 25 24
-            if(type != VerbType::_vs_c) // suru verb number 27 ends with su,  no need to chop it
+        } else if(type >= _vs){ //suru verbs numbers are 27 26 25 24
+            if(type != _vs_c) // suru verb number 27 ends with su,  no need to chop it
                 radical.chop(1);
             radical += QString::fromUtf8("||さ");
-            type = VerbType::_v0; //to prevent changing the radical when using eForm
+            type = _v0; //to prevent changing the radical when using eForm
             bar ="";
         }
 
@@ -255,8 +255,8 @@ QString Inflection::conjugate(QString verb, EdictType type, CForm form, Politene
  * It gives basic conjugation forms (or basic stems), those basic forms can be used to form
  * complex conjugation forms by adding suffixes and auxilary verbs.
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
- * \param type Type of the verb: v1, v5u, etc. (See VerbType::EdictType)
- * \param form Basic forms: imperfective, conjuntive, etc. (See VKatsuyou::KForm)
+ * \param type Type of the verb: v1, v5u, etc. (See EdictType)
+ * \param form Basic forms: imperfective, conjuntive, etc. (See KForm)
  * \return Basic forms conjugation
  */
 QString Inflection::katsuyou(QString verb, EdictType type, KForm form)
@@ -270,28 +270,28 @@ QString Inflection::katsuyou(QString verb, EdictType type, KForm form)
 
 
     switch (form){
-    case VKatsuyou::_Imperfective_a:
+    case _Imperfective_a:
         return Verbstem::aForm(radical, type);
 
-    case VKatsuyou::_Imperfective_o:
+    case _Imperfective_o:
         return Verbstem::oForm(radical, type);
 
-    case VKatsuyou::_Conjunctive_i:
+    case _Conjunctive_i:
         return Verbstem::iForm(radical, type);
 
-    case VKatsuyou::_Conjunctive_t:
+    case _Conjunctive_t:
         return Verbstem::tForm(radical, type);
 
-    case VKatsuyou::_Terminal_u:
+    case _Terminal_u:
         return Verbstem::uForm(radical, type);
 
-    case VKatsuyou::_Attributive_u:
+    case _Attributive_u:
         return Verbstem::uForm(radical, type);
 
-    case VKatsuyou::_Hypothetical_e:
+    case _Hypothetical_e:
         return Verbstem::eForm(radical, type);
 
-    case VKatsuyou::_Imperative_e:
+    case _Imperative_e:
         return Verbstem::eImpForm(radical, type);
 
     default:

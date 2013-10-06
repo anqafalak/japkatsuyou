@@ -33,10 +33,4 @@
 #  define LIBJPCONJSHARED_EXPORT Q_DECL_IMPORT
 #endif
 
-#ifdef Q_WS_WIN
-   #define WIN_EXPORT __declspec(dllexport)
-#else
-   #define WIN_EXPORT
-#endif
-
 #endif // LIBJPCONJ_GLOBAL_H

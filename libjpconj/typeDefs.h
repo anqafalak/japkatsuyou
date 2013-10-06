@@ -28,11 +28,6 @@
 // Characters which can be the ending of a verb in  dictionary form
 #define _endChars QString::fromUtf8("うくぐすつぬぶむるふ")
 
-/*! VerbType namespace is used to get easy access to the EdictTypes,
- * by taping VerbType:: in an IDE like Qt Creator
- */
-namespace VerbType {
-
 /*!
  * \brief The EdictType enum contains the verb types as specified in Edict2 dictionary
  *
@@ -124,14 +119,7 @@ enum EdictType {
     /*! suru verb - special class */
     _vs_s       = 27
 };
-}
 
-/*! VConjugate namespace (Verb conjugate) is used to package all enums used in complex conjugation.
- * It helps the programmer to use the different enum by taping VConjugate:: in an IDE like Qt Creator.
- */
-namespace VConjugate{
-
-using namespace VerbType;
 
 /*!
  * \brief The CForm enum (Conjugation Form) contains the verb's complex forms.
@@ -202,14 +190,8 @@ enum Politeness {
     _Polite             = true
 };
 
-}
 
-/*! VKatsuyou namespace (Verb Katsuyou -conjugation in Japanese-) is used to package all enums used in basic conjugation.
- * It helps the programmer to use the different enum by taping VKatsuyou:: in an IDE like Qt Creator.
- */
-namespace VKatsuyou{
 
-using namespace VerbType;
 
 /*!
  * \brief The KForm enum (Conjugation Form) contains the verb's basic forms.
@@ -242,9 +224,5 @@ enum KForm {
     /*! Imperative, in Japanese: 命令形*/
     _Imperative_e       = 8
 };
-}
-
-using namespace VConjugate;
-using namespace VKatsuyou;
 
 #endif // TYPEDEFS_H
