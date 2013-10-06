@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <virtualFolder>manual_en</virtualFolder>
+  <customFilter name="JapKatsuyou 1.0">
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+  </customFilter>
+  <filterSection>
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+    <toc>
+      <section title="About JapKatsuyou" ref="about.html">
+	<section title="JapKatsuyou features" ref="about.html#features"/>
+	<section title="JapKatsuyou License" ref="about.html#license"/>
+	<section title="JapKatsuyou Verbs Database" ref="about.html#database"/>
+      </section>
+      <section title="User Interface" ref="gui.html">
+	<section title="JapKatsuyou features" ref="gui.html#features"/>
+	<section title="JapKatsuyou License" ref="about.html#license"/>
+	<section title="JapKatsuyou Verbs Database" ref="about.html#database"/>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="japkatsuyou" ref="about.html#definition"/>
+      <keyword name="verb conjugation" ref="about.html#definition"/>
+      <keyword name="free software" ref="about.html#definition"/>
+      
+      <keyword name="feature" ref="about.html#features"/>
+      <keyword name="verb existence" ref="about.html#features"/>
+      <keyword name="verb type" ref="about.html#features"/>
+      <keyword name="language" ref="about.html#features"/>
+      <keyword name="export" ref="about.html#features"/>
+      
+      <keyword name="application license" ref="about.html#license"/>
+      <keyword name="gnu gpl" ref="about.html#license"/>
+      <keyword name="dzgroup" ref="about.html#license"/>
+      <keyword name="redistribute the software and code" ref="about.html#license"/>
+      <keyword name="modify the code" ref="about.html#license"/>
+      <keyword name="use warranty" ref="about.html#license"/>
+    </keywords>
+    <files>
+      <file>*.jpg</file>
+      <file>*.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>
