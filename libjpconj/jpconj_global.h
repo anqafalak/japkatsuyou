@@ -22,30 +22,15 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBJPCONJLINK_H
-#define LIBJPCONJLINK_H
+#ifndef LIBJPCONJ_GLOBAL_H
+#define LIBJPCONJ_GLOBAL_H
 
-#include "paths.h"
-#include "typeDefs.h"
+#include <QtCore/qglobal.h>
 
-#include <QDebug>
-#include <QLibrary>
+#if defined(LIBJPCONJ_LIBRARY)
+#  define LIBJPCONJSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define LIBJPCONJSHARED_EXPORT Q_DECL_IMPORT
+#endif
 
-typedef const char* (*sharedConjugate)(const char*, EdictType, CForm, Politeness, Polarity);
-typedef const char* (*sharedKatsuyou)(const char*, EdictType, KForm);
-
-class libjpconjlink
-{
-
-public:
-    static bool Init();
-    static QString conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
-    static QString katsuyou(QString verb, EdictType type, KForm form);
-
-private:
-    static sharedConjugate libConjugate;
-    static sharedKatsuyou libKatsuyou;
-
-};
-
-#endif // LIBJPCONJLINK_H
+#endif // LIBJPCONJ_GLOBAL_H

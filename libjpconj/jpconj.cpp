@@ -22,24 +22,32 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBJPCONJ_H
-#define LIBJPCONJ_H
+#include "jpconj.h"
 
-#include "inflection.h"
-#include "libjpconj_global.h"
-
-#include <QString>
-
-
-class LIBJPCONJSHARED_EXPORT Libjpconj
+/*!
+ * \brief JpConj::Conjugate
+ * \param verb
+ * \param type
+ * \param form
+ * \param polite
+ * \param affirmative
+ * \return
+ */
+QString JpConj::Conjugate (QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)
 {
+    return Inflection::conjugate(verb, type, form, polite, affirmative);
+}
 
-public:
-    static const char* conjugateC(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
-    static const char* katsuyouC(const char* verb, EdictType type, KForm form);
-};
 
-extern "C" WIN_EXPORT const char* Conjugate(const char* verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
-extern "C" WIN_EXPORT const char* Katsuyou(const char* verb, EdictType type, KForm form);
 
-#endif // LIBJPCONJ_H
+/*!
+ * \brief JpConj::Katsuyou
+ * \param verb
+ * \param type
+ * \param form
+ * \return
+ */
+QString JpConj::Katsuyou (QString verb, EdictType type, KForm form)
+{
+    return Inflection::katsuyou(verb, type, form);
+}

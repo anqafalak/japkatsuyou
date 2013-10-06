@@ -6,19 +6,27 @@
 
 QT       -= gui
 
-VERSION = 0.4
-
+win32{
 TARGET = libjpconj
+TARGET_EXT = .dll
+}
+unix: TARGET = jpconj
+
+VERSION = 1.0
+
 TEMPLATE = lib
 
 DEFINES += LIBJPCONJ_LIBRARY
 
-SOURCES +=  libjpconj.cpp \
+SOURCES +=  \
             verbstem.cpp \
-    inflection.cpp
+    inflection.cpp \
+    jpconj.cpp
 
-HEADERS +=  libjpconj.h\
-            libjpconj_global.h \
+HEADERS += \
             verbstem.h \
             typeDefs.h \
-    inflection.h
+    inflection.h \
+    jpconj.h \
+    jpconj_global.h
+

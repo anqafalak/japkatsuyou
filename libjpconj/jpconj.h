@@ -22,21 +22,23 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBJPCONJ_GLOBAL_H
-#define LIBJPCONJ_GLOBAL_H
+#ifndef LIBJPCONJ_H
+#define LIBJPCONJ_H
 
-#include <QtCore/qglobal.h>
+#include "inflection.h"
+#include "jpconj_global.h"
+#include "typeDefs.h"
 
-#if defined(LIBJPCONJ_LIBRARY)
-#  define LIBJPCONJSHARED_EXPORT Q_DECL_EXPORT
-#else
-#  define LIBJPCONJSHARED_EXPORT Q_DECL_IMPORT
-#endif
+#include <QString>
 
-#ifdef Q_WS_WIN
-   #define WIN_EXPORT __declspec(dllexport)
-#else
-   #define WIN_EXPORT
-#endif
+class LIBJPCONJSHARED_EXPORT JpConj
+{
 
-#endif // LIBJPCONJ_GLOBAL_H
+public:
+    static QString Conjugate (QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
+    static QString Katsuyou (QString verb, EdictType type, KForm form);
+
+};
+
+#endif // LIBJPCONJ_H
+

@@ -34,6 +34,7 @@ class Verbstem
 {
 
 public:
+
     static QString aForm(QString radical, EdictType type);
     static QString eForm(QString radical, EdictType type);
     static QString eImpForm(QString radical, EdictType type);
