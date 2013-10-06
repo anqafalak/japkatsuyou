@@ -30,10 +30,11 @@
 #include "export.h"
 #include "jpconjhelp.h"
 #include "language.h"
-#include "libjpconjlink.h"
 #include "msg.h"
 #include "preference.h"
+
 #include "typeDefs.h"
+#include "jpconj.h"
 
 #include <QDebug>
 #include <QFileDialog>

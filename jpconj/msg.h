@@ -80,24 +80,24 @@ static QString NO_USE_FUNC fileExists(bool title)
 
 
 
-/*! Gives a list of complex conjugation forms (See: VConjugate::CForm).\n
+/*! Gives a list of complex conjugation forms (See: CForm).\n
  * This list makes it easier to loop over the different complex conjugation forms.
  */
 static QMap<CForm, QString> NO_USE_FUNC complexFormsMap()
 {
     QMap<CForm, QString> resultMap;
-    resultMap.insert(VConjugate::_Present, "present");
-    resultMap.insert(VConjugate::_Past, "past");
-    resultMap.insert(VConjugate::_Provision, "provision");
-    resultMap.insert(VConjugate::_Condition, "condition");
-    resultMap.insert(VConjugate::_Imperative, "imperative");
-    resultMap.insert(VConjugate::_Volitional, "volutional");
-    resultMap.insert(VConjugate::_PresentContinuous, "presentcontinuous");
-    resultMap.insert(VConjugate::_PastContinuous, "pastcontinuous");
-    resultMap.insert(VConjugate::_Passive, "passive");
-    resultMap.insert(VConjugate::_Causative, "causative");
-    resultMap.insert(VConjugate::_CausativePassive, "causativepassive");
-    resultMap.insert(VConjugate::_Potential, "potential");
+    resultMap.insert(_Present, "present");
+    resultMap.insert(_Past, "past");
+    resultMap.insert(_Provision, "provision");
+    resultMap.insert(_Condition, "condition");
+    resultMap.insert(_Imperative, "imperative");
+    resultMap.insert(_Volitional, "volutional");
+    resultMap.insert(_PresentContinuous, "presentcontinuous");
+    resultMap.insert(_PastContinuous, "pastcontinuous");
+    resultMap.insert(_Passive, "passive");
+    resultMap.insert(_Causative, "causative");
+    resultMap.insert(_CausativePassive, "causativepassive");
+    resultMap.insert(_Potential, "potential");
 
     return resultMap;
 }
@@ -105,36 +105,36 @@ static QMap<CForm, QString> NO_USE_FUNC complexFormsMap()
 
 
 /*! Gives the verb complex form name in the current language.\n
- * For example, for VConjugate::_Present we get "present" in English
+ * For example, for _Present we get "present" in English
  */
 static QString NO_USE_FUNC getVerbFormName(CForm form)
 {
     switch (form){
-    case VConjugate::_TeForm:
+    case _TeForm:
         return qApp->translate("verbFormNames", "Te form");
-    case VConjugate::_Present:
+    case _Present:
         return qApp->translate("verbFormNames", "Present");
-    case VConjugate::_Past:
+    case _Past:
         return qApp->translate("verbFormNames", "Past");
-    case VConjugate::_Provision:
+    case _Provision:
         return qApp->translate("verbFormNames", "Provisional Condition");
-    case VConjugate::_Condition:
+    case _Condition:
         return qApp->translate("verbFormNames", "Conditional");
-    case VConjugate::_Imperative:
+    case _Imperative:
         return qApp->translate("verbFormNames", "Imperative");
-    case VConjugate::_Volitional:
+    case _Volitional:
         return qApp->translate("verbFormNames", "Volitional");
-    case VConjugate::_PresentContinuous:
+    case _PresentContinuous:
         return qApp->translate("verbFormNames", "Present Continuous");
-    case VConjugate::_PastContinuous:
+    case _PastContinuous:
         return qApp->translate("verbFormNames", "Past Continuous");
-    case VConjugate::_Passive:
+    case _Passive:
         return qApp->translate("verbFormNames", "Passive");
-    case VConjugate::_Causative:
+    case _Causative:
         return qApp->translate("verbFormNames", "Causative");
-    case VConjugate::_CausativePassive:
+    case _CausativePassive:
         return qApp->translate("verbFormNames", "Causative Passive");
-    case VConjugate::_Potential:
+    case _Potential:
         return qApp->translate("verbFormNames", "Potential");
     default:
         break;
@@ -146,36 +146,36 @@ static QString NO_USE_FUNC getVerbFormName(CForm form)
 
 
 /*! Gives the verb complex form description in the current language.\n
- * For example, for VConjugate::_Present we get "This is the present tense." in English
+ * For example, for _Present we get "This is the present tense." in English
  */
 static QString NO_USE_FUNC getVerbFormDesc(CForm form)
 {
     switch (form){
-    case VConjugate::_TeForm:
+    case _TeForm:
         return qApp->translate("verbFormDesc", "It's a form used for many purposes, like successive actions.");
-    case VConjugate::_Present:
+    case _Present:
         return qApp->translate("verbFormDesc", "This is the present tense.");
-    case VConjugate::_Past:
+    case _Past:
         return qApp->translate("verbFormDesc", "This is the past tense.");
-    case VConjugate::_Provision:
+    case _Provision:
         return qApp->translate("verbFormDesc", "The provisional conditional form is used: - In conditionals where the emphasis rests more on the condition than the result;  - Expressing obligations.");
-    case VConjugate::_Condition:
+    case _Condition:
         return qApp->translate("verbFormDesc", "It can be used in the same way as the provisional condition form. However, it implies more certainty about the condition.");
-    case VConjugate::_Imperative:
+    case _Imperative:
         return qApp->translate("verbFormDesc", "The imperative form is used to give an order to someone.");
-    case VConjugate::_Volitional:
+    case _Volitional:
         return qApp->translate("verbFormDesc", "In general, the volitional form expresses intention, eg. Let's... or Shall we...");
-    case VConjugate::_PresentContinuous:
+    case _PresentContinuous:
         return qApp->translate("verbFormDesc", "This is the present continuous tense.");
-    case VConjugate::_PastContinuous:
+    case _PastContinuous:
         return qApp->translate("verbFormDesc", "This is the past continuous tense.");
-    case VConjugate::_Passive:
+    case _Passive:
         return qApp->translate("verbFormDesc", "This is the passive voice of the verb.");
-    case VConjugate::_Causative:
+    case _Causative:
         return qApp->translate("verbFormDesc", "The causative is used for: - Making someone do something; - Letting someone do something.");
-    case VConjugate::_CausativePassive:
+    case _CausativePassive:
         return qApp->translate("verbFormDesc", "It is used to express causation passively.");
-    case VConjugate::_Potential:
+    case _Potential:
         return qApp->translate("verbFormDesc", "The potential is used to express that one has the ability to do something.");
     default:
         break;
@@ -187,66 +187,66 @@ static QString NO_USE_FUNC getVerbFormDesc(CForm form)
 
 
 /*! Gives the verb type description in the current language.\n
- * For example, for VerbType::_v1 we get "Ichidan verb." in English
+ * For example, for _v1 we get "Ichidan verb." in English
  */
 static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
 {
     switch (type){
-    case VerbType::_v0:
+    case _v0:
         return qApp->translate("verbTypeDesc", "This verb doesn't exist in the database.");
-    case VerbType::_v1:
+    case _v1:
         return qApp->translate("verbTypeDesc", "Ichidan verb.");
-    case VerbType::_v2a_s:
+    case _v2a_s:
         return qApp->translate("verbTypeDesc", "Nidan verb with 'u' ending (archaic).");
-    case VerbType::_v4h:
+    case _v4h:
         return qApp->translate("verbTypeDesc", "Yondan verb with 'hu/fu' ending (archaic).");
-    case VerbType::_v4r:
+    case _v4r:
         return qApp->translate("verbTypeDesc", "Yondan verb with 'ru' ending (archaic).");
-    case VerbType::_v5:
+    case _v5:
         return qApp->translate("verbTypeDesc", "Godan verb (not completely classified).");
-    case VerbType::_v5aru:
+    case _v5aru:
         return qApp->translate("verbTypeDesc", "Godan verb -aru special class.");
-    case VerbType::_v5b:
+    case _v5b:
         return qApp->translate("verbTypeDesc", "Godan verb with 'bu' ending.");
-    case VerbType::_v5g:
+    case _v5g:
         return qApp->translate("verbTypeDesc", "Godan verb with 'gu' ending.");
-    case VerbType::_v5k:
+    case _v5k:
         return qApp->translate("verbTypeDesc", "Godan verb with 'ku' ending.");
-    case VerbType::_v5k_s:
+    case _v5k_s:
         return qApp->translate("verbTypeDesc", "Godan verb - iku/yuku special class.");
-    case VerbType::_v5m:
+    case _v5m:
         return qApp->translate("verbTypeDesc", "Godan verb with 'mu' ending.");
-    case VerbType::_v5n:
+    case _v5n:
         return qApp->translate("verbTypeDesc", "Godan verb with 'nu' ending.");
-    case VerbType::_v5r:
+    case _v5r:
         return qApp->translate("verbTypeDesc", "Godan verb with 'ru' ending.");
-    case VerbType::_v5r_i:
+    case _v5r_i:
         return qApp->translate("verbTypeDesc", "Godan verb with 'ru' ending (irregular verb).");
-    case VerbType::_v5s:
+    case _v5s:
         return qApp->translate("verbTypeDesc", "Godan verb with 'su' ending.");
-    case VerbType::_v5t:
+    case _v5t:
         return qApp->translate("verbTypeDesc", "Godan verb with 'tsu' ending.");
-    case VerbType::_v5u:
+    case _v5u:
         return qApp->translate("verbTypeDesc", "Godan verb with 'u' ending.");
-    case VerbType::_v5u_s:
+    case _v5u_s:
         return qApp->translate("verbTypeDesc", "Godan verb with 'u' ending (special class).");
-    case VerbType::_v5uru:
+    case _v5uru:
         return qApp->translate("verbTypeDesc", "Godan verb - uru old class verb (old form of Eru).");
-    case VerbType::_v5z:
+    case _v5z:
         return qApp->translate("verbTypeDesc", "Godan verb with 'zu' ending.");
-    case VerbType::_vz:
+    case _vz:
         return qApp->translate("verbTypeDesc", "Ichidan verb - zuru verb - (alternative form of -jiru verbs).");
-    case VerbType::_vk:
+    case _vk:
         return qApp->translate("verbTypeDesc", "Kuru verb - special class.");
-    case VerbType::_vn:
+    case _vn:
         return qApp->translate("verbTypeDesc", "Irregular nu verb.");
-    case VerbType::_vs:
+    case _vs:
         return qApp->translate("verbTypeDesc", "Noun or participle which takes the aux. verb suru.");
-    case VerbType::_vs_c:
+    case _vs_c:
         return qApp->translate("verbTypeDesc", "Su verb - precursor to the modern suru.");
-    case VerbType::_vs_i:
+    case _vs_i:
         return qApp->translate("verbTypeDesc", "Suru verb - irregular.");
-    case VerbType::_vs_s:
+    case _vs_s:
         return qApp->translate("verbTypeDesc", "Suru verb - special class.");
 
     }
@@ -257,14 +257,14 @@ static QString NO_USE_FUNC getVerbTypeDesc(EdictType type)
 
 
 /*! Gives the conjugation politness name in the current language.\n
- * For example, for VConjugate::_Plain we get "Plain" in English
+ * For example, for _Plain we get "Plain" in English
  */
 static QString NO_USE_FUNC getVerbPolitenessName(Politeness polite)
 {
     switch (polite) {
-    case VConjugate::_Plain:
+    case _Plain:
         return qApp->translate("verbPolitenessDesc", "Plain");
-    case VConjugate::_Polite:
+    case _Polite:
         return qApp->translate("verbPolitenessDesc", "Polite");
     default:
         break;
@@ -276,14 +276,14 @@ static QString NO_USE_FUNC getVerbPolitenessName(Politeness polite)
 
 
 /*! Gives the conjugation politness description in the current language.\n
- * For example, for VConjugate::_Plain we get "Plain form of a sentence; it is used with friends." in English
+ * For example, for _Plain we get "Plain form of a sentence; it is used with friends." in English
  */
 static QString NO_USE_FUNC getVerbPolitenessDesc(Politeness polite)
 {
     switch (polite) {
-    case VConjugate::_Plain:
+    case _Plain:
         return qApp->translate("verbPolitenessDesc", "Plain form of a sentence; it is used with friends.");
-    case VConjugate::_Polite:
+    case _Polite:
         return qApp->translate("verbPolitenessDesc", "Polite form of a sentence; it is used in official discussion.");
     default:
         break;
@@ -295,14 +295,14 @@ static QString NO_USE_FUNC getVerbPolitenessDesc(Politeness polite)
 
 
 /*! Gives the conjugation polarity name in the current language.\n
- * For example, for VConjugate::_Negative we get "Negative" in English
+ * For example, for _Negative we get "Negative" in English
  */
 static QString NO_USE_FUNC getVerbPolarityName(Polarity affirmative)
 {
     switch (affirmative) {
-    case VConjugate::_Negative:
+    case _Negative:
         return qApp->translate("verbPolarityDesc", "Negative");
-    case VConjugate::_Affirmative:
+    case _Affirmative:
         return qApp->translate("verbPolarityDesc", "Affirmative");
     default:
         break;
@@ -314,14 +314,14 @@ static QString NO_USE_FUNC getVerbPolarityName(Polarity affirmative)
 
 
 /*! Gives the conjugation polarity description in the current language. \n
- * For example, for VConjugate::_Negative we get "Form used in negative sentences." in English
+ * For example, for _Negative we get "Form used in negative sentences." in English
  */
 static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
 {
     switch (affirmative) {
-    case VConjugate::_Negative:
+    case _Negative:
         return qApp->translate("verbPolarityDesc", "Form used in negative sentences.");
-    case VConjugate::_Affirmative:
+    case _Affirmative:
         return qApp->translate("verbPolarityDesc", "Form used in affirmative sentences.");
     default:
         break;
@@ -337,7 +337,7 @@ static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
  * For example, if we have a variable called "&stem\_a&" in an HTML file. \n
  * Supposing the HTML content is stored in a QString htmlContent. \n
  * Then we can replace the string "&stem\_a&" with the value of
- * libjpconjlink::katsuyou(verb, type, VKatsuyou::_Imperfective_a);\n
+ * libjpconjlink::katsuyou(verb, type, _Imperfective_a);\n
  * \n
  * Using this QMap, we can loop over all the existant KForm and replace the contents \n
  * Example (Assuming basicConjHTML is a QString containing HTML content) \n
@@ -346,14 +346,14 @@ static QString NO_USE_FUNC getVerbPolarityDesc(Polarity affirmative)
 static QMap<KForm, QString> NO_USE_FUNC basicFormsMap()
 {
     QMap<KForm, QString> resultMap;
-    resultMap.insert(VKatsuyou::_Imperfective_a, "a");
-    resultMap.insert(VKatsuyou::_Imperfective_o, "o");
-    resultMap.insert(VKatsuyou::_Conjunctive_i, "i");
-    resultMap.insert(VKatsuyou::_Conjunctive_t, "t");
-    resultMap.insert(VKatsuyou::_Terminal_u, "u");
-    resultMap.insert(VKatsuyou::_Attributive_u, "uAtt");
-    resultMap.insert(VKatsuyou::_Hypothetical_e, "e");
-    resultMap.insert(VKatsuyou::_Imperative_e, "eImp");
+    resultMap.insert(_Imperfective_a, "a");
+    resultMap.insert(_Imperfective_o, "o");
+    resultMap.insert(_Conjunctive_i, "i");
+    resultMap.insert(_Conjunctive_t, "t");
+    resultMap.insert(_Terminal_u, "u");
+    resultMap.insert(_Attributive_u, "uAtt");
+    resultMap.insert(_Hypothetical_e, "e");
+    resultMap.insert(_Imperative_e, "eImp");
 
     return resultMap;
 }
@@ -406,33 +406,33 @@ static QString NO_USE_FUNC getTranslatedString(QString elementId)
 
 
 /*! Gives the verb basic form name in the current language.\n
- * For example, for VKatsuyou::_Imperfective_a we get "Imperfective (general)" in English
+ * For example, for _Imperfective_a we get "Imperfective (general)" in English
  */
 static QString NO_USE_FUNC getBasicFormName(KForm form)
 {
     switch (form){
-    case VKatsuyou::_Imperfective_a:
+    case _Imperfective_a:
         return qApp->translate("basicFormName", "Imperfective (general)");
 
-    case VKatsuyou::_Hypothetical_e:
+    case _Hypothetical_e:
         return qApp->translate("basicFormName", "Hypothetical");
 
-    case VKatsuyou::_Imperative_e:
+    case _Imperative_e:
         return qApp->translate("basicFormName", "Imperative");
 
-    case VKatsuyou::_Conjunctive_t:
+    case _Conjunctive_t:
         return qApp->translate("basicFormName", "Conjunctive (other)");
 
-    case VKatsuyou::_Terminal_u:
+    case _Terminal_u:
         return qApp->translate("basicFormName", "Terminal");
 
-    case VKatsuyou::_Attributive_u:
+    case _Attributive_u:
         return qApp->translate("basicFormName", "Attributive");
 
-    case VKatsuyou::_Conjunctive_i:
+    case _Conjunctive_i:
         return qApp->translate("basicFormName", "Conjunctive (_i)");
 
-    case VKatsuyou::_Imperfective_o:
+    case _Imperfective_o:
         return qApp->translate("basicFormName", "Imperfective (volitional)");
 
     default:
