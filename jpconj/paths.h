@@ -30,7 +30,8 @@
 #ifdef Q_WS_WIN
     #define dataFolder "./"
 #else
-    #define dataFolder "/usr/share/jpconj/"
+    //#define dataFolder "/usr/share/jpconj/"
+    #define dataFolder "./"
 #endif
 
 #endif // PATHS_H
