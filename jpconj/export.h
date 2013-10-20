@@ -22,6 +22,7 @@ public:
     void exportPdf(QString filename);
     void exportOdf(QString filename);
     void exportHtml(QString filename);
+    void print(QPrinter *printer);
     void resetContent();
 
     static void setConfigExportParts(QMap<QString, bool> exportParts);

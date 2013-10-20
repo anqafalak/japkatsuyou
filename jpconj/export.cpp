@@ -104,6 +104,21 @@ void Export::exportHtml(QString filename)
 
 
 
+void Export::print(QPrinter *printer)
+{
+    QWebView webview;
+    webview.setHtml(htmlContent);
+
+    if(styleFile.length()>0){
+        QWebSettings * settings = webview.settings();
+        settings->setUserStyleSheetUrl(QUrl("file://" + styleFile));
+    }
+
+    webview.print(printer);
+}
+
+
+
 void Export::resetContent()
 {
     htmlContent = "";

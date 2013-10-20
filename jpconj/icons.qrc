@@ -6,5 +6,6 @@
         <file>img/about.png</file>
         <file>img/help.png</file>
         <file>img/export.png</file>
+        <file>img/print.png</file>
     </qresource>
 </RCC>
