@@ -194,6 +194,7 @@
      <string>&amp;File</string>
     </property>
     <addaction name="actionExportResult"/>
+    <addaction name="actionPrint"/>
     <addaction name="separator"/>
     <addaction name="actionClose"/>
    </widget>
@@ -256,6 +257,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionExportResult"/>
+   <addaction name="actionPrint"/>
    <addaction name="actionPreference"/>
    <addaction name="separator"/>
    <addaction name="actionAbout"/>
@@ -416,6 +418,19 @@
    </property>
    <property name="text">
     <string>Content Export</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/print.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Print</string>
    </property>
   </action>
  </widget>

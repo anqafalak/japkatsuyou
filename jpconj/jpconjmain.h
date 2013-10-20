@@ -37,6 +37,8 @@
 #include "jpconj.h"
 
 #include <QDebug>
+#include <QPrintDialog>
+#include <QPrinter>
 #include <QFileDialog>
 #include <QHash>
 #include <QMainWindow>
@@ -70,12 +72,14 @@ private:
     static QString currentVerb;
 
     void doInit();
+    Export initExporter();
 
     //Functions related to actions slots
     void openAbout();
     void openPref();
     void doConj();
     void doExport();
+    void doPrint();
     void openHelp();
 
     //Functions related to conjugation
@@ -98,6 +102,7 @@ private slots:
     void on_actionHelpContent_triggered();
     void on_inputConjVerb_returnPressed();
     void on_actionExportResult_triggered();
+    void on_actionPrint_triggered();
 };
 
 #endif // JPCONJMAIN_H

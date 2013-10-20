@@ -102,6 +102,36 @@ void jpconjmain::doInit()
 
 
 
+Export jpconjmain::initExporter()
+{
+    Export exporter;
+    exporter.setRTL(rtl);
+    exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
+    exporter.addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
+    if(Export::getConfigExportPart("standard")){
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
+        QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter.addContent(data);
+    }
+    if(Export::getConfigExportPart("basic")){
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
+        QString data = ui->basicConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter.addContent(data);
+    }
+    if(Export::getConfigExportPart("complex")){
+        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
+        QString data = ui->complexConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter.addContent(data);
+    }
+
+    if(Export::getConfigExportPart("styled"))
+        exporter.setStyle(QDir(QString(dataFolder)).absolutePath() + "/styles/DzStyle.css");
+
+    return exporter;
+}
+
+
+
 /*!
  * \brief jpconjmain::openAbout This function is used to call "about" dialog box.
  */
@@ -154,6 +184,7 @@ void jpconjmain::doConj()
     if (type < 1){
         ui->verbType->setText(Msg::getVerbTypeDesc(type));
         ui->actionExportResult->setEnabled(false);
+        ui->actionPrint->setEnabled(false);
         currentVerb = "";
         hasContent = false;
         ui->standardConj->setHtml("");
@@ -171,6 +202,7 @@ void jpconjmain::doConj()
     setHTMLTranslation();
 
     ui->actionExportResult->setEnabled(true);
+    ui->actionPrint->setEnabled(true);
 }
 
 
@@ -218,28 +250,7 @@ void jpconjmain::doExport()
             return;
     }
 
-    Export exporter;
-    exporter.setRTL(rtl);
-    exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
-    exporter.addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
-    if(Export::getConfigExportPart("standard")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
-        QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
-        exporter.addContent(data);
-    }
-    if(Export::getConfigExportPart("basic")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
-        QString data = ui->basicConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
-        exporter.addContent(data);
-    }
-    if(Export::getConfigExportPart("complex")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
-        QString data = ui->complexConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
-        exporter.addContent(data);
-    }
-
-    if(Export::getConfigExportPart("styled"))
-        exporter.setStyle(QDir(QString(dataFolder)).absolutePath() + "/styles/DzStyle.css");
+    Export exporter = initExporter();
 
     if (filename.endsWith(".pdf")){
         //exporter.exportPdf(filename);
@@ -255,6 +266,22 @@ void jpconjmain::doExport()
     if (filename.endsWith(".htm")){
         exporter.exportHtml(filename);
     }
+}
+
+
+
+void jpconjmain::doPrint()
+{
+    QPrinter printer;
+
+    QPrintDialog *dialog = new QPrintDialog(&printer, this);
+    //dialog->setWindowTitle(tr("Print Document"));
+    if (dialog->exec() != QDialog::Accepted)
+        return;
+
+    Export exporter = initExporter();
+
+    exporter.print(&printer);
 }
 
 
@@ -549,4 +576,9 @@ void jpconjmain::on_inputConjVerb_returnPressed()
 void jpconjmain::on_actionExportResult_triggered()
 {
     doExport();
+}
+
+void jpconjmain::on_actionPrint_triggered()
+{
+    doPrint();
 }
