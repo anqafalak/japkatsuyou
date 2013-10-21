@@ -290,9 +290,12 @@ void jpconjmain::doPrint()
 
 void jpconjmain::openHelp()
 {
-    jpconjhelp* helpWindow = new jpconjhelp(this);
-    helpWindow->show();
+    if(!jpconjhelp::exists()){
+        jpconjhelp* helpWindow = new jpconjhelp(this);
+        helpWindow->show();
+    }
 }
+
 
 
 /*!

@@ -3,7 +3,9 @@
 
 #include "helpviewer.h"
 
+//#include <QCloseEvent>
 #include <QDebug>
+#include <QEventLoop>
 #include <QMainWindow>
 #include <QHelpEngine>
 #include <QHelpContentWidget>
@@ -23,6 +25,8 @@ class jpconjhelp : public QMainWindow
 public:
     explicit jpconjhelp(QWidget *parent = 0);
     ~jpconjhelp();
+
+    static bool exists();
     
 private slots:
     void on_actionClose_triggered();
@@ -36,11 +40,16 @@ private:
 
     QHelpEngine *helpEngine;
     HelpViewer *helpViewer;
+    static bool showed;
 
     void Init();
 
 signals:
     void indexInputChanged( const QString & filter, const QString & wildcard = QString());
+
+protected:
+     void closeEvent(QCloseEvent *event);
+
 };
 
 #endif // HELP_H
