@@ -69,6 +69,7 @@ private:
     static bool rtl;
     static bool hasContent;
     static bool languageChanged;
+    static EdictType verbType;
     static QString currentVerb;
 
     void doInit();
