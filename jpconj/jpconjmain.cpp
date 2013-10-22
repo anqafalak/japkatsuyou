@@ -303,16 +303,23 @@ void jpconjmain::zoom(signed char sign)
 {
     if (sign < 0){
         ui->standardConj->setTextSizeMultiplier(qMax(0.5, ui->standardConj->textSizeMultiplier() - 1.0 / 10.0));
+        ui->basicConj->setTextSizeMultiplier(qMax(0.5, ui->basicConj->textSizeMultiplier() - 1.0 / 10.0));
+        ui->complexConj->setTextSizeMultiplier(qMax(0.5, ui->complexConj->textSizeMultiplier() - 1.0 / 10.0));
 
         return;
     }
 
     if (sign > 0){
         ui->standardConj->setTextSizeMultiplier(qMin(2.5,ui->standardConj->textSizeMultiplier() + 1.0 / 10.0));
+        ui->basicConj->setTextSizeMultiplier(qMin(2.5, ui->basicConj->textSizeMultiplier() + 1.0 / 10.0));
+        ui->complexConj->setTextSizeMultiplier(qMin(2.5, ui->complexConj->textSizeMultiplier() + 1.0 / 10.0));
+
         return;
     }
 
     ui->standardConj->setTextSizeMultiplier(1.0);
+    ui->basicConj->setTextSizeMultiplier(1.0);
+    ui->complexConj->setTextSizeMultiplier(1.0);
 }
 
 

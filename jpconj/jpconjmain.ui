@@ -214,6 +214,10 @@
      <property name="title">
       <string>Zoom</string>
      </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/img/zoom.png</normaloff>:/img/zoom.png</iconset>
+     </property>
      <addaction name="actionZoomIn"/>
      <addaction name="actionZoomOut"/>
      <addaction name="actionNormalSize"/>
@@ -403,6 +407,9 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionZoomIn"/>
+   <addaction name="actionZoomOut"/>
+   <addaction name="actionNormalSize"/>
   </widget>
   <action name="actionClose">
    <property name="icon">
@@ -470,16 +477,31 @@
    </property>
   </action>
   <action name="actionZoomIn">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/zoom+.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>Zoom In</string>
    </property>
   </action>
   <action name="actionZoomOut">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/zoom-.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>Zoom Out</string>
    </property>
   </action>
   <action name="actionNormalSize">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/zoom1.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>Normal Size</string>
    </property>

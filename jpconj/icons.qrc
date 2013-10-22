@@ -7,5 +7,9 @@
         <file>img/help.png</file>
         <file>img/export.png</file>
         <file>img/print.png</file>
+        <file>img/zoom+.png</file>
+        <file>img/zoom.png</file>
+        <file>img/zoom-.png</file>
+        <file>img/zoom1.png</file>
     </qresource>
 </RCC>
