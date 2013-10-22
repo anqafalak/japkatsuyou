@@ -33,6 +33,7 @@
 bool jpconjmain::rtl = false;
 bool jpconjmain::hasContent = false;
 bool jpconjmain::languageChanged = true;
+EdictType jpconjmain::verbType = _v0;
 QString jpconjmain::currentVerb = "";
 
 
@@ -194,11 +195,12 @@ void jpconjmain::doConj()
         return;
     }
 
-    ui->verbType->setText(Msg::getVerbTypeDesc(type));
+    //ui->verbType->setText(Msg::getVerbTypeDesc(type));
     complexConjugation(verb, type);
     basicConjugation(verb, type);
     hasContent = true;
     currentVerb = verb;
+    verbType = type;
     setHTMLTranslation();
 
     ui->actionExportResult->setEnabled(true);
@@ -288,9 +290,12 @@ void jpconjmain::doPrint()
 
 void jpconjmain::openHelp()
 {
-    jpconjhelp* helpWindow = new jpconjhelp(this);
-    helpWindow->show();
+    if(!jpconjhelp::exists()){
+        jpconjhelp* helpWindow = new jpconjhelp(this);
+        helpWindow->show();
+    }
 }
+
 
 
 /*!
@@ -416,6 +421,8 @@ void jpconjmain::setHTMLTranslation()
 {
     if (!hasContent)
         return;
+
+    ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
 
     if (!languageChanged)
         return;

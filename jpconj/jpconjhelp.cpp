@@ -1,20 +1,31 @@
 #include "jpconjhelp.h"
 #include "ui_jpconjhelp.h"
 
+bool jpconjhelp::showed = false;
+
 jpconjhelp::jpconjhelp(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::jpconjhelp)
 {
     ui->setupUi(this);
     Init();
-    this->tabifyDockWidget(ui->contentsDock, ui->indexDock);
-    ui->contentsDock->raise();
 }
+
+
 
 jpconjhelp::~jpconjhelp()
 {
     delete ui;
 }
+
+
+
+bool jpconjhelp::exists()
+{
+    return showed;
+}
+
+
 
 void jpconjhelp::on_actionClose_triggered()
 {
@@ -24,6 +35,9 @@ void jpconjhelp::on_actionClose_triggered()
 
 void jpconjhelp::Init()
 {
+    showed = true;
+
+
     helpEngine = new QHelpEngine("./help/en.qhc", this);
     helpEngine->setupData();
 
@@ -52,9 +66,12 @@ void jpconjhelp::Init()
                    this, SLOT(loadPage(const QUrl &)));
 
        connect(indexWidget, SIGNAL(linkActivated(const QUrl &, const QString &)),
-                   this, SLOT(loadPage(const QUrl &)));
+                   this, SLOT(loadPage(const QUrl &, const QString &)));
 
 
+
+       this->tabifyDockWidget(ui->contentsDock, ui->indexDock);
+       ui->contentsDock->raise();
 }
 
 
@@ -65,11 +82,32 @@ void jpconjhelp::loadPage(const QUrl &url)
 
 void jpconjhelp::loadPage(const QUrl &url, const QString & keyword)
 {
+
     helpViewer->setSource(url);
+    //QWebPage::RemoveFormat
+    //helpViewer->pageAction()
+
+    QEventLoop eventLoop;
+    connect(helpViewer, SIGNAL(loadFinished(bool)), &eventLoop, SLOT(quit()));
+    helpViewer->reload();
+    eventLoop.exec();
+
+    QStringList keywords = keyword.split(" ");
+    foreach (QString word, keywords)
+        helpViewer->findText(word, QWebPage::HighlightAllOccurrences);
 }
 
 
 void jpconjhelp::on_indexInput_textEdited(const QString &arg1)
 {
     this->indexInputChanged(arg1);
+}
+
+
+
+
+void jpconjhelp::closeEvent(QCloseEvent *event)
+{
+    showed = false;
+    event->accept();
 }
