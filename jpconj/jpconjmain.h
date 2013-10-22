@@ -82,6 +82,7 @@ private:
     void doExport();
     void doPrint();
     void openHelp();
+    void zoom(signed char sign);
 
     //Functions related to conjugation
     void basicConjugation(QString verb, EdictType type);
@@ -104,6 +105,9 @@ private slots:
     void on_inputConjVerb_returnPressed();
     void on_actionExportResult_triggered();
     void on_actionPrint_triggered();
+    void on_actionZoomIn_triggered();
+    void on_actionZoomOut_triggered();
+    void on_actionNormalSize_triggered();
 };
 
 #endif // JPCONJMAIN_H
