@@ -82,6 +82,7 @@ void jpconjmain::doInit()
     rtl = Language::mainWindowDirection(this);
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
+    ui->menu_View->addAction(ui->zoomTool->toggleViewAction());
     ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
 
@@ -294,6 +295,24 @@ void jpconjmain::openHelp()
         jpconjhelp* helpWindow = new jpconjhelp(this);
         helpWindow->show();
     }
+}
+
+
+
+void jpconjmain::zoom(signed char sign)
+{
+    if (sign < 0){
+        ui->standardConj->setTextSizeMultiplier(qMax(0.5, ui->standardConj->textSizeMultiplier() - 1.0 / 10.0));
+
+        return;
+    }
+
+    if (sign > 0){
+        ui->standardConj->setTextSizeMultiplier(qMin(2.5,ui->standardConj->textSizeMultiplier() + 1.0 / 10.0));
+        return;
+    }
+
+    ui->standardConj->setTextSizeMultiplier(1.0);
 }
 
 
@@ -520,7 +539,6 @@ void jpconjmain::setHTMLTranslation()
 
 
 
-
 /*******************************************************
  *                    PROTECTED
  *******************************************************/
@@ -588,4 +606,19 @@ void jpconjmain::on_actionExportResult_triggered()
 void jpconjmain::on_actionPrint_triggered()
 {
     doPrint();
+}
+
+void jpconjmain::on_actionZoomIn_triggered()
+{
+    zoom(1);
+}
+
+void jpconjmain::on_actionZoomOut_triggered()
+{
+    zoom(-1);
+}
+
+void jpconjmain::on_actionNormalSize_triggered()
+{
+    zoom(0);
 }

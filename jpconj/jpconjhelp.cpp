@@ -83,12 +83,13 @@ void jpconjhelp::loadPage(const QUrl &url)
 void jpconjhelp::loadPage(const QUrl &url, const QString & keyword)
 {
 
+    QEventLoop eventLoop;
+    connect(helpViewer, SIGNAL(loadFinished(bool)), &eventLoop, SLOT(quit()));
+
     helpViewer->setSource(url);
     //QWebPage::RemoveFormat
     //helpViewer->pageAction()
-
-    QEventLoop eventLoop;
-    connect(helpViewer, SIGNAL(loadFinished(bool)), &eventLoop, SLOT(quit()));
+    eventLoop.exec();
     helpViewer->reload();
     eventLoop.exec();
 
