@@ -196,6 +196,7 @@
     <addaction name="actionExportResult"/>
     <addaction name="actionPrint"/>
     <addaction name="separator"/>
+    <addaction name="actionHide"/>
     <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
@@ -504,6 +505,11 @@
    </property>
    <property name="text">
     <string>Normal Size</string>
+   </property>
+  </action>
+  <action name="actionHide">
+   <property name="text">
+    <string>Hide</string>
    </property>
   </action>
  </widget>

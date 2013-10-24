@@ -41,6 +41,8 @@ int main(int argc, char *argv[])
     a.setOrganizationDomain("https://github.com/DzCoding");
     a.setApplicationName("JapKatsuyou");
 
+    a.setQuitOnLastWindowClosed( false );
+
     jpconjmain w;
 
     w.show();

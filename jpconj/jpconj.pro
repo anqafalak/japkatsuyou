@@ -5,7 +5,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql xml webkit help network
+QT       += core gui sql xml webkit network
 CONFIG   += help
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,7 +23,8 @@ SOURCES  += main.cpp\
             language.cpp \
             export.cpp \
             jpconjhelp.cpp \
-            helpviewer.cpp
+            helpviewer.cpp \
+            jpconjtray.cpp
 
 HEADERS  += jpconjmain.h \
             about.h \
@@ -34,7 +35,8 @@ HEADERS  += jpconjmain.h \
             language.h \
             export.h \
             jpconjhelp.h \
-            helpviewer.h
+            helpviewer.h \
+            jpconjtray.h
 
 FORMS    += jpconjmain.ui \
             about.ui \
