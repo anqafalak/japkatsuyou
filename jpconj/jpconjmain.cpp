@@ -30,11 +30,6 @@
  * \class jpconjmain
  * This class is used to manage the main window of the application.
  */
-bool jpconjmain::rtl = false;
-bool jpconjmain::hasContent = false;
-bool jpconjmain::languageChanged = true;
-EdictType jpconjmain::verbType = _v0;
-QString jpconjmain::currentVerb = "";
 
 
 /*******************************************************
@@ -77,6 +72,12 @@ jpconjmain::~jpconjmain()
  */
 void jpconjmain::doInit()
 {
+    rtl = false;
+    hasContent = false;
+    languageChanged = true;
+    verbType = _v0;
+    currentVerb = "";
+
     //qDebug()<< QString(VERSION);
     Language::loadTranslations();
     rtl = Language::mainWindowDirection(this);
@@ -100,6 +101,15 @@ void jpconjmain::doInit()
     setCSS(ui->basicConj, "DzStyle.css");
     setCSS(ui->standardConj, "DzStyle.css");
     setCSS(ui->complexConj, "DzStyle.css");
+
+
+    //System tray Icon
+    trayIcon = new JpconjTray(this);
+    QAction *actionHelpContent = ui->actionHelpContent;
+    trayIcon->addAction(actionHelpContent);
+    QAction *actionClose = ui->actionClose;
+    trayIcon->addAction(actionClose);
+
 }
 
 
@@ -569,6 +579,13 @@ void jpconjmain::changeEvent(QEvent* event)
 }
 
 
+void jpconjmain::closeEvent(QCloseEvent *event)
+{
+    trayIcon->hideMain();
+    event->ignore();
+    //qApp->quit();
+
+}
 
 /*******************************************************
  *                   PRIVATE SLOTS
@@ -576,7 +593,7 @@ void jpconjmain::changeEvent(QEvent* event)
 
 void jpconjmain::on_actionClose_triggered()
 {
-    this->close();
+    qApp->quit();
 }
 
 void jpconjmain::on_conjugateButton_clicked()
@@ -628,4 +645,9 @@ void jpconjmain::on_actionZoomOut_triggered()
 void jpconjmain::on_actionNormalSize_triggered()
 {
     zoom(0);
+}
+
+void jpconjmain::on_actionHide_triggered()
+{
+    trayIcon->hideMain();
 }

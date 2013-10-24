@@ -29,6 +29,7 @@
 #include "edict2.h"
 #include "export.h"
 #include "jpconjhelp.h"
+#include "jpconjtray.h"
 #include "language.h"
 #include "msg.h"
 #include "preference.h"
@@ -36,6 +37,7 @@
 #include "typeDefs.h"
 #include "jpconj.h"
 
+#include <QApplication>
 #include <QDebug>
 #include <QPrintDialog>
 #include <QPrinter>
@@ -66,11 +68,12 @@ private:
     Ui::jpconjmain *ui;
     About     *winAbout;
     Preference *winPref;
-    static bool rtl;
-    static bool hasContent;
-    static bool languageChanged;
-    static EdictType verbType;
-    static QString currentVerb;
+    bool rtl;
+    bool hasContent;
+    bool languageChanged;
+    EdictType verbType;
+    QString currentVerb;
+    JpconjTray* trayIcon;
 
     void doInit();
     Export initExporter();
@@ -95,6 +98,7 @@ private:
 
 protected:
     void changeEvent(QEvent* event);
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void on_actionClose_triggered();
@@ -108,6 +112,7 @@ private slots:
     void on_actionZoomIn_triggered();
     void on_actionZoomOut_triggered();
     void on_actionNormalSize_triggered();
+    void on_actionHide_triggered();
 };
 
 #endif // JPCONJMAIN_H
