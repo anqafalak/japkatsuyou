@@ -1,7 +1,7 @@
 What is JapKatsuyou ?
 =====================
 
-JapKatsuyou a Japanese verbs conjugater. for more information check the `README file <https://github.com/DzCoding/JapKatsuyou/blob/master/README.md>`_
+JapKatsuyou is a Japanese verbs conjugation application. for more information check the `README file <./blob/master/README.md>`_
 
 
 ````
