@@ -508,6 +508,11 @@
    </property>
   </action>
   <action name="actionHide">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/hide.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>Hide</string>
    </property>
