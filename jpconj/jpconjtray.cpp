@@ -12,7 +12,7 @@ JpconjTray::JpconjTray(QMainWindow* parent):
 
 
     QAction *actionShow = new QAction(qApp->translate("jpconjmain", "Show"), this);
-    actionShow->setIcon(QIcon(":/img/icon.png"));
+    actionShow->setIcon(QIcon(":/img/show.png"));
     connect( actionShow, SIGNAL(triggered()), this, SLOT(showMain()) );
     trayMenu->addAction(actionShow);
     trayMenu->addSeparator();

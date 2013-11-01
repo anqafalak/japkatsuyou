@@ -21,7 +21,7 @@ Documentation
 
 Design
 ------
-* 
+* Icons: Abdelkrime Aries (using Gimp). The icons are under CC-BY-SA-3 license.
 
 Packaging
 --------- 

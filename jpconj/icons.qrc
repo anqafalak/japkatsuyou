@@ -11,5 +11,7 @@
         <file>img/zoom.png</file>
         <file>img/zoom-.png</file>
         <file>img/zoom1.png</file>
+        <file>img/hide.png</file>
+        <file>img/show.png</file>
     </qresource>
 </RCC>
