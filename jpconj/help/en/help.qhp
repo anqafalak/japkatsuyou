@@ -16,32 +16,76 @@
 	<section title="JapKatsuyou Verbs Database" ref="about.html#database"/>
       </section>
       <section title="User Interface" ref="gui.html">
-	<section title="JapKatsuyou features" ref="gui.html#features"/>
-	<section title="JapKatsuyou License" ref="about.html#license"/>
-	<section title="JapKatsuyou Verbs Database" ref="about.html#database"/>
+	<section title="Menu Bar" ref="gui.html#menubar"/>
+	<section title="Tool Bars" ref="gui.html#toolbars"/>
+	<section title="Search Panel" ref="gui.html#search"/>
+	<section title="Verb's Type" ref="gui.html#type"/>
+	<section title="Conjugation Result" ref="gui.html#result"/>
+      </section>
+      <section title="Use Mode" ref="use.html">
+	<section title="Verb search and conjugation" ref="use.html#search"/>
+	<section title="Content Export and Print" ref="use.html#save"/>
+	<section title="Zooming" ref="use.html#zoom"/>
+	<section title="Preferences" ref="use.html#pref"/>
+	<section title="Help" ref="use.html#help"/>
+	<section title="Close to tray" ref="use.html#tray"/>
       </section>
     </toc>
     <keywords>
-      <keyword name="japkatsuyou" ref="about.html#definition"/>
+      <keyword name="japkatsuyou definition" ref="about.html#definition"/>
       <keyword name="verb conjugation" ref="about.html#definition"/>
       <keyword name="free software" ref="about.html#definition"/>
-      
-      <keyword name="feature" ref="about.html#features"/>
+      <keyword name="japkatsuyou features" ref="about.html#features"/>
       <keyword name="verb existence" ref="about.html#features"/>
       <keyword name="verb type" ref="about.html#features"/>
-      <keyword name="language" ref="about.html#features"/>
-      <keyword name="export" ref="about.html#features"/>
-      
+      <keyword name="interface language" ref="about.html#features"/>
+      <keyword name="export feature" ref="about.html#features"/>
+      <keyword name="print feature" ref="about.html#features"/>
       <keyword name="application license" ref="about.html#license"/>
       <keyword name="gnu gpl" ref="about.html#license"/>
       <keyword name="dzgroup" ref="about.html#license"/>
-      <keyword name="redistribute the software and code" ref="about.html#license"/>
-      <keyword name="modify the code" ref="about.html#license"/>
+      <keyword name="redistribute software and code" ref="about.html#license"/>
+      <keyword name="modify code" ref="about.html#license"/>
       <keyword name="use warranty" ref="about.html#license"/>
+      
+      <keyword name="menubar" ref="gui.html#menubar"/>
+      <keyword name="file show edit help" ref="gui.html#menubar"/>
+      <keyword name="toolbars" ref="gui.html#toolbars"/>
+      <keyword name="search panel" ref="gui.html#search"/>
+      <keyword name="different verb types" ref="gui.html#search"/>
+      <keyword name="conjugation result tables" ref="gui.html#result"/>
+      
+      <keyword name="use mode" ref="use.html"/>
+      <keyword name="features" ref="use.html"/>
+      <keyword name="verb search" ref="use.html#search"/>
+      <keyword name="verb conjugation" ref="use.html#search"/>
+      <keyword name="conjugate verb" ref="use.html#search"/>
+      <keyword name="search existence" ref="use.html#search"/>
+      <keyword name="dictionary form u-form" ref="use.html#search"/>
+      <keyword name="result tables" ref="use.html#search"/>
+      <keyword name="standard conjugation" ref="use.html#search"/>
+      <keyword name="basic conjugation" ref="use.html#search"/>
+      <keyword name="complex conjugation" ref="use.html#search"/>
+      <keyword name="conjugation form" ref="use.html#search"/>
+      <keyword name="conjugation polarity" ref="use.html#search"/>
+      <keyword name="conjugation politesse" ref="use.html#search"/>
+      <keyword name="content export" ref="use.html#save"/>
+      <keyword name="content print" ref="use.html#save"/>
+      <keyword name="export pdf" ref="use.html#save"/>
+      <keyword name="export html" ref="use.html#save"/>
+      <keyword name="export OpenDocument" ref="use.html#save"/>
+      <keyword name="zooming" ref="use.html#zoom"/>
+      <keyword name="software preferences" ref="use.html#pref"/>
+      <keyword name="ui language" ref="use.html#pref"/>
+      <keyword name="help content" ref="use.html#help"/>
+      <keyword name="about software" ref="use.html#help"/>
+      <keyword name="application tray" ref="use.html#tray"/>
+      
     </keywords>
     <files>
       <file>*.jpg</file>
       <file>*.html</file>
+      <file>img/*.png</file>
     </files>
   </filterSection>
 </QtHelpProject>

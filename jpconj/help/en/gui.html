@@ -2,35 +2,130 @@
 <head>
   <meta charset="utf-8"/>
   <title>User interface</title>
-  <meta name="author" content="Abdelkrime Aries"/>
-  <meta name="date" content="2013/10/02"/><!--yyyy/mm/dd-->
+  <meta name="author" content="Karim" />
+  <meta name="date" content="2013-11-11T16:48:59+0100" /><!--yyyy/mm/dd-->
   <meta name="email" content="kariminfo0@gmail.com"/>
   <meta name="copyright" content="http://creativecommons.org/licenses/by-sa/3.0/"/>
   <meta name="language" content="english"/>
 </head>
 <body>
-
+<div style="text-align:center;">
 <h1 id="ui">User interface</h1>
 <img src="main_gui.jpg" />
+</div>
 <p>
+This application afford an easy to use user-interface. 
+It is designed to help the user conjugating Japanese verbs and do other stuff in an easy way.
 The application contains five parts:
 <ol>
-<li><a href="about.html">Menu Bar</a></li>
-<li>Tool Bar</li>
-<li>Search input</li>
-<li>Verb's Type</li>
-<li>Conjugation Result</li>
+<li><a href="#menubar">Menu Bar</a></li>
+<li><a href="#toolbars">Tool Bars</a></li>
+<li><a href="#search">Search Panel</a></li>
+<li><a href="#type">Verb's Type</a></li>
+<li><a href="#result">Conjugation Result</a></li>
 </ol>
+Also, the user interface is translated to languages other than English: Arabic, French, Japanese. 
+<br>
+<b>If you want to add your language</b>, you can help us by sending a request to our user group mailing list:
+<a href="mailto:dzcoding@googlegroups.com" >dzcoding@googlegroups.com</a>
+<br>
+Or, You can participate directly in our Github repository:
+<a href="https://github.com/DzCoding/JapKatsuyou/" >https://github.com/DzCoding/JapKatsuyou/</a>
 </p>
 
+
 <h2 id="menubar">Menu Bar</h2>
+The menu bar contains the following menus:
+<h4>File</h4>
+<p>
+It contains functionalities specific for data such as printing or exporting result tables. <br>
+<img src="gui_menuFile.jpg" />
+</p>
 
-<h2 id="toolbar">Menu Bar</h2>
+<h4>Edit</h4>
+<p>
+It contains editing functionalities, such as preferences. <br>
+<img src="gui_menuEdit.jpg" />
+</p>
 
-<h2 id="search">Menu Bar</h2>
+<h4>View</h4>
+<p>
+It contains functionalities specific for application presentation such as Zoom, and showed bars and panels. <br>
+<img src="gui_menuView.jpg" />
+</p>
 
-<h2 id="type">Menu Bar</h2>
+<h4>Help</h4>
+<p>
+It contains this help and information about the application. <br>
+<img src="gui_menuHelp.jpg" />
+</p>
 
-<h2 id="result">Menu Bar</h2>
+<h2 id="toolbars">Tool Bars</h2>
+<p>
+Tool Bars are used to access easily to functions, which are located in the menu bar. <br>
+<img src="gui_toolbars.jpg" alt="" >
+</p>
+
+<h2 id="search">Search Panel</h2>
+<p>
+Here you can input the Japanese verb that you want to conjugate. 
+The input verb must achieve some conditions:
+<ol>
+<li>It must be in dictionary form (U-form). For example: 行く, 食べる, 飲む, 遊ぶ, 信じる, 勉強する, etc.</li>
+<li>It must be in Japanese characters (Hiragana, Kanji). The program doesn't accept verbs written with Latin characters.</li>
+<li>Nouns which accept the auxiliary verb する, must be followed by it so they can be conjugated.</li>
+</ol>
+Then you can either press "Enter" key or push "Conjugate" button to get the result.
+</p>
+
+<h2 id="type">Verb's Type</h2>
+<p>
+The application gives you information about the input verb. 
+If the verb doesn't exist in the database, it will shows you a message saying so. 
+Otherwise, it shows you the verbs type.
+<br>
+This is a list of most important verb types:
+<ul>
+<li>Ichidan verb;</li>
+<li>Godan verb - -aru special class;</li>
+<li>Godan verb with 'bu' ending;</li>
+<li>Godan verb with 'gu' ending;</li>
+<li>Godan verb with 'ku' ending;</li>
+<li>Godan verb - iku/yuku special class;</li>
+<li>Godan verb with 'mu' ending;</li>
+<li>Godan verb with 'nu' ending;</li>
+<li>Godan verb with 'ru' ending;</li>
+<li>Godan verb with 'su' ending;</li>
+<li>Godan verb with 'tsu' ending;</li>
+<li>Godan verb with 'u' ending;</li>
+<li>noun or participle which takes the aux. verb suru;</li>
+<li>... etc.</li>
+</ul>
+</p>
+
+<h2 id="result">Conjugation Result</h2>
+<p>
+The result contains three tables:
+</p>
+
+<h4>1- Standard conjugation</h4>
+<p>
+It is used by Japanese to learn verb conjugation. <br>
+<img src="gui_standard.jpg" />
+</p>
+
+<h4>2- Basic conjugation</h4>
+<p>
+It shows the basic stems: a e u i o plus t-form. <br>
+<img src="gui_basic.jpg" />
+</p>
+
+<h4>3- Complex conjugation</h4>
+<p>
+It shows some complex forms, which are originated using basic stems and suffixes.<br>
+<img src="gui_complex.jpg" />
+</p>
+
+
 </body>
 </html>
