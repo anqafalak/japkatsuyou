@@ -179,32 +179,32 @@
     <message>
         <location filename="../jpconjhelp.ui" line="14"/>
         <source>JapKatsuyou Help</source>
-        <translation type="unfinished"></translation>
+        <translation>مساعدة JapKatsuyou</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="52"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="73"/>
         <source>Contents</source>
-        <translation type="unfinished"></translation>
+        <translation>المحتويات</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="90"/>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>فهرس</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="100"/>
         <source>Look for</source>
-        <translation type="unfinished"></translation>
+        <translation>البحث عن</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="112"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>إغلاق</translation>
     </message>
 </context>
 <context>
