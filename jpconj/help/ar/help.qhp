@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <virtualFolder>manual_ar</virtualFolder>
+  <customFilter name="JapKatsuyou 1.0">
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+  </customFilter>
+  <filterSection>
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+    <toc>
+      <section title="عن البرنامج JapKatsuyou" ref="about.html">
+	<section title="ميزات JapKatsuyou" ref="about.html#features"/>
+	<section title="ترخيص JapKatsuyou" ref="about.html#license"/>
+	<section title="قاعدة بيانات الأفعال لـ JapKatsuyou" ref="about.html#database"/>
+      </section>
+      <section title="واجهة المستخدم" ref="gui.html">
+	<section title="شريط القوائم" ref="gui.html#menubar"/>
+	<section title="أشرطة الأدوات" ref="gui.html#toolbars"/>
+	<section title="لوحة البحث" ref="gui.html#search"/>
+	<section title="نوع الفعل" ref="gui.html#type"/>
+	<section title="نتيجة التصريف" ref="gui.html#result"/>
+      </section>
+      <section title="طريقة الاستعمال" ref="use.html">
+	<section title="البحث وتصريف الفعل" ref="use.html#search"/>
+	<section title="تصدير وطباعة المحتوى" ref="use.html#save"/>
+	<section title="التكبير" ref="use.html#zoom"/>
+	<section title="الخيارات" ref="use.html#pref"/>
+	<section title="المساعدة" ref="use.html#help"/>
+	<section title="إغلاق إلى الدرج" ref="use.html#tray"/>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="تعريف japkatsuyou" ref="about.html#definition"/>
+      <keyword name="تصريف الفعل" ref="about.html#definition"/>
+      <keyword name="برنامج حر" ref="about.html#definition"/>
+      <keyword name="خصائص japkatsuyou" ref="about.html#features"/>
+      <keyword name="تواجد الفعل" ref="about.html#features"/>
+      <keyword name="نوع الفعل" ref="about.html#features"/>
+      <keyword name="لغة الواجهة" ref="about.html#features"/>
+      <keyword name="ميزة التصدير" ref="about.html#features"/>
+      <keyword name="ميزة الطباعة" ref="about.html#features"/>
+      <keyword name="رخصة التطبيق" ref="about.html#license"/>
+      <keyword name="جنو غنو gpl gnu" ref="about.html#license"/>
+      <keyword name="dzgroup" ref="about.html#license"/>
+      <keyword name="إعادة توزيع البرنامج والشفرة البرمجية" ref="about.html#license"/>
+      <keyword name="تعديل الشفرة البرمجية" ref="about.html#license"/>
+      <keyword name="ضمانات الاستعمال" ref="about.html#license"/>
+      
+      <keyword name="شريط القوائم" ref="gui.html#menubar"/>
+      <keyword name="ملف عرض تحرير مساعدة" ref="gui.html#menubar"/>
+      <keyword name="أشرطة الأدوات" ref="gui.html#toolbars"/>
+      <keyword name="لوحة البحث" ref="gui.html#search"/>
+      <keyword name="مختلف أنواع الأفعال" ref="gui.html#search"/>
+      <keyword name="جداول التصريف الناتجة" ref="gui.html#result"/>
+      
+      <keyword name="طريقة الاستعمال" ref="use.html"/>
+      <keyword name="ميزات" ref="use.html"/>
+      <keyword name="البحث عن الفعل" ref="use.html#search"/>
+      <keyword name="تصريف الفعل" ref="use.html#search"/>
+      <keyword name="صرف الفعل" ref="use.html#search"/>
+      <keyword name="البحث عن تواجد الفعل" ref="use.html#search"/>
+      <keyword name="الشكل المعجمي u-form" ref="use.html#search"/>
+      <keyword name="الجداول الناتجة" ref="use.html#search"/>
+      <keyword name="التصريف القياسي" ref="use.html#search"/>
+      <keyword name="التصريف البسيط" ref="use.html#search"/>
+      <keyword name="التصريف المعقد" ref="use.html#search"/>
+      <keyword name="شكل التصريف" ref="use.html#search"/>
+      <keyword name="تقاطب التصريف" ref="use.html#search"/>
+      <keyword name="تهذيب التصريف" ref="use.html#search"/>
+      <keyword name="تصدير المحتوى" ref="use.html#save"/>
+      <keyword name="طباعة المحتوى" ref="use.html#save"/>
+      <keyword name="تصدير بي دي آف pdf" ref="use.html#save"/>
+      <keyword name="تصدير ويب html" ref="use.html#save"/>
+      <keyword name="تصدير ملف مفتوح المصدر OpenDocument" ref="use.html#save"/>
+      <keyword name="التكبير" ref="use.html#zoom"/>
+      <keyword name="خيارات البرنامج" ref="use.html#pref"/>
+      <keyword name="لغة واجهة المستخدم" ref="use.html#pref"/>
+      <keyword name="محتوى المساعدة" ref="use.html#help"/>
+      <keyword name="عن البرنامج" ref="use.html#help"/>
+      <keyword name="درج التطبيق" ref="use.html#tray"/>
+      
+    </keywords>
+    <files>
+      <file>*.jpg</file>
+      <file>*.html</file>
+      <file>img/*.png</file>
+    </files>
+  </filterSection>
+</QtHelpProject>

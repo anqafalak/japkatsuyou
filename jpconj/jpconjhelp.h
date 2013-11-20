@@ -2,6 +2,7 @@
 #define HELP_H
 
 #include "helpviewer.h"
+#include "language.h"
 
 //#include <QCloseEvent>
 #include <QDebug>

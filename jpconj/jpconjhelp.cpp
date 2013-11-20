@@ -37,8 +37,12 @@ void jpconjhelp::Init()
 {
     showed = true;
 
+    QString helpFile = "./help/" + Language::getCurrentLanguage().left(2) + ".qhc";
 
-    helpEngine = new QHelpEngine("./help/en.qhc", this);
+    if (! QFile(helpFile).exists())
+        helpFile = "./help/en.qhc";
+
+    helpEngine = new QHelpEngine(helpFile, this);
     helpEngine->setupData();
 
        //QHelpContentModel *contentModel = helpEngine->contentModel();
