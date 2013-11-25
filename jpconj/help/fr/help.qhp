@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <virtualFolder>manual_fr</virtualFolder>
+  <customFilter name="JapKatsuyou 1.0">
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+  </customFilter>
+  <filterSection>
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+    <toc>
+      <section title="A propos de JapKatsuyou" ref="about.html">
+	<section title="Fonctionnalités de JapKatsuyou" ref="about.html#features"/>
+	<section title="Licence de JapKatsuyou" ref="about.html#license"/>
+	<section title="Base de données de verbes utilisée dans JapKatsuyou" ref="about.html#database"/>
+      </section>
+      <section title="Interface utilisateur" ref="gui.html">
+	<section title="Barre de menus" ref="gui.html#menubar"/>
+	<section title="Barres d'outils" ref="gui.html#toolbars"/>
+	<section title="Panneau de recherche" ref="gui.html#search"/>
+	<section title="Type de verbe" ref="gui.html#type"/>
+	<section title="Résultat de conjugaison" ref="gui.html#result"/>
+      </section>
+      <section title="Mode d'utilisation" ref="use.html">
+	<section title="Recherche de verbe et conjugaison" ref="use.html#search"/>
+	<section title="Export du contenu et impression" ref="use.html#save"/>
+	<section title="Zoom" ref="use.html#zoom"/>
+	<section title="Préférences" ref="use.html#pref"/>
+	<section title="Aide" ref="use.html#help"/>
+	<section title="Cacher dans la barre de tâches" ref="use.html#tray"/>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="définition de japkatsuyou" ref="about.html#definition"/>
+      <keyword name="conjugaison du verb" ref="about.html#definition"/>
+      <keyword name="logiciel gratuit" ref="about.html#definition"/>
+      <keyword name="fonctionnalités de JapKatsuyou" ref="about.html#features"/>
+      <keyword name="présence d'un verbe" ref="about.html#features"/>
+      <keyword name="type de verb" ref="about.html#features"/>
+      <keyword name="langue de l'interface" ref="about.html#features"/>
+      <keyword name="fonctionnalité d'export" ref="about.html#features"/>
+      <keyword name="fonctionnalité d'impression" ref="about.html#features"/>
+      <keyword name="licence de l'application" ref="about.html#license"/>
+      <keyword name="gnu gpl" ref="about.html#license"/>
+      <keyword name="dzgroup" ref="about.html#license"/>
+      <keyword name="redistribuer le logiciel et le code" ref="about.html#license"/>
+      <keyword name="modifier le code" ref="about.html#license"/>
+      <keyword name="garantie d'utilisation" ref="about.html#license"/>
+      
+      <keyword name="barre de menus" ref="gui.html#menubar"/>
+      <keyword name="fichier affichage édition aide" ref="gui.html#menubar"/>
+      <keyword name="barres d'outils" ref="gui.html#toolbars"/>
+      <keyword name="panneau de recherche" ref="gui.html#search"/>
+      <keyword name="différents types de verbes" ref="gui.html#search"/>
+      <keyword name="tableaux résultant de conjugaison" ref="gui.html#result"/>
+      
+      <keyword name="mode d'utilisation" ref="use.html"/>
+      <keyword name="fonctionnalités" ref="use.html"/>
+      <keyword name="recherche de verbess" ref="use.html#search"/>
+      <keyword name="conjugaison de verbes" ref="use.html#search"/>
+      <keyword name="conjuguer le verbe" ref="use.html#search"/>
+      <keyword name="search existence" ref="use.html#search"/>
+      <keyword name="dictionary form u-form" ref="use.html#search"/>
+      <keyword name="result tables" ref="use.html#search"/>
+      <keyword name="standard conjugation" ref="use.html#search"/>
+      <keyword name="conjugaison de base" ref="use.html#search"/>
+      <keyword name="conjugaison complexe" ref="use.html#search"/>
+      <keyword name="forme de conjugaison" ref="use.html#search"/>
+      <keyword name="polarité de conjugaison" ref="use.html#search"/>
+      <keyword name="politesse de conjugaison" ref="use.html#search"/>
+      <keyword name="export du contenu" ref="use.html#save"/>
+      <keyword name="impression du contenu" ref="use.html#save"/>
+      <keyword name="export pdf" ref="use.html#save"/>
+      <keyword name="export html" ref="use.html#save"/>
+      <keyword name="export OpenDocument" ref="use.html#save"/>
+      <keyword name="zoom" ref="use.html#zoom"/>
+      <keyword name="préférences du logiciel" ref="use.html#pref"/>
+      <keyword name="langue de l'interface utilisateur" ref="use.html#pref"/>
+      <keyword name="contenu de l'aide" ref="use.html#help"/>
+      <keyword name="à propos du logiciel" ref="use.html#help"/>
+      <keyword name="cacher  l'application" ref="use.html#tray"/>
+      
+    </keywords>
+    <files>
+      <file>*.jpg</file>
+      <file>*.html</file>
+      <file>img/*.png</file>
+    </files>
+  </filterSection>
+</QtHelpProject>

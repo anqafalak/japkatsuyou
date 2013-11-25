@@ -1,0 +1,182 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Mode d'utilisation</title>
+  <meta name="author" content="Karim" />
+  <meta name="date" content="2013-11-24T21:00:03+0100" /><!--yyyy/mm/dd-->
+  <meta name="email" content="kariminfo0@gmail.com"/>
+  <meta name="copyright" content="http://creativecommons.org/licenses/by-sa/3.0/"/>
+  <meta name="language" content="french"/>
+</head>
+<body>
+<div style="text-align:center;">
+<h1 id="use">Mode d'utilisation</h1>
+</div>
+<p>
+Dans cette application, nous voulons permettre autant de fonctionnalités que nous pouvons, 
+pour aider l'apprenant de langue japonaise dans la conjugaison des verbes japonais.
+Voici les fonctionnalités offertes dans cette version de l'application:
+
+In this application, we want to afford as many features as we can, to help the Japanese language learner conjugating Japanese verbs.
+These are features afforded in this application's version:
+<ul>
+<li><a href="#search">Recherche de verbe et conjugaison</a></li>
+<li><a href="#save">Export du contenu et impression</a></li>
+<li><a href="#zoom">Zoom</a></li>
+<li><a href="#pref">Préférences</a></li>
+<li><a href="#help">Aide</a></li>
+<li><a href="#tray">Cacher dans la barre de tâches</a></li>
+</ul>
+<b>Si vous voulez d'autres fonctionnalités</b>, contactez nous sur notre liste de diffusion du groupe d'utilisateurs:
+<a href="mailto:dzcoding@googlegroups.com" >dzcoding@googlegroups.com</a>
+<br>
+Ou, vous pouvez participer directement dans notre répertoire Github:
+<a href="https://github.com/DzCoding/JapKatsuyou/" >https://github.com/DzCoding/JapKatsuyou/</a>
+</p>
+
+
+<h2 id="search">Recherche de verbe et conjugaison</h2>
+<p>
+Si vous voulez tester l'existence d'un verbe, il vous suffit de le saisir dans sa forme dictionnaire, puis le conjuguer.
+S'il est trouvé, vous pouvez voir son type et sa conjugaison.
+Sinon, vous obtiendrez un message vous indiquant qu'il n'existe pas un tel verbe.
+</p>
+
+<p>
+Rappelez-vous, le verbe doit être sous sa forme de dictionnaire (ou form-U).
+Par exemple: 食べる, 飲む, 行く, 信じる, 死ぬ, 見る, 泳ぐ, 遊ぶ, 出す, 立つ, 合う, etc.
+Aussi, vous pouvez conjuguer les noms qui forment un verbe avec l'auxiliaire する.
+Par exemple, 勉強する, 選択する, 連絡する, etc.
+En fait, c'est juste la conjugaison du verbe する.
+Après avoir entré le verbe, vous pouvez soit appuyer sur la touche ENTRER (sur le clavier), ou cliquer sur le bouton "conjuguer".
+</p>
+
+<p>
+Le résultat de conjugaison est regroupé en trois tableaux.
+La classification est basée sur la complexité de la conjugaison, et le cas d'utilisation.
+</p>
+<h4>1- Conjugaison standard</h4>
+<img src="gui_standard.jpg" alt="" >
+<p>
+Elle est utilisée par les apprenants japonais pour se rappeler la conjugaison des verbes.
+Si vous voulez apprendre la conjugaison des verbes comme les Japonais le font, c'est le bon choix pour vous.
+</p>
+
+<h4>2- Conjugaison de base</h4>
+<img src="gui_basic.jpg" alt="" >
+<p>
+Presque le même que "conjugaison standard", mais il inclut la forme T.
+Ce type de conjugaison offert les différents radicaux qui sont combinés avec d'autres suffixes pour obtenir des formes plus complexes.
+Ces formes sont: l'inaccompli, hypothétique, Impératif, conjonctive, Terminal, et attributive.
+</p>
+
+<h4>3- Conjugaison complexe </h4>
+<img src="gui_complex.jpg" alt="" >
+<p>
+Les formes complexes sont générés à partir des formes de base suivis par des suffixes.
+La conjugaison complexe suit trois axes:
+<ol>
+<li>Forme de conjugaison: le temps ou cas où le verbe est conjugué. Par exemple: Présent, Passé, Impératif, Volitional, etc.</li>
+<li>Politesse de conjugaison: poli ou ordinaire.</li>
+<li>Polarité de conjugaison : affirmatif ou négatif.</li>
+</ol>
+Lorsqu'ils sont combinés, ils forment une conjugaison complexe.
+Par exemple:
+<ul>
+<li>Présent poli et affirmatif = Conjonctive (forme I) + suffixe (ます)</li>
+<li>Passé ordinaire et négatif = Imperfective (forme A) + suffixe (なかった)</li>
+<li>Conditionnel ordinaire et affirmatif = Conjonctive (forme T) + suffixe (たら)</li>
+<li>Présent Continu poli et négatif = Conjonctive (forme T) + suffixe (ていません)</li>
+</ul>
+</p>
+
+<h2 id="save">Export du contenu et impression</h2>
+<p>
+Vous pouvez enregistrer le contenu de conjugaison, soit en l'imprimant ou en l'exportant vers un fichier.
+Après conjugaison, vous pouvez exécuter ces deux fonctions à partir du menu "Fichier", ou de la barre d'outils.
+Vous pouvez choisir les tableaux que vous souhaitez enregistrer dans les Préférences.
+</p>
+
+<h4>Export du contenu</h4>
+<p>
+Pour exporter le contenu de conjugaison, sélectionner le menu "Exporter le contenu", ou appuyer sur le bouton 
+<img src="img/export.png" alt="" />.
+Il existe trois formats:
+<ul>
+<li>Fichier pdf (.pdf): Vous pouvez l'ouvrir en utilisant des lecteurs PDF tels que: Ocular, Acrobat Reader, Foxit Reader, etc.</li>
+<li>Fichier HTML (.htm): Vous pouvez l'ouvrir en utilisant des navigateurs Internet tels que: Chrome, Firefox, Opera, IE, etc.</li>
+<li>OpenDocument (.odt): Vous pouvez l'ouvrir en utilisant les logiciels de traitement de texte tels que: 
+LibreOffice, OpenOffice, MsOffice (2007 SP2 +), etc.</li>
+</ul>
+</p>
+Vous pouvez choisir le nom et le format de fichier dans la boîte de dialogue "enregistrer sous".
+
+<h4>impression du contenu</h4>
+<p>
+Pour imprimer le contenu de conjugaison, sélectionner le menu "Imprimer", ou appuyez sur le bouton 
+<img src="img/print.png" alt="" />.
+</p>
+
+<h2 id="zoom">Zoom</h2>
+<p>
+Vous pouvez contrôler la taille des tableaux de conjugaison. <br>
+Vous pouvez agrandir à partir du menu "Affichage-> Zoom-> Zoom avant", ou en appuyant sur le bouton
+<img src="img/zoom+.png" alt="" /> <br>
+Vous pouvez effectuer un zoom arrière à partir du menu "Affichage-> Zoom-> Zoom arrière", ou en appuyant sur le bouton 
+<img src="img/zoom-.png" alt="" /> <br>
+Vous pouvez rétablir la taille normale à partir du menu "Affichage-> Zoom-> Taille normale", ou en appuyant sur le bouton 
+<img src="img/zoom1.png" alt="" /> <br>
+</p>
+
+<h2 id="pref">Préférences</h2>
+<p>
+C'est ici que vous pouvez contrôler les préférences de l'application.
+Vous pouvez obtenir la boîte de dialogue "Préférences", soit à partir du menu "Edition-> Préférences", ou en appuyant sur la touche 
+<img src="img/pref.png" alt="" />.
+Les préférences sont divisées en deux groupes: l'interface utilisateur et l'export du contenu.
+</p>
+
+<h4>Interface utilisateur</h4>
+<img src="use_prefUI.jpg" alt="" >
+<p>
+Vous pouvez choisir la langue de l'application.
+Lorsque vous appuyez sur le bouton OK, la langue va changer immédiatement.
+</p>
+
+<h4>Export du contenu</h4>
+<img src="use_prefExport.jpg" alt="">
+<p>
+Dans ce panneau, vous pouvez contrôler le contenu que vous souhaitez enregistrer (export ou impression).
+Vous pouvez choisir les tableaux exportés, et si vous voulez qu'ils prennent un style ou non.
+</p>
+
+<h2 id="help">Aide</h2>
+<p>
+Vous pouvez trouver cette aide en sélectionnant le menu "Aide-> Contenu de l'aide", ou en appuyant sur le bouton 
+<img src="img/help.png" alt="" />.
+</p>
+
+<p>
+Si vous souhaitez obtenir des informations sur JapKatsuyou, 
+vous pouvez sélectionner le menu "Aide-> A propos", ou en appuyant sur le bouton
+<img src="img/about.png" alt="" />.
+<br>
+<img src="use_about.jpg" alt="" >
+</p>
+
+<h2 id="tray">Cacher dans la barre de tâches</h2>
+<p>
+Vous pouvez fermer l'application dans la barre de tâches, en sélectionnant "Fichier-> Cacher" ou en appuyant sur le bouton de fermeture.
+Si vous souhaitez quitter l'application, vous pouvez sélectionner le menu"Fichier-> Quitter", ou appuyer sur le bouton 
+<img src="img/close.png" alt="" />.
+</p>
+
+<p>
+Si vous voulez restaurer l'application à partir de la barre de tâches, 
+un clic gauche sur l'icône de l'application, ou un clic droit en dessus puis appuyer sur le bouton
+<img src="img/show.png" alt="" />. <br>
+<img src="use_tray.jpg" alt="" >
+</p>
+
+</body>
+</html>
