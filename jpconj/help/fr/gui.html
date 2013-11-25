@@ -1,0 +1,134 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Interface utilisateur</title>
+  <meta name="author" content="Karim" />
+  <meta name="date" content="2013-11-24T19:44:30+0100" /><!--yyyy/mm/dd-->
+  <meta name="email" content="kariminfo0@gmail.com"/>
+  <meta name="copyright" content="http://creativecommons.org/licenses/by-sa/3.0/"/>
+  <meta name="language" content="french"/>
+</head>
+<body>
+<div style="text-align:center;">
+<h1 id="ui">Interface utilisateur</h1>
+<img src="main_gui.jpg" />
+</div>
+<p>
+Cette application offert une interface utilisateur facile à utiliser.
+Elle est conçu pour aider l'utilisateur à conjuguer les verbes japonais et faire d'autres choses de manière simple.
+L'application contient cinq parties:
+<ol>
+<li><a href="#menubar">Barre de menus</a></li>
+<li><a href="#toolbars">Barres d'outils</a></li>
+<li><a href="#search">Panneau de recherche</a></li>
+<li><a href="#type">Type de verbe</a></li>
+<li><a href="#result">Résultat de conjugaison</a></li>
+</ol>
+En outre, l'interface utilisateur est traduite en d'autres langues que le français: arabe, anglais, japonais.
+<br>
+<b>Si vous souhaitez ajouter votre langue</b>, 
+vous pouvez nous aider en envoyant une demande à notre liste de diffusion du groupe d'utilisateurs:
+<a href="mailto:dzcoding@googlegroups.com" >dzcoding@googlegroups.com</a>
+<br>
+Ou, vous pouvez participer directement dans notre répertoire Github:
+<a href="https://github.com/DzCoding/JapKatsuyou/" >https://github.com/DzCoding/JapKatsuyou/</a>
+</p>
+
+
+<h2 id="menubar">Barre de menus</h2>
+La barre de menus contient les menus suivants:
+<h4>Fichier</h4>
+<p>
+Il contient des fonctionnalités spécifiques pour les données telles que l'impression ou l'exportation des tableaux de résultats. <br>
+<img src="gui_menuFile.jpg" />
+</p>
+
+<h4>Édition</h4>
+<p>
+Il contient des fonctionnalités d'édition, telles que les préférences. <br>
+<img src="gui_menuEdit.jpg" />
+</p>
+
+<h4>Affichage</h4>
+<p>
+Il contient des fonctionnalités spécifiques pour la présentation de l'application tels que Zoom, 
+et les bars et des panneaux à montrer.<br>
+<img src="gui_menuView.jpg" />
+</p>
+
+<h4>Aide</h4>
+<p>
+Il contient cette aide et des informations sur l'application. <br>
+<img src="gui_menuHelp.jpg" />
+</p>
+
+<h2 id="toolbars">Barres d'outils</h2>
+<p>
+Les barres d'outils sont utilisés pour accéder facilement aux fonctions, qui sont situés dans la barre de menus. <br>
+<img src="gui_toolbars.jpg" alt="" >
+</p>
+
+<h2 id="search">Panneau de recherche</h2>
+<p>
+Ici, vous pouvez entrer le verbe japonais que vous souhaitez conjuguer.
+Le verbe d'entrée doit atteindre certaines conditions:
+<ol>
+<li>
+Il doit être en forme de dictionnaire (forme U). Par exemple: 行く, 食べる, 飲む, 遊ぶ, 信じる, 勉強する, etc.</li>
+<li>Il doit être en caractères japonais (Hiragana, Kanji). Le programme n'accepte pas les verbes écrits en caractères latins.</li>
+<li>Les noms qui acceptent le verbe auxiliaire する, doivent être suivies par lui afin qu'ils puissent être conjugués.</li>
+</ol>
+Ensuite, vous pouvez soit appuyer sur la touche "Entrer" ou le bouton "Conjuguer" pour obtenir le résultat.
+</p>
+
+<h2 id="type">Type de verbe</h2>
+<p>
+L'application vous donne des informations sur le verbe d'entrée.
+Si le verbe n'existe pas dans la base de données, elle vous affiche un message disant ça.
+Sinon, elle vous indique le type de verbes.
+<br>
+Ceci est un liste de la plupart des types importants de verbes:
+<ul>
+<li>Verbe Ichidan;</li>
+<li>Verbe Godan - classe spéciale -aru;</li>
+<li>Verbe Godan avec terminaison en 'bu';</li>
+<li>Verbe Godan avec terminaison en 'gu';</li>
+<li>Verbe Godan avec terminaison en 'ku';</li>
+<li>Verbe Godan - classe spéciale Iku/Yuku;</li>
+<li>Verbe Godan avec terminaison en 'mu';</li>
+<li>Verbe Godan avec terminaison en 'nu';</li>
+<li>Verbe Godan avec terminaison en 'ru';</li>
+<li>Verbe Godan avec terminaison en 'su';</li>
+<li>Verbe Godan avec terminaison en 'tsu';</li>
+<li>Verbe Godan avec terminaison en 'u';</li>
+<li>Nom ou participe prenant le verbe auxilaire Suru;</li>
+<li>... etc.</li>
+</ul>
+</p>
+
+<h2 id="result">Résultat de conjugaison</h2>
+<p>
+Le résultat contient trois tableaux:
+</p>
+
+<h4>1- Conjugaison standard</h4>
+<p>
+Elle est utilisée par les Japonais pour apprendre la conjugaison des verbes. <br>
+<img src="gui_standard.jpg" />
+</p>
+
+<h4>2- Conjugaison de base</h4>
+<p>
+Elle montre les radicaux de base: a e u i o plus la forme t.<br>
+<img src="gui_basic.jpg" />
+</p>
+
+<h4>3- Conjugaison complexe</h4>
+<p>
+Elle montre certaines formes complexes, qui sont originaires des radicaux de base suivis par des suffixes.<br>
+<img src="gui_complex.jpg" />
+</p>
+
+
+</body>
+</html>

@@ -179,32 +179,32 @@
     <message>
         <location filename="../jpconjhelp.ui" line="14"/>
         <source>JapKatsuyou Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aide de JapKatsuyou</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="52"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="73"/>
         <source>Contents</source>
-        <translation type="unfinished"></translation>
+        <translation>Contenus</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="90"/>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexe</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="100"/>
         <source>Look for</source>
-        <translation type="unfinished"></translation>
+        <translation>Chercher sur</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="112"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitter</translation>
     </message>
 </context>
 <context>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../jpconjmain.ui" line="216"/>
         <source>Zoom</source>
-        <translation>Zoomer</translation>
+        <translation>Zoom</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="231"/>
@@ -311,12 +311,12 @@
     <message>
         <location filename="../jpconjmain.ui" line="487"/>
         <source>Zoom In</source>
-        <translation type="unfinished">Grandir</translation>
+        <translation>Zoom avant</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="497"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom arrière</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="507"/>
