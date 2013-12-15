@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <virtualFolder>manual_ja</virtualFolder>
+  <customFilter name="JapKatsuyou 1.0">
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+  </customFilter>
+  <filterSection>
+    <filterAttribute>JapKatsuyou</filterAttribute>
+    <filterAttribute>1.0</filterAttribute>
+    <toc>
+      <section title="JapKatsuyouについて" ref="about.html">
+	<section title="JapKatsuyouの特長" ref="about.html#features"/>
+	<section title="JapKatsuyouのライセンス" ref="about.html#license"/>
+	<section title="JapKatsuyouの動詞のデータベース" ref="about.html#database"/>
+      </section>
+      <section title="ユーザーインターフェース" ref="gui.html">
+	<section title="メニューバー" ref="gui.html#menubar"/>
+	<section title="ツールバー" ref="gui.html#toolbars"/>
+	<section title="検索のパネル" ref="gui.html#search"/>
+	<section title="動詞の種類" ref="gui.html#type"/>
+	<section title="動詞活用の結果" ref="gui.html#result"/>
+      </section>
+      <section title="使用方法" ref="use.html">
+	<section title="動詞活用と検索" ref="use.html#search"/>
+	<section title="コンテンツのエクスポートと印刷" ref="use.html#save"/>
+	<section title="ズーミング" ref="use.html#zoom"/>
+	<section title="設定" ref="use.html#pref"/>
+	<section title="ヘルプ" ref="use.html#help"/>
+	<section title="トレイに近い" ref="use.html#tray"/>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="japkatsuyouの定義" ref="about.html#definition"/>
+      <keyword name="動詞活用" ref="about.html#definition"/>
+      <keyword name="フリーソフトウェア" ref="about.html#definition"/>
+      <keyword name="JapKatsuyouの特長" ref="about.html#features"/>
+      <keyword name="動詞を探す" ref="about.html#features"/>
+      <keyword name="動詞の種類" ref="about.html#features"/>
+      <keyword name="インターフェイスの言語" ref="about.html#features"/>
+      <keyword name="エクスポートの機能" ref="about.html#features"/>
+      <keyword name="印刷の機能" ref="about.html#features"/>
+      <keyword name="アプリケーションのライセンス" ref="about.html#license"/>
+      <keyword name="gnu gpl" ref="about.html#license"/>
+      <keyword name="dzgroup" ref="about.html#license"/>
+      <keyword name="ソフトウェアとコードを再頒布する" ref="about.html#license"/>
+      <keyword name="コードを改変する" ref="about.html#license"/>
+      <keyword name="保証" ref="about.html#license"/>
+      
+      <keyword name="メニューバー" ref="gui.html#menubar"/>
+      <keyword name="ファイル 表 編集 ヘルプ" ref="gui.html#menubar"/>
+      <keyword name="ツールバー" ref="gui.html#toolbars"/>
+      <keyword name="検索のパネル" ref="gui.html#search"/>
+      <keyword name="別の動詞の種類" ref="gui.html#search"/>
+      <keyword name="活用の結果テーブル" ref="gui.html#result"/>
+      
+      <keyword name="使用方法" ref="use.html"/>
+      <keyword name="機能" ref="use.html"/>
+      <keyword name="動詞の検索" ref="use.html#search"/>
+      <keyword name="動詞の活用" ref="use.html#search"/>
+      <keyword name="動詞を活用する" ref="use.html#search"/>
+      <keyword name="動詞の存在" ref="use.html#search"/>
+      <keyword name="終止形" ref="use.html#search"/>
+      <keyword name="結果テーブル" ref="use.html#search"/>
+      <keyword name="国語動詞活用" ref="use.html#search"/>
+      <keyword name="基本的な動詞活用" ref="use.html#search"/>
+      <keyword name="複合の動詞活用" ref="use.html#search"/>
+      <keyword name="活用形" ref="use.html#search"/>
+      <keyword name="定形" ref="use.html#search"/>
+      <keyword name="丁寧語" ref="use.html#search"/>
+      <keyword name="コンテンツのエクスポート" ref="use.html#save"/>
+      <keyword name="コンテンツの印刷" ref="use.html#save"/>
+      <keyword name="pdfのエクスポート" ref="use.html#save"/>
+      <keyword name="htmlのエクスポート" ref="use.html#save"/>
+      <keyword name="penDocumentのエクスポート" ref="use.html#save"/>
+      <keyword name="ズーミング ズーム" ref="use.html#zoom"/>
+      <keyword name="ソフトウェアの設定" ref="use.html#pref"/>
+      <keyword name="UIの言語" ref="use.html#pref"/>
+      <keyword name="ヘルプの内容" ref="use.html#help"/>
+      <keyword name="ソフトについて" ref="use.html#help"/>
+      <keyword name="トレイに近い" ref="use.html#tray"/>
+      
+    </keywords>
+    <files>
+      <file>*.jpg</file>
+      <file>*.html</file>
+      <file>img/*.png</file>
+    </files>
+  </filterSection>
+</QtHelpProject>
