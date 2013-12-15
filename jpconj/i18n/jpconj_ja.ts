@@ -34,27 +34,27 @@
     <message>
         <location filename="../msg.h" line="60"/>
         <source>Pdf file</source>
-        <translation type="unfinished"></translation>
+        <translation>PDFファイル</translation>
     </message>
     <message>
         <location filename="../msg.h" line="62"/>
         <source>OpenDocument file</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenDocumentファイル</translation>
     </message>
     <message>
         <location filename="../msg.h" line="64"/>
         <source>HTML file</source>
-        <translation type="unfinished"></translation>
+        <translation>HTMLファイル</translation>
     </message>
     <message>
         <location filename="../msg.h" line="76"/>
         <source>File already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルがすでに存在している</translation>
     </message>
     <message>
         <location filename="../msg.h" line="78"/>
         <source>This file exists, do you want to overwrite it?</source>
-        <translation type="unfinished"></translation>
+        <translation>このファイルは存在しています。あなたがそれを上書きしますか？</translation>
     </message>
 </context>
 <context>
@@ -85,17 +85,17 @@
     <message>
         <location filename="../preference.ui" line="94"/>
         <source>Content Export</source>
-        <translation type="unfinished"></translation>
+        <translation>内容の輸出</translation>
     </message>
     <message>
         <location filename="../preference.ui" line="106"/>
         <source>Exported tables</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートされた表</translation>
     </message>
     <message>
         <location filename="../preference.ui" line="167"/>
         <source>Use Style</source>
-        <translation type="unfinished"></translation>
+        <translation>スタイルを使用する</translation>
     </message>
 </context>
 <context>
@@ -179,32 +179,32 @@
     <message>
         <location filename="../jpconjhelp.ui" line="14"/>
         <source>JapKatsuyou Help</source>
-        <translation type="unfinished"></translation>
+        <translation>JapKatsuyouのヘルプ</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="52"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="73"/>
         <source>Contents</source>
-        <translation type="unfinished"></translation>
+        <translation>内容</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="90"/>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>インデックス</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="100"/>
         <source>Look for</source>
-        <translation type="unfinished"></translation>
+        <translation>探す</translation>
     </message>
     <message>
         <location filename="../jpconjhelp.ui" line="112"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>終了</translation>
     </message>
 </context>
 <context>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../jpconjmain.ui" line="216"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>ズーム</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="231"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../jpconjmain.ui" line="394"/>
         <source>Zoom Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>ズームのツールバー</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="422"/>
@@ -301,32 +301,32 @@
     <message>
         <location filename="../jpconjmain.ui" line="464"/>
         <source>Content Export</source>
-        <translation type="unfinished"></translation>
+        <translation>内容のエクスポート</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="477"/>
         <source>&amp;Print</source>
-        <translation type="unfinished"></translation>
+        <translation>印刷</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="487"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>ズームイン</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="497"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>ズームアウト</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="507"/>
         <source>Normal Size</source>
-        <translation type="unfinished"></translation>
+        <translation>通常のサイズ</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="517"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>非表示</translation>
     </message>
     <message>
         <location filename="../jpconjmain.ui" line="452"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../jpconjtray.cpp" line="14"/>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>表示</translation>
     </message>
 </context>
 <context>
@@ -646,7 +646,7 @@
     <message>
         <location filename="../msg.h" line="244"/>
         <source>Noun or participle which takes the aux. verb suru.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">サ行変格活用の動作を表す名詞です。</translation>
     </message>
     <message>
         <location filename="../msg.h" line="246"/>
