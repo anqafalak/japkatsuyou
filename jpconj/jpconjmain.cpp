@@ -102,13 +102,7 @@ void jpconjmain::doInit()
     setCSS(ui->standardConj, "DzStyle.css");
     setCSS(ui->complexConj, "DzStyle.css");
 
-
-    //System tray Icon
-    trayIcon = new JpconjTray(this);
-    QAction *actionHelpContent = ui->actionHelpContent;
-    trayIcon->addAction(actionHelpContent);
-    QAction *actionClose = ui->actionClose;
-    trayIcon->addAction(actionClose);
+    trayIconSys = new JpconjTray(this);
 
 }
 
@@ -556,6 +550,17 @@ void jpconjmain::setHTMLTranslation()
 
 
 
+void jpconjmain::createTryIcon()
+{
+    //System tray Icon
+    QAction *actionHelpContent = ui->actionHelpContent;
+    trayIconSys->addAction(actionHelpContent);
+    QAction *actionClose = ui->actionClose;
+    trayIconSys->addAction(actionClose);
+    trayIconSys->hideMain();
+
+}
+
 /*******************************************************
  *                    PROTECTED
  *******************************************************/
@@ -581,7 +586,8 @@ void jpconjmain::changeEvent(QEvent* event)
 
 void jpconjmain::closeEvent(QCloseEvent *event)
 {
-    trayIcon->hideMain();
+    //trayIcon->hideMain();
+    createTryIcon();
     event->ignore();
     //qApp->quit();
 
@@ -649,5 +655,15 @@ void jpconjmain::on_actionNormalSize_triggered()
 
 void jpconjmain::on_actionHide_triggered()
 {
-    trayIcon->hideMain();
+    createTryIcon();
+}
+
+void jpconjmain::on_actionContactUs_triggered()
+{
+    QDesktopServices::openUrl(QUrl("mailto://dzcoding@googlegroups.com"));
+}
+
+void jpconjmain::on_actionHomePage_triggered()
+{
+    QDesktopServices::openUrl(QUrl("http://japkatsuyou.sourceforge.com"));
 }

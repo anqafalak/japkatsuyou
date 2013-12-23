@@ -3,12 +3,15 @@
 
 #include <QApplication>
 #include <QIcon>
+#include <QInputContext>
+#include <QObject>
 #include <QMenu>
 #include <QMainWindow>
 #include <QSettings>
 #include <QSystemTrayIcon>
 
-class JpconjTray : public QSystemTrayIcon
+
+class JpconjTray:QObject
 {
     Q_OBJECT
 
@@ -21,11 +24,13 @@ public:
 
     static void setConfigTraySettings(QMap<QString, bool> traySettings);
     static bool getConfigTraySetting(QString traySetting);
+    void initiateMenu();
 
 
 private:
     QMenu *trayMenu;
     QMainWindow* mainWindow;
+    QSystemTrayIcon * trayIcon;
 
 private slots:
     void showMain();

@@ -1,24 +1,13 @@
 #include "jpconjtray.h"
 
 JpconjTray::JpconjTray(QMainWindow* parent):
-    QSystemTrayIcon(QIcon(":/img/icon.png"), 0)
+    QObject(parent)
 {
-    trayMenu = new QMenu();
+    trayIcon = 0;
+    trayMenu = 0;
     mainWindow = parent;
-    this->setContextMenu(trayMenu);
-
-    connect( this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-             this, SLOT(showMain(QSystemTrayIcon::ActivationReason)) );
-
-
-    QAction *actionShow = new QAction(qApp->translate("jpconjmain", "Show"), this);
-    actionShow->setIcon(QIcon(":/img/show.png"));
-    connect( actionShow, SIGNAL(triggered()), this, SLOT(showMain()) );
-    trayMenu->addAction(actionShow);
-    trayMenu->addSeparator();
-
+    initiateMenu();
 }
-
 
 JpconjTray::~JpconjTray()
 {
@@ -29,9 +18,11 @@ void JpconjTray::addAction(QAction* action)
 {
     //QAction* newAction = new QAction(action->icon(), action->text(), this);
     //connect(newAction, SIGNAL(triggered()), action, SLOT(trigger()) );
-
-    trayMenu->addAction(action);
+    if (trayMenu)
+        trayMenu->addAction(action);
 }
+
+
 
 void JpconjTray::setConfigTraySettings(QMap<QString, bool> traySettings)
 {
@@ -42,6 +33,7 @@ void JpconjTray::setConfigTraySettings(QMap<QString, bool> traySettings)
     settings.endGroup();
 
 }
+
 
 
 bool JpconjTray::getConfigTraySetting(QString traySetting)
@@ -56,11 +48,22 @@ bool JpconjTray::getConfigTraySetting(QString traySetting)
 }
 
 
+
 void JpconjTray::hideMain()
 {
     mainWindow->hide();
-    show();
+    if (! trayIcon){
+        trayIcon = new QSystemTrayIcon(QIcon(":/img/icon.png"), this);
+        trayIcon->setContextMenu(trayMenu);
+
+        connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+                 this, SLOT(showMain(QSystemTrayIcon::ActivationReason)) );
+    }
+
+    mainWindow->hide();
+    trayIcon->show();
 }
+
 
 
 void JpconjTray::showMain()
@@ -69,8 +72,31 @@ void JpconjTray::showMain()
     //mainWindow->activateWindow();
     //mainWindow->raise();
     //mainWindow->setFocus();
-    hide();
+    //hide();
+
+    //delete trayMenu;
+    trayIcon->hide();
+    //delete trayIcon;
+    //trayIcon = 0;
+    //initiateMenu();
 }
+
+
+
+void JpconjTray::initiateMenu()
+{
+    if (trayMenu)
+        delete trayMenu;
+    trayMenu = new QMenu();
+    QAction *actionShow = new QAction(qApp->translate("jpconjmain", "Show"), this);
+    actionShow->setIcon(QIcon(":/img/show.png"));
+    connect( actionShow, SIGNAL(triggered()), this, SLOT(showMain()) );
+    trayMenu->addAction(actionShow);
+    trayMenu->addSeparator();
+
+}
+
+
 
 void JpconjTray::showMain(QSystemTrayIcon::ActivationReason reason )
 {
