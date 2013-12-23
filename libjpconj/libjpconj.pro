@@ -15,6 +15,7 @@ unix: TARGET = jpconj
 VERSION = 1.0
 
 TEMPLATE = lib
+DESTDIR = ../libjpconj-bin
 
 DEFINES += LIBJPCONJ_LIBRARY
 

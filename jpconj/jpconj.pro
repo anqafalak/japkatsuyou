@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = jpconj
 TEMPLATE = app
+DESTDIR = ../jpconj-bin
 
 VERSION = 1.0
 DEFINES += VERSION=\\\"$$VERSION\\\"
@@ -61,7 +62,10 @@ RESOURCES += \
     about.qrc \
     output.qrc
 
+    
 win32:RC_FILE = jpconj.rc
+
+system(cd i18n; lrelease *.ts)
 
 unix {
 binfile.files += jpconj
