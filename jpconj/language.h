@@ -28,8 +28,7 @@
 
 #include <QApplication>
 #include <QDebug>
-#include <QDomElement>
-#include <QDomDocument>
+#include <QDir>
 #include <QFile>
 #include <QHash>
 #include <QMainWindow>

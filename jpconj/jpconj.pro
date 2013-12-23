@@ -5,7 +5,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql xml webkit network
+QT       += core gui sql webkit network
 CONFIG   += help
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
