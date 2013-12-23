@@ -65,14 +65,29 @@ RESOURCES += \
     
 win32:RC_FILE = jpconj.rc
 
-system(cd i18n; lrelease *.ts)
+
 
 unix {
+system(mkdir ../jpconj-bin)
+
+
+system(cd i18n; lrelease *.ts)
+system(mkdir ../jpconj-bin/i18n)
+system(mv i18n/*.qm ../jpconj-bin/i18n)
+system(cp i18n/*.ini ../jpconj-bin/i18n)
+
+system(cd help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
+system(mkdir ../jpconj-bin/help)
+system(mv help/*.qhc ../jpconj-bin/help)
+system(mv help/*.qch ../jpconj-bin/help)
+
 binfile.files += jpconj
 binfile.path = /usr/bin/
-configfiles.files += verbs, i18n, img/icon.png
+configfiles.files += img/icon.png
 configfiles.files += verbs
-configfiles.files += i18n
+configfiles.files += styles
+configfiles.files += ../jpconj-bin/i18n
+configfiles.files += ../jpconj-bin/help
 configfiles.path = /usr/share/jpconj/
 docfiles.files +=
 docfiles.path = /usr/share/doc/
