@@ -37,10 +37,10 @@ void jpconjhelp::Init()
 {
     showed = true;
 
-    QString helpFile = "./help/" + Language::getCurrentLanguage().left(2) + ".qhc";
+    QString helpFile = QString(dataFolder) + "help/" + Language::getCurrentLanguage().left(2) + ".qhc";
 
     if (! QFile(helpFile).exists())
-        helpFile = "./help/en.qhc";
+        helpFile = QString(dataFolder) + "help/en.qhc";
 
     helpEngine = new QHelpEngine(helpFile, this);
     helpEngine->setupData();

@@ -11,7 +11,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = jpconj
 TEMPLATE = app
-DESTDIR = ../jpconj-bin
 
 VERSION = 1.0
 DEFINES += VERSION=\\\"$$VERSION\\\"
@@ -81,8 +80,7 @@ system(mkdir ../jpconj-bin/help)
 system(mv help/*.qhc ../jpconj-bin/help)
 system(mv help/*.qch ../jpconj-bin/help)
 
-binfile.files += jpconj
-binfile.path = /usr/bin/
+target.path = /usr/bin/
 configfiles.files += img/icon.png
 configfiles.files += verbs
 configfiles.files += styles
@@ -95,9 +93,9 @@ manfiles.files +=
 manfiles.path = /usr/share/man/man1/
 shortcutfiles.files += jpconj.desktop
 shortcutfiles.path = /usr/share/applications/
+INSTALLS += target
 INSTALLS += configfiles
 INSTALLS += docfiles
 INSTALLS += manfiles
 INSTALLS += shortcutfiles
-INSTALLS += binfile
 }

@@ -660,10 +660,10 @@ void jpconjmain::on_actionHide_triggered()
 
 void jpconjmain::on_actionContactUs_triggered()
 {
-    QDesktopServices::openUrl(QUrl("mailto://dzcoding@googlegroups.com"));
+    QDesktopServices::openUrl(QUrl("mailto:dzcoding@googlegroups.com"));
 }
 
 void jpconjmain::on_actionHomePage_triggered()
 {
-    QDesktopServices::openUrl(QUrl("http://japkatsuyou.sourceforge.com"));
+    QDesktopServices::openUrl(QUrl("http://japkatsuyou.sourceforge.net"));
 }

@@ -143,7 +143,7 @@ void Language::loadTranslations()
             QSettings langSettings(QString(dataFolder) + "i18n/" + langINIFile, QSettings::IniFormat);
             langSettings.setIniCodec("UTF-8");
             QString languageName = langSettings.value("name").toString();
-            qDebug() << langFile.fileName();
+            //qDebug() << langFile.fileName();
             languagesInfo.insert(languageId, languageName);
             addTranslation(languageId, langFile.fileName()); // add language to tanslators
         }
