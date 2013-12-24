@@ -73,7 +73,7 @@ private:
     bool languageChanged;
     EdictType verbType;
     QString currentVerb;
-    JpconjTray* trayIcon;
+    JpconjTray* trayIconSys;
 
     void doInit();
     Export initExporter();
@@ -86,6 +86,7 @@ private:
     void doPrint();
     void openHelp();
     void zoom(signed char sign);
+    void createTryIcon();
 
     //Functions related to conjugation
     void basicConjugation(QString verb, EdictType type);
@@ -113,6 +114,8 @@ private slots:
     void on_actionZoomOut_triggered();
     void on_actionNormalSize_triggered();
     void on_actionHide_triggered();
+    void on_actionContactUs_triggered();
+    void on_actionHomePage_triggered();
 };
 
 #endif // JPCONJMAIN_H

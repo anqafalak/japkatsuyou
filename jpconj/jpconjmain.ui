@@ -205,6 +205,9 @@
     </property>
     <addaction name="actionHelpContent"/>
     <addaction name="separator"/>
+    <addaction name="actionContactUs"/>
+    <addaction name="actionHomePage"/>
+    <addaction name="separator"/>
     <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menu_View">
@@ -515,6 +518,16 @@
    </property>
    <property name="text">
     <string>Hide</string>
+   </property>
+  </action>
+  <action name="actionContactUs">
+   <property name="text">
+    <string>Contact us</string>
+   </property>
+  </action>
+  <action name="actionHomePage">
+   <property name="text">
+    <string>Homepage</string>
    </property>
   </action>
  </widget>

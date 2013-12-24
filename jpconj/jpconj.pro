@@ -5,7 +5,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql xml webkit network
+QT       += core gui sql webkit network
 CONFIG   += help
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -61,14 +61,31 @@ RESOURCES += \
     about.qrc \
     output.qrc
 
+    
 win32:RC_FILE = jpconj.rc
 
+
+
 unix {
-binfile.files += jpconj
-binfile.path = /usr/bin/
-configfiles.files += verbs, i18n, img/icon.png
+system(mkdir ../jpconj-bin)
+
+
+system(cd i18n; lrelease *.ts)
+system(mkdir ../jpconj-bin/i18n)
+system(mv i18n/*.qm ../jpconj-bin/i18n)
+system(cp i18n/*.ini ../jpconj-bin/i18n)
+
+system(cd help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
+system(mkdir ../jpconj-bin/help)
+system(mv help/*.qhc ../jpconj-bin/help)
+system(mv help/*.qch ../jpconj-bin/help)
+
+target.path = /usr/bin/
+configfiles.files += img/icon.png
 configfiles.files += verbs
-configfiles.files += i18n
+configfiles.files += styles
+configfiles.files += ../jpconj-bin/i18n
+configfiles.files += ../jpconj-bin/help
 configfiles.path = /usr/share/jpconj/
 docfiles.files +=
 docfiles.path = /usr/share/doc/
@@ -76,9 +93,9 @@ manfiles.files +=
 manfiles.path = /usr/share/man/man1/
 shortcutfiles.files += jpconj.desktop
 shortcutfiles.path = /usr/share/applications/
+INSTALLS += target
 INSTALLS += configfiles
 INSTALLS += docfiles
 INSTALLS += manfiles
 INSTALLS += shortcutfiles
-INSTALLS += binfile
 }

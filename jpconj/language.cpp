@@ -128,49 +128,26 @@ QHash<QString, QString> Language::getLanguagesInfo()
  */
 void Language::loadTranslations()
 {
-    QFile languageConfigFile(QString(dataFolder) + "i18n/languages.xml");
-    if (! languageConfigFile.open(QIODevice::ReadOnly|QIODevice::Text)){
-        qDebug() << "The language config file doesn't exist";
-        return;
+    QDir langDefaultDir (QString(dataFolder) + "i18n/");
+    QStringList languageINIFiles = langDefaultDir.entryList(QStringList("jpconj_*.ini"));
+
+    languagesInfo.insert("en", "English");
+
+    foreach (QString langINIFile, languageINIFiles){
+        QString langFileName = langINIFile;
+        langFileName.chop(4);
+
+        QFile langFile (QString(dataFolder) + "i18n/" + langFileName +".qm");
+        if (langFile.exists()){
+            QString languageId = langFileName.mid(7);
+            QSettings langSettings(QString(dataFolder) + "i18n/" + langINIFile, QSettings::IniFormat);
+            langSettings.setIniCodec("UTF-8");
+            QString languageName = langSettings.value("name").toString();
+            //qDebug() << langFile.fileName();
+            languagesInfo.insert(languageId, languageName);
+            addTranslation(languageId, langFile.fileName()); // add language to tanslators
+        }
     }
-
-    QDomDocument languageXmlDoc;
-    if (!languageXmlDoc.setContent(&languageConfigFile)) {
-         languageConfigFile.close();
-         return;
-    }
-    languageConfigFile.close();
-
-    QDomElement xmlDocRoot = languageXmlDoc.documentElement();
-    QDomNodeList availableLanguages = xmlDocRoot.elementsByTagName("language");
-
-    for (int langIdx = 0; langIdx < availableLanguages.count(); langIdx++){
-        QDomElement thisLanguage = availableLanguages.at(langIdx).toElement();
-
-        //qDebug() << thisLanguage.attribute("id");
-
-        QString languageId = thisLanguage.attribute("id");
-
-        QDomNode LangEntry = thisLanguage.firstChild();
-        while(!LangEntry.isNull()) {
-            QDomElement LangData = LangEntry.toElement();
-            QString DataType = LangData.tagName();
-
-            if(DataType == "name") {
-                languagesInfo.insert(languageId, LangData.text()); //insert language id, and its name
-                //qDebug() << "language name" << LangData.text();
-            } else if (DataType == "location"){
-                addTranslation(languageId, LangData.text()); // add language to tanslators
-                //qDebug() << "language location" << LangData.text();
-            } //end if
-            LangEntry = LangEntry.nextSibling();
-        } //end while
-
-    } //end for
-
-    //run the specified language
-
-    //currentLanguageID = getConfigLanguage();
     setLanguage();
 
 }
