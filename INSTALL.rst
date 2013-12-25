@@ -6,7 +6,7 @@
     
  .. code-block:: sh
 
-        $ sudo add-apt-repository ppa:kariminf/japkatuyou
+        $ sudo add-apt-repository ppa:dzcoding/japkatuyou
         $ sudo apt-get update
         $ sudo apt-get install jpconj
 
