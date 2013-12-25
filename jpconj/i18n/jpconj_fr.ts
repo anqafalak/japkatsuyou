@@ -249,92 +249,102 @@
         <translation>Aid&amp;e</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="212"/>
+        <location filename="../jpconjmain.ui" line="215"/>
         <source>&amp;View</source>
         <translation>&amp;Affichage</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="216"/>
+        <location filename="../jpconjmain.ui" line="219"/>
         <source>Zoom</source>
         <translation>Zoom</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="231"/>
+        <location filename="../jpconjmain.ui" line="234"/>
         <source>&amp;Edit</source>
         <translation>Éditio&amp;n</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="254"/>
-        <source>ToolBar</source>
-        <translation>Barre d&apos;outils</translation>
+        <location filename="../jpconjmain.ui" line="257"/>
+        <source>Main Toolbar</source>
+        <translation>Barre d&apos;outils principale</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="307"/>
+        <location filename="../jpconjmain.ui" line="310"/>
         <source>Verb conjugation</source>
         <translation>Conjugaison du Verbe</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="366"/>
+        <location filename="../jpconjmain.ui" line="369"/>
         <source>Conjugate</source>
         <translation>Conjuger</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="394"/>
+        <location filename="../jpconjmain.ui" line="397"/>
         <source>Zoom Toolbar</source>
         <translation>Barre d&apos;outils &quot;Zoomer&quot;</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="422"/>
+        <location filename="../jpconjmain.ui" line="425"/>
         <source>&amp;Close</source>
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="432"/>
+        <location filename="../jpconjmain.ui" line="435"/>
         <source>&amp;About</source>
         <translation>A p&amp;ropos</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="442"/>
+        <location filename="../jpconjmain.ui" line="445"/>
         <source>&amp;Preference</source>
         <translation>&amp;Préférences</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="464"/>
+        <location filename="../jpconjmain.ui" line="467"/>
         <source>Content Export</source>
         <translation>Exporter le contenu</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="477"/>
+        <location filename="../jpconjmain.ui" line="480"/>
         <source>&amp;Print</source>
         <translation>Imprimer</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="487"/>
+        <location filename="../jpconjmain.ui" line="490"/>
         <source>Zoom In</source>
         <translation>Zoom avant</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="497"/>
+        <location filename="../jpconjmain.ui" line="500"/>
         <source>Zoom Out</source>
         <translation>Zoom arrière</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="507"/>
+        <location filename="../jpconjmain.ui" line="510"/>
         <source>Normal Size</source>
         <translation>Taille normale</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="517"/>
+        <location filename="../jpconjmain.ui" line="520"/>
         <source>Hide</source>
         <translation>Cacher</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="452"/>
+        <location filename="../jpconjmain.ui" line="529"/>
+        <source>Contact us</source>
+        <translation>Contactez-nous</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.ui" line="538"/>
+        <source>Homepage</source>
+        <translation>Page d&apos;accueil</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.ui" line="455"/>
         <source>Help Content</source>
         <translation>Contenu de l&apos;aide</translation>
     </message>
     <message>
-        <location filename="../jpconjtray.cpp" line="14"/>
+        <location filename="../jpconjtray.cpp" line="91"/>
         <source>Show</source>
         <translation>Montrer</translation>
     </message>
@@ -485,7 +495,7 @@
     <message>
         <location filename="../msg.h" line="323"/>
         <source>Form used in negative sentences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Form utilisée dans les phrases négatives.</translation>
     </message>
     <message>
         <location filename="../msg.h" line="306"/>
@@ -495,7 +505,7 @@
     <message>
         <location filename="../msg.h" line="325"/>
         <source>Form used in affirmative sentences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Form utilisée dans les phrases affirmatives.</translation>
     </message>
 </context>
 <context>

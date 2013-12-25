@@ -254,7 +254,7 @@
     </size>
    </property>
    <property name="windowTitle">
-    <string>ToolBar</string>
+    <string>Main Toolbar</string>
    </property>
    <property name="movable">
     <bool>true</bool>
@@ -521,11 +521,19 @@
    </property>
   </action>
   <action name="actionContactUs">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/mail.png</normaloff>:/img/mail.png</iconset>
+   </property>
    <property name="text">
     <string>Contact us</string>
    </property>
   </action>
   <action name="actionHomePage">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/home.png</normaloff>:/img/home.png</iconset>
+   </property>
    <property name="text">
     <string>Homepage</string>
    </property>

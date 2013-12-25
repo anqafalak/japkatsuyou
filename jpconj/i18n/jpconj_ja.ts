@@ -249,92 +249,102 @@
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="212"/>
+        <location filename="../jpconjmain.ui" line="215"/>
         <source>&amp;View</source>
         <translation>表示</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="216"/>
+        <location filename="../jpconjmain.ui" line="219"/>
         <source>Zoom</source>
         <translation>ズーム</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="231"/>
+        <location filename="../jpconjmain.ui" line="234"/>
         <source>&amp;Edit</source>
         <translation>編集</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="254"/>
-        <source>ToolBar</source>
-        <translation>ツールバー</translation>
+        <location filename="../jpconjmain.ui" line="257"/>
+        <source>Main Toolbar</source>
+        <translation>メインツールバー</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="307"/>
+        <location filename="../jpconjmain.ui" line="310"/>
         <source>Verb conjugation</source>
         <translation>動詞の活用</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="366"/>
+        <location filename="../jpconjmain.ui" line="369"/>
         <source>Conjugate</source>
         <translation>活用</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="394"/>
+        <location filename="../jpconjmain.ui" line="397"/>
         <source>Zoom Toolbar</source>
         <translation>ズームのツールバー</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="422"/>
+        <location filename="../jpconjmain.ui" line="425"/>
         <source>&amp;Close</source>
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="432"/>
+        <location filename="../jpconjmain.ui" line="435"/>
         <source>&amp;About</source>
         <translation>ソフトについて</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="442"/>
+        <location filename="../jpconjmain.ui" line="445"/>
         <source>&amp;Preference</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="464"/>
+        <location filename="../jpconjmain.ui" line="467"/>
         <source>Content Export</source>
         <translation>内容のエクスポート</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="477"/>
+        <location filename="../jpconjmain.ui" line="480"/>
         <source>&amp;Print</source>
         <translation>印刷</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="487"/>
+        <location filename="../jpconjmain.ui" line="490"/>
         <source>Zoom In</source>
         <translation>ズームイン</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="497"/>
+        <location filename="../jpconjmain.ui" line="500"/>
         <source>Zoom Out</source>
         <translation>ズームアウト</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="507"/>
+        <location filename="../jpconjmain.ui" line="510"/>
         <source>Normal Size</source>
         <translation>通常のサイズ</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="517"/>
+        <location filename="../jpconjmain.ui" line="520"/>
         <source>Hide</source>
         <translation>非表示</translation>
     </message>
     <message>
-        <location filename="../jpconjmain.ui" line="452"/>
+        <location filename="../jpconjmain.ui" line="529"/>
+        <source>Contact us</source>
+        <translation>ご連絡</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.ui" line="538"/>
+        <source>Homepage</source>
+        <translation>ホームページ</translation>
+    </message>
+    <message>
+        <location filename="../jpconjmain.ui" line="455"/>
         <source>Help Content</source>
         <translation>ヘルプの内容</translation>
     </message>
     <message>
-        <location filename="../jpconjtray.cpp" line="14"/>
+        <location filename="../jpconjtray.cpp" line="91"/>
         <source>Show</source>
         <translation>表示</translation>
     </message>
