@@ -13,5 +13,7 @@
         <file>img/zoom1.png</file>
         <file>img/hide.png</file>
         <file>img/show.png</file>
+        <file>img/mail.png</file>
+        <file>img/home.png</file>
     </qresource>
 </RCC>
