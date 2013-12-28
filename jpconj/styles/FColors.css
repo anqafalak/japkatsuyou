@@ -1,0 +1,48 @@
+/* 
+@Author: Abdelkrime Aries <kariminfo0@gmail.com>
+*/
+
+table.show {
+	border: 0px;
+	width: 100%;
+	}
+
+.head, .head_even, .head_odd, .head_row1, .head_row2, .head_row3, .head_row4 {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #4c66a4; /* Old browsers */
+}
+
+.col_even {
+	margin: 5%;
+	height: 1.5em;
+	direction: ltr;
+	text-align:left;
+	background: #ffffff; /* Old browsers */
+  
+}
+
+.col_odd {
+	margin: 5%;
+	height: 1.5em;
+	direction: ltr;
+	text-align:left;
+	background: #d8dfea; /* Old browsers */
+  
+}
+
+.title_even {
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #ffffff; /* Old browsers */
+}
+
+.title_odd {
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #4c66a4; /* Old browsers */
+}

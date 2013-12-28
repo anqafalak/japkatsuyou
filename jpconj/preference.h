@@ -27,6 +27,7 @@
 
 #include "export.h"
 #include "language.h"
+#include "style.h"
 
 #include <QDebug>
 #include <QDialog>

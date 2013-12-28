@@ -83,17 +83,22 @@
         <translation>Langue de l&apos;interface utilisateur</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="94"/>
+        <location filename="../preference.ui" line="111"/>
+        <source>Tables style</source>
+        <translation type="unfinished">Style de tables</translation>
+    </message>
+    <message>
+        <location filename="../preference.ui" line="130"/>
         <source>Content Export</source>
         <translation>Exporter le contenu</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="106"/>
+        <location filename="../preference.ui" line="142"/>
         <source>Exported tables</source>
         <translation>Les tables exportées</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="167"/>
+        <location filename="../preference.ui" line="203"/>
         <source>Use Style</source>
         <translation>Utiliser le style</translation>
     </message>
