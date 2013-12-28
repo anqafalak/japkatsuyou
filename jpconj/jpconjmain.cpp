@@ -601,7 +601,7 @@ void jpconjmain::closeEvent(QCloseEvent *event)
 void jpconjmain::changeStyle(QString styleID)
 {
     QString stylesheet = styleID + ".css";
-    qDebug() << "style changed" << styleID;
+    //qDebug() << "style changed" << styleID;
     setCSS(ui->basicConj, stylesheet);
     setCSS(ui->standardConj, stylesheet);
     setCSS(ui->complexConj, stylesheet);

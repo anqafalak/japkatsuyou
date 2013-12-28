@@ -83,17 +83,22 @@
         <translation>ユーザーインターフェース言語</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="94"/>
+        <location filename="../preference.ui" line="111"/>
+        <source>Tables style</source>
+        <translation>テーブルのスタイル</translation>
+    </message>
+    <message>
+        <location filename="../preference.ui" line="130"/>
         <source>Content Export</source>
         <translation>内容の輸出</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="106"/>
+        <location filename="../preference.ui" line="142"/>
         <source>Exported tables</source>
         <translation>エクスポートされた表</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="167"/>
+        <location filename="../preference.ui" line="203"/>
         <source>Use Style</source>
         <translation>スタイルを使用する</translation>
     </message>

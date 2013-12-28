@@ -1,0 +1,111 @@
+/* 
+@Author: Abdelkrime Aries <kariminfo0@gmail.com>
+*/
+
+table.show {
+	border: 0px;
+	width: 100%;
+	}
+
+.head {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #aaaaaa; /* Old browsers */
+}
+
+.head_even {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #00aa55; /* Old browsers */
+}
+
+.head_row1 {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #00bb00; /* Old browsers */
+}
+
+.row1 {
+	direction: ltr;
+	text-align:left;
+	margin: 5%;
+	height: 1.5em;
+	background: #77bb77; /* Old browsers */
+}
+
+.head_row2 {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #2233ff; /* Old browsers */
+}
+.row2 {
+	direction: ltr;
+	text-align:left;
+	margin: 5%;
+	height: 1.5em;
+	background: #7777bb; /* Old browsers */
+}
+
+
+.head_odd {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #dd5500; /* Old browsers */
+}
+
+.head_row3 {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #ff2222; /* Old browsers */
+}
+
+.row3 {
+	direction: ltr;
+	text-align:left;
+	margin: 5%;
+	height: 1.5em;
+	background: #bb7777; /* Old browsers */
+}
+
+
+.head_row4 {
+	text-align:center;
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #bbbb00; /* Old browsers */
+}
+
+.row4 {
+	direction: ltr;
+	text-align:left;
+	margin: 5%;
+	height: 1.5em;
+	background: #bbbb77; /* Old browsers */
+}
+
+.title_even {
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #cc44cc; /* Old browsers */
+}
+
+.title_odd {
+	font-weight: bold;
+	margin: 5%;
+	height: 1.5em;
+	background: #994499; /* Old browsers */
+}

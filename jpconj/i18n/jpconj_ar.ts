@@ -83,17 +83,22 @@
         <translation>لغة واجهة المستخدم</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="94"/>
+        <location filename="../preference.ui" line="111"/>
+        <source>Tables style</source>
+        <translation>ستايل الجداول</translation>
+    </message>
+    <message>
+        <location filename="../preference.ui" line="130"/>
         <source>Content Export</source>
         <translation>تصدير المحتوى</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="106"/>
+        <location filename="../preference.ui" line="142"/>
         <source>Exported tables</source>
         <translation>الجداول المصدرة</translation>
     </message>
     <message>
-        <location filename="../preference.ui" line="167"/>
+        <location filename="../preference.ui" line="203"/>
         <source>Use Style</source>
         <translation>استعمال الستايل</translation>
     </message>
