@@ -98,11 +98,12 @@ void jpconjmain::doInit()
     ui->complexConj->page()->setPalette(palette);
     ui->complexConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
 
-    setCSS(ui->basicConj, "DzStyle.css");
-    setCSS(ui->standardConj, "DzStyle.css");
-    setCSS(ui->complexConj, "DzStyle.css");
-
     trayIconSys = new JpconjTray(this);
+
+    //changeStyle(Style::getCurrentStyle());
+    Style::addReceiver(this, SLOT(changeStyle(QString)));
+    Style::loadStyles();
+    //connect(style, SIGNAL(styleChanged(QString)), this, SLOT(changeStyle(QString)));
 
 }
 
@@ -566,7 +567,7 @@ void jpconjmain::createTryIcon()
  *******************************************************/
 
 /*!
- * \brief jpconjmain::changeEvent The event treated her is the change of language.
+ * \brief jpconjmain::changeEvent The event treated here is the change of language.
  * \param event
  */
 void jpconjmain::changeEvent(QEvent* event)
@@ -596,6 +597,15 @@ void jpconjmain::closeEvent(QCloseEvent *event)
 /*******************************************************
  *                   PRIVATE SLOTS
  *******************************************************/
+
+void jpconjmain::changeStyle(QString styleID)
+{
+    QString stylesheet = styleID + ".css";
+    qDebug() << "style changed" << styleID;
+    setCSS(ui->basicConj, stylesheet);
+    setCSS(ui->standardConj, stylesheet);
+    setCSS(ui->complexConj, stylesheet);
+}
 
 void jpconjmain::on_actionClose_triggered()
 {

@@ -33,6 +33,7 @@
 #include "language.h"
 #include "msg.h"
 #include "preference.h"
+#include "style.h"
 
 #include "typeDefs.h"
 #include "jpconj.h"
@@ -45,6 +46,7 @@
 #include <QHash>
 #include <QMainWindow>
 #include <QMap>
+#include <QObject>
 #include <QWebElement>
 #include <QWebFrame>
 #include <QWebView>
@@ -74,6 +76,7 @@ private:
     EdictType verbType;
     QString currentVerb;
     JpconjTray* trayIconSys;
+    Style* style;
 
     void doInit();
     Export initExporter();
@@ -102,6 +105,8 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 private slots:
+    void changeStyle(QString styleID);
+
     void on_actionClose_triggered();
     void on_conjugateButton_clicked();
     void on_actionAbout_triggered();

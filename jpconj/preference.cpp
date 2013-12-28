@@ -78,9 +78,9 @@ void Preference::doInit()
     foreach (QString langId, languageInfo.keys())
         ui->lang->addItem(languageInfo.value(langId), QVariant(langId));
 
-    QString confLangId = Language::getConfigLanguage();
+    QString currentLangId = Language::getCurrentLanguage();
 
-    int index = ui->lang->findData(QVariant(confLangId));
+    int index = ui->lang->findData(QVariant(currentLangId));
 
     ui->lang->setCurrentIndex(index);
 
@@ -92,6 +92,21 @@ void Preference::doInit()
     ui->complex_check->setChecked(Export::getConfigExportPart("complex"));
 
     ui->styleUse_check->setChecked(Export::getConfigExportPart("styled"));
+
+
+    //------------------------
+    QHash<QString, Styleinfo*> styleInfo = Style::getStyleInfo();
+
+    foreach(QString styleID, styleInfo.keys()){
+        QIcon icon = QIcon("./styles/" + styleID + ".jpg");
+        QString name = styleInfo.value(styleID)->name;
+        ui->style->addItem(icon, name, QVariant(styleID));
+        //qDebug() << styleID;
+    }
+
+    QString currentStyleId = Style::getCurrentStyle();
+    index = ui->style->findData(QVariant(currentStyleId));
+    ui->style->setCurrentIndex(index);
 
 }
 
@@ -118,6 +133,12 @@ void Preference::doSave()
     exportParts.insert("complex", ui->complex_check->isChecked());
     exportParts.insert("styled", ui->styleUse_check->isChecked());
     Export::setConfigExportParts(exportParts);
+
+    //style
+    index = ui->style->currentIndex();
+    QString styleID = ui->style->itemData(index).toString();
+    Style::setConfigStyle(styleID);
+    Style::setStyle();
 }
 
 

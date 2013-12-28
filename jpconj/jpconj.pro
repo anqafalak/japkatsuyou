@@ -24,7 +24,8 @@ SOURCES  += main.cpp\
             export.cpp \
             jpconjhelp.cpp \
             helpviewer.cpp \
-            jpconjtray.cpp
+            jpconjtray.cpp \
+            style.cpp
 
 HEADERS  += jpconjmain.h \
             about.h \
@@ -36,7 +37,8 @@ HEADERS  += jpconjmain.h \
             export.h \
             jpconjhelp.h \
             helpviewer.h \
-            jpconjtray.h
+            jpconjtray.h \
+            style.h
 
 FORMS    += jpconjmain.ui \
             about.ui \

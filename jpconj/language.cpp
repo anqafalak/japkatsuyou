@@ -30,7 +30,7 @@
 
 QTranslator* Language::currentQtTranslator = 0;
 QTranslator* Language::currentJpconjTranslator = 0;
-QString Language::currentLanguageID = "en";
+QString Language::currentLanguageID = "";
 QHash<QString, PairTrans> Language::translators;
 QHash<QString, QString> Language::languagesInfo;
 
