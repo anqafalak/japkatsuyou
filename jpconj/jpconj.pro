@@ -76,6 +76,7 @@ system(cd i18n; lrelease *.ts)
 system(mkdir ../jpconj-bin/i18n)
 system(mv i18n/*.qm ../jpconj-bin/i18n)
 system(cp i18n/*.ini ../jpconj-bin/i18n)
+system(for i in i18n/*.ts; do j=${i$$LITERAL_HASH jpconj}; cp /usr/share/qt4/translations/qt${j%ts}qm ../jpconj-bin/i18n; done)
 
 system(cd help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
 system(mkdir ../jpconj-bin/help)

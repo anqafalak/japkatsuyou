@@ -145,7 +145,7 @@ void Language::loadTranslations()
             QString languageName = langSettings.value("name").toString();
             //qDebug() << langFile.fileName();
             languagesInfo.insert(languageId, languageName);
-            addTranslation(languageId, langFile.fileName()); // add language to tanslators
+            addTranslation(languageId, QString(dataFolder) + "i18n/"); // add language to tanslators
         }
     }
     setLanguage();
@@ -170,6 +170,7 @@ void Language::addTranslation(QString langId, QString dir)
 
     /*if (jpconjTranslator->load(jpconjTransLocation))
         translators.insert(langId, jpconjTranslator);*/
+    //qDebug() << langId << "-----" << dir;
 
     QString qtTransLocation = dir + "qt_" + langId.left(2) + ".qm";
     QTranslator* qtTranslator = new QTranslator();
