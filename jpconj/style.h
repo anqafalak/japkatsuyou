@@ -1,8 +1,6 @@
 #ifndef STYLE_H
 #define STYLE_H
 
-#include "paths.h"
-
 #include <QCustomEvent>
 #include <QApplication>
 #include <QDebug>

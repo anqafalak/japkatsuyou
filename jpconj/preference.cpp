@@ -98,7 +98,7 @@ void Preference::doInit()
     QHash<QString, Styleinfo*> styleInfo = Style::getStyleInfo();
 
     foreach(QString styleID, styleInfo.keys()){
-        QIcon icon = QIcon("./styles/" + styleID + ".jpg");
+        QIcon icon = QIcon(QString(dataFolder) + "styles/" + styleID + ".jpg");
         QString name = styleInfo.value(styleID)->name;
         ui->style->addItem(icon, name, QVariant(styleID));
         //qDebug() << styleID;

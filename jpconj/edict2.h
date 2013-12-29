@@ -25,7 +25,6 @@
 #ifndef EDICT2_H
 #define EDICT2_H
 
-#include "paths.h"
 #include "typeDefs.h"
 
 #include <QDebug>
