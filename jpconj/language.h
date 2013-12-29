@@ -24,8 +24,6 @@
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
 
-#include "paths.h"
-
 #include <QApplication>
 #include <QDebug>
 #include <QDir>

@@ -12,8 +12,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = jpconj
 TEMPLATE = app
 
-VERSION = 1.0
+VERSION = 1.0.0
 DEFINES += VERSION=\\\"$$VERSION\\\"
+DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj
 
 SOURCES  += main.cpp\
             jpconjmain.cpp \
@@ -31,7 +32,6 @@ HEADERS  += jpconjmain.h \
             about.h \
             edict2.h \
             preference.h \
-            paths.h \
             msg.h \
             language.h \
             export.h \
