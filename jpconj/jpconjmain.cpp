@@ -98,13 +98,21 @@ void jpconjmain::doInit()
     ui->complexConj->page()->setPalette(palette);
     ui->complexConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
 
-    trayIconSys = new JpconjTray(this);
-
     //changeStyle(Style::getCurrentStyle());
     Style::addReceiver(this, SLOT(changeStyle(QString)));
     Style::loadStyles();
     //connect(style, SIGNAL(styleChanged(QString)), this, SLOT(changeStyle(QString)));
 
+
+    //tray Icon
+    trayIconSys = new JpconjTray(this);
+
+    actionShow = new QAction(tr("Show"), this); //qApp->translate, "jpconjmain"
+    actionShow->setIcon(QIcon(":/img/show.png"));
+
+    connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()) );
+    trayIconSys->addAction(actionShow);
+    trayIconSys->addSeparator();
 }
 
 
@@ -132,7 +140,7 @@ Export jpconjmain::initExporter()
     }
 
     if(Export::getConfigExportPart("styled"))
-        exporter.setStyle(QDir(QString(dataFolder)).absolutePath() + "/styles/DzStyle.css");
+        exporter.setStyle(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
 
     return exporter;
 }
@@ -579,6 +587,7 @@ void jpconjmain::changeEvent(QEvent* event)
         rtl=Language::mainWindowDirection(this);
         languageChanged = true;
         setHTMLTranslation();
+        actionShow->setText(tr("Show"));
         //qDebug()<< "changed";
     }
     QMainWindow::changeEvent(event);
@@ -600,7 +609,7 @@ void jpconjmain::closeEvent(QCloseEvent *event)
 
 void jpconjmain::changeStyle(QString styleID)
 {
-    QString stylesheet = styleID + ".css";
+    stylesheet = styleID + ".css";
     //qDebug() << "style changed" << styleID;
     setCSS(ui->basicConj, stylesheet);
     setCSS(ui->standardConj, stylesheet);

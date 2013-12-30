@@ -5,32 +5,31 @@
 #include <QIcon>
 #include <QInputContext>
 #include <QObject>
+#include <QPoint>
 #include <QMenu>
 #include <QMainWindow>
 #include <QSettings>
 #include <QSystemTrayIcon>
 
 
-class JpconjTray:QObject
+class JpconjTray: public QSystemTrayIcon
 {
     Q_OBJECT
 
 public:
     JpconjTray(QMainWindow *parent);
     ~JpconjTray();
-
-    void addAction(QAction* action);
     void hideMain();
 
     static void setConfigTraySettings(QMap<QString, bool> traySettings);
     static bool getConfigTraySetting(QString traySetting);
-    void initiateMenu();
+    void addSeparator();
+    void addAction(QAction* action);
 
 
 private:
     QMenu *trayMenu;
     QMainWindow* mainWindow;
-    QSystemTrayIcon * trayIcon;
 
 private slots:
     void showMain();
