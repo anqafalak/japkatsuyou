@@ -11,10 +11,11 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = jpconj
 TEMPLATE = app
+DESTDIR = ../jpconj-bin
 
-VERSION = 1.0.0
+VERSION = 1.0.1
 DEFINES += VERSION=\\\"$$VERSION\\\"
-DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj
+DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj/
 
 SOURCES  += main.cpp\
             jpconjmain.cpp \
@@ -49,7 +50,7 @@ TRANSLATIONS    +=  i18n/jpconj_ar.ts\
                     i18n/jpconj_ja.ts\
                     i18n/jpconj_fr.ts
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/release/ -llibjpconj
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
 else:symbian: LIBS += -llibjpconj
 else:unix: LIBS += -L$$PWD/../libjpconj-bin/ -ljpconj
@@ -76,7 +77,7 @@ system(cd i18n; lrelease *.ts)
 system(mkdir ../jpconj-bin/i18n)
 system(mv i18n/*.qm ../jpconj-bin/i18n)
 system(cp i18n/*.ini ../jpconj-bin/i18n)
-system(for i in i18n/*.ts; do j=${i$$LITERAL_HASH jpconj}; cp /usr/share/qt4/translations/qt${j%ts}qm ../jpconj-bin/i18n; done)
+system(cd i18n; for i in *.ts; do j=${i$${LITERAL_HASH}jpconj}; cp /usr/share/qt4/translations/qt${j%ts}qm ../../jpconj-bin/i18n; done)
 
 system(cd help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
 system(mkdir ../jpconj-bin/help)

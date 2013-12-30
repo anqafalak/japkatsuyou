@@ -132,6 +132,7 @@ void Language::loadTranslations()
     QStringList languageINIFiles = langDefaultDir.entryList(QStringList("jpconj_*.ini"));
 
     languagesInfo.insert("en", "English");
+    addTranslation("en", ""); // add English language to tanslators
 
     foreach (QString langINIFile, languageINIFiles){
         QString langFileName = langINIFile;

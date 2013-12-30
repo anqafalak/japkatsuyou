@@ -349,7 +349,8 @@
         <translation>Contenu de l&apos;aide</translation>
     </message>
     <message>
-        <location filename="../jpconjtray.cpp" line="91"/>
+        <location filename="../jpconjmain.cpp" line="110"/>
+        <location filename="../jpconjmain.cpp" line="590"/>
         <source>Show</source>
         <translation>Montrer</translation>
     </message>

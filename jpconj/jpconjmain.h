@@ -76,7 +76,9 @@ private:
     EdictType verbType;
     QString currentVerb;
     JpconjTray* trayIconSys;
-    Style* style;
+    QString stylesheet;
+
+    QAction *actionShow;
 
     void doInit();
     Export initExporter();

@@ -81,6 +81,7 @@ void Export::exportHtml(QString filename)
     }
 
     QTextStream outStream(&outputFile);
+    outStream.setCodec("UTF-8");
 
     if(styleFile.length()>0){
         QFileInfo styleInfo(styleFile);
@@ -94,7 +95,7 @@ void Export::exportHtml(QString filename)
         qDebug() << styleFile << " to " << styleto;
         QFile::copy(styleFile, styleto);
 
-        addStyle(styleto);
+        addStyle("./" + stylefolder + "/" + stylename);
     }
 
     outStream << htmlContent;
