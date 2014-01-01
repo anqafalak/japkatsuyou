@@ -1,0 +1,25 @@
+japkatsuyou (1.0.1-1) quantal; urgency=low
+
+  * English language fix on non-English systems
+  * Language change on Tray menu
+  * UTF8 and CSS file location fix for HTML export
+
+ -- Abdelkrime Aries (kariminf) <kariminfo0@gmail.com>  Mon, 30 Dec 2013 20:36:48 +0100
+
+japkatsuyou (1.0.0-1) quantal; urgency=low
+
+  * inhance user interface
+  * export and print result
+  
+ -- Abdelkrime Aries (kariminf) <kariminfo0@gmail.com>  Sun, 29 Dec 2013 17:50:05 +0100
+
+jpconj (0.3-1) quantal; urgency=low
+
+  * Add language support Arabic, French, and Japanese
+  * Add noun + suru conjugation
+  * Fix suru, kuru, iku, kou, and ichidan conjugation
+  * Change interface language immediately without restart
+  * Add Standard and Basic conjugations
+
+ -- Abdelkrime Aries (kariminf) <kariminfo0@gmail.com>  Sat, 21 Sep 2013 11:50:47 +0100
+
