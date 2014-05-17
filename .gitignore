@@ -25,3 +25,7 @@ libjpconj-bin/
 
 *.qhc
 *.qch
+
+#Linux system
+
+.directory
