@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>about/authors_ar</file>
+        <file>about/authors_en</file>
+        <file>about/authors_fr</file>
+        <file>about/authors_ja</file>
+        <file>about/license_ar</file>
+        <file>about/license_en</file>
+        <file>about/license_fr</file>
+        <file>about/license_ja</file>
+        <file>about/thanks_ar</file>
+        <file>about/thanks_en</file>
+        <file>about/thanks_fr</file>
+        <file>about/thanks_ja</file>
+        <file>about/about_ar</file>
+        <file>about/about_en</file>
+        <file>about/about_fr</file>
+        <file>about/about_ja</file>
+    </qresource>
+</RCC>
