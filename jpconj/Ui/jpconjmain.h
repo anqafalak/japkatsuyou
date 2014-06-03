@@ -26,14 +26,15 @@
 #define JPCONJMAIN_H
 
 #include "about.h"
-#include "edict2.h"
-#include "export.h"
+#include "conjframe.h"
+#include "Conj/edict2.h"
+#include "UiHelper/export.h"
 #include "jpconjhelp.h"
-#include "jpconjtray.h"
-#include "language.h"
-#include "msg.h"
+#include "UiHelper/jpconjtray.h"
+#include "UiHelper/language.h"
+#include "UiHelper/msg.h"
 #include "preference.h"
-#include "style.h"
+#include "UiHelper/style.h"
 
 #include "typeDefs.h"
 #include "jpconj.h"
@@ -86,19 +87,13 @@ private:
     //Functions related to actions slots
     void openAbout();
     void openPref();
-    void doConj();
     void doExport();
     void doPrint();
     void openHelp();
     void zoom(signed char sign);
     void createTryIcon();
 
-    //Functions related to conjugation
-    void basicConjugation(QString verb, EdictType type);
-    void complexConjugation(QString verb, EdictType type);
-
     //HTML-related functions
-    QString readHtmlFile(QString URL);
     void setCSS(QWebView * webView, QString nameCSS);
     void setHTMLTranslation ();
 
@@ -110,11 +105,9 @@ private slots:
     void changeStyle(QString styleID);
 
     void on_actionClose_triggered();
-    void on_conjugateButton_clicked();
     void on_actionAbout_triggered();
     void on_actionPreference_triggered();
     void on_actionHelpContent_triggered();
-    void on_inputConjVerb_returnPressed();
     void on_actionExportResult_triggered();
     void on_actionPrint_triggered();
     void on_actionZoomIn_triggered();

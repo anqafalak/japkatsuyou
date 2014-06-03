@@ -23,7 +23,7 @@
  */
 
 
-#include "jpconjmain.h"
+#include "Ui/jpconjmain.h"
 
 #include <QApplication>
 

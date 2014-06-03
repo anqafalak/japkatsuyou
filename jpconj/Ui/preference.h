@@ -25,9 +25,9 @@
 #ifndef PREFERENCE_H
 #define PREFERENCE_H
 
-#include "export.h"
-#include "language.h"
-#include "style.h"
+#include "UiHelper/export.h"
+#include "UiHelper/language.h"
+#include "UiHelper/style.h"
 
 #include <QDebug>
 #include <QDialog>

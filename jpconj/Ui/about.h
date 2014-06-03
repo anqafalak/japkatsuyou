@@ -25,7 +25,7 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include "language.h"
+#include "UiHelper/language.h"
 
 #include <QDesktopServices>
 #include <QDialog>

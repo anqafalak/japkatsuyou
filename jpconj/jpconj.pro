@@ -17,34 +17,38 @@ VERSION = 1.0.1
 DEFINES += VERSION=\\\"$$VERSION\\\"
 DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj/
 
+
 SOURCES  += main.cpp\
-            jpconjmain.cpp \
-            about.cpp \
-            edict2.cpp \
-            preference.cpp \
-            language.cpp \
-            export.cpp \
-            jpconjhelp.cpp \
-            helpviewer.cpp \
-            jpconjtray.cpp \
-            style.cpp
+            Ui/jpconjmain.cpp \
+            Ui/about.cpp \
+            Conj/edict2.cpp \
+            Ui/preference.cpp \
+            UiHelper/language.cpp \
+            UiHelper/export.cpp \
+            Ui/jpconjhelp.cpp \
+            Ui/helpviewer.cpp \
+            UiHelper/jpconjtray.cpp \
+            UiHelper/style.cpp \
+            Ui/conjframe.cpp
 
-HEADERS  += jpconjmain.h \
-            about.h \
-            edict2.h \
-            preference.h \
-            msg.h \
-            language.h \
-            export.h \
-            jpconjhelp.h \
-            helpviewer.h \
-            jpconjtray.h \
-            style.h
+HEADERS  += Ui/jpconjmain.h \
+            Ui/about.h \
+            Conj/edict2.h \
+            Ui/preference.h \
+            UiHelper/msg.h \
+            UiHelper/language.h \
+            UiHelper/export.h \
+            Ui/jpconjhelp.h \
+            Ui/helpviewer.h \
+            UiHelper/jpconjtray.h \
+            UiHelper/style.h \
+            Ui/conjframe.h
 
-FORMS    += jpconjmain.ui \
-            about.ui \
-            preference.ui \
-            jpconjhelp.ui
+FORMS    += Ui/jpconjmain.ui \
+            Ui/about.ui \
+            Ui/preference.ui \
+            Ui/jpconjhelp.ui \
+            Ui/conjframe.ui
 
 TRANSLATIONS    +=  i18n/jpconj_ar.ts\
                     i18n/jpconj_ja.ts\
@@ -60,9 +64,9 @@ DEPENDPATH += . ../libjpconj
 
 
 RESOURCES += \
-    icons.qrc \
-    about.qrc \
-    output.qrc
+    Media/about.qrc \
+    Media/icons.qrc \
+    Media/output.qrc
 
     
 win32:RC_FILE = jpconj.rc
