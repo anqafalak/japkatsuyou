@@ -15,7 +15,7 @@ unix: TARGET = jpconj
 VERSION = 1.0
 
 TEMPLATE = lib
-DESTDIR = ../libjpconj-bin
+
 
 DEFINES += LIBJPCONJ_LIBRARY
 
@@ -31,23 +31,25 @@ HEADERS += \
             jpconj.h \
             jpconj_global.h
 
-unix {
-target.path = /usr/lib/
+# This is just used in time of packaging
+#DESTDIR = ../libjpconj-bin
+#unix {
+#target.path = /usr/lib/
 
-configfiles.files +=
-configfiles.path = /usr/share/
+#configfiles.files +=
+#configfiles.path = /usr/share/
 
-docfiles.files +=
-docfiles.path = /usr/share/doc/
+#docfiles.files +=
+#docfiles.path = /usr/share/doc/
 
-manfiles.files +=
-manfiles.path = /usr/share/man/man1/
+#manfiles.files +=
+#manfiles.path = /usr/share/man/man1/
 
-shortcutfiles.files +=
-shortcutfiles.path = /usr/share/applications/
+#shortcutfiles.files +=
+#shortcutfiles.path = /usr/share/applications/
 
-INSTALLS += target
-INSTALLS += configfiles
-INSTALLS += docfiles
-INSTALLS += manfiles
-}
+#INSTALLS += target
+#INSTALLS += configfiles
+#INSTALLS += docfiles
+#INSTALLS += manfiles
+#}
