@@ -60,10 +60,10 @@ TRANSLATIONS    +=  i18n/jpconj_ar.ts\
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
 else:symbian: LIBS += -llibjpconj
-else:unix: LIBS += -L$$PWD/../libjpconj-bin/ -ljpconj
+else:unix: LIBS += -L../libjpconj-bin/ -ljpconj
 
 INCLUDEPATH += ../libjpconj
-DEPENDPATH += . ../libjpconj
+DEPENDPATH += . ../libjpconj-bin
 
 
 RESOURCES += \
