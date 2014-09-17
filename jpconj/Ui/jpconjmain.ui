@@ -26,7 +26,7 @@
    <string>JapKatsuyou: Japanese Verb Conjugation</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="icons.qrc">
+   <iconset resource="../Media/icons.qrc">
     <normaloff>:/img/icon.png</normaloff>:/img/icon.png</iconset>
   </property>
   <property name="layoutDirection">
@@ -43,7 +43,16 @@
     </sizepolicy>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
-    <property name="margin">
+    <property name="leftMargin">
+     <number>1</number>
+    </property>
+    <property name="topMargin">
+     <number>1</number>
+    </property>
+    <property name="rightMargin">
+     <number>1</number>
+    </property>
+    <property name="bottomMargin">
      <number>1</number>
     </property>
     <item>
@@ -57,7 +66,7 @@
      <x>0</x>
      <y>0</y>
      <width>634</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -90,7 +99,7 @@
       <string>Zoom</string>
      </property>
      <property name="icon">
-      <iconset resource="icons.qrc">
+      <iconset resource="../Media/icons.qrc">
        <normaloff>:/img/zoom.png</normaloff>:/img/zoom.png</iconset>
      </property>
      <addaction name="actionZoomIn"/>
@@ -237,7 +246,7 @@
   </widget>
   <action name="actionClose">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../Media/icons.qrc">
      <normaloff>:/img/close.png</normaloff>
      <normalon>:/img/close.png</normalon>:/img/close.png</iconset>
    </property>
@@ -280,7 +289,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../Media/icons.qrc">
      <normaloff>:/img/export.png</normaloff>:/img/export.png</iconset>
    </property>
    <property name="text">
@@ -342,7 +351,7 @@
   </action>
   <action name="actionContactUs">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../Media/icons.qrc">
      <normaloff>:/img/mail.png</normaloff>:/img/mail.png</iconset>
    </property>
    <property name="text">
@@ -351,7 +360,7 @@
   </action>
   <action name="actionHomePage">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="../Media/icons.qrc">
      <normaloff>:/img/home.png</normaloff>:/img/home.png</iconset>
    </property>
    <property name="text">
@@ -361,7 +370,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="../Media/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

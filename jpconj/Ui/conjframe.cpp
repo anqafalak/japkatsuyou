@@ -18,6 +18,7 @@ conjFrame::~conjFrame()
 void conjFrame::Init()
 {
     QPalette palette;
+    hasContent = false;
     palette.setBrush(QPalette::Base, Qt::transparent);
     ui->basicConj->page()->setPalette(palette);
     ui->basicConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
@@ -27,6 +28,8 @@ void conjFrame::Init()
 
     ui->complexConj->page()->setPalette(palette);
     ui->complexConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
+
+    changeStyle(Style::getCurrentStyle());
 }
 
 void conjFrame::initExporter(Export exporter)
@@ -93,13 +96,13 @@ void conjFrame::doConj()
         return;
     }
 
-    //ui->verbType->setText(Msg::getVerbTypeDesc(type));
+    ui->verbType->setText(Msg::getVerbTypeDesc(type));
     complexConjugation(verb, type);
     basicConjugation(verb, type);
     hasContent = true;
     currentVerb = verb;
     verbType = type;
-    //setHTMLTranslation();
+    setHTMLTranslation();
 
    // ui->actionExportResult->setEnabled(true);
     //ui->actionPrint->setEnabled(true);
@@ -115,7 +118,7 @@ void conjFrame::doConj()
  */
 void conjFrame::basicConjugation(QString verb, EdictType type)
 {
-/*
+
     if (!hasContent){
         QString basicConjHTML = readHtmlFile(":/output/basicConj");
         QString standardConjHTML = readHtmlFile(":/output/standardConj");
@@ -142,7 +145,7 @@ void conjFrame::basicConjugation(QString verb, EdictType type)
         element_basic = ui->basicConj->page()->mainFrame()->findFirstElement("#basic_" + elementId);
         element_basic.setInnerXml(conj[0] + conj[1]);
 
-    }*/
+    }
     //! [Doxygen: basicFormsMap example]
 
 }
@@ -206,3 +209,136 @@ QString conjFrame::readHtmlFile(QString URL)
     return result;
 }
 
+
+/*!
+ * \brief jpconjmain::setHTMLDirection Set the direction of the webView body.
+ */
+void conjFrame::setHTMLTranslation()
+{
+
+    if (!hasContent)
+        return;
+
+    //ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
+
+    if (!languageChanged)
+        return;
+
+    QString jsScript = "var body = document.getElementsByTagName('body')[0]; \n";
+    QString dir = (rtl)?"rtl":"ltr";
+    jsScript += "body.dir = \"" + dir + "\";";
+
+    ui->standardConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    //it is better for standard conjugation to stay ltr
+    ui->basicConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    //qDebug()<< jsScript;
+
+    //Retranslate strings
+
+    {//standard
+        QWebElementCollection standardConjConst = ui->standardConj->page()->mainFrame()->findAllElements(".Const");
+
+        for(int i = 0; i < standardConjConst.count(); i++){
+            QWebElement element = standardConjConst.at(i);
+            QString elementName = element.attribute("name", "");
+            element.setInnerXml(Msg::getTranslatedString(elementName));
+        }
+    }
+
+    {//basic
+        QWebElementCollection basicConjConst = ui->basicConj->page()->mainFrame()->findAllElements(".Const");
+
+        for(int i = 0; i < basicConjConst.count(); i++){
+            QWebElement element = basicConjConst.at(i);
+            QString elementName = element.attribute("name", "");
+            element.setInnerXml(Msg::getTranslatedString(elementName));
+        }
+
+        QMap<KForm, QString> basicForms = Msg::basicFormsMap();
+        QWebElement element_basic;
+        foreach (KForm form, basicForms.keys()){
+            QString elementId = basicForms.value(form);
+            element_basic = ui->basicConj->page()->mainFrame()->findFirstElement("#_Name_" + elementId);
+            element_basic.setInnerXml(Msg::getBasicFormName(form));
+        }
+    }
+
+    //complexConj
+
+    QWebElementCollection complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Form\"]");
+    for(int i = 0; i < complexConjConst.count(); i++)
+        complexConjConst.at(i).setInnerXml(Msg::getTranslatedString("_Form"));
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Polite\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolitenessName(_Polite));
+        element.setAttribute("title", Msg::getVerbPolitenessDesc(_Polite));
+    }
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Plain\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolitenessName(_Plain));
+        element.setAttribute("title", Msg::getVerbPolitenessDesc(_Plain));
+    }
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Affirmative\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolarityName(_Affirmative));
+        element.setAttribute("title", Msg::getVerbPolarityDesc(_Affirmative));
+    }
+
+    complexConjConst = ui->complexConj->page()->mainFrame()->findAllElements("[name=\"_Negative\"]");
+    for(int i = 0; i < complexConjConst.count(); i++){
+        QWebElement element = complexConjConst.at(i);
+        element.setInnerXml(Msg::getVerbPolarityName(_Negative));
+        element.setAttribute("title", Msg::getVerbPolarityDesc(_Negative));
+    }
+
+    QMap<CForm, QString> complexForms = Msg::complexFormsMap();
+    QWebElement element_complex;
+    foreach (CForm form, complexForms.keys()){
+        QString elementId = complexForms.value(form);
+
+        element_complex = ui->complexConj->page()->mainFrame()->findFirstElement("#_Form_" + elementId);
+        element_complex.setInnerXml(Msg::getVerbFormName(form));
+        element_complex.setAttribute("title", Msg::getVerbFormDesc(form));
+    }
+    //qDebug()<< jsScript;
+    ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+
+    //qDebug()<< "Strings translation";
+    languageChanged = false;
+
+}
+
+
+/*!
+ * \brief jpconjmain::setCSS Set a user defined CSS to the QWebView
+ * \param webView The QWebView we want to set the content CSS.
+ * \param nameCSS The name of the CSS located in <dataFolder>/styles/ with the extension ".css"
+ */
+void conjFrame::setCSS(QWebView * webView, QString nameCSS)
+{
+    QString cssfile = "file:" + QDir(QString(dataFolder)).absolutePath() + "/styles/" + nameCSS;
+    QWebSettings * settings = webView->settings();
+    settings->setUserStyleSheetUrl(QUrl(cssfile));
+}
+
+
+void conjFrame::changeStyle(QString styleID)
+{
+    stylesheet = styleID + ".css";
+    //qDebug() << "style changed" << styleID;
+    setCSS(ui->basicConj, stylesheet);
+    setCSS(ui->standardConj, stylesheet);
+    setCSS(ui->complexConj, stylesheet);
+}
+
+void conjFrame::on_conjugateButton_clicked()
+{
+    doConj();
+}
