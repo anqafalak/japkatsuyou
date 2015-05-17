@@ -216,13 +216,12 @@ QString conjFrame::readHtmlFile(QString URL)
 void conjFrame::setHTMLTranslation()
 {
 
+    ui->retranslateUi(this);
+
     if (!hasContent)
         return;
 
     //ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
-
-    if (!languageChanged)
-        return;
 
     QString jsScript = "var body = document.getElementsByTagName('body')[0]; \n";
     QString dir = (rtl)?"rtl":"ltr";
@@ -311,7 +310,6 @@ void conjFrame::setHTMLTranslation()
     ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
 
     //qDebug()<< "Strings translation";
-    languageChanged = false;
 
 }
 
@@ -329,6 +327,30 @@ void conjFrame::setCSS(QWebView * webView, QString nameCSS)
 }
 
 
+void conjFrame::zoom(signed char sign)
+{
+    if (sign < 0){
+        ui->standardConj->setTextSizeMultiplier(qMax(0.5, ui->standardConj->textSizeMultiplier() - 1.0 / 10.0));
+        ui->basicConj->setTextSizeMultiplier(qMax(0.5, ui->basicConj->textSizeMultiplier() - 1.0 / 10.0));
+        ui->complexConj->setTextSizeMultiplier(qMax(0.5, ui->complexConj->textSizeMultiplier() - 1.0 / 10.0));
+
+        return;
+    }
+
+    if (sign > 0){
+        ui->standardConj->setTextSizeMultiplier(qMin(2.5,ui->standardConj->textSizeMultiplier() + 1.0 / 10.0));
+        ui->basicConj->setTextSizeMultiplier(qMin(2.5, ui->basicConj->textSizeMultiplier() + 1.0 / 10.0));
+        ui->complexConj->setTextSizeMultiplier(qMin(2.5, ui->complexConj->textSizeMultiplier() + 1.0 / 10.0));
+
+        return;
+    }
+
+    ui->standardConj->setTextSizeMultiplier(1.0);
+    ui->basicConj->setTextSizeMultiplier(1.0);
+    ui->complexConj->setTextSizeMultiplier(1.0);
+}
+
+
 void conjFrame::changeStyle(QString styleID)
 {
     stylesheet = styleID + ".css";
@@ -339,6 +361,12 @@ void conjFrame::changeStyle(QString styleID)
 }
 
 void conjFrame::on_conjugateButton_clicked()
+{
+    doConj();
+}
+
+
+void conjFrame::on_inputConjVerb_returnPressed()
 {
     doConj();
 }

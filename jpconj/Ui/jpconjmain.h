@@ -71,6 +71,7 @@ private:
     Ui::jpconjmain *ui;
     About     *winAbout;
     Preference *winPref;
+    conjFrame *conjfrm;
     bool rtl;
     bool hasContent;
     bool languageChanged;

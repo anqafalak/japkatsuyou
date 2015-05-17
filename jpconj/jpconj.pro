@@ -53,9 +53,9 @@ FORMS    += Ui/jpconjmain.ui \
             Ui/jpconjhelp.ui \
             Ui/conjframe.ui
 
-TRANSLATIONS    +=  i18n/jpconj_ar.ts\
-                    i18n/jpconj_ja.ts\
-                    i18n/jpconj_fr.ts
+TRANSLATIONS    +=  Media/i18n/jpconj_ar.ts\
+                    Media/i18n/jpconj_ja.ts\
+                    Media/i18n/jpconj_fr.ts
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
@@ -81,11 +81,11 @@ win32:RC_FILE = jpconj.rc
 #system(mkdir ../jpconj-bin)
 
 
-#system(cd i18n; lrelease *.ts)
-#system(mkdir ../jpconj-bin/i18n)
-#system(mv i18n/*.qm ../jpconj-bin/i18n)
-#system(cp i18n/*.ini ../jpconj-bin/i18n)
-#system(cd i18n; for i in *.ts; do j=${i$${LITERAL_HASH}jpconj}; cp /usr/share/qt4/translations/qt${j%ts}qm ../../jpconj-bin/i18n; done)
+system(cd Media/i18n; lrelease *.ts)
+system(mkdir ../jpconj-bin/i18n)
+system(mv Media/i18n/*.qm ../jpconj-bin/i18n)
+system(cp Media/i18n/*.ini ../jpconj-bin/i18n)
+system(cd Media/i18n; for i in *.ts; do j=${i$${LITERAL_HASH}jpconj}; cp /usr/share/qt4/translations/qt${j%ts}qm ../../jpconj-bin/i18n; done)
 
 #system(cd help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
 #system(mkdir ../jpconj-bin/help)

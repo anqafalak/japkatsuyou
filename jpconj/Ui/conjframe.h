@@ -24,16 +24,21 @@ public:
 
     void initExporter(Export exporter);
     void doConj();
+    void zoom(signed char sign);
+    void setHTMLTranslation();
+    void changeStyle(QString styleID);
+    void setCSS(QWebView * webView, QString nameCSS);
     
 private slots:
     void on_conjugateButton_clicked();
+    void on_inputConjVerb_returnPressed();
 
 private:
     Ui::conjFrame *ui;
 
     bool rtl;
     bool hasContent;
-    bool languageChanged;
+    //bool languageChanged;
     EdictType verbType;
     QString currentVerb;
     QString stylesheet;
@@ -41,9 +46,7 @@ private:
     void basicConjugation(QString verb, EdictType type);
     void complexConjugation(QString verb, EdictType type);
 
-    void setHTMLTranslation();
-    void changeStyle(QString styleID);
-    void setCSS(QWebView * webView, QString nameCSS);
+
 
     void Init();
     QString readHtmlFile(QString URL);
