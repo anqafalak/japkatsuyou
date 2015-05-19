@@ -32,7 +32,8 @@ SOURCES  += main.cpp\
             Ui/helpviewer.cpp \
             UiHelper/jpconjtray.cpp \
             UiHelper/style.cpp \
-            Ui/conjframe.cpp
+            Ui/conjframe.cpp \
+    UiHelper/funcframe.cpp
 
 HEADERS  += Ui/jpconjmain.h \
             Ui/about.h \
@@ -45,7 +46,8 @@ HEADERS  += Ui/jpconjmain.h \
             Ui/helpviewer.h \
             UiHelper/jpconjtray.h \
             UiHelper/style.h \
-            Ui/conjframe.h
+            Ui/conjframe.h \
+    UiHelper/funcframe.h
 
 FORMS    += Ui/jpconjmain.ui \
             Ui/about.ui \
@@ -76,9 +78,9 @@ win32:RC_FILE = jpconj.rc
 
 
 #Used when packaging only
-#DESTDIR = ../jpconj-bin
-#unix {
-#system(mkdir ../jpconj-bin)
+DESTDIR = ../jpconj-bin
+unix {
+system(mkdir ../jpconj-bin)
 
 
 system(cd Media/i18n; lrelease *.ts)
@@ -87,10 +89,16 @@ system(mv Media/i18n/*.qm ../jpconj-bin/i18n)
 system(cp Media/i18n/*.ini ../jpconj-bin/i18n)
 system(cd Media/i18n; for i in *.ts; do j=${i$${LITERAL_HASH}jpconj}; cp /usr/share/qt4/translations/qt${j%ts}qm ../../jpconj-bin/i18n; done)
 
-#system(cd help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
-#system(mkdir ../jpconj-bin/help)
-#system(mv help/*.qhc ../jpconj-bin/help)
-#system(mv help/*.qch ../jpconj-bin/help)
+system(cd Media/help; for file in *.qhcp; do qcollectiongenerator $file -o ${file%.qhcp}.qhc; done)
+system(mkdir ../jpconj-bin/help)
+system(mv Media/help/*.qhc ../jpconj-bin/help)
+system(mv Media/help/*.qch ../jpconj-bin/help)
+
+system(mkdir ../jpconj-bin/verbs)
+system(cp Media/verbs/* ../jpconj-bin/verbs)
+
+system(mkdir ../jpconj-bin/styles)
+system(cp Media/styles/* ../jpconj-bin/styles)
 
 #target.path = /usr/bin/
 #configfiles.files += img/icon.png
@@ -110,4 +118,4 @@ system(cd Media/i18n; for i in *.ts; do j=${i$${LITERAL_HASH}jpconj}; cp /usr/sh
 #INSTALLS += docfiles
 #INSTALLS += manfiles
 #INSTALLS += shortcutfiles
-#}
+}

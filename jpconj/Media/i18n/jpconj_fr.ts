@@ -30,6 +30,40 @@
     </message>
 </context>
 <context>
+    <name>ConjFrame</name>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="77"/>
+        <source>Conjugate</source>
+        <translation>Conjuguer</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="122"/>
+        <source>Standard Conjugation</source>
+        <translation>Conjugaison standard</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="142"/>
+        <source>Basic Conjugation</source>
+        <translation>Conjugaison de base</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="152"/>
+        <location filename="../../Ui/conjframe.ui" line="186"/>
+        <source>about:blank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="173"/>
+        <source>Complex Conjugation</source>
+        <translation>Conjugaison complexe</translation>
+    </message>
+</context>
+<context>
     <name>ExportResult</name>
     <message>
         <location filename="../../UiHelper/msg.h" line="60"/>
@@ -62,7 +96,7 @@
     <message>
         <location filename="../../Ui/helpviewer.cpp" line="203"/>
         <source>Open Link in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le lien dans une neauvau onglet </translation>
     </message>
 </context>
 <context>
@@ -85,7 +119,7 @@
     <message>
         <location filename="../../Ui/preference.ui" line="111"/>
         <source>Tables style</source>
-        <translation type="unfinished">Style de tables</translation>
+        <translation>Style de tables</translation>
     </message>
     <message>
         <location filename="../../Ui/preference.ui" line="130"/>
@@ -149,35 +183,24 @@
 <context>
     <name>conjFrame</name>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="14"/>
-        <source>Frame</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../Ui/conjframe.ui" line="68"/>
         <source>Conjugate</source>
-        <translation>Conjuguer</translation>
+        <translation type="obsolete">Conjuguer</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="113"/>
         <source>Standard Conjugation</source>
-        <translation>Conjugaison standarde</translation>
+        <translation type="obsolete">Conjugaison standarde</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="133"/>
         <source>Basic Conjugation</source>
-        <translation>Conjugaison de base</translation>
+        <translation type="obsolete">Conjugaison de base</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="143"/>
-        <location filename="../../Ui/conjframe.ui" line="177"/>
         <source>about:blank</source>
-        <translation>A propos ...</translation>
+        <translation type="obsolete">A propos ...</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="164"/>
         <source>Complex Conjugation</source>
-        <translation>Conjugaison complexe</translation>
+        <translation type="obsolete">Conjugaison complexe</translation>
     </message>
 </context>
 <context>
@@ -377,8 +400,8 @@
         <translation>Contenu de l&apos;aide</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.cpp" line="102"/>
-        <location filename="../../Ui/jpconjmain.cpp" line="300"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="101"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="299"/>
         <source>Show</source>
         <translation>Montrer</translation>
     </message>

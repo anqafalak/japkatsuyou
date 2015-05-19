@@ -30,6 +30,40 @@
     </message>
 </context>
 <context>
+    <name>ConjFrame</name>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="77"/>
+        <source>Conjugate</source>
+        <translation>活用</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="122"/>
+        <source>Standard Conjugation</source>
+        <translation>国語動詞活用</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="142"/>
+        <source>Basic Conjugation</source>
+        <translation>基本的な活用</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="152"/>
+        <location filename="../../Ui/conjframe.ui" line="186"/>
+        <source>about:blank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="173"/>
+        <source>Complex Conjugation</source>
+        <translation>複合の動詞活用</translation>
+    </message>
+</context>
+<context>
     <name>ExportResult</name>
     <message>
         <location filename="../../UiHelper/msg.h" line="60"/>
@@ -62,7 +96,7 @@
     <message>
         <location filename="../../Ui/helpviewer.cpp" line="203"/>
         <source>Open Link in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>リンクを新しいタブで開く</translation>
     </message>
 </context>
 <context>
@@ -149,35 +183,24 @@
 <context>
     <name>conjFrame</name>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="14"/>
-        <source>Frame</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../Ui/conjframe.ui" line="68"/>
         <source>Conjugate</source>
-        <translation>活用</translation>
+        <translation type="obsolete">活用</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="113"/>
         <source>Standard Conjugation</source>
-        <translation>国語動詞活用</translation>
+        <translation type="obsolete">国語動詞活用</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="133"/>
         <source>Basic Conjugation</source>
-        <translation>基本的な活用</translation>
+        <translation type="obsolete">基本的な活用</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="143"/>
-        <location filename="../../Ui/conjframe.ui" line="177"/>
         <source>about:blank</source>
-        <translation>ソフトについて...</translation>
+        <translation type="obsolete">ソフトについて...</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="164"/>
         <source>Complex Conjugation</source>
-        <translation>複合の動詞活用</translation>
+        <translation type="obsolete">複合の動詞活用</translation>
     </message>
 </context>
 <context>
@@ -377,8 +400,8 @@
         <translation>ヘルプの内容</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.cpp" line="102"/>
-        <location filename="../../Ui/jpconjmain.cpp" line="300"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="101"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="299"/>
         <source>Show</source>
         <translation>表示</translation>
     </message>

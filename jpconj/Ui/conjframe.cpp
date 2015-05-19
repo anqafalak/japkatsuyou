@@ -1,24 +1,25 @@
 #include "conjframe.h"
 #include "ui_conjframe.h"
 
-conjFrame::conjFrame(QWidget *parent) :
-    QFrame(parent),
-    ui(new Ui::conjFrame)
+ConjFrame::ConjFrame(QWidget *parent) :
+    FuncFrame(parent),
+    ui(new Ui::ConjFrame)
 {
-    ui->setupUi(this);
-    Init();
+    initialize();
 }
 
-conjFrame::~conjFrame()
+ConjFrame::~ConjFrame()
 {
     delete ui;
 }
 
 
-void conjFrame::Init()
+void ConjFrame::initUI()
 {
+    ui->setupUi(this);
     QPalette palette;
-    hasContent = false;
+
+    //hasContent = false;
     palette.setBrush(QPalette::Base, Qt::transparent);
     ui->basicConj->page()->setPalette(palette);
     ui->basicConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
@@ -32,7 +33,13 @@ void conjFrame::Init()
     changeStyle(Style::getCurrentStyle());
 }
 
-void conjFrame::initExporter(Export exporter)
+
+void ConjFrame::initExporter()
+{
+
+}
+
+void ConjFrame::initExporter(Export exporter)
 {/*
     exporter.setRTL(rtl);
     exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
@@ -61,15 +68,15 @@ void conjFrame::initExporter(Export exporter)
 
 
 /*!
- * \brief conjFrame::doConj This function is used to show different conjugation forms
+ * \brief ConjFrame::doConj This function is used to show different conjugation forms
  *
  * This function search for the existance of the verb, using Edict2 module.
  * Then, it calls for:
- * - conjFrame::basicConjugation To show the standard and basic conjugation forms.
- * - conjFrame::complexConjugation To show the complex conjugation forms.
+ * - ConjFrame::basicConjugation To show the standard and basic conjugation forms.
+ * - ConjFrame::complexConjugation To show the complex conjugation forms.
  */
 
-void conjFrame::doConj()
+void ConjFrame::doConj()
 {
 
     QString verb = ui->inputConjVerb->text();
@@ -102,7 +109,7 @@ void conjFrame::doConj()
     hasContent = true;
     currentVerb = verb;
     verbType = type;
-    setHTMLTranslation();
+    refreshLanguage(rtl);
 
    // ui->actionExportResult->setEnabled(true);
     //ui->actionPrint->setEnabled(true);
@@ -116,7 +123,7 @@ void conjFrame::doConj()
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
  * \param type The Edict2 type of the verb (See: VerbType::EdictType)
  */
-void conjFrame::basicConjugation(QString verb, EdictType type)
+void ConjFrame::basicConjugation(QString verb, EdictType type)
 {
 
     if (!hasContent){
@@ -157,7 +164,7 @@ void conjFrame::basicConjugation(QString verb, EdictType type)
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
  * \param type The Edict2 type of the verb (See: VerbType::EdictType)
  */
-void conjFrame::complexConjugation(QString verb, EdictType type)
+void ConjFrame::complexConjugation(QString verb, EdictType type)
 {
     if (!hasContent){
         QString complexConjHTML = readHtmlFile(":/output/complexConj");
@@ -194,7 +201,7 @@ void conjFrame::complexConjugation(QString verb, EdictType type)
  * \param URL URL of the HTML file, we want to read.
  * \return A QString which is the content of this HTML file.
  */
-QString conjFrame::readHtmlFile(QString URL)
+QString ConjFrame::readHtmlFile(QString URL)
 {
     QString result="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" /><body>";
     QFile HtmlFile(URL);
@@ -210,18 +217,18 @@ QString conjFrame::readHtmlFile(QString URL)
 }
 
 
-/*!
- * \brief jpconjmain::setHTMLDirection Set the direction of the webView body.
- */
-void conjFrame::setHTMLTranslation()
+
+void ConjFrame::refreshLanguage(bool rtl)
 {
+
+    this->rtl = rtl;
 
     ui->retranslateUi(this);
 
     if (!hasContent)
         return;
 
-    //ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
+    ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
 
     QString jsScript = "var body = document.getElementsByTagName('body')[0]; \n";
     QString dir = (rtl)?"rtl":"ltr";
@@ -314,20 +321,8 @@ void conjFrame::setHTMLTranslation()
 }
 
 
-/*!
- * \brief jpconjmain::setCSS Set a user defined CSS to the QWebView
- * \param webView The QWebView we want to set the content CSS.
- * \param nameCSS The name of the CSS located in <dataFolder>/styles/ with the extension ".css"
- */
-void conjFrame::setCSS(QWebView * webView, QString nameCSS)
-{
-    QString cssfile = "file:" + QDir(QString(dataFolder)).absolutePath() + "/styles/" + nameCSS;
-    QWebSettings * settings = webView->settings();
-    settings->setUserStyleSheetUrl(QUrl(cssfile));
-}
 
-
-void conjFrame::zoom(signed char sign)
+void ConjFrame::zoom(signed char sign)
 {
     if (sign < 0){
         ui->standardConj->setTextSizeMultiplier(qMax(0.5, ui->standardConj->textSizeMultiplier() - 1.0 / 10.0));
@@ -351,7 +346,7 @@ void conjFrame::zoom(signed char sign)
 }
 
 
-void conjFrame::changeStyle(QString styleID)
+void ConjFrame::changeStyle(QString styleID)
 {
     stylesheet = styleID + ".css";
     //qDebug() << "style changed" << styleID;
@@ -360,13 +355,13 @@ void conjFrame::changeStyle(QString styleID)
     setCSS(ui->complexConj, stylesheet);
 }
 
-void conjFrame::on_conjugateButton_clicked()
+void ConjFrame::on_conjugateButton_clicked()
 {
     doConj();
 }
 
 
-void conjFrame::on_inputConjVerb_returnPressed()
+void ConjFrame::on_inputConjVerb_returnPressed()
 {
     doConj();
 }

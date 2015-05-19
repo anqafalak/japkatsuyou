@@ -73,9 +73,8 @@ jpconjmain::~jpconjmain()
 void jpconjmain::doInit()
 {
 
-    conjfrm = new conjFrame(this);
-    ui->formLayout->addWidget(conjfrm);
-    rtl = false;
+    workfrm = new ConjFrame(this);
+    ui->formLayout->addWidget(workfrm);
     hasContent = false;
     languageChanged = true;
     verbType = _v0;
@@ -83,7 +82,7 @@ void jpconjmain::doInit()
 
     //qDebug()<< QString(VERSION);
     Language::loadTranslations();
-    rtl = Language::mainWindowDirection(this);
+    bool rtl = Language::mainWindowDirection(this);
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->zoomTool->toggleViewAction());
@@ -232,7 +231,7 @@ void jpconjmain::openHelp()
 
 void jpconjmain::zoom(signed char sign)
 {
-    conjfrm->zoom(sign);
+    workfrm->zoom(sign);
 
 }
 
@@ -256,13 +255,13 @@ void jpconjmain::setCSS(QWebView * webView, QString nameCSS)
 /*!
  * \brief jpconjmain::setHTMLDirection Set the direction of the webView body.
  */
-void jpconjmain::setHTMLTranslation()
+void jpconjmain::setHTMLTranslation(bool rtl)
 {
 
     if (!languageChanged)
         return;
 
-    conjfrm->setHTMLTranslation();
+    workfrm->refreshLanguage(rtl);
 
     languageChanged = false;
 }
@@ -294,9 +293,9 @@ void jpconjmain::changeEvent(QEvent* event)
     {
         //Msg::updateMsg();
         ui->retranslateUi(this);
-        rtl=Language::mainWindowDirection(this);
+        bool rtl=Language::mainWindowDirection(this);
         languageChanged = true;
-        setHTMLTranslation();
+        setHTMLTranslation(rtl);
         actionShow->setText(tr("Show"));
         //qDebug()<< "changed";
     }
@@ -320,10 +319,7 @@ void jpconjmain::closeEvent(QCloseEvent *event)
 void jpconjmain::changeStyle(QString styleID)
 {
     stylesheet = styleID + ".css";
-    //qDebug() << "style changed" << styleID;
-    /*setCSS(ui->basicConj, stylesheet);
-    setCSS(ui->standardConj, stylesheet);
-    setCSS(ui->complexConj, stylesheet);*/
+    workfrm->changeStyle(styleID);
 }
 
 void jpconjmain::on_actionClose_triggered()

@@ -71,8 +71,7 @@ private:
     Ui::jpconjmain *ui;
     About     *winAbout;
     Preference *winPref;
-    conjFrame *conjfrm;
-    bool rtl;
+    FuncFrame *workfrm;
     bool hasContent;
     bool languageChanged;
     EdictType verbType;
@@ -96,7 +95,7 @@ private:
 
     //HTML-related functions
     void setCSS(QWebView * webView, QString nameCSS);
-    void setHTMLTranslation ();
+    void setHTMLTranslation (bool rtl);
 
 protected:
     void changeEvent(QEvent* event);
