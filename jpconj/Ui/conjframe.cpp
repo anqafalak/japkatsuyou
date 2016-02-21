@@ -34,35 +34,29 @@ void ConjFrame::initUI()
 }
 
 
-void ConjFrame::initExporter()
+void ConjFrame::initExporter(Export *exporter)
 {
-
-}
-
-void ConjFrame::initExporter(Export exporter)
-{/*
-    exporter.setRTL(rtl);
-    exporter.addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
-    exporter.addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
+    exporter->setRTL(rtl);
+    exporter->addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
+    exporter->addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
     if(Export::getConfigExportPart("standard")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
+        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
         QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
-        exporter.addContent(data);
+        exporter->addContent(data);
     }
     if(Export::getConfigExportPart("basic")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
+        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
         QString data = ui->basicConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
-        exporter.addContent(data);
+        exporter->addContent(data);
     }
     if(Export::getConfigExportPart("complex")){
-        exporter.addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
+        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
         QString data = ui->complexConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
-        exporter.addContent(data);
+        exporter->addContent(data);
     }
 
     if(Export::getConfigExportPart("styled"))
-        exporter.setStyle(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
-*/
+        exporter->setStyle(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
 }
 
 
@@ -92,8 +86,7 @@ void ConjFrame::doConj()
 
     if (type < 1){
         ui->verbType->setText(Msg::getVerbTypeDesc(type));
-        //ui->actionExportResult->setEnabled(false);
-        //ui->actionPrint->setEnabled(false);
+        close();
         currentVerb = "";
         hasContent = false;
         ui->standardConj->setHtml("");
@@ -111,8 +104,7 @@ void ConjFrame::doConj()
     verbType = type;
     refreshLanguage(rtl);
 
-   // ui->actionExportResult->setEnabled(true);
-    //ui->actionPrint->setEnabled(true);
+    open();
 }
 
 
@@ -354,6 +346,7 @@ void ConjFrame::changeStyle(QString styleID)
     setCSS(ui->standardConj, stylesheet);
     setCSS(ui->complexConj, stylesheet);
 }
+
 
 void ConjFrame::on_conjugateButton_clicked()
 {

@@ -5,6 +5,8 @@
 #include <QWebView>
 #include <QDir>
 
+#include "UiHelper/export.h"
+
 class FuncFrame: public QFrame
 {
 
@@ -15,6 +17,7 @@ public:
     virtual void changeStyle(QString styleID) = 0;
     virtual void zoom(signed char sign) = 0;
     virtual void refreshLanguage(bool rtl) = 0;
+    virtual void initExporter(Export * exporter) = 0;
 
 protected:
 
@@ -27,7 +30,10 @@ protected:
     void setCSS(QWebView * webView, QString nameCSS);
 
     virtual void initUI() = 0;
-    virtual void initExporter() = 0;
+
+signals:
+    void close();
+    void open();
 
 };
 

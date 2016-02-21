@@ -82,7 +82,6 @@ private:
     QAction *actionShow;
 
     void doInit();
-    Export initExporter();
 
     //Functions related to actions slots
     void openAbout();
@@ -103,6 +102,9 @@ protected:
 
 private slots:
     void changeStyle(QString styleID);
+
+    void workfrmOpen();
+    void workfrmClose();
 
     void on_actionClose_triggered();
     void on_actionAbout_triggered();

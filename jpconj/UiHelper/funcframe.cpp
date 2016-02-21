@@ -9,7 +9,6 @@ FuncFrame::FuncFrame(QWidget *parent) :
 void FuncFrame::initialize()
 {
     initUI();
-    initExporter();
 }
 
 

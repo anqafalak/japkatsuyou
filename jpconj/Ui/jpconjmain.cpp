@@ -82,7 +82,7 @@ void jpconjmain::doInit()
 
     //qDebug()<< QString(VERSION);
     Language::loadTranslations();
-    bool rtl = Language::mainWindowDirection(this);
+    //bool rtl = Language::mainWindowDirection(this);
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->zoomTool->toggleViewAction());
@@ -94,6 +94,8 @@ void jpconjmain::doInit()
     Style::loadStyles();
     //connect(style, SIGNAL(styleChanged(QString)), this, SLOT(changeStyle(QString)));
 
+    connect(workfrm, SIGNAL(open()), this, SLOT(workfrmOpen()));
+    connect(workfrm, SIGNAL(close()), this, SLOT(workfrmClose()));
 
     //tray Icon
     trayIconSys = new JpconjTray(this);
@@ -105,9 +107,6 @@ void jpconjmain::doInit()
     trayIconSys->addAction(actionShow);
     trayIconSys->addSeparator();
 }
-
-
-
 
 
 
@@ -145,7 +144,7 @@ void jpconjmain::openPref()
  */
 void jpconjmain::doExport()
 {
-/*
+
     QHash<QString, QString> extensions = Msg::getExportExtensions();
 
     QStringList filters;
@@ -183,38 +182,42 @@ void jpconjmain::doExport()
             return;
     }
 
-    Export exporter = initExporter();
+    Export * exporter = new Export();
+    workfrm->initExporter(exporter);
 
     if (filename.endsWith(".pdf")){
         //exporter.exportPdf(filename);
-        exporter.exportPdf(filename);
+        exporter->exportPdf(filename);
         return;
     }
 
     if (filename.endsWith(".odt")){
-        exporter.exportOdf(filename);
+        exporter->exportOdf(filename);
         return;
     }
 
     if (filename.endsWith(".htm")){
-        exporter.exportHtml(filename);
-    }*/
+        exporter->exportHtml(filename);
+    }
 }
 
 
 
 void jpconjmain::doPrint()
 {
-    /*QPrinter printer;
+    if (workfrm == NULL)
+        return;
+
+    QPrinter printer;
 
     QPrintDialog *dialog = new QPrintDialog(&printer, this);
     //dialog->setWindowTitle(tr("Print Document"));
     if (dialog->exec() != QDialog::Accepted)
         return;
 
-    Export exporter = initExporter();
-
-    exporter.print(&printer);*/
+    Export * exporter = new Export();
+    workfrm->initExporter(exporter);
+    exporter->print(&printer);
 }
 
 
@@ -322,6 +325,18 @@ void jpconjmain::changeStyle(QString styleID)
     workfrm->changeStyle(styleID);
 }
 
+void jpconjmain::workfrmOpen()
+{
+    ui->actionExportResult->setEnabled(true);
+    ui->actionPrint->setEnabled(true);
+}
+
+void jpconjmain::workfrmClose()
+{
+    ui->actionExportResult->setEnabled(false);
+    ui->actionPrint->setEnabled(false);
+}
+
 void jpconjmain::on_actionClose_triggered()
 {
     qApp->quit();
@@ -347,12 +362,12 @@ void jpconjmain::on_actionHelpContent_triggered()
 
 void jpconjmain::on_actionExportResult_triggered()
 {
-    //doExport();
+    doExport();
 }
 
 void jpconjmain::on_actionPrint_triggered()
 {
-    //doPrint();
+    doPrint();
 }
 
 void jpconjmain::on_actionZoomIn_triggered()

@@ -23,16 +23,15 @@ public:
     explicit ConjFrame(QWidget *parent = 0);
     ~ConjFrame();
 
-    void initExporter(Export exporter);
     void doConj();
     virtual void zoom(signed char sign);
     virtual void refreshLanguage(bool rtl);
     virtual void changeStyle(QString styleID);
+    virtual void initExporter(Export  * exporter);
 
 
 protected:
     virtual void initUI();
-    virtual void initExporter();
     
 private slots:
     void on_conjugateButton_clicked();
@@ -50,6 +49,10 @@ private:
     void complexConjugation(QString verb, EdictType type);
 
     QString readHtmlFile(QString URL);
+
+signals:
+    void close();
+    void open();
 };
 
 #endif // CONJFRAME_H
