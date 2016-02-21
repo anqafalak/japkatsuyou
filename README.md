@@ -43,7 +43,7 @@ Check the [Authors](./Authors.rst) list
 License:
 --------
 
-The JapKatsuyou project is under [GPL v3](./LICENSE) license  
+The JapKatsuyou project is under [Apache v. 2.0](./LICENSE) license  
 
 
 -------------
