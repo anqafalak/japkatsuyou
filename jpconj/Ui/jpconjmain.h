@@ -26,7 +26,7 @@
 
 #include "about.h"
 #include "conjframe.h"
-#include "Conj/edict2.h"
+#include "Func/edict2.h"
 #include "UiHelper/export.h"
 #include "jpconjhelp.h"
 #include "UiHelper/jpconjtray.h"

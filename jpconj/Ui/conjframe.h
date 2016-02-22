@@ -24,7 +24,7 @@
 #define CONJFRAME_H
 
 #include "UiHelper/export.h"
-#include "Conj/edict2.h"
+#include "Func/edict2.h"
 #include "UiHelper/msg.h"
 #include "UiHelper/funcframe.h"
 #include "Ui/preference.h"

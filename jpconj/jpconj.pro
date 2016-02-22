@@ -24,7 +24,7 @@ DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj/
 SOURCES  += main.cpp\
             Ui/jpconjmain.cpp \
             Ui/about.cpp \
-            Conj/edict2.cpp \
+            Func/edict2.cpp \
             Ui/preference.cpp \
             UiHelper/language.cpp \
             UiHelper/export.cpp \
@@ -33,11 +33,12 @@ SOURCES  += main.cpp\
             UiHelper/jpconjtray.cpp \
             UiHelper/style.cpp \
             Ui/conjframe.cpp \
-    UiHelper/funcframe.cpp
+    UiHelper/funcframe.cpp \
+    Func/jtrans.cpp
 
 HEADERS  += Ui/jpconjmain.h \
             Ui/about.h \
-            Conj/edict2.h \
+            Func/edict2.h \
             Ui/preference.h \
             UiHelper/msg.h \
             UiHelper/language.h \
@@ -47,7 +48,8 @@ HEADERS  += Ui/jpconjmain.h \
             UiHelper/jpconjtray.h \
             UiHelper/style.h \
             Ui/conjframe.h \
-    UiHelper/funcframe.h
+    UiHelper/funcframe.h \
+    Func/jtrans.h
 
 FORMS    += Ui/jpconjmain.ui \
             Ui/about.ui \
