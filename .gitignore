@@ -29,3 +29,5 @@ libjpconj-bin/
 #Linux system
 
 .directory
+jpconj/Media/DB/*.db
+jpconj/Media/img/*.png
