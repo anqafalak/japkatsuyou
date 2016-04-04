@@ -11,6 +11,9 @@ class JTrans
 public:
     JTrans();
     static QString hiragana2romaji(QString hiragana);
+
+private:
+    static const QString romaji[];
 };
 
 #endif // JTRANS_H
