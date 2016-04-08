@@ -101,6 +101,9 @@
        <height>30</height>
       </size>
      </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -109,8 +112,32 @@
    <item>
     <widget class="QTabWidget" name="ConjgTab">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
+     <widget class="QWidget" name="verbInfoTab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="title">
+       <string>Information</string>
+      </attribute>
+      <widget class="QWebView" name="verbInfo" native="true">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>18</y>
+         <width>751</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="accessibleName">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </widget>
      <widget class="QWidget" name="standardConjTab">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">

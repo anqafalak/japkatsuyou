@@ -43,6 +43,10 @@ void ConjFrame::initUI()
 
     //hasContent = false;
     palette.setBrush(QPalette::Base, Qt::transparent);
+
+    ui->verbInfo->page()->setPalette(palette);
+    ui->verbInfo->setAttribute(Qt::WA_OpaquePaintEvent, false);
+
     ui->basicConj->page()->setPalette(palette);
     ui->basicConj->setAttribute(Qt::WA_OpaquePaintEvent, false);
 
@@ -111,6 +115,7 @@ void ConjFrame::doConj()
         close();
         currentVerb = "";
         hasContent = false;
+        ui->verbInfo->setHtml("");
         ui->standardConj->setHtml("");
         ui->basicConj->setHtml("");
         ui->complexConj->setHtml("");
@@ -121,6 +126,7 @@ void ConjFrame::doConj()
     ui->verbType->setText(Msg::getVerbTypeDesc(type));
     complexConjugation(verb, type);
     basicConjugation(verb, type);
+    verbInformation(verb, type);
     hasContent = true;
     currentVerb = verb;
     verbType = type;
@@ -208,6 +214,30 @@ void ConjFrame::complexConjugation(QString verb, EdictType type)
 
     ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
 
+}
+
+void ConjFrame::verbInformation(QString verb, EdictType type)
+{
+    if (!hasContent){
+        QString verbInfoHTML = readHtmlFile(":/output/verbInfo");
+        ui->verbInfo->setHtml(verbInfoHTML);
+    }
+
+    QString jsScript="";
+
+    jsScript += "document.getElementById(\"_Verb\").innerHTML = \"";
+    jsScript += Msg::getTranslatedString("_Verb") + "\";\n";
+
+    jsScript += "document.getElementById(\"verb\").innerHTML = \"";
+    jsScript += verb + "\";\n";
+
+    jsScript += "document.getElementById(\"_Type\").innerHTML = \"";
+    jsScript += Msg::getTranslatedString("_Type") + "\";\n";
+
+    jsScript += "document.getElementById(\"type\").innerHTML = \"";
+    jsScript += Msg::getVerbTypeDesc(type) + "\";\n";
+
+    ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
 }
 
 /*!
@@ -367,6 +397,7 @@ void ConjFrame::changeStyle(QString styleID)
     setCSS(ui->basicConj, stylesheet);
     setCSS(ui->standardConj, stylesheet);
     setCSS(ui->complexConj, stylesheet);
+    setCSS(ui->verbInfo, stylesheet);
 }
 
 

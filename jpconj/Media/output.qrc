@@ -3,5 +3,6 @@
         <file>output/standardConj</file>
         <file>output/basicConj</file>
         <file>output/complexConj</file>
+        <file>output/verbInfo</file>
     </qresource>
 </RCC>

@@ -368,6 +368,9 @@ static QString NO_USE_FUNC getTranslatedString(QString elementId)
     if (elementId == "_Stem")
         return qApp->translate("conjugationStrings", "Stem");
 
+    if (elementId == "_Type")
+        return qApp->translate("conjugationStrings", "Type");
+
     if (elementId == "_Verb")
         return qApp->translate("conjugationStrings", "Verb");
 

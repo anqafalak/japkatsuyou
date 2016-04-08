@@ -69,6 +69,7 @@ private:
 
     void basicConjugation(QString verb, EdictType type);
     void complexConjugation(QString verb, EdictType type);
+    void verbInformation(QString verb, EdictType type);
 
     QString readHtmlFile(QString URL);
 
