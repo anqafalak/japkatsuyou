@@ -68,7 +68,7 @@ void Edict2::connect()
     if (!QSqlDatabase::contains("dbverbs"))
     {
         verbdb =  QSqlDatabase::addDatabase("QSQLITE","dbverbs");
-        verbdb.setDatabaseName(QString(dataFolder) + "verbs/edict2verbs.db" );
+        verbdb.setDatabaseName(QString(dataFolder) + "DB/edict2verbs.db" );
     }
     else
     {

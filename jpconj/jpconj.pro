@@ -16,7 +16,7 @@ TARGET = jpconj
 TEMPLATE = app
 
 
-VERSION = 1.0.1
+VERSION = 1.0.2
 DEFINES += VERSION=\\\"$$VERSION\\\"
 DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj/
 
@@ -96,8 +96,8 @@ system(mkdir ../jpconj-bin/help)
 system(mv Media/help/*.qhc ../jpconj-bin/help)
 system(mv Media/help/*.qch ../jpconj-bin/help)
 
-system(mkdir ../jpconj-bin/verbs)
-system(cp Media/verbs/* ../jpconj-bin/verbs)
+system(mkdir ../jpconj-bin/DB)
+system(cp Media/DB/* ../jpconj-bin/DB)
 
 system(mkdir ../jpconj-bin/styles)
 system(cp Media/styles/* ../jpconj-bin/styles)

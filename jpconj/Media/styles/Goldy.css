@@ -1,0 +1,33 @@
+/* 
+@Author: Abdelkrime Aries <kariminfo0@gmail.com>
+*/
+
+table.show {
+	border: 0px;
+	width: 100%;
+}
+
+.head, .head_even, .head_odd, .head_row1, .head_row3, .head_row2, .head_row4 {
+	font-weight: bold;
+	text-align:center;
+	margin: 5%;
+	height: 1.5em;
+	background: -webkit-linear-gradient(top, #d0a014 0%, #aaaaaa 30%, #ffffff 44%,#d0a014 100%);
+}
+
+.title_even, .title_odd {
+	font-weight: bold;
+	text-align:center;
+	margin: 5%;
+	height: 1.5em;
+	background: -webkit-linear-gradient(top, #d0a014 0%, #ffffff 44%, #aaaaaa 70%, #d0a014 100%);
+}
+
+.row1, .row3, .row2, .row4 {
+	margin: 5%;
+	height: 1.5em;
+	direction: ltr;
+	text-align:left;
+	background: -webkit-linear-gradient(top, #d0a014 0%,#ffffff 44%,#d0a014 100%);
+  
+}

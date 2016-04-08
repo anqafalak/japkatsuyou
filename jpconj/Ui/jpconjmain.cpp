@@ -80,7 +80,6 @@ void jpconjmain::doInit()
     currentVerb = "";
 
     //qDebug()<< QString(VERSION);
-    qDebug()<< QString("\343\202\240");
     Language::loadTranslations();
     //bool rtl = Language::mainWindowDirection(this);
 
