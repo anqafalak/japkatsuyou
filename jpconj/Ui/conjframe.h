@@ -66,7 +66,7 @@ private:
 
     //bool languageChanged;
     Edict2::JaVerb jaVerb;
-    QString currentVerb;
+    //QString currentVerb;
 
     void basicConjugation(Edict2::JaVerb javerb);
     void complexConjugation(Edict2::JaVerb javerb);

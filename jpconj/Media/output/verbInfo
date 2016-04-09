@@ -9,6 +9,9 @@
       <td></td>
     </tr>
     <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
       <td class="title_even" id="_Romaji"></td>
       <td class="row1 col_even" id="romaji"></td>
     </tr>

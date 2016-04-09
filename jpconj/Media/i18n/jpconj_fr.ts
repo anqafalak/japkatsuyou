@@ -24,7 +24,7 @@
         <translation>Remerciements</translation>
     </message>
     <message>
-        <location filename="../../Ui/about.cpp" line="76"/>
+        <location filename="../../Ui/about.cpp" line="75"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
@@ -42,23 +42,28 @@
         <translation>Conjuguer</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="122"/>
+        <location filename="../../Ui/conjframe.ui" line="109"/>
+        <source>Information</source>
+        <translation>Information</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/conjframe.ui" line="129"/>
         <source>Standard Conjugation</source>
         <translation>Conjugaison standard</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="142"/>
+        <location filename="../../Ui/conjframe.ui" line="149"/>
         <source>Basic Conjugation</source>
         <translation>Conjugaison de base</translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="152"/>
-        <location filename="../../Ui/conjframe.ui" line="186"/>
+        <location filename="../../Ui/conjframe.ui" line="159"/>
+        <location filename="../../Ui/conjframe.ui" line="193"/>
         <source>about:blank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Ui/conjframe.ui" line="173"/>
+        <location filename="../../Ui/conjframe.ui" line="180"/>
         <source>Complex Conjugation</source>
         <translation>Conjugaison complexe</translation>
     </message>
@@ -66,27 +71,27 @@
 <context>
     <name>ExportResult</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="60"/>
+        <location filename="../../UiHelper/msg.h" line="59"/>
         <source>Pdf file</source>
         <translation>Fichier Pdf</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="62"/>
+        <location filename="../../UiHelper/msg.h" line="61"/>
         <source>OpenDocument file</source>
         <translation>Fichier OpenDocument</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="64"/>
+        <location filename="../../UiHelper/msg.h" line="63"/>
         <source>HTML file</source>
         <translation>Fichier HTML</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="76"/>
+        <location filename="../../UiHelper/msg.h" line="75"/>
         <source>File already exists</source>
         <translation>Le fichier existe déja</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="78"/>
+        <location filename="../../UiHelper/msg.h" line="77"/>
         <source>This file exists, do you want to overwrite it?</source>
         <translation>Ce fichier existe, voulez vous l&apos;écraser?</translation>
     </message>
@@ -140,42 +145,42 @@
 <context>
     <name>basicFormName</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="415"/>
+        <location filename="../../UiHelper/msg.h" line="420"/>
         <source>Imperfective (general)</source>
         <translation>Inaccomplie (générale)</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="418"/>
+        <location filename="../../UiHelper/msg.h" line="423"/>
         <source>Hypothetical</source>
         <translation>Hypothétique</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="421"/>
+        <location filename="../../UiHelper/msg.h" line="426"/>
         <source>Imperative</source>
         <translation>Impérative</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="424"/>
+        <location filename="../../UiHelper/msg.h" line="429"/>
         <source>Conjunctive (other)</source>
         <translation>Conjonctive (autre)</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="427"/>
+        <location filename="../../UiHelper/msg.h" line="432"/>
         <source>Terminal</source>
         <translation>Terminal</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="430"/>
+        <location filename="../../UiHelper/msg.h" line="435"/>
         <source>Attributive</source>
         <translation>Attributive</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="433"/>
+        <location filename="../../UiHelper/msg.h" line="438"/>
         <source>Conjunctive (_i)</source>
         <translation>Conjonctive (_i)</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="436"/>
+        <location filename="../../UiHelper/msg.h" line="441"/>
         <source>Imperfective (volitional)</source>
         <translation>Inaccomplie (volontaire)</translation>
     </message>
@@ -206,32 +211,42 @@
 <context>
     <name>conjugationStrings</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="370"/>
+        <location filename="../../UiHelper/msg.h" line="369"/>
         <source>Stem</source>
         <translation>Radical</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="373"/>
+        <location filename="../../UiHelper/msg.h" line="372"/>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <location filename="../../UiHelper/msg.h" line="375"/>
+        <source>Romaji</source>
+        <translation>Romaji</translation>
+    </message>
+    <message>
+        <location filename="../../UiHelper/msg.h" line="378"/>
         <source>Verb</source>
         <translation>Verbe</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="376"/>
+        <location filename="../../UiHelper/msg.h" line="381"/>
         <source>Suffix</source>
         <translation>Suffixe</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="379"/>
+        <location filename="../../UiHelper/msg.h" line="384"/>
         <source>Words that come after</source>
         <translation>Les mots qui viennent après</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="382"/>
+        <location filename="../../UiHelper/msg.h" line="387"/>
         <source>Form name</source>
         <translation>Nom de la forme</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="385"/>
+        <location filename="../../UiHelper/msg.h" line="390"/>
         <source>Basic Conjugation</source>
         <translation>Conjugaison de base</translation>
     </message>
@@ -277,17 +292,17 @@
         <translation>JapKatsuyou: Conjugaison des Verbes Japonais</translation>
     </message>
     <message>
-        <location filename="../../Ui/preference.cpp" line="87"/>
+        <location filename="../../Ui/preference.cpp" line="86"/>
         <source>Standard Conjugation</source>
         <translation>Conjugaison standard</translation>
     </message>
     <message>
-        <location filename="../../Ui/preference.cpp" line="89"/>
+        <location filename="../../Ui/preference.cpp" line="88"/>
         <source>Basic Conjugation</source>
         <translation>Conjugaison de base</translation>
     </message>
     <message>
-        <location filename="../../Ui/preference.cpp" line="91"/>
+        <location filename="../../Ui/preference.cpp" line="90"/>
         <source>Complex Conjugation</source>
         <translation>Conjugaison complexe</translation>
     </message>
@@ -332,7 +347,7 @@
     <message>
         <location filename="../../Ui/jpconjmain.ui" line="190"/>
         <source>Examples</source>
-        <translation type="unfinished"></translation>
+        <translation>Exemples</translation>
     </message>
     <message>
         <location filename="../../Ui/jpconjmain.ui" line="226"/>
@@ -400,8 +415,8 @@
         <translation>Contenu de l&apos;aide</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.cpp" line="101"/>
-        <location filename="../../Ui/jpconjmain.cpp" line="299"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="102"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="301"/>
         <source>Show</source>
         <translation>Montrer</translation>
     </message>
@@ -409,67 +424,67 @@
 <context>
     <name>verbFormDesc</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="155"/>
+        <location filename="../../UiHelper/msg.h" line="154"/>
         <source>It&apos;s a form used for many purposes, like successive actions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="157"/>
+        <location filename="../../UiHelper/msg.h" line="156"/>
         <source>This is the present tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="159"/>
+        <location filename="../../UiHelper/msg.h" line="158"/>
         <source>This is the past tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="161"/>
+        <location filename="../../UiHelper/msg.h" line="160"/>
         <source>The provisional conditional form is used: - In conditionals where the emphasis rests more on the condition than the result;  - Expressing obligations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="163"/>
+        <location filename="../../UiHelper/msg.h" line="162"/>
         <source>It can be used in the same way as the provisional condition form. However, it implies more certainty about the condition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="165"/>
+        <location filename="../../UiHelper/msg.h" line="164"/>
         <source>The imperative form is used to give an order to someone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="167"/>
+        <location filename="../../UiHelper/msg.h" line="166"/>
         <source>In general, the volitional form expresses intention, eg. Let&apos;s... or Shall we...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="169"/>
+        <location filename="../../UiHelper/msg.h" line="168"/>
         <source>This is the present continuous tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="171"/>
+        <location filename="../../UiHelper/msg.h" line="170"/>
         <source>This is the past continuous tense.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="173"/>
+        <location filename="../../UiHelper/msg.h" line="172"/>
         <source>This is the passive voice of the verb.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="175"/>
+        <location filename="../../UiHelper/msg.h" line="174"/>
         <source>The causative is used for: - Making someone do something; - Letting someone do something.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="179"/>
+        <location filename="../../UiHelper/msg.h" line="178"/>
         <source>The potential is used to express that one has the ability to do something.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="177"/>
+        <location filename="../../UiHelper/msg.h" line="176"/>
         <source>It is used to express causation passively.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -477,67 +492,67 @@
 <context>
     <name>verbFormNames</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="116"/>
+        <location filename="../../UiHelper/msg.h" line="115"/>
         <source>Present</source>
         <translation>Présent</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="118"/>
+        <location filename="../../UiHelper/msg.h" line="117"/>
         <source>Past</source>
         <translation>Passé</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="120"/>
+        <location filename="../../UiHelper/msg.h" line="119"/>
         <source>Provisional Condition</source>
         <translation>Condition provisoire</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="124"/>
+        <location filename="../../UiHelper/msg.h" line="123"/>
         <source>Imperative</source>
         <translation>Impératif</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="114"/>
+        <location filename="../../UiHelper/msg.h" line="113"/>
         <source>Te form</source>
         <translation>Forme Te</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="122"/>
+        <location filename="../../UiHelper/msg.h" line="121"/>
         <source>Conditional</source>
         <translation>Conditionnel</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="126"/>
+        <location filename="../../UiHelper/msg.h" line="125"/>
         <source>Volitional</source>
         <translation>Volitional</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="128"/>
+        <location filename="../../UiHelper/msg.h" line="127"/>
         <source>Present Continuous</source>
         <translation>Présent continu</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="130"/>
+        <location filename="../../UiHelper/msg.h" line="129"/>
         <source>Past Continuous</source>
         <translation>Passé continu</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="132"/>
+        <location filename="../../UiHelper/msg.h" line="131"/>
         <source>Passive</source>
         <translation>Passive</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="134"/>
+        <location filename="../../UiHelper/msg.h" line="133"/>
         <source>Causative</source>
         <translation>Causatif</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="136"/>
+        <location filename="../../UiHelper/msg.h" line="135"/>
         <source>Causative Passive</source>
         <translation>Passif Causatif</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="138"/>
+        <location filename="../../UiHelper/msg.h" line="137"/>
         <source>Potential</source>
         <translation>Potentiel</translation>
     </message>
@@ -545,22 +560,22 @@
 <context>
     <name>verbPolarityDesc</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="304"/>
+        <location filename="../../UiHelper/msg.h" line="303"/>
         <source>Negative</source>
         <translation>Négatif</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="323"/>
+        <location filename="../../UiHelper/msg.h" line="322"/>
         <source>Form used in negative sentences.</source>
         <translation>Form utilisée dans les phrases négatives.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="306"/>
+        <location filename="../../UiHelper/msg.h" line="305"/>
         <source>Affirmative</source>
         <translation>Affirmatif</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="325"/>
+        <location filename="../../UiHelper/msg.h" line="324"/>
         <source>Form used in affirmative sentences.</source>
         <translation>Form utilisée dans les phrases affirmatives.</translation>
     </message>
@@ -568,22 +583,22 @@
 <context>
     <name>verbPolitenessDesc</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="266"/>
+        <location filename="../../UiHelper/msg.h" line="265"/>
         <source>Plain</source>
         <translation>Ordinaire</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="268"/>
+        <location filename="../../UiHelper/msg.h" line="267"/>
         <source>Polite</source>
         <translation>Polie</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="285"/>
+        <location filename="../../UiHelper/msg.h" line="284"/>
         <source>Plain form of a sentence; it is used with friends.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="287"/>
+        <location filename="../../UiHelper/msg.h" line="286"/>
         <source>Polite form of a sentence; it is used in official discussion.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -591,142 +606,142 @@
 <context>
     <name>verbTypeDesc</name>
     <message>
-        <location filename="../../UiHelper/msg.h" line="196"/>
+        <location filename="../../UiHelper/msg.h" line="195"/>
         <source>This verb doesn&apos;t exist in the database.</source>
         <translation>Ce verbe n&apos;existe pas dans la base de données. </translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="198"/>
+        <location filename="../../UiHelper/msg.h" line="197"/>
         <source>Ichidan verb.</source>
         <translation>verbe Ichidan.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="200"/>
+        <location filename="../../UiHelper/msg.h" line="199"/>
         <source>Nidan verb with &apos;u&apos; ending (archaic).</source>
         <translation>Verbe Nidan avec terminaison en &apos;u&apos; (archaïque).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="202"/>
+        <location filename="../../UiHelper/msg.h" line="201"/>
         <source>Yondan verb with &apos;hu/fu&apos; ending (archaic).</source>
         <translation>Verbe Yondan avec terminaison en &apos;hu/fu&apos; (archaïque).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="204"/>
+        <location filename="../../UiHelper/msg.h" line="203"/>
         <source>Yondan verb with &apos;ru&apos; ending (archaic).</source>
         <translation>Verbe Yodan avec terminaison en `ru&apos; (archaïque).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="206"/>
+        <location filename="../../UiHelper/msg.h" line="205"/>
         <source>Godan verb (not completely classified).</source>
         <translation>Verbe Godan (pas complètement classifié).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="208"/>
+        <location filename="../../UiHelper/msg.h" line="207"/>
         <source>Godan verb -aru special class.</source>
         <translation>Verbe Godan - classe spéciale -aru.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="210"/>
+        <location filename="../../UiHelper/msg.h" line="209"/>
         <source>Godan verb with &apos;bu&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;bu&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="212"/>
+        <location filename="../../UiHelper/msg.h" line="211"/>
         <source>Godan verb with &apos;gu&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;gu&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="214"/>
+        <location filename="../../UiHelper/msg.h" line="213"/>
         <source>Godan verb with &apos;ku&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;ku&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="216"/>
+        <location filename="../../UiHelper/msg.h" line="215"/>
         <source>Godan verb - iku/yuku special class.</source>
         <translation>Verbe Godan - classe spéciale Iku/Yuku.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="218"/>
+        <location filename="../../UiHelper/msg.h" line="217"/>
         <source>Godan verb with &apos;mu&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;mu&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="220"/>
+        <location filename="../../UiHelper/msg.h" line="219"/>
         <source>Godan verb with &apos;nu&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;nu&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="222"/>
+        <location filename="../../UiHelper/msg.h" line="221"/>
         <source>Godan verb with &apos;ru&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;ru&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="224"/>
+        <location filename="../../UiHelper/msg.h" line="223"/>
         <source>Godan verb with &apos;ru&apos; ending (irregular verb).</source>
         <translation>Verbe Godan avec terminaison en &apos;ru&apos; (verbe irrégulier).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="226"/>
+        <location filename="../../UiHelper/msg.h" line="225"/>
         <source>Godan verb with &apos;su&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;su&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="228"/>
+        <location filename="../../UiHelper/msg.h" line="227"/>
         <source>Godan verb with &apos;tsu&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;tsu&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="230"/>
+        <location filename="../../UiHelper/msg.h" line="229"/>
         <source>Godan verb with &apos;u&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;u&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="232"/>
+        <location filename="../../UiHelper/msg.h" line="231"/>
         <source>Godan verb with &apos;u&apos; ending (special class).</source>
         <translation>Verbe Godan avec terminaison en &apos;u&apos; (classe spéciale).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="234"/>
+        <location filename="../../UiHelper/msg.h" line="233"/>
         <source>Godan verb - uru old class verb (old form of Eru).</source>
         <translation>Verbe Godan - ancienne classe uru (ancienne forme de Eru).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="236"/>
+        <location filename="../../UiHelper/msg.h" line="235"/>
         <source>Godan verb with &apos;zu&apos; ending.</source>
         <translation>Verbe Godan avec terminaison en &apos;zu&apos;.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="238"/>
+        <location filename="../../UiHelper/msg.h" line="237"/>
         <source>Ichidan verb - zuru verb - (alternative form of -jiru verbs).</source>
         <translation>Verbe Ichidan - verbe zuru (forme alternative des verbes -jiru).</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="240"/>
+        <location filename="../../UiHelper/msg.h" line="239"/>
         <source>Kuru verb - special class.</source>
         <translation>Verbe Kuru - classe spéciale.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="242"/>
+        <location filename="../../UiHelper/msg.h" line="241"/>
         <source>Irregular nu verb.</source>
         <translation>Verbe nu irrégulier.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="244"/>
+        <location filename="../../UiHelper/msg.h" line="243"/>
         <source>Noun or participle which takes the aux. verb suru.</source>
         <translation>Nom ou participe prenant le verbe auxilaire Suru.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="246"/>
+        <location filename="../../UiHelper/msg.h" line="245"/>
         <source>Su verb - precursor to the modern suru.</source>
         <translation>Verbe su - précurseur du verbe &apos;Suru&apos; moderne.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="248"/>
+        <location filename="../../UiHelper/msg.h" line="247"/>
         <source>Suru verb - irregular.</source>
         <translation>Verbe Suru - irrégulier.</translation>
     </message>
     <message>
-        <location filename="../../UiHelper/msg.h" line="250"/>
+        <location filename="../../UiHelper/msg.h" line="249"/>
         <source>Suru verb - special class.</source>
         <translation>Verbe Suru - classe spéciale.</translation>
     </message>

@@ -63,7 +63,7 @@ void ConjFrame::initUI()
 void ConjFrame::initExporter(Export *exporter)
 {
     exporter->setRTL(rtl);
-    exporter->addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
+    exporter->addContent("<p><h1>" + jaVerb.kanji + "</h1></p><hr>\n");
     //TODO add verb info here
     //exporter->addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
     if(Export::getConfigExportPart("standard")){
@@ -102,7 +102,7 @@ void ConjFrame::doConj()
 
     QString verb = ui->inputConjVerb->text();
 
-    if (verb == currentVerb)
+    if (verb == jaVerb.kanji)
         return;
 
     Edict2 edict2;
@@ -115,7 +115,9 @@ void ConjFrame::doConj()
         //TODO show a message that the verb is not found
         //ui->verbType->setText(Msg::getVerbTypeDesc(type));
         close();
-        currentVerb = "";
+        javerb.kanji = "";
+        javerb.hiragana = "";
+        javerb.type = (EdictType) 0;
         hasContent = false;
         ui->verbInfo->setHtml("");
         ui->standardConj->setHtml("");
@@ -130,11 +132,8 @@ void ConjFrame::doConj()
     basicConjugation(javerb);
     verbInformation(javerb);
     hasContent = true;
-    currentVerb = verb;
     jaVerb = javerb;
     refreshLanguage(rtl);
-
-    qDebug() << "kanji:" << javerb.kanji << ", kana:" << javerb.hiragana << ", romaji:" << JTrans::hiragana2romaji(javerb.hiragana);
 
     open();
 }
@@ -301,9 +300,23 @@ void ConjFrame::refreshLanguage(bool rtl)
     //it is better for standard conjugation to stay ltr
     ui->basicConj->page()->mainFrame()->evaluateJavaScript(jsScript);
     ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
     //qDebug()<< jsScript;
 
     //Retranslate strings
+
+    {//Information
+        jsScript += "document.getElementById(\"_Verb\").innerHTML = \"";
+        jsScript += Msg::getTranslatedString("_Verb") + "\";\n";
+        jsScript += "document.getElementById(\"_Romaji\").innerHTML = \"";
+        jsScript += Msg::getTranslatedString("_Romaji") + "\";\n";
+        jsScript += "document.getElementById(\"_Type\").innerHTML = \"";
+        jsScript += Msg::getTranslatedString("_Type") + "\";\n";
+        ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
+        jsScript += "document.getElementById(\"type\").innerHTML = \"";
+        jsScript += Msg::getVerbTypeDesc(jaVerb.type) + "\";\n";
+        ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
+    }
 
     {//standard
         QWebElementCollection standardConjConst = ui->standardConj->page()->mainFrame()->findAllElements(".Const");
