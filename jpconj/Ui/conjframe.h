@@ -64,12 +64,12 @@ private:
 
 
     //bool languageChanged;
-    EdictType verbType;
+    Edict2::JaVerb jaVerb;
     QString currentVerb;
 
-    void basicConjugation(QString verb, EdictType type);
-    void complexConjugation(QString verb, EdictType type);
-    void verbInformation(QString verb, EdictType type);
+    void basicConjugation(Edict2::JaVerb javerb);
+    void complexConjugation(Edict2::JaVerb javerb);
+    void verbInformation(Edict2::JaVerb javerb);
 
     QString readHtmlFile(QString URL);
 

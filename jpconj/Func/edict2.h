@@ -34,9 +34,14 @@ class Edict2
 {
 
 public:
+    struct JaVerb {
+        QString kanji;
+        QString hiragana;
+        EdictType type;
+    };
     Edict2();
     ~Edict2();
-    EdictType find(QString verb);
+    JaVerb find(QString verb);
     void connect();
     void desconnect();
 

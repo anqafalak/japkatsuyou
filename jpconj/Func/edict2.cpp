@@ -98,9 +98,10 @@ void Edict2::desconnect()
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
  * \return The type of the verb if found (See: VerbType::EdictType)
  */
-EdictType Edict2::find(QString verb)
+Edict2::JaVerb Edict2::find(QString verb)
 {
-    int result= 0;
+    //int result= 0;
+    JaVerb result;
 
         if (verbdb.open()) {
             //qDebug() << "DB connected";
@@ -108,7 +109,18 @@ EdictType Edict2::find(QString verb)
             query.exec("SELECT * FROM tkanji WHERE kanji='" + verb + "';");
             QSqlRecord record = query.record();
             if (query.next()) {
-                result = query.value(record.indexOf("idtype")).toInt();
+                int type = query.value(record.indexOf("idtype")).toInt();
+                int id = query.value(record.indexOf("idkanji")).toInt();
+                //query.clear();
+                //query.finish();
+                result.kanji = verb;
+                result.type = (EdictType) type;
+                query.exec("SELECT * FROM tread,tkana WHERE idkanji=" + QString::number(id) + " AND tread.idkana=tkana.idkana;");
+                record = query.record();
+                if (query.next()){
+                    QString kana = query.value(record.indexOf("kana")).toString();
+                    result.hiragana = kana;
+                }
                 //qDebug() << "Verb kanji found" << result;
             }
             else
@@ -116,7 +128,16 @@ EdictType Edict2::find(QString verb)
                 query.exec("SELECT * FROM tkana WHERE kana='" + verb + "';");
                 record = query.record();
                 if (query.next()) {
-                    result = query.value(record.indexOf("idtype")).toInt();
+                    int type = query.value(record.indexOf("idtype")).toInt();
+                    int id = query.value(record.indexOf("idkana")).toInt();
+                    result.hiragana = verb;
+                    result.type = (EdictType) type;
+                    query.exec("SELECT * FROM tkanji, tread WHERE tread.idkana=" + QString::number(id) + " AND tread.idkanji=tkanji.idkanji;");
+                    record = query.record();
+                    if (query.next()){
+                        QString kanji = query.value(record.indexOf("kanji")).toString();
+                        result.kanji = kanji;
+                    }
                     //qDebug() << "Verb kana found" << result;
                 }
             }
@@ -127,6 +148,5 @@ EdictType Edict2::find(QString verb)
     //qDebug() << result;
     verbdb.close();
 
-    return (EdictType) result;
+    return result;
 }
-

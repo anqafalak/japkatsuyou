@@ -2,11 +2,11 @@
   <tbody>
     <tr>
       <td class="title_even" id="_Verb"></td>
-      <td class="row1 col_even" id="verb"></td>
+      <td></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Hiragana"></td>
-      <td class="row1 col_odd" id="hiragana"></td>
+      <td class="row1 col_even" id="furigana" style="height: 100%;text-align:center;"></td>
+      <td></td>
     </tr>
     <tr>
       <td class="title_even" id="_Romaji"></td>

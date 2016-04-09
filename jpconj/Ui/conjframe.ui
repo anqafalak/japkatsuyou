@@ -94,25 +94,9 @@
     </layout>
    </item>
    <item>
-    <widget class="QLineEdit" name="verbType">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="frame">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QTabWidget" name="ConjgTab">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="verbInfoTab">
       <property name="sizePolicy">
@@ -124,19 +108,15 @@
       <attribute name="title">
        <string>Information</string>
       </attribute>
-      <widget class="QWebView" name="verbInfo" native="true">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>18</y>
-         <width>751</width>
-         <height>241</height>
-        </rect>
-       </property>
-       <property name="accessibleName">
-        <string notr="true"/>
-       </property>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QWebView" name="verbInfo" native="true">
+         <property name="accessibleName">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="standardConjTab">
       <property name="sizePolicy">

@@ -64,7 +64,8 @@ void ConjFrame::initExporter(Export *exporter)
 {
     exporter->setRTL(rtl);
     exporter->addContent("<p><h1>" + currentVerb + "</h1></p><hr>\n");
-    exporter->addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
+    //TODO add verb info here
+    //exporter->addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
     if(Export::getConfigExportPart("standard")){
         exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
         QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
@@ -106,12 +107,13 @@ void ConjFrame::doConj()
 
     Edict2 edict2;
 
-    EdictType type = edict2.find(verb);
+    Edict2::JaVerb javerb = edict2.find(verb);
 
 
 
-    if (type < 1){
-        ui->verbType->setText(Msg::getVerbTypeDesc(type));
+    if (javerb.type < 1){
+        //TODO show a message that the verb is not found
+        //ui->verbType->setText(Msg::getVerbTypeDesc(type));
         close();
         currentVerb = "";
         hasContent = false;
@@ -123,14 +125,16 @@ void ConjFrame::doConj()
         return;
     }
 
-    ui->verbType->setText(Msg::getVerbTypeDesc(type));
-    complexConjugation(verb, type);
-    basicConjugation(verb, type);
-    verbInformation(verb, type);
+    //ui->verbType->setText(Msg::getVerbTypeDesc(type));
+    complexConjugation(javerb);
+    basicConjugation(javerb);
+    verbInformation(javerb);
     hasContent = true;
     currentVerb = verb;
-    verbType = type;
+    jaVerb = javerb;
     refreshLanguage(rtl);
+
+    qDebug() << "kanji:" << javerb.kanji << ", kana:" << javerb.hiragana;
 
     open();
 }
@@ -143,7 +147,7 @@ void ConjFrame::doConj()
  * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
  * \param type The Edict2 type of the verb (See: VerbType::EdictType)
  */
-void ConjFrame::basicConjugation(QString verb, EdictType type)
+void ConjFrame::basicConjugation(Edict2::JaVerb javerb)
 {
 
     if (!hasContent){
@@ -154,6 +158,8 @@ void ConjFrame::basicConjugation(QString verb, EdictType type)
         ui->basicConj->setHtml(basicConjHTML);
     }
 
+    QString verb = javerb.kanji;
+    EdictType type = javerb.type;
 
     //! [Doxygen: basicFormsMap example]
     QMap<KForm, QString> basicForms = Msg::basicFormsMap();
@@ -181,15 +187,18 @@ void ConjFrame::basicConjugation(QString verb, EdictType type)
 
 /*!
  * \brief jpconjmain::complexConjugation Used to show the complex conjugation forms.
- * \param verb The verb in dictionary form (u-form), eg. 食べる, 飲む, 行く, 来る, etc.
+ * \param verb The verb in dictionary form (u-form), eg. 食, 飲む, 行く, 来る, etc.
  * \param type The Edict2 type of the verb (See: VerbType::EdictType)
  */
-void ConjFrame::complexConjugation(QString verb, EdictType type)
+void ConjFrame::complexConjugation(Edict2::JaVerb javerb)
 {
     if (!hasContent){
         QString complexConjHTML = readHtmlFile(":/output/complexConj");
         ui->complexConj->setHtml(complexConjHTML);
     }
+
+    QString verb = javerb.kanji;
+    EdictType type = javerb.type;
 
     QString jsScript="";
     QMap<CForm, QString> complexForms = Msg::complexFormsMap();
@@ -216,20 +225,29 @@ void ConjFrame::complexConjugation(QString verb, EdictType type)
 
 }
 
-void ConjFrame::verbInformation(QString verb, EdictType type)
+void ConjFrame::verbInformation(Edict2::JaVerb javerb)
 {
     if (!hasContent){
         QString verbInfoHTML = readHtmlFile(":/output/verbInfo");
         ui->verbInfo->setHtml(verbInfoHTML);
     }
 
+    QString verb = javerb.kanji;
+    EdictType type = javerb.type;
+
     QString jsScript="";
 
     jsScript += "document.getElementById(\"_Verb\").innerHTML = \"";
     jsScript += Msg::getTranslatedString("_Verb") + "\";\n";
 
-    jsScript += "document.getElementById(\"verb\").innerHTML = \"";
-    jsScript += verb + "\";\n";
+    jsScript += "document.getElementById(\"furigana\").innerHTML = \"";
+    jsScript += "<ruby>" + verb + "<rt>" + javerb.hiragana + "</rt></ruby>\";\n";
+
+    jsScript += "document.getElementById(\"_Romaji\").innerHTML = \"";
+    jsScript += Msg::getTranslatedString("_Romaji") + "\";\n";
+
+    jsScript += "document.getElementById(\"romaji\").innerHTML = \"";
+    jsScript += "\";\n"; //TODO add romaji function call
 
     jsScript += "document.getElementById(\"_Type\").innerHTML = \"";
     jsScript += Msg::getTranslatedString("_Type") + "\";\n";
@@ -272,7 +290,8 @@ void ConjFrame::refreshLanguage(bool rtl)
     if (!hasContent)
         return;
 
-    ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
+    //TODO Refresh verbInfo instead
+    //ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
 
     QString jsScript = "var body = document.getElementsByTagName('body')[0]; \n";
     QString dir = (rtl)?"rtl":"ltr";
