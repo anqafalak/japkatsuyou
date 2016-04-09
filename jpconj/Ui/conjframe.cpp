@@ -134,7 +134,7 @@ void ConjFrame::doConj()
     jaVerb = javerb;
     refreshLanguage(rtl);
 
-    qDebug() << "kanji:" << javerb.kanji << ", kana:" << javerb.hiragana;
+    qDebug() << "kanji:" << javerb.kanji << ", kana:" << javerb.hiragana << ", romaji:" << JTrans::hiragana2romaji(javerb.hiragana);
 
     open();
 }
@@ -247,7 +247,7 @@ void ConjFrame::verbInformation(Edict2::JaVerb javerb)
     jsScript += Msg::getTranslatedString("_Romaji") + "\";\n";
 
     jsScript += "document.getElementById(\"romaji\").innerHTML = \"";
-    jsScript += "\";\n"; //TODO add romaji function call
+    jsScript += JTrans::hiragana2romaji(javerb.hiragana) + "\";\n";
 
     jsScript += "document.getElementById(\"_Type\").innerHTML = \"";
     jsScript += Msg::getTranslatedString("_Type") + "\";\n";

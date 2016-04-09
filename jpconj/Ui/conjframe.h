@@ -28,6 +28,7 @@
 #include "UiHelper/msg.h"
 #include "UiHelper/funcframe.h"
 #include "Ui/preference.h"
+#include "Func/jtrans.h"
 #include "jpconj.h"
 #include <QWebElement>
 #include <QWebFrame>
