@@ -40,6 +40,7 @@ public:
     Export();
     void addContent(QString content);
     void setStyle(QString styleFile);
+    void addStyle(QString styleContent);
     void setRTL(bool RTL);
     void exportPdf(QString filename);
     void exportOdf(QString filename);
@@ -54,6 +55,6 @@ private:
     QString htmlContent;
     QString styleFile;
     bool isRTL;
-    void addStyle(QString filename);
+
 };
 #endif // EXPORT_H

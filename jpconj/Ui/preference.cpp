@@ -83,6 +83,8 @@ void Preference::doInit()
 
     ui->lang->setCurrentIndex(index);
 
+    ui->info_check->setText(qApp->translate("jpconjmain", "Information"));
+    ui->info_check->setChecked(Export::getConfigExportPart("info"));
     ui->standard_check->setText(qApp->translate("jpconjmain", "Standard Conjugation"));
     ui->standard_check->setChecked(Export::getConfigExportPart("standard"));
     ui->basic_check->setText(qApp->translate("jpconjmain", "Basic Conjugation"));
@@ -127,6 +129,7 @@ void Preference::doSave()
 
     //Export preferences
     QMap<QString, bool> exportParts;
+    exportParts.insert("info", ui->info_check->isChecked());
     exportParts.insert("standard", ui->standard_check->isChecked());
     exportParts.insert("basic", ui->basic_check->isChecked());
     exportParts.insert("complex", ui->complex_check->isChecked());
