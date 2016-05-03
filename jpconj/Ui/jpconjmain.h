@@ -104,6 +104,7 @@ private slots:
 
     void workfrmOpen();
     void workfrmClose();
+    void newVerb(QString verb);
 
     void on_actionClose_triggered();
     void on_actionAbout_triggered();

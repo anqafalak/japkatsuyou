@@ -77,6 +77,7 @@ private:
 signals:
     void close();
     void open();
+    void newVerb(QString verb);
 };
 
 #endif // CONJFRAME_H

@@ -95,14 +95,14 @@ void jpconjmain::doInit()
 
     connect(workfrm, SIGNAL(open()), this, SLOT(workfrmOpen()));
     connect(workfrm, SIGNAL(close()), this, SLOT(workfrmClose()));
-
+    connect(workfrm, SIGNAL(newVerb(QString)), this, SLOT(newVerb(QString)));
     //tray Icon
     trayIconSys = new JpconjTray(this);
 
     actionShow = new QAction(tr("Show"), this); //qApp->translate, "jpconjmain"
     actionShow->setIcon(QIcon(":/img/show.png"));
 
-    connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()) );
+    connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()));
     trayIconSys->addAction(actionShow);
     trayIconSys->addSeparator();
 }
@@ -334,6 +334,11 @@ void jpconjmain::workfrmClose()
 {
     ui->actionExportResult->setEnabled(false);
     ui->actionPrint->setEnabled(false);
+}
+
+void jpconjmain::newVerb(QString verb)
+{
+    currentVerb = verb;
 }
 
 void jpconjmain::on_actionClose_triggered()

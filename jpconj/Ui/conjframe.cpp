@@ -141,6 +141,7 @@ void ConjFrame::doConj()
     hasContent = true;
     jaVerb = javerb;
     refreshLanguage(rtl);
+    newVerb(javerb.kanji);
 
     open();
 }
