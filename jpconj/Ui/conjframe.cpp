@@ -88,7 +88,7 @@ void ConjFrame::initExporter(Export *exporter)
     }
 
     if(Export::getConfigExportPart("styled")){
-        QString styleCSS = readHtmlFile(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
+        QString styleCSS = readCSSFile(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
         exporter->addStyle(styleCSS);
     }
 }
@@ -285,6 +285,18 @@ QString ConjFrame::readHtmlFile(QString URL)
     return result;
 }
 
+QString ConjFrame::readCSSFile(QString URL)
+{
+    QString result="";
+    QFile HtmlFile(URL);
+
+    if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream htmlStream(&HtmlFile);
+        result = htmlStream.readAll();
+    }
+
+    return result;
+}
 
 
 void ConjFrame::refreshLanguage(bool rtl)

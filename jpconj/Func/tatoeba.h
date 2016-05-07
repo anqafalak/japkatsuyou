@@ -2,6 +2,7 @@
 #define TATOEBA_H
 
 #include <QList>
+#include <QMap>
 #include <QDebug>
 #include <QtSql/QtSql>
 
@@ -18,6 +19,8 @@ public:
     QList<Exp> find (QString verb, QString lang);
     void connect();
     void desconnect();
+
+    static QString convertLang(QString lang);
 
 private:
     QSqlDatabase tatoebadb;

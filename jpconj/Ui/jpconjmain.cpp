@@ -85,6 +85,7 @@ void jpconjmain::doInit()
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->zoomTool->toggleViewAction());
+    ui->menu_View->addAction(ui->example->toggleViewAction());
     //ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
 
@@ -105,6 +106,36 @@ void jpconjmain::doInit()
     connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()));
     trayIconSys->addAction(actionShow);
     trayIconSys->addSeparator();
+
+    //Init examples
+    QPalette palette;
+
+    //hasContent = false;
+    palette.setBrush(QPalette::Base, Qt::transparent);
+    ui->expView->page()->setPalette(palette);
+    ui->expView->setAttribute(Qt::WA_OpaquePaintEvent, false);
+}
+
+
+void jpconjmain::doExamples()
+{
+    if (ui->example->isVisible()){
+
+        Tatoeba tatoeba;
+        QList<Tatoeba::Exp> examples = tatoeba.find(currentVerb, Language::getCurrentLanguage());
+        //QList<Exp> examples = tatoeba.find(currentVerb, "eng");
+        QString result = "";
+
+        foreach(Tatoeba::Exp example, examples){
+            result += "<p>" + example.jap + "<br>";
+            foreach(QString trans, example.lang){
+                result += trans + "<br>";
+            }
+            result += "</p>";
+        }
+
+        ui->expView->setHtml(result);
+    }
 }
 
 
@@ -133,8 +164,6 @@ void jpconjmain::openPref()
     winPref->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
     winPref->show();
 }
-
-
 
 
 
@@ -339,6 +368,7 @@ void jpconjmain::workfrmClose()
 void jpconjmain::newVerb(QString verb)
 {
     currentVerb = verb;
+    doExamples();
 }
 
 void jpconjmain::on_actionClose_triggered()

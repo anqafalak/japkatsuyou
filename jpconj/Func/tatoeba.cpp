@@ -7,50 +7,69 @@ Tatoeba::Tatoeba()
 
 QList<Tatoeba::Exp> Tatoeba::find(QString verb, QString lang)
 {
-    QList<Tatoeba::Exp> result;
+
+    QString lang2 = convertLang(lang);
+    QList<Exp> result;
     //tatoebadb
 
     QString radical = verb;
     radical.chop(1);
 
     if (tatoebadb.open()) {
-        //qDebug() << "DB connected";
+        //qDebug() << "Tatoeba DB connected";
         QSqlQuery query(tatoebadb);
         QString req;
-        req = "SELECT * FROM jpn WHERE LIKE \"%" + radical + "%\";";
+
+        bool notJPN = true;
+
+        if (lang == "jpn"){
+            req = "SELECT jpn.id, jpn.sent \n";
+            req += "FROM jpn \n";
+            req += "WHERE jpn.sent LIKE \"%" + radical + "%\" LIMIT 200;\n";
+            notJPN = false;
+        } else {
+            req = "SELECT jpn.id, jpn.sent, " + lang2 + ".sent\n";
+            req += "FROM jpn, links, " + lang2 + "\n";
+            req += "WHERE jpn.sent LIKE \"%" + radical + "%\"\n";
+            req += "AND links.jpnId = jpn.id \n";
+            req += "AND links.id = " + lang2 + ".id  LIMIT 200;\n";
+        }
+
+        int pastId = -1;
         query.exec(req);
-        QSqlRecord record = query.record();
-        int idIdx = record.indexOf("id");
-        int sentIdx = record.indexOf("sent");
-        if (query.next()) {
-            int id = query.value(idIdx).toInt();
-            QString JPsent = query.value(sentIdx).toString();
-            //query.clear();
-            //query.finish();
-            QSqlQuery query2(tatoebadb);
-            req = "SELECT sent FROM " + lang + ", links\n";
-            req += "WHERE links.jpnId = " + QString::number(id) + "\n";
-            req += "AND links.id = " + lang + ".id";
+        QString JPsent;
+        int i = 0;
+        while (query.next()) {
+            int id = query.value(0).toInt();
 
-            query2.exec(req);
+            if (id != pastId){
+                i++;
+                if(i > 100)
+                    break;
+                JPsent = query.value(1).toString();
+                QList<QString> langTrans;
 
-            QList<QString> langTrans;
+                Exp example;
+                example.jap = JPsent;
+                example.lang = langTrans;
 
-            while (query2.next()){
-                QString langSent = query2.value(0).toString();
+                result.append(example);
+
+                pastId = id;
+
+            }
+
+            if(notJPN){
+                Exp & example = result.last();
+                QList<QString> & langTrans = example.lang;
+                QString langSent = query.value(2).toString();
                 langTrans.append(langSent);
             }
 
-            Tatoeba::Exp example;
-            example.jap = JPsent;
-            example.lang = langTrans;
-
-            result.append(example);
-            //qDebug() << "Verb kanji found" << result;
         }
 
     } else {
-        //qDebug() << "DB not connecting";
+        qDebug() << "DB not connecting";
     }
     //qDebug() << result;
     tatoebadb.close();
@@ -78,4 +97,16 @@ void Tatoeba::desconnect()
     {
         QSqlDatabase::removeDatabase("dbexamples");
     }
+}
+
+QString Tatoeba::convertLang(QString lang)
+{
+    if (lang == "ar")
+        return "ara";
+    if(lang == "en")
+        return "eng";
+    if(lang == "fr" )
+        return "fra";
+
+    return "jpn";
 }

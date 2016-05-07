@@ -56,7 +56,14 @@
      <number>1</number>
     </property>
     <item>
-     <layout class="QFormLayout" name="formLayout"/>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="horizontalSpacing">
+       <number>0</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -166,7 +173,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="example">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <sizepolicy hsizetype="Maximum" vsizetype="MinimumExpanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -212,6 +219,19 @@
      <property name="bottomMargin">
       <number>1</number>
      </property>
+     <item>
+      <widget class="QWebView" name="expView" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="accessibleName">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -369,6 +389,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>qwebview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../Media/icons.qrc"/>
  </resources>

@@ -34,6 +34,7 @@
 #include "UiHelper/msg.h"
 #include "preference.h"
 #include "UiHelper/style.h"
+#include "Func/tatoeba.h"
 
 #include "typeDefs.h"
 #include "jpconj.h"
@@ -81,6 +82,8 @@ private:
     QAction *actionShow;
 
     void doInit();
+
+    void doExamples();
 
     //Functions related to actions slots
     void openAbout();
