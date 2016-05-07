@@ -60,7 +60,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="ui_tab">
     <attribute name="title">
@@ -135,29 +135,13 @@
        <x>10</x>
        <y>10</y>
        <width>211</width>
-       <height>121</height>
+       <height>161</height>
       </rect>
      </property>
      <property name="title">
       <string>Exported tables</string>
      </property>
      <widget class="QCheckBox" name="standard_check">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>191</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string notr="true">CheckBox</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="basic_check">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -173,11 +157,43 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QCheckBox" name="complex_check">
+     <widget class="QCheckBox" name="basic_check">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>90</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">CheckBox</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="complex_check">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">CheckBox</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="info_check">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
         <width>191</width>
         <height>21</height>
        </rect>

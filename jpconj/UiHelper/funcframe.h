@@ -56,6 +56,7 @@ protected:
 signals:
     void close();
     void open();
+    void newVerb(QString verb);
 
 };
 

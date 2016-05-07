@@ -40,6 +40,14 @@ void Export::addContent(QString content)
                         content + "\n<!--CONTENT-->");
 }
 
+void Export::addStyle(QString styleContent)
+{
+    QString CSS = "<style type=\"text/css\">\n";
+    CSS += styleContent + "\n";
+    CSS += "</style>\n";
+    htmlContent.replace("<!--STYLESHEETS-->", CSS + "\n<!--STYLESHEETS-->\n");
+}
+
 void Export::setStyle(QString styleFile)
 {
     this->styleFile = styleFile;
@@ -177,12 +185,4 @@ bool Export::getConfigExportPart(QString exportPart)
     settings.endGroup();
     //qDebug() << exportPart << " = " << result;
     return result;
-}
-
-
-void Export::addStyle(QString filename)
-{
-    htmlContent.replace("<!--STYLESHEETS-->",
-                        "<link rel=\"stylesheet\" type=\"text/css\" href=\"" +
-                        filename + "\">\n<!--STYLESHEETS-->");
 }

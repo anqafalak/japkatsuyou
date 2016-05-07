@@ -66,24 +66,31 @@ void ConjFrame::initExporter(Export *exporter)
     exporter->addContent("<p><h1>" + jaVerb.kanji + "</h1></p><hr>\n");
     //TODO add verb info here
     //exporter->addContent("<p><h3>" + ui->verbType->text() + "</h3></p>\n");
-    if(Export::getConfigExportPart("standard")){
+    if(Export::getConfigExportPart("info")){
         exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(0) + "</h2></p>\n");
+        QString data = ui->verbInfo->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
+        exporter->addContent(data);
+    }
+    if(Export::getConfigExportPart("standard")){
+        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
         QString data = ui->standardConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
         exporter->addContent(data);
     }
     if(Export::getConfigExportPart("basic")){
-        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(1) + "</h2></p>\n");
+        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
         QString data = ui->basicConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
         exporter->addContent(data);
     }
     if(Export::getConfigExportPart("complex")){
-        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(2) + "</h2></p>\n");
+        exporter->addContent("<p><h2>" + ui->ConjgTab->tabText(3) + "</h2></p>\n");
         QString data = ui->complexConj->page()->mainFrame()->findFirstElement("body").firstChild().toOuterXml();
         exporter->addContent(data);
     }
 
-    if(Export::getConfigExportPart("styled"))
-        exporter->setStyle(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
+    if(Export::getConfigExportPart("styled")){
+        QString styleCSS = readCSSFile(QDir(QString(dataFolder) + "styles/" + stylesheet).absolutePath());
+        exporter->addStyle(styleCSS);
+    }
 }
 
 
@@ -134,6 +141,7 @@ void ConjFrame::doConj()
     hasContent = true;
     jaVerb = javerb;
     refreshLanguage(rtl);
+    newVerb(javerb.kanji);
 
     open();
 }
@@ -277,6 +285,18 @@ QString ConjFrame::readHtmlFile(QString URL)
     return result;
 }
 
+QString ConjFrame::readCSSFile(QString URL)
+{
+    QString result="";
+    QFile HtmlFile(URL);
+
+    if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream htmlStream(&HtmlFile);
+        result = htmlStream.readAll();
+    }
+
+    return result;
+}
 
 
 void ConjFrame::refreshLanguage(bool rtl)

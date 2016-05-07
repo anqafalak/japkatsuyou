@@ -85,6 +85,7 @@ void jpconjmain::doInit()
 
     ui->menu_View->addAction(ui->mainTool->toggleViewAction());
     ui->menu_View->addAction(ui->zoomTool->toggleViewAction());
+    ui->menu_View->addAction(ui->example->toggleViewAction());
     //ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
 
@@ -95,16 +96,46 @@ void jpconjmain::doInit()
 
     connect(workfrm, SIGNAL(open()), this, SLOT(workfrmOpen()));
     connect(workfrm, SIGNAL(close()), this, SLOT(workfrmClose()));
-
+    connect(workfrm, SIGNAL(newVerb(QString)), this, SLOT(newVerb(QString)));
     //tray Icon
     trayIconSys = new JpconjTray(this);
 
     actionShow = new QAction(tr("Show"), this); //qApp->translate, "jpconjmain"
     actionShow->setIcon(QIcon(":/img/show.png"));
 
-    connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()) );
+    connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()));
     trayIconSys->addAction(actionShow);
     trayIconSys->addSeparator();
+
+    //Init examples
+    QPalette palette;
+
+    //hasContent = false;
+    palette.setBrush(QPalette::Base, Qt::transparent);
+    ui->expView->page()->setPalette(palette);
+    ui->expView->setAttribute(Qt::WA_OpaquePaintEvent, false);
+}
+
+
+void jpconjmain::doExamples()
+{
+    if (ui->example->isVisible()){
+
+        Tatoeba tatoeba;
+        QList<Tatoeba::Exp> examples = tatoeba.find(currentVerb, Language::getCurrentLanguage());
+        //QList<Exp> examples = tatoeba.find(currentVerb, "eng");
+        QString result = "";
+
+        foreach(Tatoeba::Exp example, examples){
+            result += "<p>" + example.jap + "<br>";
+            foreach(QString trans, example.lang){
+                result += trans + "<br>";
+            }
+            result += "</p>";
+        }
+
+        ui->expView->setHtml(result);
+    }
 }
 
 
@@ -133,8 +164,6 @@ void jpconjmain::openPref()
     winPref->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
     winPref->show();
 }
-
-
 
 
 
@@ -334,6 +363,12 @@ void jpconjmain::workfrmClose()
 {
     ui->actionExportResult->setEnabled(false);
     ui->actionPrint->setEnabled(false);
+}
+
+void jpconjmain::newVerb(QString verb)
+{
+    currentVerb = verb;
+    doExamples();
 }
 
 void jpconjmain::on_actionClose_triggered()

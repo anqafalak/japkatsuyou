@@ -34,6 +34,7 @@
 #include "UiHelper/msg.h"
 #include "preference.h"
 #include "UiHelper/style.h"
+#include "Func/tatoeba.h"
 
 #include "typeDefs.h"
 #include "jpconj.h"
@@ -82,6 +83,8 @@ private:
 
     void doInit();
 
+    void doExamples();
+
     //Functions related to actions slots
     void openAbout();
     void openPref();
@@ -104,6 +107,7 @@ private slots:
 
     void workfrmOpen();
     void workfrmClose();
+    void newVerb(QString verb);
 
     void on_actionClose_triggered();
     void on_actionAbout_triggered();

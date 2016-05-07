@@ -73,10 +73,12 @@ private:
     void verbInformation(Edict2::JaVerb javerb);
 
     QString readHtmlFile(QString URL);
+    QString readCSSFile(QString URL);
 
 signals:
     void close();
     void open();
+    void newVerb(QString verb);
 };
 
 #endif // CONJFRAME_H
