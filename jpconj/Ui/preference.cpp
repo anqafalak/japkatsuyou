@@ -91,6 +91,8 @@ void Preference::doInit()
     ui->basic_check->setChecked(Export::getConfigExportPart("basic"));
     ui->complex_check->setText(qApp->translate("ConjFrame", "Complex Conjugation"));
     ui->complex_check->setChecked(Export::getConfigExportPart("complex"));
+    ui->exp_check->setText(qApp->translate("jpconjmain", "Examples"));
+    ui->exp_check->setChecked(Export::getConfigExportPart("examples"));
 
     ui->styleUse_check->setChecked(Export::getConfigExportPart("styled"));
 
@@ -133,7 +135,9 @@ void Preference::doSave()
     exportParts.insert("standard", ui->standard_check->isChecked());
     exportParts.insert("basic", ui->basic_check->isChecked());
     exportParts.insert("complex", ui->complex_check->isChecked());
+    exportParts.insert("examples", ui->exp_check->isChecked());
     exportParts.insert("styled", ui->styleUse_check->isChecked());
+
     Export::setConfigExportParts(exportParts);
 
     //style

@@ -135,7 +135,7 @@
        <x>10</x>
        <y>10</y>
        <width>211</width>
-       <height>161</height>
+       <height>181</height>
       </rect>
      </property>
      <property name="title">
@@ -194,6 +194,22 @@
        <rect>
         <x>10</x>
         <y>30</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">CheckBox</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="exp_check">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
         <width>191</width>
         <height>21</height>
        </rect>

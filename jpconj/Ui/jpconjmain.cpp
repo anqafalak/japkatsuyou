@@ -222,6 +222,8 @@ void jpconjmain::doExport()
 
     Export * exporter = new Export();
     workfrm->initExporter(exporter);
+    exportExamples(exporter);
+
 
     if (filename.endsWith(".pdf")){
         //exporter.exportPdf(filename);
@@ -236,6 +238,16 @@ void jpconjmain::doExport()
 
     if (filename.endsWith(".htm")){
         exporter->exportHtml(filename);
+    }
+}
+
+void jpconjmain::exportExamples(Export * exporter)
+{
+
+    if(Export::getConfigExportPart("examples")){
+        exporter->addContent("<p><h2>" + ui->example->windowTitle() + "</h2></p>\n");
+        QString data = ui->expView->page()->mainFrame()->findFirstElement("body").toOuterXml();
+        exporter->addContent(data);
     }
 }
 
