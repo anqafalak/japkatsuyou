@@ -127,14 +127,24 @@ void jpconjmain::doExamples()
         QString result = "";
 
         foreach(Tatoeba::Exp example, examples){
-            result += "<p>" + example.jap + "<br>";
+            result += "<table width=\"100%\">\n";
+            result += "<tr><td class=\"title_even\">" + example.jap + "</td></tr>\n";
+            bool even = true;
             foreach(QString trans, example.lang){
-                result += trans + "<br>";
+                if (even)
+                    result += "<tr><td class=\"row1 col_even\">\n";
+                else
+                    result += "<tr><td class=\"row2 col_odd\">\n";
+                result += trans + "\n</td></tr>\n";
+
+                even = ! even;
             }
-            result += "</p>";
+            result += "</table>\n";
+            result += "<div style=\"height: 1em;\"></div>\n";
         }
 
         ui->expView->setHtml(result);
+
     }
 }
 
@@ -212,6 +222,8 @@ void jpconjmain::doExport()
 
     Export * exporter = new Export();
     workfrm->initExporter(exporter);
+    exportExamples(exporter);
+
 
     if (filename.endsWith(".pdf")){
         //exporter.exportPdf(filename);
@@ -226,6 +238,16 @@ void jpconjmain::doExport()
 
     if (filename.endsWith(".htm")){
         exporter->exportHtml(filename);
+    }
+}
+
+void jpconjmain::exportExamples(Export * exporter)
+{
+
+    if(Export::getConfigExportPart("examples")){
+        exporter->addContent("<p><h2>" + ui->example->windowTitle() + "</h2></p>\n");
+        QString data = ui->expView->page()->mainFrame()->findFirstElement("body").toOuterXml();
+        exporter->addContent(data);
     }
 }
 
@@ -351,6 +373,8 @@ void jpconjmain::changeStyle(QString styleID)
 {
     stylesheet = styleID + ".css";
     workfrm->changeStyle(styleID);
+    setCSS(ui->expView, stylesheet);
+    //qDebug()<< "style changed";
 }
 
 void jpconjmain::workfrmOpen()

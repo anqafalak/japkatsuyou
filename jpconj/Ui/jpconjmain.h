@@ -89,6 +89,7 @@ private:
     void openAbout();
     void openPref();
     void doExport();
+    void exportExamples(Export *exporter);
     void doPrint();
     void openHelp();
     void zoom(signed char sign);
