@@ -22,10 +22,10 @@ QList<Tatoeba::Exp> Tatoeba::find(QString verb, QString lang)
 
         bool notJPN = true;
 
-        if (lang == "jpn"){
+        if (lang2 == "jpn"){
             req = "SELECT jpn.id, jpn.sent \n";
             req += "FROM jpn \n";
-            req += "WHERE jpn.sent LIKE \"%" + radical + "%\" LIMIT 200;\n";
+            req += "WHERE jpn.sent LIKE \"%" + radical + "%\" LIMIT 100;\n";
             notJPN = false;
         } else {
             req = "SELECT jpn.id, jpn.sent, " + lang2 + ".sent\n";
@@ -71,7 +71,7 @@ QList<Tatoeba::Exp> Tatoeba::find(QString verb, QString lang)
     } else {
         qDebug() << "DB not connecting";
     }
-    //qDebug() << result;
+    //qDebug() << result.size();
     tatoebadb.close();
 
     return result;

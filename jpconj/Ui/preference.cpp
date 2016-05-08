@@ -83,13 +83,13 @@ void Preference::doInit()
 
     ui->lang->setCurrentIndex(index);
 
-    ui->info_check->setText(qApp->translate("jpconjmain", "Information"));
+    ui->info_check->setText(qApp->translate("ConjFrame", "Information"));
     ui->info_check->setChecked(Export::getConfigExportPart("info"));
-    ui->standard_check->setText(qApp->translate("jpconjmain", "Standard Conjugation"));
+    ui->standard_check->setText(qApp->translate("ConjFrame", "Standard Conjugation"));
     ui->standard_check->setChecked(Export::getConfigExportPart("standard"));
-    ui->basic_check->setText(qApp->translate("jpconjmain", "Basic Conjugation"));
+    ui->basic_check->setText(qApp->translate("ConjFrame", "Basic Conjugation"));
     ui->basic_check->setChecked(Export::getConfigExportPart("basic"));
-    ui->complex_check->setText(qApp->translate("jpconjmain", "Complex Conjugation"));
+    ui->complex_check->setText(qApp->translate("ConjFrame", "Complex Conjugation"));
     ui->complex_check->setChecked(Export::getConfigExportPart("complex"));
 
     ui->styleUse_check->setChecked(Export::getConfigExportPart("styled"));
