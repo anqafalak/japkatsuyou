@@ -20,6 +20,8 @@ QString JTrans::hiragana2romaji(QString hiragana)
     const QString reg = QString::fromUtf8("っ(.)");
     result.replace(QRegExp(reg), "\\1\\1");
 
+    const QString reg2 = QString::fromUtf8("iょ");
+    result.replace(QRegExp(reg2), "yo");
     return result;
 
 }

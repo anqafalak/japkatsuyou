@@ -128,7 +128,7 @@ void jpconjmain::doExamples()
 
         foreach(Tatoeba::Exp example, examples){
             result += "<table width=\"100%\">\n";
-            result += "<tr><td class=\"title_even\">" + example.jap + "</td></tr>\n";
+            result += "<tr><td class=\"title_odd\">" + example.jap + "</td></tr>\n";
             bool even = true;
             foreach(QString trans, example.lang){
                 if (even)
@@ -178,7 +178,7 @@ void jpconjmain::openPref()
 
 
 /*!
- * \brief jpconjmain::doConj Used to export the result content as pdf, odt, etc.
+ * \brief jpconjmain::doExport Used to export the result content as pdf, odt, etc.
  */
 void jpconjmain::doExport()
 {
@@ -241,6 +241,11 @@ void jpconjmain::doExport()
     }
 }
 
+/*!
+ * \brief jpconjmain::exportExamples function used to export the examples from the
+ * example web viewer, using a given exporter
+ * \param exporter the exporter which is used to create the exported content.
+ */
 void jpconjmain::exportExamples(Export * exporter)
 {
 
