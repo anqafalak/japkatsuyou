@@ -51,6 +51,7 @@ public:
     virtual void refreshLanguage(bool rtl);
     virtual void changeStyle(QString styleID);
     virtual void initExporter(Export  * exporter);
+    virtual void changeFont(QString font, QString jpfont, int size, int jpsize);
 
 
 protected:

@@ -1,99 +1,99 @@
 <table class="show" name="Complex conjugation">
   <tbody>
     <tr>
-      <td rowspan="2" class="head" name="_Form"></td>
-      <td colspan="2" class="head_even" name="_Polite"></td>
-      <td colspan="2" class="head_odd" name="_Plain"></td>
+      <td rowspan="2" class="head lan" name="_Form"></td>
+      <td colspan="2" class="head_even lan" name="_Polite"></td>
+      <td colspan="2" class="head_odd lan" name="_Plain"></td>
     </tr>
     <tr>
-      <td class="head_row1" name="_Affirmative"></td>
-      <td class="head_row2" name="_Negative"></td>
-      <td class="head_row3" name="_Affirmative"></td>
-      <td class="head_row4" name="_Negative"></td>
+      <td class="head_row1 lan" name="_Affirmative"></td>
+      <td class="head_row2 lan" name="_Negative"></td>
+      <td class="head_row3 lan" name="_Affirmative"></td>
+      <td class="head_row4 lan" name="_Negative"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Form_present"></td>
-      <td class="row1 col_even" id="PoA_present"></td>
-      <td class="row2 col_even" id="PoN_present"></td>
-      <td class="row3 col_even" id="PlA_present"></td>
-      <td class="row4 col_even" id="PlN_present"></td>
+      <td class="title_even lan" id="_Form_present"></td>
+      <td class="row1 col_even jp" id="PoA_present"></td>
+      <td class="row2 col_even jp" id="PoN_present"></td>
+      <td class="row3 col_even jp" id="PlA_present"></td>
+      <td class="row4 col_even jp" id="PlN_present"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Form_past"></td>
-      <td class="row1 col_odd" id="PoA_past"></td>
-      <td class="row2 col_odd" id="PoN_past"></td>
-      <td class="row3 col_odd" id="PlA_past"></td>
-      <td class="row4 col_odd" id="PlN_past"></td>
+      <td class="title_odd lan" id="_Form_past"></td>
+      <td class="row1 col_odd jp" id="PoA_past"></td>
+      <td class="row2 col_odd jp" id="PoN_past"></td>
+      <td class="row3 col_odd jp" id="PlA_past"></td>
+      <td class="row4 col_odd jp" id="PlN_past"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Form_provision"></td>
-      <td class="row1 col_even" id="PoA_provision"></td>
-      <td class="row2 col_even" id="PoN_provision"></td>
-      <td class="row3 col_even" id="PlA_provision"></td>
-      <td class="row4 col_even" id="PlN_provision"></td>
+      <td class="title_even lan" id="_Form_provision"></td>
+      <td class="row1 col_even jp" id="PoA_provision"></td>
+      <td class="row2 col_even jp" id="PoN_provision"></td>
+      <td class="row3 col_even jp" id="PlA_provision"></td>
+      <td class="row4 col_even jp" id="PlN_provision"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Form_condition"></td>
-      <td class="row1 col_odd" id="PoA_condition"></td>
-      <td class="row2 col_odd" id="PoN_condition"></td>
-      <td class="row3 col_odd" id="PlA_condition"></td>
-      <td class="row4 col_odd" id="PlN_condition"></td>
+      <td class="title_odd lan" id= jp"_Form_condition"></td>
+      <td class="row1 col_odd jp" id="PoA_condition"></td>
+      <td class="row2 col_odd jp" id="PoN_condition"></td>
+      <td class="row3 col_odd jp" id="PlA_condition"></td>
+      <td class="row4 col_odd jp" id="PlN_condition"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Form_imperative"></td>
-      <td class="row1 col_even" id="PoA_imperative"></td>
-      <td class="row2 col_even" id="PoN_imperative"></td>
-      <td class="row3 col_even" id="PlA_imperative"></td>
-      <td class="row4 col_even" id="PlN_imperative"></td>
+      <td class="title_even lan" id="_Form_imperative"></td>
+      <td class="row1 col_even jp" id="PoA_imperative"></td>
+      <td class="row2 col_even jp" id="PoN_imperative"></td>
+      <td class="row3 col_even jp" id="PlA_imperative"></td>
+      <td class="row4 col_even jp" id="PlN_imperative"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Form_volutional"></td>
-      <td class="row1 col_odd" id="PoA_volutional"></td>
-      <td class="row2 col_odd" id="PoN_volutional"></td>
-      <td class="row3 col_odd" id="PlA_volutional"></td>
-      <td class="row4 col_odd" id="PlN_volutional"></td>
+      <td class="title_odd lan" id="_Form_volutional"></td>
+      <td class="row1 col_odd jp" id="PoA_volutional"></td>
+      <td class="row2 col_odd jp" id="PoN_volutional"></td>
+      <td class="row3 col_odd jp" id="PlA_volutional"></td>
+      <td class="row4 col_odd jp" id="PlN_volutional"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Form_presentcontinuous"></td>
-      <td class="row1 col_even" id="PoA_presentcontinuous"></td>
-      <td class="row2 col_even" id="PoN_presentcontinuous"></td>
-      <td class="row3 col_even" id="PlA_presentcontinuous"></td>
-      <td class="row4 col_even" id="PlN_presentcontinuous"></td>
+      <td class="title_even lan" id="_Form_presentcontinuous"></td>
+      <td class="row1 col_even jp" id="PoA_presentcontinuous"></td>
+      <td class="row2 col_even jp" id="PoN_presentcontinuous"></td>
+      <td class="row3 col_even jp" id="PlA_presentcontinuous"></td>
+      <td class="row4 col_even jp" id="PlN_presentcontinuous"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Form_pastcontinuous"></td>
-      <td class="row1 col_odd" id="PoA_pastcontinuous"></td>
-      <td class="row2 col_odd" id="PoN_pastcontinuous"></td>
-      <td class="row3 col_odd" id="PlA_pastcontinuous"></td>
-      <td class="row4 col_odd" id="PlN_pastcontinuous"></td>
+      <td class="title_odd lan" id="_Form_pastcontinuous"></td>
+      <td class="row1 col_odd jp" id="PoA_pastcontinuous"></td>
+      <td class="row2 col_odd jp" id="PoN_pastcontinuous"></td>
+      <td class="row3 col_odd jp" id="PlA_pastcontinuous"></td>
+      <td class="row4 col_odd jp" id="PlN_pastcontinuous"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Form_passive"></td>
-      <td class="row1 col_even" id="PoA_passive"></td>
-      <td class="row2 col_even" id="PoN_passive"></td>
-      <td class="row3 col_even" id="PlA_passive"></td>
-      <td class="row4 col_even" id="PlN_passive"></td>
+      <td class="title_even lan" id="_Form_passive"></td>
+      <td class="row1 col_even jp" id="PoA_passive"></td>
+      <td class="row2 col_even jp" id="PoN_passive"></td>
+      <td class="row3 col_even jp" id="PlA_passive"></td>
+      <td class="row4 col_even jp" id="PlN_passive"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Form_causative"></td>
-      <td class="row1 col_odd" id="PoA_causative"></td>
-      <td class="row2 col_odd" id="PoN_causative"></td>
-      <td class="row3 col_odd" id="PlA_causative"></td>
-      <td class="row4 col_odd" id="PlN_causative"></td>
+      <td class="title_odd lan" id="_Form_causative"></td>
+      <td class="row1 col_odd jp" id="PoA_causative"></td>
+      <td class="row2 col_odd jp" id="PoN_causative"></td>
+      <td class="row3 col_odd jp" id="PlA_causative"></td>
+      <td class="row4 col_odd jp" id="PlN_causative"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Form_causativepassive"></td>
-      <td class="row1 col_even" id="PoA_causativepassive"></td>
-      <td class="row2 col_even" id="PoN_causativepassive"></td>
-      <td class="row3 col_even" id="PlA_causativepassive"></td>
-      <td class="row4 col_even" id="PlN_causativepassive"></td>
+      <td class="title_even lan" id="_Form_causativepassive"></td>
+      <td class="row1 col_even jp" id="PoA_causativepassive"></td>
+      <td class="row2 col_even jp" id="PoN_causativepassive"></td>
+      <td class="row3 col_even jp" id="PlA_causativepassive"></td>
+      <td class="row4 col_even jp" id="PlN_causativepassive"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Form_potential"></td>
-      <td class="row1 col_odd" id="PoA_potential"></td>
-      <td class="row2 col_odd" id="PoN_potential"></td>
-      <td class="row3 col_odd" id="PlA_potential"></td>
-      <td class="row4 col_odd" id="PlN_potential"></td>
+      <td class="title_odd lan" id="_Form_potential"></td>
+      <td class="row1 col_odd jp" id="PoA_potential"></td>
+      <td class="row2 col_odd jp" id="PoN_potential"></td>
+      <td class="row3 col_odd jp" id="PlA_potential"></td>
+      <td class="row4 col_odd jp" id="PlN_potential"></td>
     </tr>
   </tbody>
 </table>

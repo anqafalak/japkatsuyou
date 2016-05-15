@@ -93,6 +93,32 @@ void ConjFrame::initExporter(Export *exporter)
     }
 }
 
+void ConjFrame::changeFont(QString font, QString jpfont, int size, int jpsize)
+{
+    QString style = ".lan {font-family:" + font;
+    style += "; font-size :" + QString::number(size) + "pt;}\n";
+
+    style += ".jp {font-family:" + jpfont;
+    style += "; font-size :" + QString::number(jpsize) + "pt;}";
+
+    QWebElement infoEl = ui->verbInfo->page()->mainFrame()->findFirstElement("style");
+    infoEl.setInnerXml(style);
+
+    QWebElement basicEl = ui->basicConj->page()->mainFrame()->findFirstElement("style");
+    basicEl.setInnerXml(style);
+
+    QWebElement stdEl = ui->standardConj->page()->mainFrame()->findFirstElement("style");
+    stdEl.setInnerXml(style);
+
+    QWebElement cplxEl = ui->complexConj->page()->mainFrame()->findFirstElement("style");
+    cplxEl.setInnerXml(style);
+
+    //qDebug()<< "font changed" << ui->basicConj->page()->mainFrame()->toHtml();
+
+
+
+}
+
 
 
 /*!
@@ -272,12 +298,22 @@ void ConjFrame::verbInformation(Edict2::JaVerb javerb)
  */
 QString ConjFrame::readHtmlFile(QString URL)
 {
-    QString result="<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" /><body>";
+    QString result = "<!doctype html>\n";
+    result += "<html>\n";
+    result += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />\n";
+    result += "<style>\n";
+    result += ".lan {font-family:" + Style::getCurrentFont(false) + ";";
+    result += "font-size:" + QString::number(Style::getCurrentFontSize(false)) + "pt;}\n";
+    result += ".jp {font-family:" + Style::getCurrentFont(true);
+    result += "; font-size :" + QString::number(Style::getCurrentFontSize(true)) + "pt;}\n";
+    result += "\n</style>\n";
+    result += "<body>\n";
+
     QFile HtmlFile(URL);
 
     if (HtmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
         QTextStream htmlStream(&HtmlFile);
-        result = htmlStream.readAll();
+        result += htmlStream.readAll();
     }
 
     result += "</body>";

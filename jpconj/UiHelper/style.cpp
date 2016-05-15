@@ -29,7 +29,14 @@
 
 QHash<QString, Styleinfo*> Style::styles;
 QString Style::currentstyle = "";
+
+QString Style::currentFont = "";
+QString Style::currentJpFont = "";
+int Style::currentFontSize = 12;
+int Style::currentJpFontSize = 12;
+
 Style* Style::_instance = new Style();
+
 
 
 /*******************************************************
@@ -50,6 +57,11 @@ Style::Style()
 void Style::emitSignal(QString styleID)
 {
     emit styleChanged(styleID);
+}
+
+void Style::signalFontChanged(QString font, QString jpfont, int size, int jpsize)
+{
+    emit fontChanged(font, jpfont, size, jpsize);
 }
 
 void Style::loadStyles()
@@ -115,6 +127,66 @@ void Style::addReceiver(const QObject * receiver, const char * receiverSlot)
     connect(_instance, SIGNAL(styleChanged(QString)), receiver, receiverSlot);
 }
 
+void Style::addFontReceiver(const QObject *receiver, const char *receiverSlot)
+{
+    connect(_instance, SIGNAL(fontChanged(QString, QString, int,int)), receiver, receiverSlot);
+}
+
+QString Style::getConfigFont(bool jap)
+{
+    QSettings settings;
+
+    if (jap)
+        return settings.value("jp_font-family", "").toString();
+    return settings.value("font-family", "").toString();
+}
+
+QString Style::getCurrentFont(bool jap)
+{
+    if (jap)
+        return currentJpFont;
+
+    return currentFont;
+}
+
+void Style::setConfigFont(QString font, bool jap)
+{
+    QSettings settings;
+
+    if (jap)
+        settings.setValue("jp_font-family", font);
+    else
+        settings.setValue("font-family", font);
+}
+
+int Style::getConfigFontSize(bool jap)
+{
+    QSettings settings;
+
+    if (jap)
+        return settings.value("jp_font-size", "12").toInt();
+
+    return settings.value("font-size", "12").toInt();
+}
+
+int Style::getCurrentFontSize(bool jap)
+{
+    if (jap)
+        return currentJpFontSize;
+
+    return currentFontSize;
+}
+
+void Style::setConfigFontSize(int fontSize, bool jap)
+{
+    QSettings settings;
+
+    if (jap)
+        settings.setValue("jp_font-size", fontSize);
+    else
+        settings.setValue("font-size", fontSize);
+}
+
 
 /*******************************************************
  *                   PUBLIC SLOTS
@@ -135,4 +207,37 @@ void Style::setStyle()
         //qDebug() << "emit signal";
     }
 
+}
+
+void Style::setFont()
+{
+    QString font = getConfigFont(false);
+    QString jpfont = getConfigFont(true);
+    int size = getConfigFontSize(false);
+    int jpsize = getConfigFontSize(true);
+
+    bool changed = false;
+
+    if (font != currentFont){
+        currentFont = font;
+        changed = true;
+    }
+
+    if (jpfont != currentJpFont){
+        currentJpFont = jpfont;
+        changed = true;
+    }
+
+    if (size != currentFontSize){
+        currentFontSize = size;
+        changed = true;
+    }
+
+    if (jpsize != currentJpFontSize){
+        currentJpFontSize = jpsize;
+        changed = true;
+    }
+
+    if (changed)
+        _instance->signalFontChanged(font, jpfont, size, jpsize);
 }

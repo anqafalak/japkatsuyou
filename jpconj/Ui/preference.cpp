@@ -111,6 +111,16 @@ void Preference::doInit()
     index = ui->style->findData(QVariant(currentStyleId));
     ui->style->setCurrentIndex(index);
 
+    QString currentFont = Style::getCurrentFont(false);
+    index = ui->font->findText(currentFont);
+    ui->font->setCurrentIndex(index);
+
+    currentFont = Style::getCurrentFont(true);
+    index = ui->jpfont->findText(currentFont);
+    ui->jpfont->setCurrentIndex(index);
+
+    ui->size->setValue(Style::getCurrentFontSize(false));
+    ui->jpsize->setValue(Style::getCurrentFontSize(true));
 }
 
 
@@ -145,6 +155,17 @@ void Preference::doSave()
     QString styleID = ui->style->itemData(index).toString();
     Style::setConfigStyle(styleID);
     Style::setStyle();
+
+    //Font
+    QString font = ui->font->currentFont().family();
+    Style::setConfigFont(font, false);
+    font = ui->jpfont->currentFont().family();
+    Style::setConfigFont(font, true);
+    int size = ui->size->value();
+    Style::setConfigFontSize(size, false);
+    size = ui->jpsize->value();
+    Style::setConfigFontSize(size, true);
+    Style::setFont();
 }
 
 

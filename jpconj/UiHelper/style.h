@@ -51,23 +51,40 @@ class Style : public QObject
 public:
     Style();
     void emitSignal(QString styleID);
+    void signalFontChanged(QString font, QString jpfont, int size, int jpsize);
+
     static void loadStyles();
     static QHash<QString, Styleinfo *> getStyleInfo();
     static void setStyle();
+    static void setFont();
     static QString getConfigStyle();
     static QString getCurrentStyle();
     static void setConfigStyle(QString styleID);
     static void addReceiver(const QObject * receiver, const char * receiverSlot);
+    static void addFontReceiver(const QObject * receiver, const char * receiverSlot);
+
+    static QString getConfigFont(bool jap);
+    static QString getCurrentFont(bool jap);
+    static void setConfigFont(QString font, bool jap);
+    static int getConfigFontSize(bool jap);
+    static int getCurrentFontSize(bool jap);
+    static void setConfigFontSize(int fontSize, bool jap);
 
 private:
     static QHash<QString, Styleinfo*> styles;
     static QString currentstyle;
+    static QString currentFont;
+    static QString currentJpFont;
+    static int currentFontSize;
+    static int currentJpFontSize;
     //static Style* getInstance();
     static Style* _instance;
 
 
 signals:
     void styleChanged(QString styleID);
+    void fontChanged(QString font, QString jpfont, int size, int jpsize);
+
 };
 
 #endif // STYLE_H
