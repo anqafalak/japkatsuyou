@@ -316,7 +316,7 @@ QString ConjFrame::readHtmlFile(QString URL)
         result += htmlStream.readAll();
     }
 
-    result += "</body>";
+    result += "</body>\n</html>";
 
     return result;
 }

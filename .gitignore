@@ -31,3 +31,4 @@ libjpconj-bin/
 .directory
 jpconj/Media/DB/*.db
 jpconj/Media/img/*.png
+jpconj/3rdParty/

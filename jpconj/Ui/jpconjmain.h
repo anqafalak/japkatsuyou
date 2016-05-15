@@ -34,6 +34,7 @@
 #include "preference.h"
 #include "UiHelper/style.h"
 #include "Func/tatoeba.h"
+#include "UiHelper/icona.h"
 
 #include "typeDefs.h"
 #include "jpconj.h"
@@ -98,6 +99,9 @@ private:
     void setCSS(QWebView * webView, QString nameCSS);
     void setHTMLTranslation (bool rtl);
 
+    void changeExamplesFont(QString font, QString jpfont, int size, int jpsize);
+    void changeUiIcons();
+
 protected:
     void changeEvent(QEvent* event);
     void closeEvent(QCloseEvent *event);
@@ -105,6 +109,7 @@ protected:
 private slots:
     void changeStyle(QString styleID);
     void changeFont(QString font, QString jpfont, int size, int jpsize);
+    void changeIcons();
 
     void workfrmOpen();
     void workfrmClose();

@@ -121,6 +121,18 @@ void Preference::doInit()
 
     ui->size->setValue(Style::getCurrentFontSize(false));
     ui->jpsize->setValue(Style::getCurrentFontSize(true));
+
+    //=================
+    QMap<QString, QIcon> icons = Icona::getAvailableIcons();
+
+    foreach(QString icon, icons.keys()){
+        ui->icons->addItem(icons.value(icon), icon);
+        //qDebug() << styleID;
+    }
+
+    QString currentIconId = Icona::getCurrentIcons();
+    index = ui->icons->findText(currentIconId);
+    ui->icons->setCurrentIndex(index);
 }
 
 
@@ -166,6 +178,11 @@ void Preference::doSave()
     size = ui->jpsize->value();
     Style::setConfigFontSize(size, true);
     Style::setFont();
+
+    //Icons
+    QString iconsID = ui->icons->currentText();
+    Icona::setConfigIcons(iconsID);
+    Icona::setIcons();
 }
 
 

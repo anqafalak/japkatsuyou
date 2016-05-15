@@ -101,7 +101,7 @@ void jpconjmain::doInit()
     trayIconSys = new JpconjTray(this);
 
     actionShow = new QAction(tr("Show"), this); //qApp->translate, "jpconjmain"
-    actionShow->setIcon(QIcon(":/img/show.png"));
+
 
     connect(actionShow, SIGNAL(triggered()), trayIconSys, SLOT(showMain()));
     trayIconSys->addAction(actionShow);
@@ -114,6 +114,9 @@ void jpconjmain::doInit()
     palette.setBrush(QPalette::Base, Qt::transparent);
     ui->expView->page()->setPalette(palette);
     ui->expView->setAttribute(Qt::WA_OpaquePaintEvent, false);
+
+    Icona::addReceiver(this, SLOT(changeIcons()));
+    Icona::setIcons();
 }
 
 
@@ -124,17 +127,26 @@ void jpconjmain::doExamples()
         Tatoeba tatoeba;
         QList<Tatoeba::Exp> examples = tatoeba.find(currentVerb, Language::getCurrentLanguage());
         //QList<Exp> examples = tatoeba.find(currentVerb, "eng");
-        QString result = "";
+        QString result = "<!doctype html>\n";
+        result += "<html>\n";
+        result += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />\n";
+        result += "<style>\n";
+        result += ".lan {font-family:" + Style::getCurrentFont(false) + ";";
+        result += "font-size:" + QString::number(Style::getCurrentFontSize(false)) + "pt;}\n";
+        result += ".jp {font-family:" + Style::getCurrentFont(true);
+        result += "; font-size :" + QString::number(Style::getCurrentFontSize(true)) + "pt;}\n";
+        result += "\n</style>\n";
+        result += "<body>\n";
 
         foreach(Tatoeba::Exp example, examples){
             result += "<table width=\"100%\">\n";
-            result += "<tr><td class=\"title_odd\">" + example.jap + "</td></tr>\n";
+            result += "<tr><td class=\"title_odd jp\">" + example.jap + "</td></tr>\n";
             bool even = true;
             foreach(QString trans, example.lang){
                 if (even)
-                    result += "<tr><td class=\"row1 col_even\">\n";
+                    result += "<tr><td class=\"row1 col_even lan\">\n";
                 else
-                    result += "<tr><td class=\"row2 col_odd\">\n";
+                    result += "<tr><td class=\"row2 col_odd lan\">\n";
                 result += trans + "\n</td></tr>\n";
 
                 even = ! even;
@@ -142,6 +154,8 @@ void jpconjmain::doExamples()
             result += "</table>\n";
             result += "<div style=\"height: 1em;\"></div>\n";
         }
+
+        result += "</body>\n</html>";
 
         ui->expView->setHtml(result);
 
@@ -257,7 +271,9 @@ void jpconjmain::exportExamples(Export * exporter)
 }
 
 
-
+/*!
+ * \brief jpconjmain::doPrint
+ */
 void jpconjmain::doPrint()
 {
     if (workfrm == NULL)
@@ -276,7 +292,9 @@ void jpconjmain::doPrint()
 }
 
 
-
+/*!
+ * \brief jpconjmain::openHelp
+ */
 void jpconjmain::openHelp()
 {
     if(!jpconjhelp::exists()){
@@ -322,6 +340,39 @@ void jpconjmain::setHTMLTranslation(bool rtl)
     workfrm->refreshLanguage(rtl);
 
     languageChanged = false;
+}
+
+void jpconjmain::changeExamplesFont(QString font, QString jpfont, int size, int jpsize)
+{
+    QString style = ".lan {font-family:" + font;
+    style += "; font-size :" + QString::number(size) + "pt;}\n";
+
+    style += ".jp {font-family:" + jpfont;
+    style += "; font-size :" + QString::number(jpsize) + "pt;}";
+
+    QWebElement expEl = ui->expView->page()->mainFrame()->findFirstElement("style");
+    expEl.setInnerXml(style);
+
+}
+
+void jpconjmain::changeUiIcons()
+{
+    ui->actionAbout->setIcon(Icona::getIcon("about"));
+    ui->actionClose->setIcon(Icona::getIcon("close"));
+    ui->actionContactUs->setIcon(Icona::getIcon("mail"));
+    ui->actionExportResult->setIcon(Icona::getIcon("export"));
+    ui->actionHelpContent->setIcon(Icona::getIcon("help"));
+    ui->actionHide->setIcon(Icona::getIcon("hide"));
+    ui->actionHomePage->setIcon(Icona::getIcon("home"));
+    ui->actionNormalSize->setIcon(Icona::getIcon("zoom1"));
+    ui->actionPreference->setIcon(Icona::getIcon("pref"));
+    ui->actionPrint->setIcon(Icona::getIcon("print"));
+    ui->actionZoomIn->setIcon(Icona::getIcon("zoom+"));
+    ui->actionZoomOut->setIcon(Icona::getIcon("zoom"));
+
+    ui->menuZoom->setIcon(Icona::getIcon("zoom"));
+
+    actionShow->setIcon(Icona::getIcon("show"));
 }
 
 
@@ -385,6 +436,12 @@ void jpconjmain::changeStyle(QString styleID)
 void jpconjmain::changeFont(QString font, QString jpfont, int size, int jpsize)
 {
     workfrm->changeFont(font, jpfont, size, jpsize);
+    changeExamplesFont(font, jpfont, size, jpsize);
+}
+
+void jpconjmain::changeIcons()
+{
+    changeUiIcons();
 }
 
 void jpconjmain::workfrmOpen()

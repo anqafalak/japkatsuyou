@@ -99,7 +99,7 @@
      <property name="geometry">
       <rect>
        <x>9</x>
-       <y>50</y>
+       <y>90</y>
        <width>451</width>
        <height>31</height>
       </rect>
@@ -128,7 +128,7 @@
      <property name="geometry">
       <rect>
        <x>9</x>
-       <y>90</y>
+       <y>130</y>
        <width>451</width>
        <height>31</height>
       </rect>
@@ -166,7 +166,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>130</y>
+       <y>170</y>
        <width>451</width>
        <height>31</height>
       </rect>
@@ -204,6 +204,41 @@
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>451</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="iconsLayout">
+      <item>
+       <widget class="QLabel" name="icons_label">
+        <property name="text">
+         <string>Icons style</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="icons">
+        <property name="iconSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <zorder>horizontalLayoutWidget</zorder>
+    <zorder>horizontalLayoutWidget_2</zorder>
+    <zorder>horizontalLayoutWidget_3</zorder>
+    <zorder>horizontalLayoutWidget_4</zorder>
+    <zorder>horizontalLayoutWidget_5</zorder>
+    <zorder>icons_label</zorder>
    </widget>
    <widget class="QWidget" name="export_tab">
     <attribute name="title">

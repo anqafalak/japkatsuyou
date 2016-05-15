@@ -26,6 +26,7 @@
 #include "UiHelper/export.h"
 #include "UiHelper/language.h"
 #include "UiHelper/style.h"
+#include "UiHelper/icona.h"
 
 #include <QDebug>
 #include <QDialog>

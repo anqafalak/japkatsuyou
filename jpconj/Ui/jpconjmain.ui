@@ -106,7 +106,7 @@
       <string>Zoom</string>
      </property>
      <property name="icon">
-      <iconset resource="../Media/icons.qrc">
+      <iconset>
        <normaloff>:/img/zoom.png</normaloff>:/img/zoom.png</iconset>
      </property>
      <addaction name="actionZoomIn"/>
@@ -265,41 +265,21 @@
    <addaction name="actionNormalSize"/>
   </widget>
   <action name="actionClose">
-   <property name="icon">
-    <iconset resource="../Media/icons.qrc">
-     <normaloff>:/img/close.png</normaloff>
-     <normalon>:/img/close.png</normalon>:/img/close.png</iconset>
-   </property>
    <property name="text">
     <string>&amp;Close</string>
    </property>
   </action>
   <action name="actionAbout">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/about.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>&amp;About</string>
    </property>
   </action>
   <action name="actionPreference">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/pref.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>&amp;Preference</string>
    </property>
   </action>
   <action name="actionHelpContent">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/help.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>Help Content</string>
    </property>
@@ -307,10 +287,6 @@
   <action name="actionExportResult">
    <property name="enabled">
     <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../Media/icons.qrc">
-     <normaloff>:/img/export.png</normaloff>:/img/export.png</iconset>
    </property>
    <property name="text">
     <string>Content Export</string>
@@ -320,69 +296,36 @@
    <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/print.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>&amp;Print</string>
    </property>
   </action>
   <action name="actionZoomIn">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/zoom+.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>Zoom In</string>
    </property>
   </action>
   <action name="actionZoomOut">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/zoom-.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>Zoom Out</string>
    </property>
   </action>
   <action name="actionNormalSize">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/zoom1.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>Normal Size</string>
    </property>
   </action>
   <action name="actionHide">
-   <property name="icon">
-    <iconset>
-     <normalon>:/img/hide.png</normalon>
-    </iconset>
-   </property>
    <property name="text">
     <string>Hide</string>
    </property>
   </action>
   <action name="actionContactUs">
-   <property name="icon">
-    <iconset resource="../Media/icons.qrc">
-     <normaloff>:/img/mail.png</normaloff>:/img/mail.png</iconset>
-   </property>
    <property name="text">
     <string>Contact us</string>
    </property>
   </action>
   <action name="actionHomePage">
-   <property name="icon">
-    <iconset resource="../Media/icons.qrc">
-     <normaloff>:/img/home.png</normaloff>:/img/home.png</iconset>
-   </property>
    <property name="text">
     <string>Homepage</string>
    </property>

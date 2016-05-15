@@ -35,7 +35,8 @@ SOURCES  += main.cpp\
             Ui/conjframe.cpp \
     UiHelper/funcframe.cpp \
     Func/jtrans.cpp \
-    Func/tatoeba.cpp
+    Func/tatoeba.cpp \
+    UiHelper/icona.cpp
 
 HEADERS  += Ui/jpconjmain.h \
             Ui/about.h \
@@ -51,7 +52,8 @@ HEADERS  += Ui/jpconjmain.h \
             Ui/conjframe.h \
     UiHelper/funcframe.h \
     Func/jtrans.h \
-    Func/tatoeba.h
+    Func/tatoeba.h \
+    UiHelper/icona.h
 
 FORMS    += Ui/jpconjmain.ui \
             Ui/about.ui \
@@ -63,12 +65,22 @@ TRANSLATIONS    +=  Media/i18n/jpconj_ar.ts\
                     Media/i18n/jpconj_ja.ts\
                     Media/i18n/jpconj_fr.ts
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
+win32:CONFIG(release, debug|release):{
+LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
+LIBS += -L$$PWD/3rdParty/QKIcona/ -llibQKIcona
+}
+else:win32:CONFIG(debug, debug|release):{
+LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
+LIBS += -L$$PWD/../jpconj/3rdParty/QKIcona/ -llibQKIcona
+}
 else:symbian: LIBS += -llibjpconj
-else:unix: LIBS += -L../libjpconj-bin/ -ljpconj
+else:unix:{
+LIBS += -L../libjpconj-bin/ -ljpconj
+LIBS += -L../jpconj/3rdParty/QKIcona/ -lQKIcona
+}
 
 INCLUDEPATH += ../libjpconj
+INCLUDEPATH += ./3rdParty/QKIcona/
 DEPENDPATH += . ../libjpconj-bin
 
 
