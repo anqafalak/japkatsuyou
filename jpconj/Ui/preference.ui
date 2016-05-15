@@ -75,7 +75,7 @@
        <height>31</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="langLayout">
       <item>
        <widget class="QLabel" name="lang_label">
         <property name="text">
@@ -104,7 +104,7 @@
        <height>31</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="styleLayout">
       <item>
        <widget class="QLabel" name="style_label">
         <property name="text">
@@ -119,6 +119,86 @@
           <width>150</width>
           <height>50</height>
          </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>90</y>
+       <width>451</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="fontLayout">
+      <item>
+       <widget class="QLabel" name="font_label">
+        <property name="text">
+         <string>Font style</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFontComboBox" name="font"/>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="size">
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="minimum">
+         <number>12</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>451</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="jpfontLayout">
+      <item>
+       <widget class="QLabel" name="jpfont_label">
+        <property name="text">
+         <string>Japanese font style</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFontComboBox" name="jpfont">
+        <property name="writingSystem">
+         <enum>QFontDatabase::Japanese</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="jpsize">
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="minimum">
+         <number>12</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
         </property>
        </widget>
       </item>

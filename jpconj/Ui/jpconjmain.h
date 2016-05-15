@@ -105,6 +105,7 @@ protected:
 
 private slots:
     void changeStyle(QString styleID);
+    void changeFont(QString font, QString jpfont, int size, int jpsize);
 
     void workfrmOpen();
     void workfrmClose();

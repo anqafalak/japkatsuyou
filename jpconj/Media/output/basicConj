@@ -1,40 +1,40 @@
 ﻿<table class="show" name="Basic conjugation">
   <tbody>
     <tr style="vertical-align:middle;">
-      <td class="head Const" name="_Form"></td>
-      <td class="head_even Const" name= "_BasicConj"></td>
+      <td class="head Const lan" name="_Form"></td>
+      <td class="head_even Const lan" name= "_BasicConj"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Name_a"></td>
-      <td class="row1 col_even" id="basic_a"></td>
+      <td class="title_even lan" id="_Name_a"></td>
+      <td class="row1 col_even jp" id="basic_a"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Name_e"></td>
-      <td class="row1 col_odd" id="basic_e"></td>
+      <td class="title_odd lan" id="_Name_e"></td>
+      <td class="row1 col_odd jp" id="basic_e"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Name_eImp"></td>
-      <td class="row1 col_even" id="basic_eImp"></td>
+      <td class="title_even lan" id="_Name_eImp"></td>
+      <td class="row1 col_even jp" id="basic_eImp"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Name_t"></td>
-      <td class="row1 col_odd" id="basic_t"></td>
+      <td class="title_odd lan" id="_Name_t"></td>
+      <td class="row1 col_odd jp" id="basic_t"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Name_u"></td>
-      <td class="row1 col_even" id="basic_u"></td>
+      <td class="title_even lan" id="_Name_u"></td>
+      <td class="row1 col_even jp" id="basic_u"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Name_uAtt"></td>
-      <td class="row1 col_odd" id="basic_uAtt"></td>
+      <td class="title_odd lan" id="_Name_uAtt"></td>
+      <td class="row1 col_odd jp" id="basic_uAtt"></td>
     </tr>
     <tr>
-      <td class="title_even" id="_Name_i"></td>
-      <td class="row1 col_even" id="basic_i"></td>
+      <td class="title_even lan" id="_Name_i"></td>
+      <td class="row1 col_even jp" id="basic_i"></td>
     </tr>
     <tr>
-      <td class="title_odd" id="_Name_o"></td>
-      <td class="row1 col_odd" id="basic_o"></td>
+      <td class="title_odd lan" id="_Name_o"></td>
+      <td class="row1 col_odd jp" id="basic_o"></td>
     </tr>
   </tbody>
 </table>

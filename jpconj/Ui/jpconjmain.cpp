@@ -92,7 +92,8 @@ void jpconjmain::doInit()
     //changeStyle(Style::getCurrentStyle());
     Style::addReceiver(this, SLOT(changeStyle(QString)));
     Style::loadStyles();
-    //connect(style, SIGNAL(styleChanged(QString)), this, SLOT(changeStyle(QString)));
+    Style::addFontReceiver(this, SLOT(changeFont(QString,QString,int,int)));
+    Style::setFont();
 
     connect(workfrm, SIGNAL(open()), this, SLOT(workfrmOpen()));
     connect(workfrm, SIGNAL(close()), this, SLOT(workfrmClose()));
@@ -380,6 +381,11 @@ void jpconjmain::changeStyle(QString styleID)
     workfrm->changeStyle(styleID);
     setCSS(ui->expView, stylesheet);
     //qDebug()<< "style changed";
+}
+
+void jpconjmain::changeFont(QString font, QString jpfont, int size, int jpsize)
+{
+    workfrm->changeFont(font, jpfont, size, jpsize);
 }
 
 void jpconjmain::workfrmOpen()

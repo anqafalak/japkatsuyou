@@ -2,47 +2,47 @@
 <table class="show" name="Standard conjugation">
   <tbody>
     <tr style="vertical-align:middle;">
-      <td colspan="2" class="head_even Const" name="_Verb"></td>
-      <td rowspan="2" class="head_row3 Const" name="_WordsAfter"></td>
+      <td colspan="2" class="head_even Const lan" name="_Verb"></td>
+      <td rowspan="2" class="head_row3 Const lan" name="_WordsAfter"></td>
     </tr>
     <tr>
-      <td class="head_row1 Const" name="_Stem"></td>
-      <td class="head_row2 Const" name="_Suffix"></td>
+      <td class="head_row1 Const lan" name="_Stem"></td>
+      <td class="head_row2 Const lan" name="_Suffix"></td>
     </tr>
     <tr>
-      <td class="row1 col_even" id="stem_a"></td>
-      <td class="row2 col_even" id="suffix_a"></td>
-      <td class="row3 col_even" id="after_a">-ない</td>
+      <td class="row1 col_even jp" id="stem_a"></td>
+      <td class="row2 col_even jp" id="suffix_a"></td>
+      <td class="row3 col_even jp" id="after_a">-ない</td>
     </tr>
     <tr>
-      <td class="row1 col_odd" id="stem_i"></td>
-      <td class="row2 col_odd" id="suffix_i"></td>
-      <td class="row3 col_odd" id="after_i">-ます</td>
+      <td class="row1 col_odd jp" id="stem_i"></td>
+      <td class="row2 col_odd jp" id="suffix_i"></td>
+      <td class="row3 col_odd jp" id="after_i">-ます</td>
     </tr>
     <tr>
-      <td class="row1 col_even" id="stem_u"></td>
-      <td class="row2 col_even" id="suffix_u"></td>
-      <td class="row3 col_even" id="after_u">。</td>
+      <td class="row1 col_even jp" id="stem_u"></td>
+      <td class="row2 col_even jp" id="suffix_u"></td>
+      <td class="row3 col_even jp" id="after_u">。</td>
     </tr>
     <tr>
-      <td class="row1 col_odd" id="stem_uAtt"></td>
-      <td class="row2 col_odd" id="suffix_uAtt"></td>
-      <td class="row3 col_odd" id="after_uAtt">-時</td>
+      <td class="row1 col_odd jp" id="stem_uAtt"></td>
+      <td class="row2 col_odd jp" id="suffix_uAtt"></td>
+      <td class="row3 col_odd jp" id="after_uAtt">-時</td>
     </tr>
     <tr>
-      <td class="row1 col_even" id="stem_e"></td>
-      <td class="row2 col_even" id="suffix_e"></td>
-      <td class="row3 col_even" id="after_e">-ば</td>
+      <td class="row1 col_even jp" id="stem_e"></td>
+      <td class="row2 col_even jp" id="suffix_e"></td>
+      <td class="row3 col_even jp" id="after_e">-ば</td>
     </tr>
     <tr>
-      <td class="row1 col_odd" id="stem_eImp"></td>
-      <td class="row2 col_odd" id="suffix_eImp"></td>
-      <td class="row3 col_odd" id="after_eImp">。(命令)</td>
+      <td class="row1 col_odd jp" id="stem_eImp"></td>
+      <td class="row2 col_odd jp" id="suffix_eImp"></td>
+      <td class="row3 col_odd jp" id="after_eImp">。(命令)</td>
     </tr>
     <tr>
-      <td class="row1 col_even" id="stem_o"></td>
-      <td class="row2 col_even" id="suffix_o"></td>
-      <td class="row3 col_even" id="after_o">-う
+      <td class="row1 col_even jp" id="stem_o"></td>
+      <td class="row2 col_even jp" id="suffix_o"></td>
+      <td class="row3 col_even jp" id="after_o">-う
       <br/> 一段、くる、する：-よう
       </td>
     </tr>

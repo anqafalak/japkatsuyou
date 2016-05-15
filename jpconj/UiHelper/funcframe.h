@@ -40,6 +40,7 @@ public:
     virtual void zoom(signed char sign) = 0;
     virtual void refreshLanguage(bool rtl) = 0;
     virtual void initExporter(Export * exporter) = 0;
+    virtual void changeFont(QString font, QString jpfont, int size, int jpsize) = 0;
 
 protected:
 
