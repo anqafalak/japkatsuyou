@@ -85,9 +85,9 @@ void About::Init()
     ui->authorsText->setSource(loadLocalizePath("authors"));
     connect(ui->authorsText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
 
-    ui->thanksText->viewport()->setAutoFillBackground(false);
-    ui->thanksText->setSource(loadLocalizePath("thanks"));
-    connect(ui->thanksText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
+    ui->legalText->viewport()->setAutoFillBackground(false);
+    ui->legalText->setSource(loadLocalizePath("legal"));
+    connect(ui->legalText, SIGNAL(anchorClicked(QUrl)), this, SLOT(externUrl(QUrl)));
 }
 
 

@@ -1,8 +1,7 @@
-﻿حقوق النشر 2013 عبد الكريم عريس
-(kariminfo0@gmail.com)
+﻿حقوق النشر 2013-2016 مجموعة عنقاء الفلك AnqaFalak
 
-حقوق النشر 2013 مجموعة DzCoding - فريق JapKatsuyou
-(dzcoding@googlegroups.com)
+حقوق النشر 2013 عبد الكريم عريس
+(kariminfo0@gmail.com)
 
 مرخص تحت GNU GPLv3 أو أي نسخة لاحقة.
 

@@ -20,8 +20,12 @@
     </message>
     <message>
         <location filename="../../Ui/about.ui" line="163"/>
+        <source>Legal information</source>
+        <translation>معلومات قانونية</translation>
+    </message>
+    <message>
         <source>Thanks</source>
-        <translation>شكر</translation>
+        <translation type="obsolete">شكر</translation>
     </message>
     <message>
         <location filename="../../Ui/about.cpp" line="74"/>
@@ -136,17 +140,22 @@
         <translation>نمط الخط الياباني</translation>
     </message>
     <message>
-        <location filename="../../Ui/preference.ui" line="210"/>
+        <location filename="../../Ui/preference.ui" line="220"/>
+        <source>Icons style</source>
+        <translation>ستايل الأيقونات</translation>
+    </message>
+    <message>
+        <location filename="../../Ui/preference.ui" line="245"/>
         <source>Content Export</source>
         <translation>تصدير المحتوى</translation>
     </message>
     <message>
-        <location filename="../../Ui/preference.ui" line="222"/>
+        <location filename="../../Ui/preference.ui" line="257"/>
         <source>Exported tables</source>
         <translation>الجداول المصدرة</translation>
     </message>
     <message>
-        <location filename="../../Ui/preference.ui" line="315"/>
+        <location filename="../../Ui/preference.ui" line="350"/>
         <source>Use Style</source>
         <translation>استعمال الستايل</translation>
     </message>
@@ -366,68 +375,68 @@
         <translation>شريط أدوات الحجم</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="274"/>
+        <location filename="../../Ui/jpconjmain.ui" line="269"/>
         <source>&amp;Close</source>
         <translation>إغلاق</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="284"/>
+        <location filename="../../Ui/jpconjmain.ui" line="274"/>
         <source>&amp;About</source>
         <translation>عن البرنامج</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="294"/>
+        <location filename="../../Ui/jpconjmain.ui" line="279"/>
         <source>&amp;Preference</source>
         <translation>خيارات</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="316"/>
+        <location filename="../../Ui/jpconjmain.ui" line="292"/>
         <source>Content Export</source>
         <translation>تصدير المحتوى</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="329"/>
+        <location filename="../../Ui/jpconjmain.ui" line="300"/>
         <source>&amp;Print</source>
         <translation>طباعة</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="339"/>
+        <location filename="../../Ui/jpconjmain.ui" line="305"/>
         <source>Zoom In</source>
         <translation>تكبير</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="349"/>
+        <location filename="../../Ui/jpconjmain.ui" line="310"/>
         <source>Zoom Out</source>
         <translation>تصغير</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="359"/>
+        <location filename="../../Ui/jpconjmain.ui" line="315"/>
         <source>Normal Size</source>
         <translation>حجم عادي</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="369"/>
+        <location filename="../../Ui/jpconjmain.ui" line="320"/>
         <source>Hide</source>
         <translation>إخفاء</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="378"/>
+        <location filename="../../Ui/jpconjmain.ui" line="325"/>
         <source>Contact us</source>
         <translation>إتصل بنا</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="387"/>
+        <location filename="../../Ui/jpconjmain.ui" line="330"/>
         <source>Homepage</source>
         <translation>الصفحة الرئيسية</translation>
     </message>
     <message>
-        <location filename="../../Ui/jpconjmain.ui" line="304"/>
+        <location filename="../../Ui/jpconjmain.ui" line="284"/>
         <source>Help Content</source>
         <translation>محتوى المساعدة</translation>
     </message>
     <message>
         <location filename="../../Ui/jpconjmain.cpp" line="103"/>
-        <location filename="../../Ui/jpconjmain.cpp" line="385"/>
+        <location filename="../../Ui/jpconjmain.cpp" line="408"/>
         <source>Show</source>
         <translation>إظهار</translation>
     </message>

@@ -16,7 +16,7 @@ TARGET = jpconj
 TEMPLATE = app
 
 
-VERSION = 1.0.2
+VERSION = 2.0.0
 DEFINES += VERSION=\\\"$$VERSION\\\"
 DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj/
 
@@ -66,11 +66,11 @@ TRANSLATIONS    +=  Media/i18n/jpconj_ar.ts\
                     Media/i18n/jpconj_fr.ts
 
 win32:CONFIG(release, debug|release):{
-LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
-LIBS += -L$$PWD/3rdParty/QKIcona/ -llibQKIcona
+LIBS += -L$$PWD/../libjpconj-bin/release/ -llibjpconj
+LIBS += -L$$PWD/../jpconj/3rdParty/QKIcona/ -llibQKIcona
 }
 else:win32:CONFIG(debug, debug|release):{
-LIBS += -L$$PWD/../libjpconj-bin/ -llibjpconj
+LIBS += -L$$PWD/../libjpconj-bin/debug/ -llibjpconj
 LIBS += -L$$PWD/../jpconj/3rdParty/QKIcona/ -llibQKIcona
 }
 else:symbian: LIBS += -llibjpconj
@@ -89,8 +89,8 @@ RESOURCES += \
     Media/icons.qrc \
     Media/output.qrc
 
-    
-win32:RC_FILE = jpconj.rc
+
+win32:RC_FILE = Media/jpconj.rc
 
 
 #Used when packaging only

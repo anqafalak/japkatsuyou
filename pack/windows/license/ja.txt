@@ -1,8 +1,7 @@
-﻿Copyright 2013 Abdelkrime Aries
-(kariminfo0@gmail.com)
+﻿Copyright 2013-2016 AnqaFalakのグループ
 
-Copyright 2013 DzCodingのグループ (JapKatsuyouのチーム)
-(dzcoding@googlegroups.com)
+Copyright 2013 Abdelkrime Aries
+(kariminfo0@gmail.com)
 
 GNU GPLv3 の下で、または後のバージョンの下でライセンスされています。
 
