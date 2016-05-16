@@ -1,8 +1,7 @@
-﻿Droits d'auteur 2013 Abdelkrime Aries
-(kariminfo0@gmail.com)
+﻿Copyright 2013-2016 groupe AnqaFalak
 
-Droits d'auteur 2013 groupe DzCoding group (équipe JapKatsuyou)
-(dzcoding@googlegroups.com)
+Droits d'auteur 2013 Abdelkrime Aries
+(kariminfo0@gmail.com)
 
 Sous la licence GNU GPLv3 ou versions ultérieures.
 

@@ -1,0 +1,52 @@
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<h1>Code</h1>
+<p>
+Le code de ce logiciel est sous la licence  
+<a href="http://www.apache.org/licenses/LICENSE-2.0">
+Apache version 2
+</a>
+<br>
+<a href="https://github.com/AnqaFalak/JapKatsuyou">
+Source
+</a>
+</p>
+
+<h1>Tierce partie</h1>
+<p>
+Ce logiciel utilise d'autres matériaux:
+</p>
+
+<h3>Edict2</h3>
+<p>
+Utilisé pour vérifier l'existence de verbes.<br>
+Droits d'auteur: <a href="mailto:jim.breen@monash.edu">Jim Breen</a> 
+et <a href="http://www.edrdg.org/edrdg/index.html">le groupe EDRDG</a>
+<br>
+Sous la licence 
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>
+<br>
+<a href="http://www.csse.monash.edu.au/~jwb/edict.html">Source</a> 
+</p>
+
+<h3>Examples de Tatoeba</h3>
+<p>
+Utilisé pour donner des exemples dans les différentes langues.<br>
+Droits d'auteur: <a href="https://tatoeba.org">tatoeba.org</a> 
+<br>
+Sous la licence 
+<a href="https://creativecommons.org/licenses/by/2.0/">CC-BY-2.0</a>
+<br>
+<a href="https://tatoeba.org/fra/downloads">Source</a> 
+</p>
+
+
+<h3>KIcona</h3>
+<p>
+Utilisé pour les icônes de l'application.<br>
+Droits d'auteur: <a href="mailto:kariminfo0@gmail.com">Abdelkrime Aries</a>
+<br>
+Sous la licence 
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>
+<br>
+<a href="https://github.com/kariminf/K-Icona">Source</a> 
+</p>
