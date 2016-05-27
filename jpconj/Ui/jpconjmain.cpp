@@ -368,7 +368,7 @@ void jpconjmain::changeUiIcons()
     ui->actionPreference->setIcon(Icona::getIcon("pref"));
     ui->actionPrint->setIcon(Icona::getIcon("print"));
     ui->actionZoomIn->setIcon(Icona::getIcon("zoom+"));
-    ui->actionZoomOut->setIcon(Icona::getIcon("zoom"));
+    ui->actionZoomOut->setIcon(Icona::getIcon("zoom-"));
 
     ui->menuZoom->setIcon(Icona::getIcon("zoom"));
 
