@@ -638,17 +638,17 @@
     <message>
         <location filename="../../UiHelper/msg.h" line="198"/>
         <source>Nidan verb with &apos;u&apos; ending (archaic).</source>
-        <translation>فعل نيدان ينتهي ب &quot;u&quot; (مهجور).</translation>
+        <translation>فعل نيدان ينتهي ب &apos;u&apos; (مهجور).</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="200"/>
         <source>Yondan verb with &apos;hu/fu&apos; ending (archaic).</source>
-        <translation>فعل يوندان ينتهي ب &quot;ru&quot; (مهجور).</translation>
+        <translation>فعل يوندان ينتهي ب &apos;ru&apos; (مهجور).</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="202"/>
         <source>Yondan verb with &apos;ru&apos; ending (archaic).</source>
-        <translation>فعل يوندان ينتهي ب &quot;ru&quot; (مهجور).</translation>
+        <translation>فعل يوندان ينتهي ب &apos;ru&apos; (مهجور).</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="204"/>
@@ -663,17 +663,17 @@
     <message>
         <location filename="../../UiHelper/msg.h" line="208"/>
         <source>Godan verb with &apos;bu&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;bu&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;bu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="210"/>
         <source>Godan verb with &apos;gu&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;gu&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;gu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="212"/>
         <source>Godan verb with &apos;ku&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;ku&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;ku&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="214"/>
@@ -683,42 +683,42 @@
     <message>
         <location filename="../../UiHelper/msg.h" line="216"/>
         <source>Godan verb with &apos;mu&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;mu&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;mu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="218"/>
         <source>Godan verb with &apos;nu&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;nu&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;nu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="220"/>
         <source>Godan verb with &apos;ru&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;ru&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;ru&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="222"/>
         <source>Godan verb with &apos;ru&apos; ending (irregular verb).</source>
-        <translation>فعل غودان ينتهي ب &quot;ru&quot; (فعل غير نظامي).</translation>
+        <translation>فعل غودان ينتهي ب &apos;ru&apos; (فعل غير نظامي).</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="224"/>
         <source>Godan verb with &apos;su&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;su&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;su&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="226"/>
         <source>Godan verb with &apos;tsu&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;tsu&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;tsu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="228"/>
         <source>Godan verb with &apos;u&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;u&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;u&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="230"/>
         <source>Godan verb with &apos;u&apos; ending (special class).</source>
-        <translation>فعل غودان ينتهي ب &quot;u&quot; (فئة خاصة).</translation>
+        <translation>فعل غودان ينتهي ب &apos;u&apos; (فئة خاصة).</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="232"/>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../../UiHelper/msg.h" line="234"/>
         <source>Godan verb with &apos;zu&apos; ending.</source>
-        <translation>فعل غودان ينتهي ب &quot;zu&quot;.</translation>
+        <translation>فعل غودان ينتهي ب &apos;zu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="236"/>
@@ -743,7 +743,7 @@
     <message>
         <location filename="../../UiHelper/msg.h" line="240"/>
         <source>Irregular nu verb.</source>
-        <translation>فعل غير نظامي ينهي ب &quot;nu&quot;.</translation>
+        <translation>فعل غير نظامي ينهي ب &apos;nu&apos;.</translation>
     </message>
     <message>
         <location filename="../../UiHelper/msg.h" line="242"/>

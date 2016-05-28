@@ -160,12 +160,14 @@ void ConjFrame::doConj()
         return;
     }
 
+    jaVerb = javerb;
     //ui->verbType->setText(Msg::getVerbTypeDesc(type));
+    verbInformation(javerb);
     complexConjugation(javerb);
     basicConjugation(javerb);
-    verbInformation(javerb);
+
     hasContent = true;
-    jaVerb = javerb;
+
     refreshLanguage(rtl);
     newVerb(javerb.kanji);
 
@@ -345,30 +347,31 @@ void ConjFrame::refreshLanguage(bool rtl)
     if (!hasContent)
         return;
 
-    //TODO Refresh verbInfo instead
-    //ui->verbType->setText(Msg::getVerbTypeDesc(verbType));
-
     QString jsScript = "var body = document.getElementsByTagName('body')[0]; \n";
     QString dir = (rtl)?"rtl":"ltr";
     jsScript += "body.dir = \"" + dir + "\";";
 
-    ui->standardConj->page()->mainFrame()->evaluateJavaScript(jsScript);
+    //ui->standardConj->page()->mainFrame()->evaluateJavaScript(jsScript);
     //it is better for standard conjugation to stay ltr
     ui->basicConj->page()->mainFrame()->evaluateJavaScript(jsScript);
     ui->complexConj->page()->mainFrame()->evaluateJavaScript(jsScript);
     ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
+    {
+        QWebElement element = ui->verbInfo->page()->mainFrame()->findFirstElement("#type");
+        element.setAttribute("dir", dir);
+    }
     //qDebug()<< jsScript;
 
     //Retranslate strings
 
     {//Information
-        jsScript += "document.getElementById(\"_Verb\").innerHTML = \"";
+        jsScript = "document.getElementById(\"_Verb\").innerHTML = \"";
         jsScript += Msg::getTranslatedString("_Verb") + "\";\n";
         jsScript += "document.getElementById(\"_Romaji\").innerHTML = \"";
         jsScript += Msg::getTranslatedString("_Romaji") + "\";\n";
         jsScript += "document.getElementById(\"_Type\").innerHTML = \"";
         jsScript += Msg::getTranslatedString("_Type") + "\";\n";
-        ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
+        //ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
         jsScript += "document.getElementById(\"type\").innerHTML = \"";
         jsScript += Msg::getVerbTypeDesc(jaVerb.type) + "\";\n";
         ui->verbInfo->page()->mainFrame()->evaluateJavaScript(jsScript);
