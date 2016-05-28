@@ -13,14 +13,14 @@
       <section title="About JapKatsuyou" ref="about.html">
 	<section title="JapKatsuyou features" ref="about.html#features"/>
 	<section title="JapKatsuyou License" ref="about.html#license"/>
-	<section title="JapKatsuyou Verbs Database" ref="about.html#database"/>
+	<section title="Legal information" ref="about.html#legal"/>
       </section>
       <section title="User Interface" ref="gui.html">
 	<section title="Menu Bar" ref="gui.html#menubar"/>
 	<section title="Tool Bars" ref="gui.html#toolbars"/>
 	<section title="Search Panel" ref="gui.html#search"/>
-	<section title="Verb's Type" ref="gui.html#type"/>
 	<section title="Conjugation Result" ref="gui.html#result"/>
+	<section title="Examples" ref="gui.html#exp"/>
       </section>
       <section title="Use Mode" ref="use.html">
 	<section title="Verb search and conjugation" ref="use.html#search"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QtHelpProject version="1.0">
-  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <namespace>AnqaFalak.com.JapKatsuyou.2.0</namespace>
   <virtualFolder>manual_ja</virtualFolder>
-  <customFilter name="JapKatsuyou 1.0">
+  <customFilter name="JapKatsuyou 2.0">
     <filterAttribute>JapKatsuyou</filterAttribute>
     <filterAttribute>1.0</filterAttribute>
   </customFilter>
@@ -13,14 +13,14 @@
       <section title="JapKatsuyouについて" ref="about.html">
 	<section title="JapKatsuyouの特長" ref="about.html#features"/>
 	<section title="JapKatsuyouのライセンス" ref="about.html#license"/>
-	<section title="JapKatsuyouの動詞のデータベース" ref="about.html#database"/>
+	<section title="法律情報" ref="about.html#legal"/>
       </section>
       <section title="ユーザーインターフェース" ref="gui.html">
 	<section title="メニューバー" ref="gui.html#menubar"/>
 	<section title="ツールバー" ref="gui.html#toolbars"/>
 	<section title="検索のパネル" ref="gui.html#search"/>
-	<section title="動詞の種類" ref="gui.html#type"/>
 	<section title="動詞活用の結果" ref="gui.html#result"/>
+	<section title="例題" ref="gui.html#exp"/>
       </section>
       <section title="使用方法" ref="use.html">
 	<section title="動詞活用と検索" ref="use.html#search"/>

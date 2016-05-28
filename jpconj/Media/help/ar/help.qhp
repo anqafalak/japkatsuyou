@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QtHelpProject version="1.0">
-  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <namespace>AnqaFalak.com.JapKatsuyou.2.0</namespace>
   <virtualFolder>manual_ar</virtualFolder>
-  <customFilter name="JapKatsuyou 1.0">
+  <customFilter name="JapKatsuyou 2.0">
     <filterAttribute>JapKatsuyou</filterAttribute>
     <filterAttribute>1.0</filterAttribute>
   </customFilter>
@@ -13,14 +13,14 @@
       <section title="عن البرنامج JapKatsuyou" ref="about.html">
 	<section title="ميزات JapKatsuyou" ref="about.html#features"/>
 	<section title="ترخيص JapKatsuyou" ref="about.html#license"/>
-	<section title="قاعدة بيانات الأفعال لـ JapKatsuyou" ref="about.html#database"/>
+	<section title="معلومات قانونية" ref="about.html#legal"/>
       </section>
       <section title="واجهة المستخدم" ref="gui.html">
 	<section title="شريط القوائم" ref="gui.html#menubar"/>
 	<section title="أشرطة الأدوات" ref="gui.html#toolbars"/>
 	<section title="لوحة البحث" ref="gui.html#search"/>
-	<section title="نوع الفعل" ref="gui.html#type"/>
 	<section title="نتيجة التصريف" ref="gui.html#result"/>
+	<section title="أمثلة" ref="gui.html#exp"/>
       </section>
       <section title="طريقة الاستعمال" ref="use.html">
 	<section title="البحث وتصريف الفعل" ref="use.html#search"/>

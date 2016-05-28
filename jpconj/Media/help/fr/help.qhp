@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QtHelpProject version="1.0">
-  <namespace>DzCoding.com.JapKatsuyou.1.0</namespace>
+  <namespace>DzCoding.com.JapKatsuyou.2.0</namespace>
   <virtualFolder>manual_fr</virtualFolder>
-  <customFilter name="JapKatsuyou 1.0">
+  <customFilter name="JapKatsuyou 2.0">
     <filterAttribute>JapKatsuyou</filterAttribute>
     <filterAttribute>1.0</filterAttribute>
   </customFilter>
@@ -13,14 +13,14 @@
       <section title="A propos de JapKatsuyou" ref="about.html">
 	<section title="Fonctionnalités de JapKatsuyou" ref="about.html#features"/>
 	<section title="Licence de JapKatsuyou" ref="about.html#license"/>
-	<section title="Base de données de verbes utilisée dans JapKatsuyou" ref="about.html#database"/>
+	<section title="Information légale" ref="about.html#legal"/>
       </section>
       <section title="Interface utilisateur" ref="gui.html">
 	<section title="Barre de menus" ref="gui.html#menubar"/>
 	<section title="Barres d'outils" ref="gui.html#toolbars"/>
 	<section title="Panneau de recherche" ref="gui.html#search"/>
-	<section title="Type de verbe" ref="gui.html#type"/>
 	<section title="Résultat de conjugaison" ref="gui.html#result"/>
+	<section title="Exemples" ref="gui.html#exp"/>
       </section>
       <section title="Mode d'utilisation" ref="use.html">
 	<section title="Recherche de verbe et conjugaison" ref="use.html#search"/>
