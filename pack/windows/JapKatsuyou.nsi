@@ -8,16 +8,16 @@
 ;to use if else statements
 ;!include LogicLib.nsh
 
-Unicode true
+;Unicode true
 XPStyle on
 
 ;detect if windows installer is higher than 3.1
-!include MSI.nsh
+;!include MSI.nsh
 ; The name of the installer
 Name "JapKatsuyou"
 
 ; The file to write
-OutFile JapKatsuyou-1.0.1.exe
+OutFile JapKatsuyou-2.0.0.exe
 
 ; The default installation directory
 InstallDir $PROGRAMFILES\JapKatuyou
@@ -62,25 +62,6 @@ Name $(Name)
 ; Section JapKatsuyou
 Section "JapKatsuyou"
 	SectionIn RO
-
-	;Install visual c++ 2010 redistributable (x86) & windows installer 3.1 if not exist
-	SetOutPath $PLUGINSDIR
-	Var /GLOBAL update
-	Call UpdateMSIVersion
-	Pop $update
-	IntCmp $update 1 +1 msifound msifound
-	;	MessageBox MB_OK|MB_ICONEXCLAMATION \
-	;	"Windows Installer 3.1 was not detected; this is required for installation. \
-	;	Setup will install the Windows Installer. This may take awhile, please wait."
-		File "win\WindowsInstaller-KB893803-v2-x86.exe"
-		ExecWait '"$PLUGINSDIR\WindowsInstaller-KB893803-v2-x86.exe"  /quiet /norestart'
-	msifound:
-	;MessageBox MB_OK|MB_ICONEXCLAMATION \
-	;	"MSVC 2010. \
-	;	Installing visual c++ 2010 redistributable (x86), please wait."
-	File "win\vcredist_x86.exe"
-	ExecWait '"$PLUGINSDIR\vcredist_x86.exe"  /quiet /norestart'
-	
 	
 	; Set output path to the installation directory.
 	SetOutPath $INSTDIR
