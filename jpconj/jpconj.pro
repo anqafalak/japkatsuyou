@@ -18,7 +18,10 @@ TEMPLATE = app
 
 VERSION = 2.0.0
 DEFINES += VERSION=\\\"$$VERSION\\\"
-DEFINES += dataFolder=\\\"./\\\" #/usr/share/jpconj/
+DEFINES += dataFolder=\\\"./\\\"
+
+# This is used to package debian
+#DEFINES += dataFolder=\\\"/usr/share/jpconj/\\\"
 
 
 SOURCES  += main.cpp\
@@ -65,6 +68,7 @@ TRANSLATIONS    +=  Media/i18n/jpconj_ar.ts\
                     Media/i18n/jpconj_ja.ts\
                     Media/i18n/jpconj_fr.ts
 
+# Set libraries paths
 win32:CONFIG(release, debug|release):{
 LIBS += -L$$PWD/../libjpconj-bin/release/ -llibjpconj
 LIBS += -L$$PWD/../jpconj/3rdParty/QKIcona/ -llibQKIcona
@@ -77,11 +81,16 @@ else:symbian: LIBS += -llibjpconj
 else:unix:{
 LIBS += -L../libjpconj-bin/ -ljpconj
 LIBS += -L../jpconj/3rdParty/QKIcona/ -lQKIcona
+# This is used when the library is installed in the system
+# LIBS += -lQKIcona
 }
 
+# Set libraries definitions (interfaces)
 INCLUDEPATH += ../libjpconj
 INCLUDEPATH += ./3rdParty/QKIcona/
 DEPENDPATH += . ../libjpconj-bin
+# This is used when the library headers are installed
+# INCLUDEPATH += /usr/include/QKIcona
 
 
 RESOURCES += \
@@ -94,8 +103,14 @@ win32:RC_FILE = Media/jpconj.rc
 
 
 #Used when packaging only
-DESTDIR = ../jpconj-bin
 unix {
+
+#DESTDIR = ../jpconj-bin
+#MOC_DIR = ../build/app/moc
+#RCC_DIR = ../build/app/rcc
+#UI_DIR = ../build/app/ui
+#OBJECTS_DIR = ../build/app/o
+
 system(mkdir ../jpconj-bin)
 
 
@@ -117,9 +132,9 @@ system(mkdir ../jpconj-bin/styles)
 system(cp Media/styles/* ../jpconj-bin/styles)
 
 #target.path = /usr/bin/
-#configfiles.files += img/icon.png
-#configfiles.files += verbs
-#configfiles.files += styles
+#configfiles.files += Media/img/icon.png
+#configfiles.files += Media/DB
+#configfiles.files += Media/styles
 #configfiles.files += ../jpconj-bin/i18n
 #configfiles.files += ../jpconj-bin/help
 #configfiles.path = /usr/share/jpconj/
@@ -127,7 +142,7 @@ system(cp Media/styles/* ../jpconj-bin/styles)
 #docfiles.path = /usr/share/doc/
 #manfiles.files +=
 #manfiles.path = /usr/share/man/man1/
-#shortcutfiles.files += jpconj.desktop
+#shortcutfiles.files += Media/jpconj.desktop
 #shortcutfiles.path = /usr/share/applications/
 #INSTALLS += target
 #INSTALLS += configfiles
