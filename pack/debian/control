@@ -2,12 +2,12 @@ Source: japkatsuyou
 Section: education
 Priority: extra
 Maintainer: Abdelkrime Aries <kariminfo0@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), libqt4-dev (>= 4.8.3), qt4-dev-tools (>= 4.8.3), libqtwebkit-dev (>= 2.2)
+Build-Depends: debhelper (>= 8.0.0), libqt4-dev (>= 4.8.3), qt4-dev-tools (>= 4.8.3), libqtwebkit-dev (>= 2.2), libqkicona (>= 1.0.0), libqkicona-dev (>= 1.0.0)
 Standards-Version: 3.9.3
-Homepage: https://github.com/DzCoding/JapKatsuyou
+Homepage: https://github.com/AnqaFalak/JapKatsuyou
 #Vcs-Git: git://git.debian.org/collab-maint/japkatsuyou.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/japkatsuyou.git;a=summary
-
+  
 Package: libjpconj
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -18,7 +18,7 @@ Description:Japanese verb conjugation library
 
 Package: jpconj
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libjpconj (>= 1.0.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libjpconj (>= 1.0.0), libqkicona (>= 1.0.0)
 Description:JapKatsuyou: Japanese verb conjugation application
   This application is a GUI which use the library libjpconj.
   Giving a Japanese verb in its dictionary form (root+u),

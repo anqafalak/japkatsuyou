@@ -1,6 +1,10 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: japkatsuyou
-Source: <https://github.com/DzCoding/JapKatsuyou>
+Source: <https://github.com/AnqaFalak/JapKatsuyou>
+
+Files: *
+Copyright: 2016 AnqaFalak group
+License: GPL-3.0+
 
 Files: *
 Copyright: 2013 DzCoding (JapKatsuyou group) <dzcoding@googlegroups.com>
