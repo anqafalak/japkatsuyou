@@ -1,6 +1,6 @@
 # JapKatsuyou
 
-[![Project](https://img.shields.io/badge/Project-JapKatsuyou-F34B7D.svg)](https://kariminf.github.com/jslingua)
+[![Project](https://img.shields.io/badge/Project-JapKatsuyou-F34B7D.svg)](https://anqafalak.github.com/japkatsuyou)
 [![License](https://img.shields.io/badge/License-Apache--2.0-F34B7D.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![GitHub release](https://img.shields.io/github/release/anqafalak/japkatsuyou.svg)]()
 [![Travis](https://img.shields.io/travis/anqafalak/japkatsuyou.svg)](https://travis-ci.org/anqafalak/japkatsuyou)
