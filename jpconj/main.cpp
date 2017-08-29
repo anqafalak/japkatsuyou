@@ -36,8 +36,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    a.setOrganizationName("DzCoding");
-    a.setOrganizationDomain("https://github.com/DzCoding");
+    a.setOrganizationName("AnqaFalak");
+    a.setOrganizationDomain("https://github.com/anqafalak");
     a.setApplicationName("JapKatsuyou");
 
     a.setQuitOnLastWindowClosed( false );

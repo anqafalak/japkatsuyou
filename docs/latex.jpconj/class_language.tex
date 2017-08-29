@@ -1,0 +1,139 @@
+\hypertarget{class_language}{}\section{Language Class Reference}
+\label{class_language}\index{Language@{Language}}
+
+
+{\ttfamily \#include $<$language.\+h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_language_a1be8a8900bc2e8511f68cdadb460fa65}{set\+Language} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_language_aeebc39360aef6d5fd053fd60b6ddc99a}{load\+Translations} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_language_aeebc39360aef6d5fd053fd60b6ddc99a}{Language\+::load\+Translations} Look for available translations and load them. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_language_a41e794bd617d77954179da57c2093412}{main\+Window\+Direction} (\hyperlink{class_q_main_window}{Q\+Main\+Window} $\ast$w)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_language_a41e794bd617d77954179da57c2093412}{Language\+::main\+Window\+Direction} Sets the Layout direction to R\+TL or L\+TR. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_language_a166c93720b89d805481cd70f6fe333a2}{get\+Config\+Language} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_language_a166c93720b89d805481cd70f6fe333a2}{Language\+::get\+Config\+Language} Get the language ID from the Config file. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_language_a8b7392bc644966ab95e5e18f3ef01c68}{get\+Current\+Language} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_language_a8b7392bc644966ab95e5e18f3ef01c68}{Language\+::get\+Current\+Language} Get the current language ID. \end{DoxyCompactList}\item 
+static void \hyperlink{class_language_a95f2608b1e56df6a792b24120a800399}{set\+Config\+Language} (Q\+String lang\+ID)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_language_a95f2608b1e56df6a792b24120a800399}{Language\+::set\+Config\+Language} Set the language ID to the Config file. \end{DoxyCompactList}\item 
+static Q\+Hash$<$ Q\+String, Q\+String $>$ \hyperlink{class_language_ac56915d59897ed05717af793b5aae7fb}{get\+Languages\+Info} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_language_ac56915d59897ed05717af793b5aae7fb}{Language\+::get\+Languages\+Info} Get ID\textquotesingle{}s and names of available languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to manage the localization 
+
+\subsection{Member Function Documentation}
+\index{Language@{Language}!get\+Config\+Language@{get\+Config\+Language}}
+\index{get\+Config\+Language@{get\+Config\+Language}!Language@{Language}}
+\subsubsection[{\texorpdfstring{get\+Config\+Language()}{getConfigLanguage()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Language\+::get\+Config\+Language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_language_a166c93720b89d805481cd70f6fe333a2}{}\label{class_language_a166c93720b89d805481cd70f6fe333a2}
+
+
+\hyperlink{class_language_a166c93720b89d805481cd70f6fe333a2}{Language\+::get\+Config\+Language} Get the language ID from the Config file. 
+
+\begin{DoxyReturn}{Returns}
+The ID of the specified language ~\newline
+If the language ID is not available, it returns \char`\"{}??\char`\"{} 
+\end{DoxyReturn}
+\index{Language@{Language}!get\+Current\+Language@{get\+Current\+Language}}
+\index{get\+Current\+Language@{get\+Current\+Language}!Language@{Language}}
+\subsubsection[{\texorpdfstring{get\+Current\+Language()}{getCurrentLanguage()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Language\+::get\+Current\+Language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_language_a8b7392bc644966ab95e5e18f3ef01c68}{}\label{class_language_a8b7392bc644966ab95e5e18f3ef01c68}
+
+
+\hyperlink{class_language_a8b7392bc644966ab95e5e18f3ef01c68}{Language\+::get\+Current\+Language} Get the current language ID. 
+
+\begin{DoxyReturn}{Returns}
+The ID of the language used currently 
+\end{DoxyReturn}
+\index{Language@{Language}!get\+Languages\+Info@{get\+Languages\+Info}}
+\index{get\+Languages\+Info@{get\+Languages\+Info}!Language@{Language}}
+\subsubsection[{\texorpdfstring{get\+Languages\+Info()}{getLanguagesInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$ Q\+String, Q\+String $>$ Language\+::get\+Languages\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_language_ac56915d59897ed05717af793b5aae7fb}{}\label{class_language_ac56915d59897ed05717af793b5aae7fb}
+
+
+\hyperlink{class_language_ac56915d59897ed05717af793b5aae7fb}{Language\+::get\+Languages\+Info} Get ID\textquotesingle{}s and names of available languages. 
+
+\begin{DoxyReturn}{Returns}
+A Q\+Hash of language-\/\+ID as key, and language-\/name as value. ~\newline
+Example\+: $<$en, English$>$, $<$ar, Arabic$>$, etc. 
+\end{DoxyReturn}
+\index{Language@{Language}!load\+Translations@{load\+Translations}}
+\index{load\+Translations@{load\+Translations}!Language@{Language}}
+\subsubsection[{\texorpdfstring{load\+Translations()}{loadTranslations()}}]{\setlength{\rightskip}{0pt plus 5cm}void Language\+::load\+Translations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_language_aeebc39360aef6d5fd053fd60b6ddc99a}{}\label{class_language_aeebc39360aef6d5fd053fd60b6ddc99a}
+
+
+\hyperlink{class_language_aeebc39360aef6d5fd053fd60b6ddc99a}{Language\+::load\+Translations} Look for available translations and load them. 
+
+It looks for available languages in an X\+ML file, containing id, name, location. Then, it loads the languages (translations) from their locations. It creates, also, the Q\+Hash$<$\+Q\+String, Q\+String$>$ languages\+Info that can be returned using the function \hyperlink{class_language_ac56915d59897ed05717af793b5aae7fb}{Language\+::get\+Languages\+Info} \index{Language@{Language}!main\+Window\+Direction@{main\+Window\+Direction}}
+\index{main\+Window\+Direction@{main\+Window\+Direction}!Language@{Language}}
+\subsubsection[{\texorpdfstring{main\+Window\+Direction(\+Q\+Main\+Window $\ast$w)}{mainWindowDirection(QMainWindow *w)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Language\+::main\+Window\+Direction (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Main\+Window} $\ast$}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_language_a41e794bd617d77954179da57c2093412}{}\label{class_language_a41e794bd617d77954179da57c2093412}
+
+
+\hyperlink{class_language_a41e794bd617d77954179da57c2093412}{Language\+::main\+Window\+Direction} Sets the Layout direction to R\+TL or L\+TR. 
+
+Sets the direction of a given \hyperlink{class_q_main_window}{Q\+Main\+Window} to R\+TL or L\+TR according to current local
+\begin{DoxyItemize}
+\item R\+TL\+: If the local first two characters are in\+: ar, dv, ha, he, fa, ps, ur, yi
+\item L\+TR\+: Otherwise 
+\begin{DoxyParams}{Parameters}
+{\em w} & A \hyperlink{class_q_main_window}{Q\+Main\+Window} which we want to set the direction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if rtl, false if ltr 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\index{Language@{Language}!set\+Config\+Language@{set\+Config\+Language}}
+\index{set\+Config\+Language@{set\+Config\+Language}!Language@{Language}}
+\subsubsection[{\texorpdfstring{set\+Config\+Language(\+Q\+String lang\+I\+D)}{setConfigLanguage(QString langID)}}]{\setlength{\rightskip}{0pt plus 5cm}void Language\+::set\+Config\+Language (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{lang\+ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_language_a95f2608b1e56df6a792b24120a800399}{}\label{class_language_a95f2608b1e56df6a792b24120a800399}
+
+
+\hyperlink{class_language_a95f2608b1e56df6a792b24120a800399}{Language\+::set\+Config\+Language} Set the language ID to the Config file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lang\+ID} & \\
+\hline
+\end{DoxyParams}
+\index{Language@{Language}!set\+Language@{set\+Language}}
+\index{set\+Language@{set\+Language}!Language@{Language}}
+\subsubsection[{\texorpdfstring{set\+Language}{setLanguage}}]{\setlength{\rightskip}{0pt plus 5cm}static void Language\+::set\+Language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [slot]}}\hypertarget{class_language_a1be8a8900bc2e8511f68cdadb460fa65}{}\label{class_language_a1be8a8900bc2e8511f68cdadb460fa65}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+jpconj/\+Ui\+Helper/\hyperlink{language_8h}{language.\+h}\item 
+jpconj/\+Ui\+Helper/\hyperlink{language_8cpp}{language.\+cpp}\end{DoxyCompactItemize}

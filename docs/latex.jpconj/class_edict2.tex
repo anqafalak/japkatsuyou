@@ -1,0 +1,102 @@
+\hypertarget{class_edict2}{}\section{Edict2 Class Reference}
+\label{class_edict2}\index{Edict2@{Edict2}}
+
+
+{\ttfamily \#include $<$edict2.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_edict2_1_1_ja_verb}{Ja\+Verb}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_edict2_a8dec1c26f4eb12381dd49419deaa6d7d}{Edict2} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_edict2_a8dec1c26f4eb12381dd49419deaa6d7d}{Edict2\+::\+Edict2} Constructor of the \hyperlink{class_edict2}{Edict2} management module. \end{DoxyCompactList}\item 
+\hyperlink{class_edict2_ad6121ad9ebcb2836b8289d66a4842372}{$\sim$\+Edict2} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_edict2_ad6121ad9ebcb2836b8289d66a4842372}{Edict2\+::$\sim$\+Edict2} Destructor of the \hyperlink{class_edict2}{Edict2} management module. \end{DoxyCompactList}\item 
+\hyperlink{struct_edict2_1_1_ja_verb}{Ja\+Verb} \hyperlink{class_edict2_abc792160e9770e32a682b661a16493ba}{find} (Q\+String verb)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_edict2_abc792160e9770e32a682b661a16493ba}{Edict2\+::find} Search for a verb in the database, and return its type. \end{DoxyCompactList}\item 
+void \hyperlink{class_edict2_a5674389d9d45962ff1daf40d5fd8695e}{connect} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_edict2_a5674389d9d45962ff1daf40d5fd8695e}{Edict2\+::connect} Connect to edict2verbs.\+db Sq\+Lite database. \end{DoxyCompactList}\item 
+void \hyperlink{class_edict2_a0a051927cdec6d9108252d25c92394eb}{desconnect} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_edict2_a0a051927cdec6d9108252d25c92394eb}{Edict2\+::desconnect} Desconnect edict2verbs.\+db Sq\+Lite database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to connect to the verbs\textquotesingle{} database, and verify if a verb exists, then get its type 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Edict2@{Edict2}!Edict2@{Edict2}}
+\index{Edict2@{Edict2}!Edict2@{Edict2}}
+\subsubsection[{\texorpdfstring{Edict2()}{Edict2()}}]{\setlength{\rightskip}{0pt plus 5cm}Edict2\+::\+Edict2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_edict2_a8dec1c26f4eb12381dd49419deaa6d7d}{}\label{class_edict2_a8dec1c26f4eb12381dd49419deaa6d7d}
+
+
+\hyperlink{class_edict2_a8dec1c26f4eb12381dd49419deaa6d7d}{Edict2\+::\+Edict2} Constructor of the \hyperlink{class_edict2}{Edict2} management module. 
+
+\index{Edict2@{Edict2}!````~Edict2@{$\sim$\+Edict2}}
+\index{````~Edict2@{$\sim$\+Edict2}!Edict2@{Edict2}}
+\subsubsection[{\texorpdfstring{$\sim$\+Edict2()}{~Edict2()}}]{\setlength{\rightskip}{0pt plus 5cm}Edict2\+::$\sim$\+Edict2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_edict2_ad6121ad9ebcb2836b8289d66a4842372}{}\label{class_edict2_ad6121ad9ebcb2836b8289d66a4842372}
+
+
+\hyperlink{class_edict2_ad6121ad9ebcb2836b8289d66a4842372}{Edict2\+::$\sim$\+Edict2} Destructor of the \hyperlink{class_edict2}{Edict2} management module. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Edict2@{Edict2}!connect@{connect}}
+\index{connect@{connect}!Edict2@{Edict2}}
+\subsubsection[{\texorpdfstring{connect()}{connect()}}]{\setlength{\rightskip}{0pt plus 5cm}void Edict2\+::connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_edict2_a5674389d9d45962ff1daf40d5fd8695e}{}\label{class_edict2_a5674389d9d45962ff1daf40d5fd8695e}
+
+
+\hyperlink{class_edict2_a5674389d9d45962ff1daf40d5fd8695e}{Edict2\+::connect} Connect to edict2verbs.\+db Sq\+Lite database. 
+
+This function is loaded when we want to manage edict2verbs.\+db Sq\+Lite database. It looks for a connection name called \char`\"{}dbverbs\char`\"{}, if found we just use the database assigned to that connection name. If not, we search for edict2verbs.\+db, and assign connection name called \char`\"{}dbverbs\char`\"{} to it. \index{Edict2@{Edict2}!desconnect@{desconnect}}
+\index{desconnect@{desconnect}!Edict2@{Edict2}}
+\subsubsection[{\texorpdfstring{desconnect()}{desconnect()}}]{\setlength{\rightskip}{0pt plus 5cm}void Edict2\+::desconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_edict2_a0a051927cdec6d9108252d25c92394eb}{}\label{class_edict2_a0a051927cdec6d9108252d25c92394eb}
+
+
+\hyperlink{class_edict2_a0a051927cdec6d9108252d25c92394eb}{Edict2\+::desconnect} Desconnect edict2verbs.\+db Sq\+Lite database. 
+
+It looks for a connection name called \char`\"{}dbverbs\char`\"{}, if found we remove it. \index{Edict2@{Edict2}!find@{find}}
+\index{find@{find}!Edict2@{Edict2}}
+\subsubsection[{\texorpdfstring{find(\+Q\+String verb)}{find(QString verb)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Edict2\+::\+Ja\+Verb} Edict2\+::find (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{verb}
+\end{DoxyParamCaption}
+)}\hypertarget{class_edict2_abc792160e9770e32a682b661a16493ba}{}\label{class_edict2_abc792160e9770e32a682b661a16493ba}
+
+
+\hyperlink{class_edict2_abc792160e9770e32a682b661a16493ba}{Edict2\+::find} Search for a verb in the database, and return its type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em verb} & The verb in dictionary form (u-\/form), eg. 食べる, 飲む, 行く, 来る, etc. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type of the verb if found (See\+: Verb\+Type\+::\+Edict\+Type) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+jpconj/\+Func/\hyperlink{edict2_8h}{edict2.\+h}\item 
+jpconj/\+Func/\hyperlink{edict2_8cpp}{edict2.\+cpp}\end{DoxyCompactItemize}

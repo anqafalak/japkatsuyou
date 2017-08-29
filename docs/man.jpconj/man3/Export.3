@@ -1,0 +1,86 @@
+.TH "Export" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Export \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <export\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBExport\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddContent\fP (QString content)"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (QString styleFile)"
+.br
+.ti -1c
+.RI "void \fBaddStyle\fP (QString styleContent)"
+.br
+.ti -1c
+.RI "void \fBsetRTL\fP (bool RTL)"
+.br
+.ti -1c
+.RI "void \fBexportPdf\fP (QString filename)"
+.br
+.ti -1c
+.RI "void \fBexportOdf\fP (QString filename)"
+.br
+.ti -1c
+.RI "void \fBexportHtml\fP (QString filename)"
+.br
+.ti -1c
+.RI "void \fBprint\fP (QPrinter *printer)"
+.br
+.ti -1c
+.RI "void \fBresetContent\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetConfigExportParts\fP (QMap< QString, bool > exportParts)"
+.br
+.ti -1c
+.RI "static bool \fBgetConfigExportPart\fP (QString exportPart)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Export::Export ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Export::addContent (QString content)"
+
+.SS "void Export::addStyle (QString styleContent)"
+
+.SS "void Export::exportHtml (QString filename)"
+
+.SS "void Export::exportOdf (QString filename)"
+
+.SS "void Export::exportPdf (QString filename)"
+
+.SS "bool Export::getConfigExportPart (QString exportPart)\fC [static]\fP"
+
+.SS "void Export::print (QPrinter * printer)"
+
+.SS "void Export::resetContent ()"
+
+.SS "void Export::setConfigExportParts (QMap< QString, bool > exportParts)\fC [static]\fP"
+
+.SS "void Export::setRTL (bool RTL)"
+
+.SS "void Export::setStyle (QString styleFile)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

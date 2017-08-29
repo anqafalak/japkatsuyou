@@ -1,0 +1,215 @@
+\hypertarget{class_help_viewer}{}\section{Help\+Viewer Class Reference}
+\label{class_help_viewer}\index{Help\+Viewer@{Help\+Viewer}}
+
+
+{\ttfamily \#include $<$helpviewer.\+h$>$}
+
+
+
+Inherits \hyperlink{class_q_web_view}{Q\+Web\+View}.
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_help_viewer_a4dfb871234c298b294f9fd70b5913638}{home} ()
+\item 
+void \hyperlink{class_help_viewer_aae2a10ffc8463decbcdcb4b87cfa30a1}{backward} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_help_viewer_a4053444c3ccf2a5ef8422cb7bfd1dcaa}{copy\+Available} (bool enabled)
+\item 
+void \hyperlink{class_help_viewer_a147b483dd2a752325e3a9776f0988345}{forward\+Available} (bool enabled)
+\item 
+void \hyperlink{class_help_viewer_acaddb370132b3fcd7db01fa70320a1ff}{backward\+Available} (bool enabled)
+\item 
+void \hyperlink{class_help_viewer_ab87496c5f5aa9a99ce8961e5b60c1304}{highlighted} (const Q\+String \&)
+\item 
+void \hyperlink{class_help_viewer_a58c62391a49577f1bce93a23fcfbb435}{source\+Changed} (const Q\+Url \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_help_viewer_a5a59f5f1a69dccd1db3f99557eefedff}{Help\+Viewer} (Q\+Help\+Engine $\ast$help\+Engine, Q\+Widget $\ast$parent)
+\item 
+void \hyperlink{class_help_viewer_a2394ee6d83fc0bcccce745a69574fe65}{set\+Source} (const Q\+Url \&url)
+\item 
+Q\+Url \hyperlink{class_help_viewer_af7076fdbba96daa4540bb8863df7ce64}{source} () const 
+\item 
+Q\+String \hyperlink{class_help_viewer_a922412cfbbf882be461c86206fdce514}{document\+Title} () const 
+\item 
+bool \hyperlink{class_help_viewer_a5f4b571df4b0009c0d260536dd8d5534}{has\+Selection} () const 
+\item 
+void \hyperlink{class_help_viewer_ad4dd2c120b87884d06d6f4d53fdd785b}{reset\+Zoom} ()
+\item 
+void \hyperlink{class_help_viewer_ad02962035b72b412ec429e1531963452}{zoom\+In} (qreal range=1)
+\item 
+void \hyperlink{class_help_viewer_aedb6f64c1eef874659ad3e71200eab6b}{zoom\+Out} (qreal range=1)
+\item 
+void \hyperlink{class_help_viewer_a590585128057d3990bc2f222b35ebbe4}{copy} ()
+\item 
+bool \hyperlink{class_help_viewer_afa96fe1757e0782110df1dd9a6d5af64}{is\+Forward\+Available} () const 
+\item 
+bool \hyperlink{class_help_viewer_aad885245128b1f3368406cce1b803cef}{is\+Backward\+Available} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_help_viewer_a700d19b911c5cfbfa691cb776a274547}{wheel\+Event} (Q\+Wheel\+Event $\ast$)
+\item 
+void \hyperlink{class_help_viewer_a29a0f16331e4fb8900e7670800a53002}{mouse\+Release\+Event} (Q\+Mouse\+Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Help\+Viewer@{Help\+Viewer}!Help\+Viewer@{Help\+Viewer}}
+\index{Help\+Viewer@{Help\+Viewer}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{Help\+Viewer(\+Q\+Help\+Engine $\ast$help\+Engine, Q\+Widget $\ast$parent)}{HelpViewer(QHelpEngine *helpEngine, QWidget *parent)}}]{\setlength{\rightskip}{0pt plus 5cm}Help\+Viewer\+::\+Help\+Viewer (
+\begin{DoxyParamCaption}
+\item[{Q\+Help\+Engine $\ast$}]{help\+Engine, }
+\item[{Q\+Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}\hypertarget{class_help_viewer_a5a59f5f1a69dccd1db3f99557eefedff}{}\label{class_help_viewer_a5a59f5f1a69dccd1db3f99557eefedff}
+
+
+\subsection{Member Function Documentation}
+\index{Help\+Viewer@{Help\+Viewer}!backward@{backward}}
+\index{backward@{backward}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{backward}{backward}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::backward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}\hypertarget{class_help_viewer_aae2a10ffc8463decbcdcb4b87cfa30a1}{}\label{class_help_viewer_aae2a10ffc8463decbcdcb4b87cfa30a1}
+\index{Help\+Viewer@{Help\+Viewer}!backward\+Available@{backward\+Available}}
+\index{backward\+Available@{backward\+Available}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{backward\+Available}{backwardAvailable}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::backward\+Available (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_help_viewer_acaddb370132b3fcd7db01fa70320a1ff}{}\label{class_help_viewer_acaddb370132b3fcd7db01fa70320a1ff}
+\index{Help\+Viewer@{Help\+Viewer}!copy@{copy}}
+\index{copy@{copy}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{copy()}{copy()}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_help_viewer_a590585128057d3990bc2f222b35ebbe4}{}\label{class_help_viewer_a590585128057d3990bc2f222b35ebbe4}
+\index{Help\+Viewer@{Help\+Viewer}!copy\+Available@{copy\+Available}}
+\index{copy\+Available@{copy\+Available}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{copy\+Available}{copyAvailable}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::copy\+Available (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_help_viewer_a4053444c3ccf2a5ef8422cb7bfd1dcaa}{}\label{class_help_viewer_a4053444c3ccf2a5ef8422cb7bfd1dcaa}
+\index{Help\+Viewer@{Help\+Viewer}!document\+Title@{document\+Title}}
+\index{document\+Title@{document\+Title}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{document\+Title() const }{documentTitle() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Help\+Viewer\+::document\+Title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_help_viewer_a922412cfbbf882be461c86206fdce514}{}\label{class_help_viewer_a922412cfbbf882be461c86206fdce514}
+\index{Help\+Viewer@{Help\+Viewer}!forward\+Available@{forward\+Available}}
+\index{forward\+Available@{forward\+Available}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{forward\+Available}{forwardAvailable}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::forward\+Available (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_help_viewer_a147b483dd2a752325e3a9776f0988345}{}\label{class_help_viewer_a147b483dd2a752325e3a9776f0988345}
+\index{Help\+Viewer@{Help\+Viewer}!has\+Selection@{has\+Selection}}
+\index{has\+Selection@{has\+Selection}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{has\+Selection() const }{hasSelection() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Help\+Viewer\+::has\+Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_help_viewer_a5f4b571df4b0009c0d260536dd8d5534}{}\label{class_help_viewer_a5f4b571df4b0009c0d260536dd8d5534}
+\index{Help\+Viewer@{Help\+Viewer}!highlighted@{highlighted}}
+\index{highlighted@{highlighted}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{highlighted}{highlighted}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::highlighted (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_help_viewer_ab87496c5f5aa9a99ce8961e5b60c1304}{}\label{class_help_viewer_ab87496c5f5aa9a99ce8961e5b60c1304}
+\index{Help\+Viewer@{Help\+Viewer}!home@{home}}
+\index{home@{home}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{home}{home}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::home (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_help_viewer_a4dfb871234c298b294f9fd70b5913638}{}\label{class_help_viewer_a4dfb871234c298b294f9fd70b5913638}
+\index{Help\+Viewer@{Help\+Viewer}!is\+Backward\+Available@{is\+Backward\+Available}}
+\index{is\+Backward\+Available@{is\+Backward\+Available}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{is\+Backward\+Available() const }{isBackwardAvailable() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Help\+Viewer\+::is\+Backward\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_help_viewer_aad885245128b1f3368406cce1b803cef}{}\label{class_help_viewer_aad885245128b1f3368406cce1b803cef}
+\index{Help\+Viewer@{Help\+Viewer}!is\+Forward\+Available@{is\+Forward\+Available}}
+\index{is\+Forward\+Available@{is\+Forward\+Available}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{is\+Forward\+Available() const }{isForwardAvailable() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Help\+Viewer\+::is\+Forward\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_help_viewer_afa96fe1757e0782110df1dd9a6d5af64}{}\label{class_help_viewer_afa96fe1757e0782110df1dd9a6d5af64}
+\index{Help\+Viewer@{Help\+Viewer}!mouse\+Release\+Event@{mouse\+Release\+Event}}
+\index{mouse\+Release\+Event@{mouse\+Release\+Event}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{mouse\+Release\+Event(\+Q\+Mouse\+Event $\ast$e)}{mouseReleaseEvent(QMouseEvent *e)}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_help_viewer_a29a0f16331e4fb8900e7670800a53002}{}\label{class_help_viewer_a29a0f16331e4fb8900e7670800a53002}
+\index{Help\+Viewer@{Help\+Viewer}!reset\+Zoom@{reset\+Zoom}}
+\index{reset\+Zoom@{reset\+Zoom}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{reset\+Zoom()}{resetZoom()}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::reset\+Zoom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_help_viewer_ad4dd2c120b87884d06d6f4d53fdd785b}{}\label{class_help_viewer_ad4dd2c120b87884d06d6f4d53fdd785b}
+\index{Help\+Viewer@{Help\+Viewer}!set\+Source@{set\+Source}}
+\index{set\+Source@{set\+Source}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{set\+Source(const Q\+Url \&url)}{setSource(const QUrl &url)}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::set\+Source (
+\begin{DoxyParamCaption}
+\item[{const Q\+Url \&}]{url}
+\end{DoxyParamCaption}
+)}\hypertarget{class_help_viewer_a2394ee6d83fc0bcccce745a69574fe65}{}\label{class_help_viewer_a2394ee6d83fc0bcccce745a69574fe65}
+\index{Help\+Viewer@{Help\+Viewer}!source@{source}}
+\index{source@{source}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{source() const }{source() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Url Help\+Viewer\+::source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_help_viewer_af7076fdbba96daa4540bb8863df7ce64}{}\label{class_help_viewer_af7076fdbba96daa4540bb8863df7ce64}
+\index{Help\+Viewer@{Help\+Viewer}!source\+Changed@{source\+Changed}}
+\index{source\+Changed@{source\+Changed}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{source\+Changed}{sourceChanged}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::source\+Changed (
+\begin{DoxyParamCaption}
+\item[{const Q\+Url \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_help_viewer_a58c62391a49577f1bce93a23fcfbb435}{}\label{class_help_viewer_a58c62391a49577f1bce93a23fcfbb435}
+\index{Help\+Viewer@{Help\+Viewer}!wheel\+Event@{wheel\+Event}}
+\index{wheel\+Event@{wheel\+Event}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{wheel\+Event(\+Q\+Wheel\+Event $\ast$)}{wheelEvent(QWheelEvent *)}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::wheel\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Wheel\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_help_viewer_a700d19b911c5cfbfa691cb776a274547}{}\label{class_help_viewer_a700d19b911c5cfbfa691cb776a274547}
+\index{Help\+Viewer@{Help\+Viewer}!zoom\+In@{zoom\+In}}
+\index{zoom\+In@{zoom\+In}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{zoom\+In(qreal range=1)}{zoomIn(qreal range=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::zoom\+In (
+\begin{DoxyParamCaption}
+\item[{qreal}]{range = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_help_viewer_ad02962035b72b412ec429e1531963452}{}\label{class_help_viewer_ad02962035b72b412ec429e1531963452}
+\index{Help\+Viewer@{Help\+Viewer}!zoom\+Out@{zoom\+Out}}
+\index{zoom\+Out@{zoom\+Out}!Help\+Viewer@{Help\+Viewer}}
+\subsubsection[{\texorpdfstring{zoom\+Out(qreal range=1)}{zoomOut(qreal range=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Help\+Viewer\+::zoom\+Out (
+\begin{DoxyParamCaption}
+\item[{qreal}]{range = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_help_viewer_aedb6f64c1eef874659ad3e71200eab6b}{}\label{class_help_viewer_aedb6f64c1eef874659ad3e71200eab6b}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+jpconj/\+Ui/\hyperlink{helpviewer_8h}{helpviewer.\+h}\item 
+jpconj/\+Ui/\hyperlink{helpviewer_8cpp}{helpviewer.\+cpp}\end{DoxyCompactItemize}

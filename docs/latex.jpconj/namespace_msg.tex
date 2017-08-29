@@ -1,0 +1,13 @@
+\hypertarget{namespace_msg}{}\section{Msg Namespace Reference}
+\label{namespace_msg}\index{Msg@{Msg}}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespace_msg}{Msg} namespace (abbr. Messages) is used to store all strings used to internationalize the application. It contains also, some lists which help speeding things up.
+
+In all functions we used N\+O\+\_\+\+U\+S\+E\+\_\+\+F\+U\+NC to stop \char`\"{}function-\/not-\/used\char`\"{} warnings in case of G\+CC compiler. This is its definition\+: ~\newline
+\#ifdef  ~\newline
+\#define N\+O\+\_\+\+U\+S\+E\+\_\+\+F\+U\+NC  ((unused)) ~\newline
+\#else ~\newline
+\#define N\+O\+\_\+\+U\+S\+E\+\_\+\+F\+U\+NC ~\newline
+\#endif ~\newline

@@ -22,6 +22,8 @@
 #ifndef TYPEDEFS_H
 #define TYPEDEFS_H
 
+#include <QString>
+
 // Characters which can be the ending of a verb in  dictionary form
 #define _endChars QString::fromUtf8("うくぐすつぬぶむるふ")
 
@@ -220,6 +222,13 @@ enum KForm {
 
     /*! Imperative, in Japanese: 命令形*/
     _Imperative_e       = 8
+};
+
+struct VerbInfo {
+    QString verb;
+    CForm form;
+    Polarity polarity;
+    Politeness politeness;
 };
 
 #endif // TYPEDEFS_H

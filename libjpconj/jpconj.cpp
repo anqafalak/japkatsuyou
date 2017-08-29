@@ -49,3 +49,14 @@ QString JpConj::Katsuyou (QString verb, EdictType type, KForm form)
 {
     return Inflection::katsuyou(verb, type, form);
 }
+
+
+/*!
+ * \brief deConjugate
+ * \param conjVerb
+ * \return
+ */
+QList<VerbInfo> deConjugate(QString conjVerb)
+{
+    return Lemmatization::deConjugate(conjVerb);
+}

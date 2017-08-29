@@ -39,7 +39,8 @@ SOURCES  += main.cpp\
     UiHelper/funcframe.cpp \
     Func/jtrans.cpp \
     Func/tatoeba.cpp \
-    UiHelper/icona.cpp
+    UiHelper/icona.cpp \
+    Ui/deconjframe.cpp
 
 HEADERS  += Ui/jpconjmain.h \
             Ui/about.h \
@@ -56,13 +57,15 @@ HEADERS  += Ui/jpconjmain.h \
     UiHelper/funcframe.h \
     Func/jtrans.h \
     Func/tatoeba.h \
-    UiHelper/icona.h
+    UiHelper/icona.h \
+    Ui/deconjframe.h
 
 FORMS    += Ui/jpconjmain.ui \
             Ui/about.ui \
             Ui/preference.ui \
             Ui/jpconjhelp.ui \
-            Ui/conjframe.ui
+            Ui/conjframe.ui \
+    Ui/deconjframe.ui
 
 TRANSLATIONS    +=  Media/i18n/jpconj_ar.ts\
                     Media/i18n/jpconj_ja.ts\

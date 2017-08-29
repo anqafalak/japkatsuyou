@@ -1,0 +1,250 @@
+.TH "libjpconj/typeDefs.h" 3 "Tue Aug 29 2017" "Version 1.0" "JapKatsuyou.libJpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libjpconj/typeDefs.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QString>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBVerbInfo\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_endChars\fP   QString::fromUtf8('うくぐすつぬぶむるふ')"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEdictType\fP { \fB_v0\fP = 0, \fB_v1\fP = 1, \fB_v2a_s\fP = 2, \fB_v4h\fP = 3, \fB_v4r\fP = 4, \fB_v5\fP = 5, \fB_v5aru\fP = 6, \fB_v5b\fP = 7, \fB_v5g\fP = 8, \fB_v5k\fP = 9, \fB_v5k_s\fP = 10, \fB_v5m\fP = 11, \fB_v5n\fP = 12, \fB_v5r\fP = 13, \fB_v5r_i\fP = 14, \fB_v5s\fP = 15, \fB_v5t\fP = 16, \fB_v5u\fP = 17, \fB_v5u_s\fP = 18, \fB_v5uru\fP = 19, \fB_v5z\fP = 20, \fB_vz\fP = 21, \fB_vk\fP = 22, \fB_vn\fP = 23, \fB_vs\fP = 24, \fB_vs_c\fP = 25, \fB_vs_i\fP = 26, \fB_vs_s\fP = 27 }
+.RI "\fIThe EdictType enum contains the verb types as specified in Edict2 dictionary\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBCForm\fP { \fB_TeForm\fP = 1, \fB_Present\fP = 2, \fB_Past\fP = 3, \fB_Provision\fP = 4, \fB_Condition\fP = 5, \fB_Imperative\fP = 6, \fB_Volitional\fP = 7, \fB_PresentContinuous\fP = 8, \fB_PastContinuous\fP = 9, \fB_Passive\fP = 10, \fB_Causative\fP = 11, \fB_CausativePassive\fP = 12, \fB_Potential\fP = 13 }
+.RI "\fIThe CForm enum (Conjugation Form) contains the verb's complex forms\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBPolarity\fP { \fB_Affirmative\fP = true, \fB_Negative\fP = false }
+.RI "\fIThe Polarity enum Gives the polartity of sentence: affirmative or negative\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBPoliteness\fP { \fB_Plain\fP = false, \fB_Polite\fP = true }
+.RI "\fIThe Politeness enum Specifies if the verb is in plain form (used between friends), or polite form (official talking) \fP""
+.br
+.ti -1c
+.RI "enum \fBKForm\fP { \fB_Imperfective_a\fP = 1, \fB_Imperfective_o\fP = 2, \fB_Conjunctive_i\fP = 3, \fB_Conjunctive_t\fP = 4, \fB_Terminal_u\fP = 5, \fB_Attributive_u\fP = 6, \fB_Hypothetical_e\fP = 7, \fB_Imperative_e\fP = 8 }
+.RI "\fIThe KForm enum (Conjugation Form) contains the verb's basic forms\&. \fP""
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _endChars   QString::fromUtf8('うくぐすつぬぶむるふ')"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBCForm\fP"
+
+.PP
+The CForm enum (Conjugation Form) contains the verb's complex forms\&. Conjugation Form: contains the verb's complex forms\&. These forms are created from basic forms (a, e, t, u, i, o)-stems by adding suffixes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fI_TeForm \fP\fP
+This is the te-form of the verb, it has no polite form 
+.TP
+\fB\fI_Present \fP\fP
+Present tense of the verb; plain (u-form + る), polite (i-form + ます) 
+.TP
+\fB\fI_Past \fP\fP
+Past tense of the verb; plain (t-form + た), polite (i-form + ました) 
+.TP
+\fB\fI_Provision \fP\fP
+Provision form (condition); plain (e-form + ば), polite (i-form + ますれば) 
+.TP
+\fB\fI_Condition \fP\fP
+Condiction form (past condition); plain (t-form + たら), polite (i-form + ましたら) 
+.TP
+\fB\fI_Imperative \fP\fP
+Imperative form; plain (eImp-form), polite (t-form + て下さい) 
+.TP
+\fB\fI_Volitional \fP\fP
+Volitional form (lets \&.\&.\&.); plain (o-form + う), polite (i-form + ましょう) 
+.TP
+\fB\fI_PresentContinuous \fP\fP
+Present continuous form; plain (t-form + ている), polite (t-form + ています) 
+.TP
+\fB\fI_PastContinuous \fP\fP
+Past continuous form; plain (t-form + ていた), polite (t-form + ていました) 
+.TP
+\fB\fI_Passive \fP\fP
+Passive form; plain (a-form + れる), polite (a-form + れます) 
+.TP
+\fB\fI_Causative \fP\fP
+Causative form 
+.TP
+\fB\fI_CausativePassive \fP\fP
+.TP
+\fB\fI_Potential \fP\fP
+.SS "enum \fBEdictType\fP"
+
+.PP
+The EdictType enum contains the verb types as specified in Edict2 dictionary\&. It contains all types defined by Mr\&. Jim Breen in his dictionary Edict2\&. It is used in our SqLite database (Edict2verbs\&.db) 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fI_v0 \fP\fP
+This means no type at all, it is used to return the radical as it is\&. 
+.TP
+\fB\fI_v1 \fP\fP
+Ichidan verb 
+.TP
+\fB\fI_v2a_s \fP\fP
+Nidan verb with 'u' ending (archaic) 
+.TP
+\fB\fI_v4h \fP\fP
+Yondan verb with 'hu/fu' ending (archaic) 
+.TP
+\fB\fI_v4r \fP\fP
+Yondan verb with 'ru' ending (archaic) 
+.TP
+\fB\fI_v5 \fP\fP
+Godan verb (not completely classified) 
+.TP
+\fB\fI_v5aru \fP\fP
+Godan verb - -aru special class 
+.TP
+\fB\fI_v5b \fP\fP
+Godan verb with 'bu' ending 
+.TP
+\fB\fI_v5g \fP\fP
+Godan verb with 'gu' ending 
+.TP
+\fB\fI_v5k \fP\fP
+Godan verb with 'ku' ending 
+.TP
+\fB\fI_v5k_s \fP\fP
+Godan verb - iku/yuku special class 
+.TP
+\fB\fI_v5m \fP\fP
+Godan verb with 'mu' ending 
+.TP
+\fB\fI_v5n \fP\fP
+Godan verb with 'nu' ending 
+.TP
+\fB\fI_v5r \fP\fP
+Godan verb with 'ru' ending 
+.TP
+\fB\fI_v5r_i \fP\fP
+Godan verb with 'ru' ending (irregular verb) 
+.TP
+\fB\fI_v5s \fP\fP
+Godan verb with 'su' ending 
+.TP
+\fB\fI_v5t \fP\fP
+Godan verb with 'tsu' ending 
+.TP
+\fB\fI_v5u \fP\fP
+Godan verb with 'u' ending 
+.TP
+\fB\fI_v5u_s \fP\fP
+Godan verb with 'u' ending (special class) 
+.TP
+\fB\fI_v5uru \fP\fP
+Godan verb - uru old class verb (old form of Eru) 
+.TP
+\fB\fI_v5z \fP\fP
+Godan verb with 'zu' ending 
+.TP
+\fB\fI_vz \fP\fP
+Ichidan verb - zuru verb - (alternative form of -jiru verbs) 
+.TP
+\fB\fI_vk \fP\fP
+kuru verb - special class 
+.TP
+\fB\fI_vn \fP\fP
+irregular nu verb 
+.TP
+\fB\fI_vs \fP\fP
+noun or participle which takes the aux\&. verb suru 
+.TP
+\fB\fI_vs_c \fP\fP
+su verb - precursor to the modern suru 
+.TP
+\fB\fI_vs_i \fP\fP
+suru verb - irregular 
+.TP
+\fB\fI_vs_s \fP\fP
+suru verb - special class 
+.SS "enum \fBKForm\fP"
+
+.PP
+The KForm enum (Conjugation Form) contains the verb's basic forms\&. Katsuyou Form: contains the verb's basic forms\&. These forms are thought in Japanese schools, and are origin of complex forms by adding suffixes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fI_Imperfective_a \fP\fP
+Imperfective (general), in Japanese: 未然形 
+.TP
+\fB\fI_Imperfective_o \fP\fP
+Imperfective (volutional), in Japanese also: 未然形 
+.TP
+\fB\fI_Conjunctive_i \fP\fP
+Conjunctive (-i), in Japanese: 連用形 
+.TP
+\fB\fI_Conjunctive_t \fP\fP
+Conjunctive (other), in Japanese also: 連用形 
+.TP
+\fB\fI_Terminal_u \fP\fP
+Attributive, in Japanese: 終止形 
+.TP
+\fB\fI_Attributive_u \fP\fP
+Attributive, in Japanese: 連体形 
+.TP
+\fB\fI_Hypothetical_e \fP\fP
+Hypothetical, in Japanese: 仮定形 
+.TP
+\fB\fI_Imperative_e \fP\fP
+Imperative, in Japanese: 命令形 
+.SS "enum \fBPolarity\fP"
+
+.PP
+The Polarity enum Gives the polartity of sentence: affirmative or negative\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fI_Affirmative \fP\fP
+This is the affirnative conjugation of the verb\&. eg\&. 行きます: go (polite present) 
+.TP
+\fB\fI_Negative \fP\fP
+This is the negative conjugation of the verb\&. eg\&. don't go (polite present) 
+.SS "enum \fBPoliteness\fP"
+
+.PP
+The Politeness enum Specifies if the verb is in plain form (used between friends), or polite form (official talking) 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fI_Plain \fP\fP
+Plain form of a verb\&. eg\&. 行く: go (plain present) 
+.TP
+\fB\fI_Polite \fP\fP
+Polite form of a verb\&. eg\&. 行きます: go (polite present) 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.libJpConj from the source code\&.

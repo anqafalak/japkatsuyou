@@ -1,0 +1,130 @@
+.TH "Language" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Language \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <language\&.h>\fP
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetLanguage\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBloadTranslations\fP ()"
+.br
+.RI "\fI\fBLanguage::loadTranslations\fP Look for available translations and load them\&. \fP"
+.ti -1c
+.RI "static bool \fBmainWindowDirection\fP (\fBQMainWindow\fP *w)"
+.br
+.RI "\fI\fBLanguage::mainWindowDirection\fP Sets the Layout direction to RTL or LTR\&. \fP"
+.ti -1c
+.RI "static QString \fBgetConfigLanguage\fP ()"
+.br
+.RI "\fI\fBLanguage::getConfigLanguage\fP Get the language ID from the Config file\&. \fP"
+.ti -1c
+.RI "static QString \fBgetCurrentLanguage\fP ()"
+.br
+.RI "\fI\fBLanguage::getCurrentLanguage\fP Get the current language ID\&. \fP"
+.ti -1c
+.RI "static void \fBsetConfigLanguage\fP (QString langID)"
+.br
+.RI "\fI\fBLanguage::setConfigLanguage\fP Set the language ID to the Config file\&. \fP"
+.ti -1c
+.RI "static QHash< QString, QString > \fBgetLanguagesInfo\fP ()"
+.br
+.RI "\fI\fBLanguage::getLanguagesInfo\fP Get ID's and names of available languages\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to manage the localization 
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Language::getConfigLanguage ()\fC [static]\fP"
+
+.PP
+\fBLanguage::getConfigLanguage\fP Get the language ID from the Config file\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The ID of the specified language 
+.br
+If the language ID is not available, it returns '??' 
+.RE
+.PP
+
+.SS "QString Language::getCurrentLanguage ()\fC [static]\fP"
+
+.PP
+\fBLanguage::getCurrentLanguage\fP Get the current language ID\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The ID of the language used currently 
+.RE
+.PP
+
+.SS "QHash< QString, QString > Language::getLanguagesInfo ()\fC [static]\fP"
+
+.PP
+\fBLanguage::getLanguagesInfo\fP Get ID's and names of available languages\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A QHash of language-ID as key, and language-name as value\&. 
+.br
+Example: <en, English>, <ar, Arabic>, etc\&. 
+.RE
+.PP
+
+.SS "void Language::loadTranslations ()\fC [static]\fP"
+
+.PP
+\fBLanguage::loadTranslations\fP Look for available translations and load them\&. It looks for available languages in an XML file, containing id, name, location\&. Then, it loads the languages (translations) from their locations\&. It creates, also, the QHash<QString, QString> languagesInfo that can be returned using the function \fBLanguage::getLanguagesInfo\fP 
+.SS "bool Language::mainWindowDirection (\fBQMainWindow\fP * w)\fC [static]\fP"
+
+.PP
+\fBLanguage::mainWindowDirection\fP Sets the Layout direction to RTL or LTR\&. Sets the direction of a given \fBQMainWindow\fP to RTL or LTR according to current local
+.IP "\(bu" 2
+RTL: If the local first two characters are in: ar, dv, ha, he, fa, ps, ur, yi
+.IP "\(bu" 2
+LTR: Otherwise 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIw\fP A \fBQMainWindow\fP which we want to set the direction\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if rtl, false if ltr 
+.RE
+.PP
+
+.PP
+
+.SS "void Language::setConfigLanguage (QString langID)\fC [static]\fP"
+
+.PP
+\fBLanguage::setConfigLanguage\fP Set the language ID to the Config file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlangID\fP 
+.RE
+.PP
+
+.SS "static void Language::setLanguage ()\fC [static]\fP, \fC [slot]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

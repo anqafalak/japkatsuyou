@@ -1,0 +1,232 @@
+\hypertarget{class_style}{}\section{Style Class Reference}
+\label{class_style}\index{Style@{Style}}
+
+
+{\ttfamily \#include $<$style.\+h$>$}
+
+
+
+Inherits \hyperlink{class_q_object}{Q\+Object}.
+
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_style_ae0d0c354818d25e74cabed6d97dd3585}{style\+Changed} (Q\+String style\+ID)
+\item 
+void \hyperlink{class_style_a2824b7c9634f202278b9e0f593207628}{font\+Changed} (Q\+String font, Q\+String jpfont, int size, int jpsize)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_style_a914f187818eb30c0cebe3df5378bfa0a}{Style} ()
+\item 
+void \hyperlink{class_style_aee0ec6a67f69a904c9bea96c83182769}{emit\+Signal} (Q\+String style\+ID)
+\item 
+void \hyperlink{class_style_a7475ca444e740eb82fbb2e9b9ee9da0b}{signal\+Font\+Changed} (Q\+String font, Q\+String jpfont, int size, int jpsize)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_style_aba44fc6be77df65cfd35b4b27e7f61d7}{load\+Styles} ()
+\item 
+static Q\+Hash$<$ Q\+String, \hyperlink{class_styleinfo}{Styleinfo} $\ast$ $>$ \hyperlink{class_style_aeffeb1681c983c1b3648ec72feb46966}{get\+Style\+Info} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_style_aeffeb1681c983c1b3648ec72feb46966}{Style\+::get\+Style\+Info} Get ID\textquotesingle{}s and names of available style sheets. \end{DoxyCompactList}\item 
+static void \hyperlink{class_style_aef8e6319350f1bf38c76980b23f0cd46}{set\+Style} ()
+\item 
+static void \hyperlink{class_style_aa2e2b0c10d7b116d3261158d83b5784a}{set\+Font} ()
+\item 
+static Q\+String \hyperlink{class_style_aa325b448902938a20f599eeb522a01b3}{get\+Config\+Style} ()
+\item 
+static Q\+String \hyperlink{class_style_a49604c44594ba8902451672a7d9f0b75}{get\+Current\+Style} ()
+\item 
+static void \hyperlink{class_style_acfb0a050e2995247f196a2dc94720b32}{set\+Config\+Style} (Q\+String style\+ID)
+\item 
+static void \hyperlink{class_style_a1086ec80b4ca63d43e5c1f3544a04109}{add\+Receiver} (const \hyperlink{class_q_object}{Q\+Object} $\ast$receiver, const char $\ast$receiver\+Slot)
+\item 
+static void \hyperlink{class_style_ad318e6ab475524bf67b1034c7770559e}{add\+Font\+Receiver} (const \hyperlink{class_q_object}{Q\+Object} $\ast$receiver, const char $\ast$receiver\+Slot)
+\item 
+static Q\+String \hyperlink{class_style_a350af48bd7123d91251c4b0c9d07d75e}{get\+Config\+Font} (bool jap)
+\item 
+static Q\+String \hyperlink{class_style_a3437664ebef7c3c470635b7581a47f9e}{get\+Current\+Font} (bool jap)
+\item 
+static void \hyperlink{class_style_a4a5238e6c153a9b8dececbea223d4ae8}{set\+Config\+Font} (Q\+String font, bool jap)
+\item 
+static int \hyperlink{class_style_a27c49fbae999ac6159374d12fe8737bb}{get\+Config\+Font\+Size} (bool jap)
+\item 
+static int \hyperlink{class_style_a75598212a2b2a73d11ad7ba7b40d5982}{get\+Current\+Font\+Size} (bool jap)
+\item 
+static void \hyperlink{class_style_ac927fbfccc3c4073fb48d5c07fddcb0c}{set\+Config\+Font\+Size} (int font\+Size, bool jap)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to manage the tables styles (C\+SS) 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Style@{Style}!Style@{Style}}
+\index{Style@{Style}!Style@{Style}}
+\subsubsection[{\texorpdfstring{Style()}{Style()}}]{\setlength{\rightskip}{0pt plus 5cm}Style\+::\+Style (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_style_a914f187818eb30c0cebe3df5378bfa0a}{}\label{class_style_a914f187818eb30c0cebe3df5378bfa0a}
+
+
+\subsection{Member Function Documentation}
+\index{Style@{Style}!add\+Font\+Receiver@{add\+Font\+Receiver}}
+\index{add\+Font\+Receiver@{add\+Font\+Receiver}!Style@{Style}}
+\subsubsection[{\texorpdfstring{add\+Font\+Receiver(const Q\+Object $\ast$receiver, const char $\ast$receiver\+Slot)}{addFontReceiver(const QObject *receiver, const char *receiverSlot)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::add\+Font\+Receiver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+Object} $\ast$}]{receiver, }
+\item[{const char $\ast$}]{receiver\+Slot}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_ad318e6ab475524bf67b1034c7770559e}{}\label{class_style_ad318e6ab475524bf67b1034c7770559e}
+\index{Style@{Style}!add\+Receiver@{add\+Receiver}}
+\index{add\+Receiver@{add\+Receiver}!Style@{Style}}
+\subsubsection[{\texorpdfstring{add\+Receiver(const Q\+Object $\ast$receiver, const char $\ast$receiver\+Slot)}{addReceiver(const QObject *receiver, const char *receiverSlot)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::add\+Receiver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+Object} $\ast$}]{receiver, }
+\item[{const char $\ast$}]{receiver\+Slot}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a1086ec80b4ca63d43e5c1f3544a04109}{}\label{class_style_a1086ec80b4ca63d43e5c1f3544a04109}
+\index{Style@{Style}!emit\+Signal@{emit\+Signal}}
+\index{emit\+Signal@{emit\+Signal}!Style@{Style}}
+\subsubsection[{\texorpdfstring{emit\+Signal(\+Q\+String style\+I\+D)}{emitSignal(QString styleID)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::emit\+Signal (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{style\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{class_style_aee0ec6a67f69a904c9bea96c83182769}{}\label{class_style_aee0ec6a67f69a904c9bea96c83182769}
+\index{Style@{Style}!font\+Changed@{font\+Changed}}
+\index{font\+Changed@{font\+Changed}!Style@{Style}}
+\subsubsection[{\texorpdfstring{font\+Changed}{fontChanged}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::font\+Changed (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{font, }
+\item[{Q\+String}]{jpfont, }
+\item[{int}]{size, }
+\item[{int}]{jpsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_style_a2824b7c9634f202278b9e0f593207628}{}\label{class_style_a2824b7c9634f202278b9e0f593207628}
+\index{Style@{Style}!get\+Config\+Font@{get\+Config\+Font}}
+\index{get\+Config\+Font@{get\+Config\+Font}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Config\+Font(bool jap)}{getConfigFont(bool jap)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Style\+::get\+Config\+Font (
+\begin{DoxyParamCaption}
+\item[{bool}]{jap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a350af48bd7123d91251c4b0c9d07d75e}{}\label{class_style_a350af48bd7123d91251c4b0c9d07d75e}
+\index{Style@{Style}!get\+Config\+Font\+Size@{get\+Config\+Font\+Size}}
+\index{get\+Config\+Font\+Size@{get\+Config\+Font\+Size}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Config\+Font\+Size(bool jap)}{getConfigFontSize(bool jap)}}]{\setlength{\rightskip}{0pt plus 5cm}int Style\+::get\+Config\+Font\+Size (
+\begin{DoxyParamCaption}
+\item[{bool}]{jap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a27c49fbae999ac6159374d12fe8737bb}{}\label{class_style_a27c49fbae999ac6159374d12fe8737bb}
+\index{Style@{Style}!get\+Config\+Style@{get\+Config\+Style}}
+\index{get\+Config\+Style@{get\+Config\+Style}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Config\+Style()}{getConfigStyle()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Style\+::get\+Config\+Style (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_aa325b448902938a20f599eeb522a01b3}{}\label{class_style_aa325b448902938a20f599eeb522a01b3}
+\index{Style@{Style}!get\+Current\+Font@{get\+Current\+Font}}
+\index{get\+Current\+Font@{get\+Current\+Font}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Current\+Font(bool jap)}{getCurrentFont(bool jap)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Style\+::get\+Current\+Font (
+\begin{DoxyParamCaption}
+\item[{bool}]{jap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a3437664ebef7c3c470635b7581a47f9e}{}\label{class_style_a3437664ebef7c3c470635b7581a47f9e}
+\index{Style@{Style}!get\+Current\+Font\+Size@{get\+Current\+Font\+Size}}
+\index{get\+Current\+Font\+Size@{get\+Current\+Font\+Size}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Current\+Font\+Size(bool jap)}{getCurrentFontSize(bool jap)}}]{\setlength{\rightskip}{0pt plus 5cm}int Style\+::get\+Current\+Font\+Size (
+\begin{DoxyParamCaption}
+\item[{bool}]{jap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a75598212a2b2a73d11ad7ba7b40d5982}{}\label{class_style_a75598212a2b2a73d11ad7ba7b40d5982}
+\index{Style@{Style}!get\+Current\+Style@{get\+Current\+Style}}
+\index{get\+Current\+Style@{get\+Current\+Style}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Current\+Style()}{getCurrentStyle()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Style\+::get\+Current\+Style (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a49604c44594ba8902451672a7d9f0b75}{}\label{class_style_a49604c44594ba8902451672a7d9f0b75}
+\index{Style@{Style}!get\+Style\+Info@{get\+Style\+Info}}
+\index{get\+Style\+Info@{get\+Style\+Info}!Style@{Style}}
+\subsubsection[{\texorpdfstring{get\+Style\+Info()}{getStyleInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$ Q\+String, {\bf Styleinfo} $\ast$ $>$ Style\+::get\+Style\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_aeffeb1681c983c1b3648ec72feb46966}{}\label{class_style_aeffeb1681c983c1b3648ec72feb46966}
+
+
+\hyperlink{class_style_aeffeb1681c983c1b3648ec72feb46966}{Style\+::get\+Style\+Info} Get ID\textquotesingle{}s and names of available style sheets. 
+
+\begin{DoxyReturn}{Returns}
+A Q\+Hash of style-\/\+ID as key, and style-\/name as value. ~\newline
+Example\+: $<$Dz\+Style, Dz\+Coding default style$>$, etc. 
+\end{DoxyReturn}
+\index{Style@{Style}!load\+Styles@{load\+Styles}}
+\index{load\+Styles@{load\+Styles}!Style@{Style}}
+\subsubsection[{\texorpdfstring{load\+Styles()}{loadStyles()}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::load\+Styles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_aba44fc6be77df65cfd35b4b27e7f61d7}{}\label{class_style_aba44fc6be77df65cfd35b4b27e7f61d7}
+\index{Style@{Style}!set\+Config\+Font@{set\+Config\+Font}}
+\index{set\+Config\+Font@{set\+Config\+Font}!Style@{Style}}
+\subsubsection[{\texorpdfstring{set\+Config\+Font(\+Q\+String font, bool jap)}{setConfigFont(QString font, bool jap)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::set\+Config\+Font (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{font, }
+\item[{bool}]{jap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_a4a5238e6c153a9b8dececbea223d4ae8}{}\label{class_style_a4a5238e6c153a9b8dececbea223d4ae8}
+\index{Style@{Style}!set\+Config\+Font\+Size@{set\+Config\+Font\+Size}}
+\index{set\+Config\+Font\+Size@{set\+Config\+Font\+Size}!Style@{Style}}
+\subsubsection[{\texorpdfstring{set\+Config\+Font\+Size(int font\+Size, bool jap)}{setConfigFontSize(int fontSize, bool jap)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::set\+Config\+Font\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{font\+Size, }
+\item[{bool}]{jap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_ac927fbfccc3c4073fb48d5c07fddcb0c}{}\label{class_style_ac927fbfccc3c4073fb48d5c07fddcb0c}
+\index{Style@{Style}!set\+Config\+Style@{set\+Config\+Style}}
+\index{set\+Config\+Style@{set\+Config\+Style}!Style@{Style}}
+\subsubsection[{\texorpdfstring{set\+Config\+Style(\+Q\+String style\+I\+D)}{setConfigStyle(QString styleID)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::set\+Config\+Style (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{style\+ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_acfb0a050e2995247f196a2dc94720b32}{}\label{class_style_acfb0a050e2995247f196a2dc94720b32}
+\index{Style@{Style}!set\+Font@{set\+Font}}
+\index{set\+Font@{set\+Font}!Style@{Style}}
+\subsubsection[{\texorpdfstring{set\+Font()}{setFont()}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::set\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_aa2e2b0c10d7b116d3261158d83b5784a}{}\label{class_style_aa2e2b0c10d7b116d3261158d83b5784a}
+\index{Style@{Style}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!Style@{Style}}
+\subsubsection[{\texorpdfstring{set\+Style()}{setStyle()}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::set\+Style (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_style_aef8e6319350f1bf38c76980b23f0cd46}{}\label{class_style_aef8e6319350f1bf38c76980b23f0cd46}
+\index{Style@{Style}!signal\+Font\+Changed@{signal\+Font\+Changed}}
+\index{signal\+Font\+Changed@{signal\+Font\+Changed}!Style@{Style}}
+\subsubsection[{\texorpdfstring{signal\+Font\+Changed(\+Q\+String font, Q\+String jpfont, int size, int jpsize)}{signalFontChanged(QString font, QString jpfont, int size, int jpsize)}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::signal\+Font\+Changed (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{font, }
+\item[{Q\+String}]{jpfont, }
+\item[{int}]{size, }
+\item[{int}]{jpsize}
+\end{DoxyParamCaption}
+)}\hypertarget{class_style_a7475ca444e740eb82fbb2e9b9ee9da0b}{}\label{class_style_a7475ca444e740eb82fbb2e9b9ee9da0b}
+\index{Style@{Style}!style\+Changed@{style\+Changed}}
+\index{style\+Changed@{style\+Changed}!Style@{Style}}
+\subsubsection[{\texorpdfstring{style\+Changed}{styleChanged}}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+::style\+Changed (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{style\+ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_style_ae0d0c354818d25e74cabed6d97dd3585}{}\label{class_style_ae0d0c354818d25e74cabed6d97dd3585}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+jpconj/\+Ui\+Helper/\hyperlink{style_8h}{style.\+h}\item 
+jpconj/\+Ui\+Helper/\hyperlink{style_8cpp}{style.\+cpp}\end{DoxyCompactItemize}

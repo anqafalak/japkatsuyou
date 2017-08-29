@@ -1,8 +1,9 @@
-# JapKatsuyou
+# ![Logo](logo.png) JapKatsuyou
 
 [![Project](https://img.shields.io/badge/Project-JapKatsuyou-F34B7D.svg)](https://anqafalak.github.com/japkatsuyou)
 [![License](https://img.shields.io/badge/License-Apache--2.0-F34B7D.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![GitHub release](https://img.shields.io/github/release/anqafalak/japkatsuyou.svg)]()
+[![Codacy grade](https://img.shields.io/codacy/grade/d8b6bda5d3f1446d84ec095e3e528d19.svg)](https://www.codacy.com/app/kariminf/japkatsuyou/dashboard)
 [![Travis](https://img.shields.io/travis/anqafalak/japkatsuyou.svg)](https://travis-ci.org/anqafalak/japkatsuyou)
 [![SourceForge](https://img.shields.io/sourceforge/dt/japkatsuyou.svg)](https://sourceforge.net/projects/japkatsuyou/)
 
@@ -44,13 +45,19 @@ Check the [Authors](./Authors.rst) list
 The documentation uptodate can be founded on the [FAQ file](./FAQ.rst)
 
 
-- If you have a concrete bug report please go to the [Tracker](https://github.com/DzCoding/JapKatsuyou/issues) ; submit your report and tag it "bug".
+- If you have a concrete bug report please go to the [Tracker](https://github.com/anqafalak/japkatsuyou/issues) ; submit your report and tag it "bug".
 
 - If you want to participate in developing JapKatsuyou,by testing or by coding we invite you to read this [How to contribute?](./FAQ.rst#how-to-contribute)
 
-- If you want to follow the project news or you have some feedbacks, you can contact us by subscribing in our mailing list in [launchepad](https://launchpad.net/~dzcoding)
+- If you want to follow the project news or you have some feedbacks, you can contact us by subscribing in our mailing list in [launchepad](https://launchpad.net/~anqafalak)
 
 - You can also contact us on our google user group: dzgroup@googlegroup.com
+
+## Documentation
+
+Check [this link for LibJpConj API](anqafalak.github.com/japkatsuyou/docs/libjpconj/)
+
+Check [this link for JpConj API](anqafalak.github.com/japkatsuyou/docs/jpconj/)
 
 ## License
 

@@ -23,11 +23,13 @@
 #ifndef LIBJPCONJ_H
 #define LIBJPCONJ_H
 
-#include "inflection.h"
 #include "jpconj_global.h"
 #include "typeDefs.h"
+#include "inflection.h"
+#include "lemmatization.h"
 
 #include <QString>
+#include <QList>
 
 class LIBJPCONJSHARED_EXPORT JpConj
 {
@@ -35,6 +37,7 @@ class LIBJPCONJSHARED_EXPORT JpConj
 public:
     static QString Conjugate (QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
     static QString Katsuyou (QString verb, EdictType type, KForm form);
+    static QList<VerbInfo> deConjugate(QString conjVerb);
 
 };
 

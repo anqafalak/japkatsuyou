@@ -1,0 +1,81 @@
+\hypertarget{class_inflection}{}\section{Inflection Class Reference}
+\label{class_inflection}\index{Inflection@{Inflection}}
+
+
+{\ttfamily \#include $<$inflection.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \hyperlink{class_inflection_a669ca41547486d284d020490a4655666}{conjugate} (Q\+String verb, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type, \hyperlink{type_defs_8h_af45f1339984167e7b556ced32eca2472}{C\+Form} form, \hyperlink{type_defs_8h_ab4f7d298d5c6d08f0a7cd0fdd1ac1f2e}{Politeness} polite, \hyperlink{type_defs_8h_a84a045fa4024e050ca8be6d33311a054}{Polarity} affirmative)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_inflection_a669ca41547486d284d020490a4655666}{Inflection\+::conjugate} Gives complicated conjugation forms, such as polite positive past form (tense) \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_inflection_ab39ea3efc26e655370b97878564db34b}{katsuyou} (Q\+String verb, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type, \hyperlink{type_defs_8h_a0cdb0ab5f8f266dbb06760ee6b178cc3}{K\+Form} form)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_inflection_ab39ea3efc26e655370b97878564db34b}{Inflection\+::katsuyou} Gives basic conjugation forms, as thought in Japanese schools. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+It is used to get the verb\textquotesingle{}s conjugation (inflection) by affording the six basic conjugation forms, and adding suffixes to get more complicated conjugation form 
+
+\subsection{Member Function Documentation}
+\index{Inflection@{Inflection}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!Inflection@{Inflection}}
+\subsubsection[{\texorpdfstring{conjugate(\+Q\+String verb, Edict\+Type type, C\+Form form, Politeness polite, Polarity affirmative)}{conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Inflection\+::conjugate (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{verb, }
+\item[{{\bf Edict\+Type}}]{type, }
+\item[{{\bf C\+Form}}]{form, }
+\item[{{\bf Politeness}}]{polite, }
+\item[{{\bf Polarity}}]{affirmative}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_inflection_a669ca41547486d284d020490a4655666}{}\label{class_inflection_a669ca41547486d284d020490a4655666}
+
+
+\hyperlink{class_inflection_a669ca41547486d284d020490a4655666}{Inflection\+::conjugate} Gives complicated conjugation forms, such as polite positive past form (tense) 
+
+It gives complex conjugation forms, using the basic stems, and adding suffixes according to parameters\+: {\bfseries type} {\bfseries }, {\bfseries form} {\bfseries }, {\bfseries polite} {\bfseries }, and {\bfseries affirmative} {\bfseries }. 
+\begin{DoxyParams}{Parameters}
+{\em verb} & The verb in dictionary form (u-\/form), eg. 食べる, 飲む, 行く, 来る, etc. \\
+\hline
+{\em type} & Type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+{\em form} & Complex form (tense) which we want to conjugate to, such as\+: present, past, conditional, etc. (See C\+Form) \\
+\hline
+{\em polite} & The language can be polite or plain, ans thus verb conjugation variate according to these two. (See Politeness) \\
+\hline
+{\em affirmative} & The sentence can be affirmative (positive) or negative. (See Polarity) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The complex verb conjugation 
+\end{DoxyReturn}
+\index{Inflection@{Inflection}!katsuyou@{katsuyou}}
+\index{katsuyou@{katsuyou}!Inflection@{Inflection}}
+\subsubsection[{\texorpdfstring{katsuyou(\+Q\+String verb, Edict\+Type type, K\+Form form)}{katsuyou(QString verb, EdictType type, KForm form)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Inflection\+::katsuyou (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{verb, }
+\item[{{\bf Edict\+Type}}]{type, }
+\item[{{\bf K\+Form}}]{form}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_inflection_ab39ea3efc26e655370b97878564db34b}{}\label{class_inflection_ab39ea3efc26e655370b97878564db34b}
+
+
+\hyperlink{class_inflection_ab39ea3efc26e655370b97878564db34b}{Inflection\+::katsuyou} Gives basic conjugation forms, as thought in Japanese schools. 
+
+It gives basic conjugation forms (or basic stems), those basic forms can be used to form complex conjugation forms by adding suffixes and auxilary verbs. 
+\begin{DoxyParams}{Parameters}
+{\em verb} & The verb in dictionary form (u-\/form), eg. 食べる, 飲む, 行く, 来る, etc. \\
+\hline
+{\em type} & Type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+{\em form} & Basic forms\+: imperfective, conjuntive, etc. (See K\+Form) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Basic forms conjugation 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libjpconj/\hyperlink{inflection_8h}{inflection.\+h}\item 
+libjpconj/\hyperlink{inflection_8cpp}{inflection.\+cpp}\end{DoxyCompactItemize}

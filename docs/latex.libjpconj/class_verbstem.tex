@@ -1,0 +1,202 @@
+\hypertarget{class_verbstem}{}\section{Verbstem Class Reference}
+\label{class_verbstem}\index{Verbstem@{Verbstem}}
+
+
+{\ttfamily \#include $<$verbstem.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \hyperlink{class_verbstem_aeed17d02506f4897fa36a45b04d39d03}{a\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_aeed17d02506f4897fa36a45b04d39d03}{Verbstem\+::a\+Form} Gives the a-\/form (stem) of a verb. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_verbstem_abfba98ad5122aa0b78f31b8ff55bac7d}{e\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_abfba98ad5122aa0b78f31b8ff55bac7d}{Verbstem\+::e\+Form} Gives the e-\/form (stem) of a verb. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_verbstem_aacebbfba4fd6f8832bf409b5dd52b107}{e\+Imp\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_aacebbfba4fd6f8832bf409b5dd52b107}{Verbstem\+::e\+Imp\+Form} Gives the e-\/imperative form (stem) of a verb. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_verbstem_ade956b530e7399c0dc3621beaeb9d289}{t\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_ade956b530e7399c0dc3621beaeb9d289}{Verbstem\+::t\+Form} Gives the t-\/form (stem) of a verb. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_verbstem_a254499c56ea44fe139f8d4f605dc670f}{u\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_a254499c56ea44fe139f8d4f605dc670f}{Verbstem\+::u\+Form} Gives the u-\/form (stem) of a verb. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_verbstem_a5f7907f96147bd43d6ceb406e8625b46}{i\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_a5f7907f96147bd43d6ceb406e8625b46}{Verbstem\+::i\+Form} Gives the i-\/form (stem) of a verb. \end{DoxyCompactList}\item 
+static Q\+String \hyperlink{class_verbstem_a8ceb9efb6447e43b002261e5d7bfb30a}{o\+Form} (Q\+String radical, \hyperlink{type_defs_8h_a44f9030d5e119edcb703fea53ceb7a1b}{Edict\+Type} type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_verbstem_a8ceb9efb6447e43b002261e5d7bfb30a}{Verbstem\+::o\+Form} Gives the o-\/form (stem) of a verb. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+It is used to get the verb\textquotesingle{}s six forms which are a, e, u, i, o, and t -\/forms. 
+
+\subsection{Member Function Documentation}
+\index{Verbstem@{Verbstem}!a\+Form@{a\+Form}}
+\index{a\+Form@{a\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{a\+Form(\+Q\+String radical, Edict\+Type type)}{aForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::a\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_aeed17d02506f4897fa36a45b04d39d03}{}\label{class_verbstem_aeed17d02506f4897fa36a45b04d39d03}
+
+
+\hyperlink{class_verbstem_aeed17d02506f4897fa36a45b04d39d03}{Verbstem\+::a\+Form} Gives the a-\/form (stem) of a verb. 
+
+The function take a {\itshape radical} {\itshape of} a verb and gives its a-\/form by changing the last character\textquotesingle{}s sound from {\bfseries u} {\bfseries }(dictionary form) to {\bfseries a} {\bfseries } eg. 飲む -\/$>$ 飲ま 
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String the a-\/form of the verb 
+\end{DoxyReturn}
+\index{Verbstem@{Verbstem}!e\+Form@{e\+Form}}
+\index{e\+Form@{e\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{e\+Form(\+Q\+String radical, Edict\+Type type)}{eForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::e\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_abfba98ad5122aa0b78f31b8ff55bac7d}{}\label{class_verbstem_abfba98ad5122aa0b78f31b8ff55bac7d}
+
+
+\hyperlink{class_verbstem_abfba98ad5122aa0b78f31b8ff55bac7d}{Verbstem\+::e\+Form} Gives the e-\/form (stem) of a verb. 
+
+In case of G\+O\+D\+AN verbs, The function take a {\itshape radical} {\itshape of} a verb and gives its e-\/form by changing the last character\textquotesingle{}s sound from {\bfseries u} {\bfseries }(dictionary form) to {\bfseries e} {\bfseries } eg. 飲む -\/$>$ 飲め 
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String the e-\/form of the verb 
+\end{DoxyReturn}
+\index{Verbstem@{Verbstem}!e\+Imp\+Form@{e\+Imp\+Form}}
+\index{e\+Imp\+Form@{e\+Imp\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{e\+Imp\+Form(\+Q\+String radical, Edict\+Type type)}{eImpForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::e\+Imp\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_aacebbfba4fd6f8832bf409b5dd52b107}{}\label{class_verbstem_aacebbfba4fd6f8832bf409b5dd52b107}
+
+
+\hyperlink{class_verbstem_aacebbfba4fd6f8832bf409b5dd52b107}{Verbstem\+::e\+Imp\+Form} Gives the e-\/imperative form (stem) of a verb. 
+
+It is the same as \hyperlink{class_verbstem_aacebbfba4fd6f8832bf409b5dd52b107}{Verbstem\+::e\+Imp\+Form}, but in case of suru and kuru, ichidan, and zuru it\textquotesingle{}s different eg. する -\/$>$ しろ 
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String the e-\/imperative form of the verb 
+\end{DoxyReturn}
+\index{Verbstem@{Verbstem}!i\+Form@{i\+Form}}
+\index{i\+Form@{i\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{i\+Form(\+Q\+String radical, Edict\+Type type)}{iForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::i\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_a5f7907f96147bd43d6ceb406e8625b46}{}\label{class_verbstem_a5f7907f96147bd43d6ceb406e8625b46}
+
+
+\hyperlink{class_verbstem_a5f7907f96147bd43d6ceb406e8625b46}{Verbstem\+::i\+Form} Gives the i-\/form (stem) of a verb. 
+
+In case of G\+O\+D\+AN verbs, The function take a {\itshape radical} {\itshape of} a verb and gives its i-\/form by changing the last character\textquotesingle{}s sound from {\bfseries u} {\bfseries }(dictionary form) to {\bfseries i} {\bfseries } eg. 飲む -\/$>$ 飲み 
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String the i-\/form of the verb 
+\end{DoxyReturn}
+\index{Verbstem@{Verbstem}!o\+Form@{o\+Form}}
+\index{o\+Form@{o\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{o\+Form(\+Q\+String radical, Edict\+Type type)}{oForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::o\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_a8ceb9efb6447e43b002261e5d7bfb30a}{}\label{class_verbstem_a8ceb9efb6447e43b002261e5d7bfb30a}
+
+
+\hyperlink{class_verbstem_a8ceb9efb6447e43b002261e5d7bfb30a}{Verbstem\+::o\+Form} Gives the o-\/form (stem) of a verb. 
+
+The function take a {\itshape radical} {\itshape of} a verb and gives its o-\/form by changing the last character\textquotesingle{}s sound from {\bfseries u} {\bfseries }(dictionary form) to {\bfseries o} {\bfseries } eg. 飲む -\/$>$ 飲も 
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String the o-\/form of the verb 
+\end{DoxyReturn}
+\index{Verbstem@{Verbstem}!t\+Form@{t\+Form}}
+\index{t\+Form@{t\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{t\+Form(\+Q\+String radical, Edict\+Type type)}{tForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::t\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_ade956b530e7399c0dc3621beaeb9d289}{}\label{class_verbstem_ade956b530e7399c0dc3621beaeb9d289}
+
+
+\hyperlink{class_verbstem_ade956b530e7399c0dc3621beaeb9d289}{Verbstem\+::t\+Form} Gives the t-\/form (stem) of a verb. 
+
+In case of G\+O\+D\+AN verbs, The function take a {\itshape radical} {\itshape of} a verb and gives its t-\/form by changing the last character\textquotesingle{}s sound
+\begin{DoxyItemize}
+\item u to t 買う -\/$>$ 買っ
+\item ku to i　歩く -\/$>$ 歩い
+\item gu to i　泳ぐ -\/$>$ 泳い
+\item su to shi 出す -\/$>$ 出し
+\item tsu to t 立つ -\/$>$ 立っ
+\item nu to n 死ぬ -\/$>$ 死ん
+\item bu to n 遊ぶ -\/$>$ 遊ん
+\item mu to n 飲む -\/$>$ 飲ん
+\item ru to t eg. 取る -\/$>$ 取っ
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String the t-\/form of the verb 
+\end{DoxyReturn}
+\index{Verbstem@{Verbstem}!u\+Form@{u\+Form}}
+\index{u\+Form@{u\+Form}!Verbstem@{Verbstem}}
+\subsubsection[{\texorpdfstring{u\+Form(\+Q\+String radical, Edict\+Type type)}{uForm(QString radical, EdictType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Verbstem\+::u\+Form (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{radical, }
+\item[{{\bf Edict\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_verbstem_a254499c56ea44fe139f8d4f605dc670f}{}\label{class_verbstem_a254499c56ea44fe139f8d4f605dc670f}
+
+
+\hyperlink{class_verbstem_a254499c56ea44fe139f8d4f605dc670f}{Verbstem\+::u\+Form} Gives the u-\/form (stem) of a verb. 
+
+Gives the dictionary form of a verb 
+\begin{DoxyParams}{Parameters}
+{\em radical} & It is the part which never get changed during conjugation, we can get it dictionary form (u-\/form) minus the last character (eg. 飲む -\/$>$ 飲) \\
+\hline
+{\em type} & type of the verb\+: v1, v5u, etc. (See Edict\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String dictionary form of the verb 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libjpconj/\hyperlink{verbstem_8h}{verbstem.\+h}\item 
+libjpconj/\hyperlink{verbstem_8cpp}{verbstem.\+cpp}\end{DoxyCompactItemize}
