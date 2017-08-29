@@ -24,7 +24,7 @@ Design
 * Icons: Abdelkrime Aries (using Gimp). The icons are under CC-BY-SA-3 license.
 
 Packaging
---------- 
+---------
 * Windows NSIS installer: Abdelkrime Aries
 * Ubuntu DEB package: Abdelkrime Aries
 *
@@ -34,9 +34,3 @@ Testing
 
 * Test : Abdelkrime Aries , Zakaria Smahi
 * Bugs : Abdelkrime Aries
-*
-
-
- 
-
-

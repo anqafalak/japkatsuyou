@@ -10,4 +10,4 @@
         $ sudo apt-get update
         $ sudo apt-get install jpconj
 
-* **Windows XP/VISTA/7** : Download the installer from sourceforge: `latest version <http://sourceforge.net/projects/japkatsuyou/files/latest/download>`_
+* **Windows XP/VISTA/7/8/10** : Download the installer from sourceforge: `latest version <http://sourceforge.net/projects/japkatsuyou/files/latest/download>`_
