@@ -1,0 +1,203 @@
+\hypertarget{class_func_frame}{}\section{Func\+Frame Class Reference}
+\label{class_func_frame}\index{Func\+Frame@{Func\+Frame}}
+
+
+{\ttfamily \#include $<$funcframe.\+h$>$}
+
+
+
+Inherits \hyperlink{class_q_frame}{Q\+Frame}.
+
+
+
+Inherited by \hyperlink{class_conj_frame}{Conj\+Frame}.
+
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_func_frame_a8c1de1e64822b12e21279ddee89d2c5c}{close} ()
+\item 
+void \hyperlink{class_func_frame_ac207df67eedfb7befd9c4eff4adb055b}{open} ()
+\item 
+void \hyperlink{class_func_frame_a7e5ad4d47567e5564bc462175b0fa824}{new\+Verb} (Q\+String verb)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_func_frame_acca8a9c9f954e66a1ea9cd75f1272cfe}{Func\+Frame} (Q\+Widget $\ast$parent=0)
+\item 
+virtual void \hyperlink{class_func_frame_abad791bdc2a791af1ae13fd864bf984d}{change\+Style} (Q\+String style\+ID)=0
+\item 
+virtual void \hyperlink{class_func_frame_a0872b6db14e325d2637ad405bb0de947}{zoom} (signed char sign)=0
+\item 
+virtual void \hyperlink{class_func_frame_ac6c816ef397c59a30448ca4fd51672f2}{refresh\+Language} (bool \hyperlink{class_func_frame_a9afcf2865055116446b9f50406bb1c12}{rtl})=0
+\item 
+virtual void \hyperlink{class_func_frame_ab4fc9921002677a89b5ddaa87e403a3c}{init\+Exporter} (\hyperlink{class_export}{Export} $\ast$exporter)=0
+\item 
+virtual void \hyperlink{class_func_frame_a216cb113ba196d4ec4f18fe403c9ee05}{change\+Font} (Q\+String font, Q\+String jpfont, int size, int jpsize)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_func_frame_a94a9c40f21fbd1d246baf27d99235568}{initialize} ()
+\item 
+void \hyperlink{class_func_frame_abfa615a8f31b3d82ac0665eb7c402b3e}{set\+C\+SS} (\hyperlink{class_q_web_view}{Q\+Web\+View} $\ast$web\+View, Q\+String name\+C\+SS)
+\begin{DoxyCompactList}\small\item\em jpconjmain\+::set\+C\+SS Set a user defined C\+SS to the \hyperlink{class_q_web_view}{Q\+Web\+View} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_func_frame_a59fbe8faf8763ad54615b6512b5e9772}{init\+UI} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_func_frame_a9afcf2865055116446b9f50406bb1c12}{rtl}
+\item 
+bool \hyperlink{class_func_frame_a9e2ab69ca54b7f45ab9b314b5a2d94ff}{has\+Content}
+\item 
+Q\+String \hyperlink{class_func_frame_a62f747a890411dd79469f66dcb853f3c}{stylesheet}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Func\+Frame@{Func\+Frame}!Func\+Frame@{Func\+Frame}}
+\index{Func\+Frame@{Func\+Frame}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{Func\+Frame(\+Q\+Widget $\ast$parent=0)}{FuncFrame(QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Func\+Frame\+::\+Func\+Frame (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_func_frame_acca8a9c9f954e66a1ea9cd75f1272cfe}{}\label{class_func_frame_acca8a9c9f954e66a1ea9cd75f1272cfe}
+
+
+\subsection{Member Function Documentation}
+\index{Func\+Frame@{Func\+Frame}!change\+Font@{change\+Font}}
+\index{change\+Font@{change\+Font}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{change\+Font(\+Q\+String font, Q\+String jpfont, int size, int jpsize)=0}{changeFont(QString font, QString jpfont, int size, int jpsize)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Func\+Frame\+::change\+Font (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{font, }
+\item[{Q\+String}]{jpfont, }
+\item[{int}]{size, }
+\item[{int}]{jpsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_func_frame_a216cb113ba196d4ec4f18fe403c9ee05}{}\label{class_func_frame_a216cb113ba196d4ec4f18fe403c9ee05}
+
+
+Implemented in \hyperlink{class_conj_frame_a03eeb5ba6a8583f28d6b12903efcc8a1}{Conj\+Frame}.
+
+\index{Func\+Frame@{Func\+Frame}!change\+Style@{change\+Style}}
+\index{change\+Style@{change\+Style}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{change\+Style(\+Q\+String style\+I\+D)=0}{changeStyle(QString styleID)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Func\+Frame\+::change\+Style (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{style\+ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_func_frame_abad791bdc2a791af1ae13fd864bf984d}{}\label{class_func_frame_abad791bdc2a791af1ae13fd864bf984d}
+
+
+Implemented in \hyperlink{class_conj_frame_ae9be73faedec7fa1305406b9a2866669}{Conj\+Frame}.
+
+\index{Func\+Frame@{Func\+Frame}!close@{close}}
+\index{close@{close}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{close}{close}}]{\setlength{\rightskip}{0pt plus 5cm}void Func\+Frame\+::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_func_frame_a8c1de1e64822b12e21279ddee89d2c5c}{}\label{class_func_frame_a8c1de1e64822b12e21279ddee89d2c5c}
+\index{Func\+Frame@{Func\+Frame}!init\+Exporter@{init\+Exporter}}
+\index{init\+Exporter@{init\+Exporter}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{init\+Exporter(\+Export $\ast$exporter)=0}{initExporter(Export *exporter)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Func\+Frame\+::init\+Exporter (
+\begin{DoxyParamCaption}
+\item[{{\bf Export} $\ast$}]{exporter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_func_frame_ab4fc9921002677a89b5ddaa87e403a3c}{}\label{class_func_frame_ab4fc9921002677a89b5ddaa87e403a3c}
+
+
+Implemented in \hyperlink{class_conj_frame_a860983e19318724a7590ec400816c7aa}{Conj\+Frame}.
+
+\index{Func\+Frame@{Func\+Frame}!initialize@{initialize}}
+\index{initialize@{initialize}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{initialize()}{initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}void Func\+Frame\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_func_frame_a94a9c40f21fbd1d246baf27d99235568}{}\label{class_func_frame_a94a9c40f21fbd1d246baf27d99235568}
+\index{Func\+Frame@{Func\+Frame}!init\+UI@{init\+UI}}
+\index{init\+UI@{init\+UI}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{init\+U\+I()=0}{initUI()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Func\+Frame\+::init\+UI (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_func_frame_a59fbe8faf8763ad54615b6512b5e9772}{}\label{class_func_frame_a59fbe8faf8763ad54615b6512b5e9772}
+
+
+Implemented in \hyperlink{class_conj_frame_a85375b7842b63a9fc7e782d9e25391b9}{Conj\+Frame}.
+
+\index{Func\+Frame@{Func\+Frame}!new\+Verb@{new\+Verb}}
+\index{new\+Verb@{new\+Verb}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{new\+Verb}{newVerb}}]{\setlength{\rightskip}{0pt plus 5cm}void Func\+Frame\+::new\+Verb (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{verb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_func_frame_a7e5ad4d47567e5564bc462175b0fa824}{}\label{class_func_frame_a7e5ad4d47567e5564bc462175b0fa824}
+\index{Func\+Frame@{Func\+Frame}!open@{open}}
+\index{open@{open}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{open}{open}}]{\setlength{\rightskip}{0pt plus 5cm}void Func\+Frame\+::open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_func_frame_ac207df67eedfb7befd9c4eff4adb055b}{}\label{class_func_frame_ac207df67eedfb7befd9c4eff4adb055b}
+\index{Func\+Frame@{Func\+Frame}!refresh\+Language@{refresh\+Language}}
+\index{refresh\+Language@{refresh\+Language}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{refresh\+Language(bool rtl)=0}{refreshLanguage(bool rtl)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Func\+Frame\+::refresh\+Language (
+\begin{DoxyParamCaption}
+\item[{bool}]{rtl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_func_frame_ac6c816ef397c59a30448ca4fd51672f2}{}\label{class_func_frame_ac6c816ef397c59a30448ca4fd51672f2}
+
+
+Implemented in \hyperlink{class_conj_frame_a54d19035527d1e0f556fdcbbad5a5abb}{Conj\+Frame}.
+
+\index{Func\+Frame@{Func\+Frame}!set\+C\+SS@{set\+C\+SS}}
+\index{set\+C\+SS@{set\+C\+SS}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{set\+C\+S\+S(\+Q\+Web\+View $\ast$web\+View, Q\+String name\+C\+S\+S)}{setCSS(QWebView *webView, QString nameCSS)}}]{\setlength{\rightskip}{0pt plus 5cm}void Func\+Frame\+::set\+C\+SS (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Web\+View} $\ast$}]{web\+View, }
+\item[{Q\+String}]{name\+C\+SS}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_func_frame_abfa615a8f31b3d82ac0665eb7c402b3e}{}\label{class_func_frame_abfa615a8f31b3d82ac0665eb7c402b3e}
+
+
+jpconjmain\+::set\+C\+SS Set a user defined C\+SS to the \hyperlink{class_q_web_view}{Q\+Web\+View} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+View} & The \hyperlink{class_q_web_view}{Q\+Web\+View} we want to set the content C\+SS. \\
+\hline
+{\em name\+C\+SS} & The name of the C\+SS located in $<$data\+Folder$>$/styles/ with the extension \char`\"{}.\+css\char`\"{} \\
+\hline
+\end{DoxyParams}
+\index{Func\+Frame@{Func\+Frame}!zoom@{zoom}}
+\index{zoom@{zoom}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{zoom(signed char sign)=0}{zoom(signed char sign)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Func\+Frame\+::zoom (
+\begin{DoxyParamCaption}
+\item[{signed char}]{sign}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_func_frame_a0872b6db14e325d2637ad405bb0de947}{}\label{class_func_frame_a0872b6db14e325d2637ad405bb0de947}
+
+
+Implemented in \hyperlink{class_conj_frame_ad02a4547f6ec085bbf5569ccabcb1cc6}{Conj\+Frame}.
+
+
+
+\subsection{Member Data Documentation}
+\index{Func\+Frame@{Func\+Frame}!has\+Content@{has\+Content}}
+\index{has\+Content@{has\+Content}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{has\+Content}{hasContent}}]{\setlength{\rightskip}{0pt plus 5cm}bool Func\+Frame\+::has\+Content\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_func_frame_a9e2ab69ca54b7f45ab9b314b5a2d94ff}{}\label{class_func_frame_a9e2ab69ca54b7f45ab9b314b5a2d94ff}
+\index{Func\+Frame@{Func\+Frame}!rtl@{rtl}}
+\index{rtl@{rtl}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{rtl}{rtl}}]{\setlength{\rightskip}{0pt plus 5cm}bool Func\+Frame\+::rtl\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_func_frame_a9afcf2865055116446b9f50406bb1c12}{}\label{class_func_frame_a9afcf2865055116446b9f50406bb1c12}
+\index{Func\+Frame@{Func\+Frame}!stylesheet@{stylesheet}}
+\index{stylesheet@{stylesheet}!Func\+Frame@{Func\+Frame}}
+\subsubsection[{\texorpdfstring{stylesheet}{stylesheet}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Func\+Frame\+::stylesheet\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_func_frame_a62f747a890411dd79469f66dcb853f3c}{}\label{class_func_frame_a62f747a890411dd79469f66dcb853f3c}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+jpconj/\+Ui\+Helper/\hyperlink{funcframe_8h}{funcframe.\+h}\item 
+jpconj/\+Ui\+Helper/\hyperlink{funcframe_8cpp}{funcframe.\+cpp}\end{DoxyCompactItemize}

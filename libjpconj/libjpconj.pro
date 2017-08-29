@@ -22,14 +22,16 @@ DEFINES += LIBJPCONJ_LIBRARY
 SOURCES +=  \
             verbstem.cpp \
             inflection.cpp \
-            jpconj.cpp
+            jpconj.cpp \
+    lemmatization.cpp
 
 HEADERS += \
             verbstem.h \
             typeDefs.h \
             inflection.h \
             jpconj.h \
-            jpconj_global.h
+            jpconj_global.h \
+    lemmatization.h
 
 # This is just used in time of packaging
 #DESTDIR = ../libjpconj-bin

@@ -1,0 +1,75 @@
+.TH "JpConj" 3 "Tue Aug 29 2017" "Version 1.0" "JapKatsuyou.libJpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JpConj \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <jpconj\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBConjugate\fP (QString verb, \fBEdictType\fP type, \fBCForm\fP form, \fBPoliteness\fP polite, \fBPolarity\fP affirmative)"
+.br
+.RI "\fI\fBJpConj::Conjugate\fP\&. \fP"
+.ti -1c
+.RI "static QString \fBKatsuyou\fP (QString verb, \fBEdictType\fP type, \fBKForm\fP form)"
+.br
+.RI "\fI\fBJpConj::Katsuyou\fP\&. \fP"
+.ti -1c
+.RI "static QList< \fBVerbInfo\fP > \fBdeConjugate\fP (QString conjVerb)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "QString JpConj::Conjugate (QString verb, \fBEdictType\fP type, \fBCForm\fP form, \fBPoliteness\fP polite, \fBPolarity\fP affirmative)\fC [static]\fP"
+
+.PP
+\fBJpConj::Conjugate\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIverb\fP 
+.br
+\fItype\fP 
+.br
+\fIform\fP 
+.br
+\fIpolite\fP 
+.br
+\fIaffirmative\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "static QList<\fBVerbInfo\fP> JpConj::deConjugate (QString conjVerb)\fC [static]\fP"
+
+.SS "QString JpConj::Katsuyou (QString verb, \fBEdictType\fP type, \fBKForm\fP form)\fC [static]\fP"
+
+.PP
+\fBJpConj::Katsuyou\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIverb\fP 
+.br
+\fItype\fP 
+.br
+\fIform\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.libJpConj from the source code\&.

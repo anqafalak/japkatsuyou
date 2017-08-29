@@ -1,0 +1,136 @@
+.TH "HelpViewer" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HelpViewer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <helpviewer\&.h>\fP
+.PP
+Inherits \fBQWebView\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBhome\fP ()"
+.br
+.ti -1c
+.RI "void \fBbackward\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcopyAvailable\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBforwardAvailable\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBbackwardAvailable\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBhighlighted\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsourceChanged\fP (const QUrl &)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHelpViewer\fP (QHelpEngine *helpEngine, QWidget *parent)"
+.br
+.ti -1c
+.RI "void \fBsetSource\fP (const QUrl &url)"
+.br
+.ti -1c
+.RI "QUrl \fBsource\fP () const "
+.br
+.ti -1c
+.RI "QString \fBdocumentTitle\fP () const "
+.br
+.ti -1c
+.RI "bool \fBhasSelection\fP () const "
+.br
+.ti -1c
+.RI "void \fBresetZoom\fP ()"
+.br
+.ti -1c
+.RI "void \fBzoomIn\fP (qreal range=1)"
+.br
+.ti -1c
+.RI "void \fBzoomOut\fP (qreal range=1)"
+.br
+.ti -1c
+.RI "void \fBcopy\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisForwardAvailable\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisBackwardAvailable\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *)"
+.br
+.ti -1c
+.RI "void \fBmouseReleaseEvent\fP (QMouseEvent *e)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HelpViewer::HelpViewer (QHelpEngine * helpEngine, QWidget * parent)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void HelpViewer::backward ()\fC [inline]\fP, \fC [slot]\fP"
+
+.SS "void HelpViewer::backwardAvailable (bool enabled)\fC [signal]\fP"
+
+.SS "void HelpViewer::copy ()\fC [inline]\fP"
+
+.SS "void HelpViewer::copyAvailable (bool enabled)\fC [signal]\fP"
+
+.SS "QString HelpViewer::documentTitle () const\fC [inline]\fP"
+
+.SS "void HelpViewer::forwardAvailable (bool enabled)\fC [signal]\fP"
+
+.SS "bool HelpViewer::hasSelection () const\fC [inline]\fP"
+
+.SS "void HelpViewer::highlighted (const QString &)\fC [signal]\fP"
+
+.SS "void HelpViewer::home ()\fC [slot]\fP"
+
+.SS "bool HelpViewer::isBackwardAvailable () const\fC [inline]\fP"
+
+.SS "bool HelpViewer::isForwardAvailable () const\fC [inline]\fP"
+
+.SS "void HelpViewer::mouseReleaseEvent (QMouseEvent * e)\fC [protected]\fP"
+
+.SS "void HelpViewer::resetZoom ()"
+
+.SS "void HelpViewer::setSource (const QUrl & url)"
+
+.SS "QUrl HelpViewer::source () const\fC [inline]\fP"
+
+.SS "void HelpViewer::sourceChanged (const QUrl &)\fC [signal]\fP"
+
+.SS "void HelpViewer::wheelEvent (QWheelEvent * e)\fC [protected]\fP, \fC [virtual]\fP"
+
+.SS "void HelpViewer::zoomIn (qreal range = \fC1\fP)"
+
+.SS "void HelpViewer::zoomOut (qreal range = \fC1\fP)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

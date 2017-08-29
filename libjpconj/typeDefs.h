@@ -22,6 +22,15 @@
 #ifndef TYPEDEFS_H
 #define TYPEDEFS_H
 
+#include <QString>
+
+struct VerbInfo {
+    QString verb;
+    CForm form;
+    Polarity polarity;
+    Politeness politeness;
+};
+
 // Characters which can be the ending of a verb in  dictionary form
 #define _endChars QString::fromUtf8("うくぐすつぬぶむるふ")
 

@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['getavailableicons',['getAvailableIcons',['../class_icona.html#acebd1ee76a058fb832d38c6caac701ba',1,'Icona']]],
+  ['getconfigexportpart',['getConfigExportPart',['../class_export.html#ad3babac023d9aa2818df948bf73b3164',1,'Export']]],
+  ['getconfigfont',['getConfigFont',['../class_style.html#a350af48bd7123d91251c4b0c9d07d75e',1,'Style']]],
+  ['getconfigfontsize',['getConfigFontSize',['../class_style.html#a27c49fbae999ac6159374d12fe8737bb',1,'Style']]],
+  ['getconfigicons',['getConfigIcons',['../class_icona.html#ae4fcde6f20d15fa255ab246ef0caaaec',1,'Icona']]],
+  ['getconfiglanguage',['getConfigLanguage',['../class_language.html#a166c93720b89d805481cd70f6fe333a2',1,'Language']]],
+  ['getconfigstyle',['getConfigStyle',['../class_style.html#aa325b448902938a20f599eeb522a01b3',1,'Style']]],
+  ['getconfigtraysetting',['getConfigTraySetting',['../class_jpconj_tray.html#a9a3055295ad6821f498cf2eafb66db88',1,'JpconjTray']]],
+  ['getcurrentfont',['getCurrentFont',['../class_style.html#a3437664ebef7c3c470635b7581a47f9e',1,'Style']]],
+  ['getcurrentfontsize',['getCurrentFontSize',['../class_style.html#a75598212a2b2a73d11ad7ba7b40d5982',1,'Style']]],
+  ['getcurrenticons',['getCurrentIcons',['../class_icona.html#aa9554f8b52200401215d0b62bcbb5adf',1,'Icona']]],
+  ['getcurrentlanguage',['getCurrentLanguage',['../class_language.html#a8b7392bc644966ab95e5e18f3ef01c68',1,'Language']]],
+  ['getcurrentstyle',['getCurrentStyle',['../class_style.html#a49604c44594ba8902451672a7d9f0b75',1,'Style']]],
+  ['getdefaultstyle',['getDefaultStyle',['../class_q_k_icona.html#a4204e2ad2b93f3a553c36a9bc31f545a',1,'QKIcona']]],
+  ['geticon',['getIcon',['../class_q_k_icona.html#a3e83faf0e88155836d7bd3488defc893',1,'QKIcona::getIcon()'],['../class_icona.html#acfd62908e0e3b548926d246b9ef3c84c',1,'Icona::getIcon()']]],
+  ['getlanguagesinfo',['getLanguagesInfo',['../class_language.html#ac56915d59897ed05717af793b5aae7fb',1,'Language']]],
+  ['getstyleinfo',['getStyleInfo',['../class_style.html#aeffeb1681c983c1b3648ec72feb46966',1,'Style']]]
+];

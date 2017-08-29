@@ -47,7 +47,7 @@ QList<Tatoeba::Exp> Tatoeba::find(QString verb, QString lang)
         if (lang2 == "jpn"){
             req = "SELECT jpn.id, jpn.sent \n";
             req += "FROM jpn \n";
-            req += "WHERE jpn.sent LIKE \"%" + radical + "%\" LIMIT 100;\n";
+            req += "WHERE jpn.sent LIKE \"%" + radical + "%\" LIMIT 50;\n";
             notJPN = false;
         } else {
             req = "SELECT jpn.id, jpn.sent, " + lang2 + ".sent\n";

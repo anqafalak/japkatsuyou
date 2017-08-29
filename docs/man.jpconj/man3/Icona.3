@@ -1,0 +1,82 @@
+.TH "Icona" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Icona \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <icona\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBiconsChanged\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIcona\fP ()"
+.br
+.ti -1c
+.RI "void \fBsignalIconsChanged\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetIcons\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBgetConfigIcons\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBgetCurrentIcons\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetConfigIcons\fP (QString style)"
+.br
+.ti -1c
+.RI "static QMap< QString, QIcon > \fBgetAvailableIcons\fP ()"
+.br
+.ti -1c
+.RI "static void \fBaddReceiver\fP (const \fBQObject\fP *receiver, const char *receiverSlot)"
+.br
+.ti -1c
+.RI "static QIcon \fBgetIcon\fP (QString iconName)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Icona::Icona ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Icona::addReceiver (const \fBQObject\fP * receiver, const char * receiverSlot)\fC [static]\fP"
+
+.SS "QMap< QString, QIcon > Icona::getAvailableIcons ()\fC [static]\fP"
+
+.SS "QString Icona::getConfigIcons ()\fC [static]\fP"
+
+.SS "QString Icona::getCurrentIcons ()\fC [static]\fP"
+
+.SS "QIcon Icona::getIcon (QString iconName)\fC [static]\fP"
+
+.SS "void Icona::iconsChanged ()\fC [signal]\fP"
+
+.SS "void Icona::setConfigIcons (QString style)\fC [static]\fP"
+
+.SS "void Icona::setIcons ()\fC [static]\fP"
+
+.SS "void Icona::signalIconsChanged ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

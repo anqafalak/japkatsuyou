@@ -1,0 +1,63 @@
+.TH "JpconjTray" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JpconjTray \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <jpconjtray\&.h>\fP
+.PP
+Inherits \fBQSystemTrayIcon\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJpconjTray\fP (\fBQMainWindow\fP *parent)"
+.br
+.ti -1c
+.RI "\fB~JpconjTray\fP ()"
+.br
+.ti -1c
+.RI "void \fBhideMain\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddSeparator\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddAction\fP (QAction *action)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetConfigTraySettings\fP (QMap< QString, bool > traySettings)"
+.br
+.ti -1c
+.RI "static bool \fBgetConfigTraySetting\fP (QString traySetting)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "JpconjTray::JpconjTray (\fBQMainWindow\fP * parent)"
+
+.SS "JpconjTray::~JpconjTray ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void JpconjTray::addAction (QAction * action)"
+
+.SS "void JpconjTray::addSeparator ()"
+
+.SS "bool JpconjTray::getConfigTraySetting (QString traySetting)\fC [static]\fP"
+
+.SS "void JpconjTray::hideMain ()"
+
+.SS "void JpconjTray::setConfigTraySettings (QMap< QString, bool > traySettings)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

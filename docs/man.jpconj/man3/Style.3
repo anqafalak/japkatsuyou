@@ -1,0 +1,147 @@
+.TH "Style" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Style \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <style\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstyleChanged\fP (QString styleID)"
+.br
+.ti -1c
+.RI "void \fBfontChanged\fP (QString font, QString jpfont, int size, int jpsize)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStyle\fP ()"
+.br
+.ti -1c
+.RI "void \fBemitSignal\fP (QString styleID)"
+.br
+.ti -1c
+.RI "void \fBsignalFontChanged\fP (QString font, QString jpfont, int size, int jpsize)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBloadStyles\fP ()"
+.br
+.ti -1c
+.RI "static QHash< QString, \fBStyleinfo\fP * > \fBgetStyleInfo\fP ()"
+.br
+.RI "\fI\fBStyle::getStyleInfo\fP Get ID's and names of available style sheets\&. \fP"
+.ti -1c
+.RI "static void \fBsetStyle\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetFont\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBgetConfigStyle\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBgetCurrentStyle\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetConfigStyle\fP (QString styleID)"
+.br
+.ti -1c
+.RI "static void \fBaddReceiver\fP (const \fBQObject\fP *receiver, const char *receiverSlot)"
+.br
+.ti -1c
+.RI "static void \fBaddFontReceiver\fP (const \fBQObject\fP *receiver, const char *receiverSlot)"
+.br
+.ti -1c
+.RI "static QString \fBgetConfigFont\fP (bool jap)"
+.br
+.ti -1c
+.RI "static QString \fBgetCurrentFont\fP (bool jap)"
+.br
+.ti -1c
+.RI "static void \fBsetConfigFont\fP (QString font, bool jap)"
+.br
+.ti -1c
+.RI "static int \fBgetConfigFontSize\fP (bool jap)"
+.br
+.ti -1c
+.RI "static int \fBgetCurrentFontSize\fP (bool jap)"
+.br
+.ti -1c
+.RI "static void \fBsetConfigFontSize\fP (int fontSize, bool jap)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to manage the tables styles (CSS) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Style::Style ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Style::addFontReceiver (const \fBQObject\fP * receiver, const char * receiverSlot)\fC [static]\fP"
+
+.SS "void Style::addReceiver (const \fBQObject\fP * receiver, const char * receiverSlot)\fC [static]\fP"
+
+.SS "void Style::emitSignal (QString styleID)"
+
+.SS "void Style::fontChanged (QString font, QString jpfont, int size, int jpsize)\fC [signal]\fP"
+
+.SS "QString Style::getConfigFont (bool jap)\fC [static]\fP"
+
+.SS "int Style::getConfigFontSize (bool jap)\fC [static]\fP"
+
+.SS "QString Style::getConfigStyle ()\fC [static]\fP"
+
+.SS "QString Style::getCurrentFont (bool jap)\fC [static]\fP"
+
+.SS "int Style::getCurrentFontSize (bool jap)\fC [static]\fP"
+
+.SS "QString Style::getCurrentStyle ()\fC [static]\fP"
+
+.SS "QHash< QString, \fBStyleinfo\fP * > Style::getStyleInfo ()\fC [static]\fP"
+
+.PP
+\fBStyle::getStyleInfo\fP Get ID's and names of available style sheets\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A QHash of style-ID as key, and style-name as value\&. 
+.br
+Example: <DzStyle, DzCoding default style>, etc\&. 
+.RE
+.PP
+
+.SS "void Style::loadStyles ()\fC [static]\fP"
+
+.SS "void Style::setConfigFont (QString font, bool jap)\fC [static]\fP"
+
+.SS "void Style::setConfigFontSize (int fontSize, bool jap)\fC [static]\fP"
+
+.SS "void Style::setConfigStyle (QString styleID)\fC [static]\fP"
+
+.SS "void Style::setFont ()\fC [static]\fP"
+
+.SS "void Style::setStyle ()\fC [static]\fP"
+
+.SS "void Style::signalFontChanged (QString font, QString jpfont, int size, int jpsize)"
+
+.SS "void Style::styleChanged (QString styleID)\fC [signal]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

@@ -1,0 +1,114 @@
+.TH "ConjFrame" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConjFrame \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <conjframe\&.h>\fP
+.PP
+Inherits \fBFuncFrame\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "void \fBopen\fP ()"
+.br
+.ti -1c
+.RI "void \fBnewVerb\fP (QString verb)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConjFrame\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~ConjFrame\fP ()"
+.br
+.ti -1c
+.RI "void \fBdoConj\fP ()"
+.br
+.RI "\fI\fBConjFrame::doConj\fP This function is used to show different conjugation forms\&. \fP"
+.ti -1c
+.RI "virtual void \fBzoom\fP (signed char sign)"
+.br
+.ti -1c
+.RI "virtual void \fBrefreshLanguage\fP (bool \fBrtl\fP)"
+.br
+.ti -1c
+.RI "virtual void \fBchangeStyle\fP (QString styleID)"
+.br
+.ti -1c
+.RI "virtual void \fBinitExporter\fP (\fBExport\fP *exporter)"
+.br
+.ti -1c
+.RI "virtual void \fBchangeFont\fP (QString font, QString jpfont, int size, int jpsize)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinitUI\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ConjFrame::ConjFrame (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.SS "ConjFrame::~ConjFrame ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ConjFrame::changeFont (QString font, QString jpfont, int size, int jpsize)\fC [virtual]\fP"
+
+.PP
+Implements \fBFuncFrame\fP\&.
+.SS "void ConjFrame::changeStyle (QString styleID)\fC [virtual]\fP"
+
+.PP
+Implements \fBFuncFrame\fP\&.
+.SS "void ConjFrame::close ()\fC [signal]\fP"
+
+.SS "void ConjFrame::doConj ()"
+
+.PP
+\fBConjFrame::doConj\fP This function is used to show different conjugation forms\&. This function search for the existance of the verb, using \fBEdict2\fP module\&. Then, it calls for:
+.IP "\(bu" 2
+ConjFrame::basicConjugation To show the standard and basic conjugation forms\&.
+.IP "\(bu" 2
+ConjFrame::complexConjugation To show the complex conjugation forms\&. 
+.PP
+
+.SS "void ConjFrame::initExporter (\fBExport\fP * exporter)\fC [virtual]\fP"
+
+.PP
+Implements \fBFuncFrame\fP\&.
+.SS "void ConjFrame::initUI ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBFuncFrame\fP\&.
+.SS "void ConjFrame::newVerb (QString verb)\fC [signal]\fP"
+
+.SS "void ConjFrame::open ()\fC [signal]\fP"
+
+.SS "void ConjFrame::refreshLanguage (bool rtl)\fC [virtual]\fP"
+
+.PP
+Implements \fBFuncFrame\fP\&.
+.SS "void ConjFrame::zoom (signed char sign)\fC [virtual]\fP"
+
+.PP
+Implements \fBFuncFrame\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

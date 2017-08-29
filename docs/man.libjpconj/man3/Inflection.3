@@ -1,0 +1,75 @@
+.TH "Inflection" 3 "Tue Aug 29 2017" "Version 1.0" "JapKatsuyou.libJpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Inflection \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <inflection\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBconjugate\fP (QString verb, \fBEdictType\fP type, \fBCForm\fP form, \fBPoliteness\fP polite, \fBPolarity\fP affirmative)"
+.br
+.RI "\fI\fBInflection::conjugate\fP Gives complicated conjugation forms, such as polite positive past form (tense) \fP"
+.ti -1c
+.RI "static QString \fBkatsuyou\fP (QString verb, \fBEdictType\fP type, \fBKForm\fP form)"
+.br
+.RI "\fI\fBInflection::katsuyou\fP Gives basic conjugation forms, as thought in Japanese schools\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+It is used to get the verb's conjugation (inflection) by affording the six basic conjugation forms, and adding suffixes to get more complicated conjugation form 
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Inflection::conjugate (QString verb, \fBEdictType\fP type, \fBCForm\fP form, \fBPoliteness\fP polite, \fBPolarity\fP affirmative)\fC [static]\fP"
+
+.PP
+\fBInflection::conjugate\fP Gives complicated conjugation forms, such as polite positive past form (tense) It gives complex conjugation forms, using the basic stems, and adding suffixes according to parameters: \fBtype\fP \fB\fP, \fBform\fP \fB\fP, \fBpolite\fP \fB\fP, and \fBaffirmative\fP \fB\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIverb\fP The verb in dictionary form (u-form), eg\&. 食べる, 飲む, 行く, 来る, etc\&. 
+.br
+\fItype\fP Type of the verb: v1, v5u, etc\&. (See EdictType) 
+.br
+\fIform\fP Complex form (tense) which we want to conjugate to, such as: present, past, conditional, etc\&. (See CForm) 
+.br
+\fIpolite\fP The language can be polite or plain, ans thus verb conjugation variate according to these two\&. (See Politeness) 
+.br
+\fIaffirmative\fP The sentence can be affirmative (positive) or negative\&. (See Polarity) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The complex verb conjugation 
+.RE
+.PP
+
+.SS "QString Inflection::katsuyou (QString verb, \fBEdictType\fP type, \fBKForm\fP form)\fC [static]\fP"
+
+.PP
+\fBInflection::katsuyou\fP Gives basic conjugation forms, as thought in Japanese schools\&. It gives basic conjugation forms (or basic stems), those basic forms can be used to form complex conjugation forms by adding suffixes and auxilary verbs\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIverb\fP The verb in dictionary form (u-form), eg\&. 食べる, 飲む, 行く, 来る, etc\&. 
+.br
+\fItype\fP Type of the verb: v1, v5u, etc\&. (See EdictType) 
+.br
+\fIform\fP Basic forms: imperfective, conjuntive, etc\&. (See KForm) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Basic forms conjugation 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.libJpConj from the source code\&.

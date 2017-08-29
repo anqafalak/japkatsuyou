@@ -1,0 +1,28 @@
+.TH "Msg" 3 "Tue Aug 29 2017" "Version 2.0.0" "JapKatsuyou.JpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Msg \- 
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+\fBMsg\fP namespace (abbr\&. Messages) is used to store all strings used to internationalize the application\&. It contains also, some lists which help speeding things up\&.
+.PP
+In all functions we used NO_USE_FUNC to stop 'function-not-used' warnings in case of GCC compiler\&. This is its definition: 
+.br
+#ifdef  
+.br
+#define NO_USE_FUNC  ((unused)) 
+.br
+#else 
+.br
+#define NO_USE_FUNC 
+.br
+#endif 
+.br
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.JpConj from the source code\&.

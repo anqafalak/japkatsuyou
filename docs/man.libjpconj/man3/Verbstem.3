@@ -1,0 +1,196 @@
+.TH "Verbstem" 3 "Tue Aug 29 2017" "Version 1.0" "JapKatsuyou.libJpConj" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Verbstem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <verbstem\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBaForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::aForm\fP Gives the a-form (stem) of a verb\&. \fP"
+.ti -1c
+.RI "static QString \fBeForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::eForm\fP Gives the e-form (stem) of a verb\&. \fP"
+.ti -1c
+.RI "static QString \fBeImpForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::eImpForm\fP Gives the e-imperative form (stem) of a verb\&. \fP"
+.ti -1c
+.RI "static QString \fBtForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::tForm\fP Gives the t-form (stem) of a verb\&. \fP"
+.ti -1c
+.RI "static QString \fBuForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::uForm\fP Gives the u-form (stem) of a verb\&. \fP"
+.ti -1c
+.RI "static QString \fBiForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::iForm\fP Gives the i-form (stem) of a verb\&. \fP"
+.ti -1c
+.RI "static QString \fBoForm\fP (QString radical, \fBEdictType\fP type)"
+.br
+.RI "\fI\fBVerbstem::oForm\fP Gives the o-form (stem) of a verb\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+It is used to get the verb's six forms which are a, e, u, i, o, and t -forms\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Verbstem::aForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::aForm\fP Gives the a-form (stem) of a verb\&. The function take a \fIradical\fP \fIof\fP a verb and gives its a-form by changing the last character's sound from \fBu\fP \fB\fP(dictionary form) to \fBa\fP \fB\fP eg\&. 飲む -> 飲ま 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString the a-form of the verb 
+.RE
+.PP
+
+.SS "QString Verbstem::eForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::eForm\fP Gives the e-form (stem) of a verb\&. In case of GODAN verbs, The function take a \fIradical\fP \fIof\fP a verb and gives its e-form by changing the last character's sound from \fBu\fP \fB\fP(dictionary form) to \fBe\fP \fB\fP eg\&. 飲む -> 飲め 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString the e-form of the verb 
+.RE
+.PP
+
+.SS "QString Verbstem::eImpForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::eImpForm\fP Gives the e-imperative form (stem) of a verb\&. It is the same as \fBVerbstem::eImpForm\fP, but in case of suru and kuru, ichidan, and zuru it's different eg\&. する -> しろ 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString the e-imperative form of the verb 
+.RE
+.PP
+
+.SS "QString Verbstem::iForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::iForm\fP Gives the i-form (stem) of a verb\&. In case of GODAN verbs, The function take a \fIradical\fP \fIof\fP a verb and gives its i-form by changing the last character's sound from \fBu\fP \fB\fP(dictionary form) to \fBi\fP \fB\fP eg\&. 飲む -> 飲み 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString the i-form of the verb 
+.RE
+.PP
+
+.SS "QString Verbstem::oForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::oForm\fP Gives the o-form (stem) of a verb\&. The function take a \fIradical\fP \fIof\fP a verb and gives its o-form by changing the last character's sound from \fBu\fP \fB\fP(dictionary form) to \fBo\fP \fB\fP eg\&. 飲む -> 飲も 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString the o-form of the verb 
+.RE
+.PP
+
+.SS "QString Verbstem::tForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::tForm\fP Gives the t-form (stem) of a verb\&. In case of GODAN verbs, The function take a \fIradical\fP \fIof\fP a verb and gives its t-form by changing the last character's sound
+.IP "\(bu" 2
+u to t 買う -> 買っ
+.IP "\(bu" 2
+ku to i　歩く -> 歩い
+.IP "\(bu" 2
+gu to i　泳ぐ -> 泳い
+.IP "\(bu" 2
+su to shi 出す -> 出し
+.IP "\(bu" 2
+tsu to t 立つ -> 立っ
+.IP "\(bu" 2
+nu to n 死ぬ -> 死ん
+.IP "\(bu" 2
+bu to n 遊ぶ -> 遊ん
+.IP "\(bu" 2
+mu to n 飲む -> 飲ん
+.IP "\(bu" 2
+ru to t eg\&. 取る -> 取っ
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString the t-form of the verb 
+.RE
+.PP
+
+.SS "QString Verbstem::uForm (QString radical, \fBEdictType\fP type)\fC [static]\fP"
+
+.PP
+\fBVerbstem::uForm\fP Gives the u-form (stem) of a verb\&. Gives the dictionary form of a verb 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradical\fP It is the part which never get changed during conjugation, we can get it dictionary form (u-form) minus the last character (eg\&. 飲む -> 飲) 
+.br
+\fItype\fP type of the verb: v1, v5u, etc\&. (See EdictType) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+QString dictionary form of the verb 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JapKatsuyou\&.libJpConj from the source code\&.
