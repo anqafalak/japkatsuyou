@@ -58,5 +58,5 @@ QString JpConj::Katsuyou (QString verb, EdictType type, KForm form)
  */
 QList<VerbInfo> deConjugate(QString conjVerb)
 {
-    return NULL;
+    return Lemmatization::deConjugate(conjVerb);
 }

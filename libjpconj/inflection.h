@@ -31,6 +31,7 @@
 
 class Inflection
 {
+
 public:
     static QString conjugate(QString verb, EdictType type, CForm form, Politeness polite, Polarity affirmative);
     static QString katsuyou(QString verb, EdictType type, KForm form);
