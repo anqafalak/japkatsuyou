@@ -71,8 +71,8 @@ jpconjmain::~jpconjmain()
 void jpconjmain::doInit()
 {
 
-    workfrm = new ConjFrame(this);
-    ui->formLayout->addWidget(workfrm);
+    chooseOperation(0);
+
     hasContent = false;
     languageChanged = true;
     verbType = _v0;
@@ -82,11 +82,17 @@ void jpconjmain::doInit()
     Language::loadTranslations();
     //bool rtl = Language::mainWindowDirection(this);
 
-    ui->menu_View->addAction(ui->mainTool->toggleViewAction());
-    ui->menu_View->addAction(ui->zoomTool->toggleViewAction());
-    ui->menu_View->addAction(ui->example->toggleViewAction());
+    ui->menu_Toolbars->addAction(ui->mainTool->toggleViewAction());
+    ui->menu_Toolbars->addAction(ui->zoomTool->toggleViewAction());
+    ui->menu_Toolbars->addAction(ui->example->toggleViewAction());
     //ui->menu_View->addAction(ui->search->toggleViewAction());
     //ui->showt->setLayoutDirection(Qt::LeftToRight);
+
+    QActionGroup* group = new QActionGroup( this );
+
+    ui->showConjugate->setActionGroup(group);
+    ui->showUnconjugate->setActionGroup(group);
+
 
     //changeStyle(Style::getCurrentStyle());
     Style::addReceiver(this, SLOT(changeStyle(QString)));
@@ -117,6 +123,30 @@ void jpconjmain::doInit()
 
     Icona::addReceiver(this, SLOT(changeIcons()));
     Icona::setIcons();
+}
+
+
+void jpconjmain::chooseOperation(int type)
+{
+    FuncFrame* newWorkfrm;
+
+    switch (type) {
+    case 1:
+        newWorkfrm = new DeconjFrame(this);
+        break;
+    default:
+        newWorkfrm = new ConjFrame(this);
+        break;
+    }
+
+    ui->formLayout->addWidget(newWorkfrm);
+
+    if (workfrm){
+        workfrm->hide();
+        delete workfrm;
+    }
+
+    workfrm = newWorkfrm;
 }
 
 
@@ -523,4 +553,16 @@ void jpconjmain::on_actionContactUs_triggered()
 void jpconjmain::on_actionHomePage_triggered()
 {
     QDesktopServices::openUrl(QUrl("http://japkatsuyou.sourceforge.net"));
+}
+
+void jpconjmain::on_showConjugate_toggled(bool checked)
+{
+    if (checked)
+        chooseOperation(0);
+}
+
+void jpconjmain::on_showUnconjugate_toggled(bool checked)
+{
+    if (checked)
+        chooseOperation(1);
 }

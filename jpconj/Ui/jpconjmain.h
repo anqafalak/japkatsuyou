@@ -25,6 +25,7 @@
 
 #include "about.h"
 #include "conjframe.h"
+#include "deconjframe.h"
 #include "Func/edict2.h"
 #include "UiHelper/export.h"
 #include "jpconjhelp.h"
@@ -71,7 +72,7 @@ private:
     Ui::jpconjmain *ui;
     About     *winAbout;
     Preference *winPref;
-    FuncFrame *workfrm;
+    FuncFrame *workfrm = NULL;
     bool hasContent;
     bool languageChanged;
     EdictType verbType;
@@ -82,6 +83,8 @@ private:
     QAction *actionShow;
 
     void doInit();
+
+    void chooseOperation(int type);
 
     void doExamples();
 
@@ -127,6 +130,8 @@ private slots:
     void on_actionHide_triggered();
     void on_actionContactUs_triggered();
     void on_actionHomePage_triggered();
+    void on_showConjugate_toggled(bool checked);
+    void on_showUnconjugate_toggled(bool checked);
 };
 
 #endif // JPCONJMAIN_H
