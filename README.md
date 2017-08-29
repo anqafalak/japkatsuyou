@@ -55,9 +55,9 @@ The documentation uptodate can be founded on the [FAQ file](./FAQ.rst)
 
 ## Documentation
 
-Check [this link for LibJpConj API](anqafalak.github.com/japkatsuyou/docs/libjpconj/)
+Check [this link for LibJpConj API](https://anqafalak.github.com/japkatsuyou/docs/libjpconj/)
 
-Check [this link for JpConj API](anqafalak.github.com/japkatsuyou/docs/jpconj/)
+Check [this link for JpConj API](https://anqafalak.github.com/japkatsuyou/docs/jpconj/)
 
 ## License
 
